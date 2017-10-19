@@ -32,6 +32,8 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.dysen.common_res.common.utils.ParamUtils.UserId;
+
 public class OpinionSubmitActivity extends ParentActivity {
 
     @Bind(R.id.rlv_data)
@@ -76,11 +78,11 @@ public class OpinionSubmitActivity extends ParentActivity {
                     // nexNewPhaseAction:给空值即可（流程定制需要次参数，目前无需给值）,UserId:登陆用户id
                     jsonObject = ParamUtils.setParams("nextActionOperator", "nextActionOperator", new Object[]{
                             examineBeanList.get(index).getFlowTaskNo(),
-                            idea, "", ParamUtils.UserId}, 4);
+                            idea, "", UserId}, 4);
                     sendRequest(jsonObject, 1);
                 }
                 break;
-            case 1:
+            case 1://下一步
                 listData = parseList(HttpThread.parseJSON(msg.obj.toString()).getJSONArray("array").toString());
                 List<String> list = new ArrayList<>();
                 for (int i = 0; i < listData.size(); i++) {
@@ -99,8 +101,12 @@ public class OpinionSubmitActivity extends ParentActivity {
                     }
                 }));
                 break;
-            case 2:
+            case 2://提交
                 startActivity(new Intent(this, ApprovalActivity.class));
+                finish();
+                break;
+            case 3://返回上一步
+                toast(HttpThread.parseJSON(msg.obj.toString()).getString("OperationMsg"));
                 finish();
                 break;
         }
@@ -162,7 +168,7 @@ public class OpinionSubmitActivity extends ParentActivity {
 
             jsonObject = ParamUtils.setParams("saveOpinion", "nextActionOperator", new String[]{examineBeanList.get(index).getFlowTaskNo(),
                     examineBeanList.get(index).getObjectNo(), examineBeanList.get(index).getObjectType(), opinionContent, opinionType
-                    , examineBeanList.get(index).getFlowNo(), examineBeanList.get(index).getPhaseNo(), "false", ParamUtils.UserId}, 9);
+                    , examineBeanList.get(index).getFlowNo(), examineBeanList.get(index).getPhaseNo(), "false", UserId}, 9);
         }
     }
 
@@ -175,16 +181,19 @@ public class OpinionSubmitActivity extends ParentActivity {
                 //ftSerialNo:贷款流程树编号,phaseAction:下一步提交人（由下一步（获取提交人）获得）,phaseOpinion:选择的意见（"同意"||"不同意"  由签署意见里获得）
                 //        ,nexNewPhaseAction:给空（该参数为流程定制，目前无需给值）,UserId:登陆用户id
                 jsonObject = ParamUtils.setParams("doMySubmit", "doMySubmit", new String[]{examineBeanList.get(index).getFlowTaskNo(),
-                        phaseAction, opinionType, "", ParamUtils.UserId}, 5);
+                        phaseAction, opinionType, "", UserId}, 5);
                 sendRequest(jsonObject, 2);
             } else {
                 toast("请选择意见！");
             }
                 break;
             case R.id.lay_back:
+                //FlowTaskNo:贷款流程树编号,ObjectNo:贷款编号, UserId:登陆用户id
+                jsonObject = ParamUtils.setParams("backToLast", "backToLast", new String[]{examineBeanList.get(index).getFlowTaskNo(),
+                        examineBeanList.get(index).getObjectNo(), UserId}, 3);
+                sendRequest(jsonObject, 3);
                 break;
         }
-
 
     }
 
