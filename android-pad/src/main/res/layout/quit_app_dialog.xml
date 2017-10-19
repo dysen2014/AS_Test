@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialog_linear"
+    android:layout_width="320dip"
+    android:layout_height="188dip"
+    android:background="@drawable/common_quit_dialog"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="113"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="120"
+        android:gravity="center"
+        android:text="您是否要退出系统？"
+        android:textColor="@color/black"
+        android:textSize="25px"
+        android:textStyle="italic" >
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="88"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bt_Yes"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="6"
+            android:background="@drawable/btn_pc_xyka"
+            android:gravity="center"
+            android:text="确定(Yes)"
+            android:textColor="@color/white"
+            android:textSize="18px" >
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8" >
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bt_No"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="6"
+            android:background="@drawable/btn_pc_xyka"
+            android:gravity="center"
+            android:text="取消(No)"
+            android:textColor="@color/white"
+            android:textSize="18px" >
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="8" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="55" >
+    </LinearLayout>
+
+</LinearLayout>

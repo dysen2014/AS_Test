@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dysen.approvaldemo.OpinionActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <include
+        layout="@layout/common_title_layout"/>
+
+    <LinearLayout
+        android:layout_width="800dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rlv_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:orientation="horizontal">
+            <com.yinglan.alphatabs.AlphaTabsIndicator
+                android:id="@+id/alphaIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+            <!--
+                app:tabIconNormal="@color/transparent"
+                app:tabIconSelected="@drawable/contact_name_bg"-->
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/tab_0"
+                style="@style/common_tab_bar"
+                app:tabIconNormal="@drawable/tab_nomal"
+                app:tabIconSelected="@drawable/tab_selected"
+                app:tabText="同意"
+                app:tabTextSize="13sp"
+                app:textColorNormal="#999999"
+                app:textColorSelected="#ea452f"/>
+
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/tab_1"
+                style="@style/common_tab_bar"
+                app:tabIconNormal="@drawable/tab_nomal"
+                app:tabIconSelected="@drawable/tab_selected"
+                app:tabText="不同意"
+                app:tabTextSize="13sp"
+                app:textColorNormal="#999999"
+                app:textColorSelected="#ea452f"/>
+            </com.yinglan.alphatabs.AlphaTabsIndicator>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="意见详情："/>
+            <EditText
+                android:id="@+id/opinion_edt"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_txt_bg"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/common_btn_submit"/>
+
+</LinearLayout>

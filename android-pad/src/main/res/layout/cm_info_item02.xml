@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/boundaryline"
+    android:orientation="vertical" >
+
+    <!-- 7英寸 -->
+    <!-- <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:text="活期金额：4000元"
+        android:textColor="@color/red" /> -->
+    <!-- 10.1英寸 -->
+    <!--
+        <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="@string/tv_optimal_recommend_products"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textColor="@color/tv_customer_marketing_sell_clew" />
+    -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" >
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:text="最近一个月到期提醒"
+        android:textColor="@color/black"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/et_backgroud_gray"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="产品名称"
+            android:textColor="@color/black" />
+		<LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/gray" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:gravity="center"
+            android:text="到期日期"
+            android:textColor="@color/black" />
+		<LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/gray" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:gravity="center"
+            android:text="到期金额"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <ListView android:id="@+id/cm_info_item02_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:dividerHeight="0dip"
+        android:divider="@color/white"
+        android:fadingEdge="none"></ListView>
+    <!-- <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="阳光理财”T计划“第28期产品3人民币53天产品"
+            android:textColor="@color/black" />
+		<LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/gray" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:gravity="center"
+            android:text="2012-08-20"
+            android:textColor="@color/black" />
+		<LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/gray" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:gravity="right"
+            android:text="50,000.00"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/et_backgroud_gray"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="阳光理财”A计划“第15期产品1美币1个月产品"
+            android:textColor="@color/black" />
+		<LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/gray" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:gravity="center"
+            android:text="2012-08-30"
+            android:textColor="@color/black" />
+		<LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/gray" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:gravity="right"
+            android:text="55,000.00"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45dip"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:text="阳光理财”套餐计划“2012年第20期产品1人民币3个月产品"
+            android:textColor="@color/black" />
+		<LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/gray" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:gravity="center"
+            android:text="2012-09-15"
+            android:textColor="@color/black" />
+		<LinearLayout
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/gray" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2.0"
+            android:gravity="right"
+            android:text="333,000.00"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" >
+    </LinearLayout> -->
+
+    <!-- <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </LinearLayout> -->
+
+</LinearLayout>

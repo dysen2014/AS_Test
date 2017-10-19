@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nowworkplacebg"
+    android:orientation="vertical"
+    android:weightSum="1536" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="107"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+        <include layout="@layout/com_title" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="22dp"
+        android:layout_weight="1429"
+        android:background="@drawable/queuebg"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp" >
+
+            <ImageView
+                android:id="@+id/imgqueue"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/imgqueue" >
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="9dp"
+                android:layout_toRightOf="@id/imgqueue"
+                android:text="排队信息"
+                android:textColor="@color/workplacewordcolor"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="45dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前排队人数："
+                    android:textColor="@color/workplacewordcolor"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_queuenum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:text="0"
+                    android:textColor="@color/separatelightredline"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="7dp"
+                android:layout_marginRight="45dp"
+                android:layout_marginTop="9dp"
+                android:visibility="gone"
+                android:background="@drawable/shapesearchbg"
+                android:gravity="center_vertical|left" >
+
+                <ImageView
+                    android:id="@+id/imgsearch"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical|left"
+                    android:layout_marginLeft="9dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/searchbg" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:hint="客户快速查询"
+                    android:singleLine="true"
+                    android:textColor="@color/workplacewordcolor"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <include layout="@layout/hf_recent_visit_customer_item" />
+
+            <com.pactera.financialmanager.ui.HeadRefreshListView
+                android:id="@+id/hf_list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:cacheColorHint="@color/transparent"
+                android:divider="@null"
+                android:drawSelectorOnTop="false"
+                android:fastScrollEnabled="true" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>

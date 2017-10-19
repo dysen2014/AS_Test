@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <style>
+    	html,body { height:100%; width:100%; margin:0; padding:0;align:left;valign:left;}
+    </style>
+</head>
+<body>
+    <div id="mainTop" style="height:50%;width:100%;"></div>
+	 <div id="mainBottom" style="height:50%;width:100%;border:0px;text-align:left;align:left;valign:left;"></div>
+     
+	
+    <!-- ECharts单文件引入 -->
+    <script src="./js/echarts.js"></script>
+    <script type="text/javascript">
+    //初始化路径
+    var myChartTop;  
+    var myChartBottom;
+    require.config({
+        paths: {
+            echarts: './js'
+        }
+    });
+    
+    //通用属性定义
+    var options = {  
+        title : {  
+            text : "Echart"  
+        },  
+        tooltip : {  
+            show : false  
+        },   
+        toolbox : {  
+            show : false
+        },  
+    }; 
+
+
+    //创建折线图
+    function createLineChart(xDataArray, yDataArray){
+    	optionsTop = {
+			title : {
+				text: '存款趋势图',
+				subtext: '单位:元',
+				x:'center'
+			},
+			/*
+			legend: {
+				data:['存款'],
+				x:'right'
+			},
+			*/
+			calculable : false,
+			xAxis : [
+				{
+					type : 'category',
+					boundaryGap : false,
+					//data : ['20150911','20150912','20150913','20150914','20150915','20150916','20150917']
+					data : xDataArray
+				}
+			],
+			yAxis : [
+				{
+					type : 'value'
+				}
+			],
+			series : [
+				{
+					name:'存款',
+					type:'line',
+					smooth:false,
+					color:'red',
+					//itemStyle: {normal: {areaStyle: {type: 'default'}}}, // 阴影面积
+					//data:[5300, 2820, 1340, 2910, 1900, 3300, 5100]
+					data:yDataArray
+				}
+			]
+        };
+        
+        optionsBottom = {
+			title : {
+				text: '金融资产月日趋势图',
+				subtext: '单位:万元',
+				x:'center'
+			},
+			legend: {
+				data:['意向','成交'],
+				x:'right'
+			},
+			calculable : false,
+			xAxis : [
+				{
+					type : 'category',
+					boundaryGap : false,
+					x:'center',
+					y:'bottom',
+					data : ['201501','201502','201503','201504','201505','201506','201507','201508','201509','201510','201511','201512']
+				}
+			],
+			yAxis : [
+				{
+					type : 'value'
+				}
+			],
+			series : [
+				{
+					name:'成交',
+					type:'line',
+					smooth:false,
+					itemStyle: {normal: {areaStyle: {type: 'default'}}},
+					data:[5000, 1002, 2100, 5400, 2600, 4830, 3710, 2000, 4560, 5430, 2300, 7690]
+				},
+				{
+					name:'意向',
+					type:'line',
+					smooth:false,
+					itemStyle: {normal: {areaStyle: {type: 'default'}}},
+					data:[1320, 3132, 2601, 1234, 4120, 3490, 5400, 2600, 4830, 3710, 2000,2000]
+				}
+			]
+        };
+    }
+
+
+	// 开始创建图表
+    function createChart(chartKind, xDataArray, yDataArray){
+        if (chartKind=='line') {
+            doCreatChart(createLineChart(xDataArray,yDataArray));
+        };
+        
+    }
+    
+    function doCreatChart(specificChartFunction){
+        require(
+	        ['echarts',
+	        'echarts/theme/macarons',
+	        'echarts/chart/line',
+	        'echarts/chart/bar',
+	        'echarts/chart/pie'
+	        ],
+	        
+	        function(ec, theme){
+		        myChartTop =ec.init(document.getElementById('mainTop'),theme);
+		        myChartBottom =ec.init(document.getElementById('mainBottom'),theme);
+		        myChartTop.showLoading({  
+		            text : "图表数据正在努力加载..."  
+		        }
+		    ); 
+		    
+	        specificChartFunction;
+		        myChartTop.setOption(optionsTop); //先把可选项注入myChart中  
+		        myChartBottom.setOption(optionsBottom);
+		        myChartTop.hideLoading(); 
+	        }
+	    );
+    }
+
+ 
+    //createChart('line',[89,78,77]);
+    //createChart('bar',[89,78,77]);
+    //createChart('pie',[89,78,77]);
+    </script>
+</body>

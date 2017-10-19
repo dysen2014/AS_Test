@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <style>
+    	html,body { height:100%; width:100%; margin:0; padding:0;align:left;valign:left;}
+    </style>
+</head>
+<body>
+    <div id="main" style="height:100%;width:100%;border:0px;text-align:left;align:left;valign:left;"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="./js/echarts.js"></script>
+    <script type="text/javascript">
+    //初始化路径
+    var myChart;  
+    require.config({
+        paths: {
+            echarts: './js'
+        }
+    });
+    
+    //通用属性定义
+    var options = {  
+        title : {  
+            text : "Echart"  
+        },  
+        tooltip : {  
+            show : false  
+        },   
+        toolbox : {  
+            show : false
+        },  
+    }; 
+
+
+    //创建柱状图
+    function createBarChart(titleArray,dataArray){
+       options = {			
+			tooltip : {
+				trigger: 'axis'
+			},
+            xAxis : [
+                {
+                    type : 'category',
+                    data : titleArray
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'渠道签约情况',
+                    type:'bar',
+					/*markPoint : {
+						data : [
+							{type : 'max', name: '最大值'},
+							{type : 'min', name: '最小值'}
+						]
+					},*/
+                    data:dataArray
+                }
+            ]
+        };
+                    
+    }
+
+	// 开始创建图表
+    function createChart(chartKind, titleArray, dataArray){
+        if (chartKind=='bar') {
+            doCreatChart(createBarChart(titleArray,dataArray));
+        };
+    }
+    
+    function doCreatChart(specificChartFunction){
+        require(
+	        ['echarts',
+	        'echarts/theme/macarons',
+	        'echarts/chart/line',
+	        'echarts/chart/bar',
+	        'echarts/chart/pie'
+	        ],
+	        
+	        function(ec,theme){
+		        myChart =ec.init(document.getElementById('main'),theme);
+		        myChart.showLoading({  
+		            text : "图表数据正在努力加载..."  
+		        }
+		    ); 
+	        specificChartFunction;
+		        myChart.setOption(options); //先把可选项注入myChart中  
+		        myChart.hideLoading(); 
+	        }
+	    );
+    }
+    </script>
+</body>

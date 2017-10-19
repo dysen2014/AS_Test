@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_bg_main_nologo"
+    android:orientation="vertical"
+    android:weightSum="1536" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="107"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <include layout="@layout/com_title" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1429"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/querycus_rl_action"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/querycus_line_2"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_apply"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/qy_btn_red_check"
+                android:text="+ 创建申请"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/btn_upload"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/qy_btn_red_check"
+                android:text="上传"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+        
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/querycus_rl_action"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp" >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/workplaceshape"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                        android:id="@+id/ll_lvtop"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="0.7dp"
+                        android:layout_marginRight="0.7dp"
+                        android:layout_marginTop="0.7dp"
+                        android:background="@color/lvtopbg"
+                        android:orientation="horizontal" >
+                        <include 
+                            layout="@layout/item_credit_apply"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_alignBottom="@id/ll_lvtop"
+                        android:background="@color/separateline" />
+                </RelativeLayout>
+
+                <RelativeLayout 
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+	                <ListView
+	                    android:id="@+id/lv_list"
+			            android:layout_width="match_parent"
+			            android:layout_height="match_parent"
+				        android:cacheColorHint="#00000000"
+				        android:divider="#dddbdb"
+				        android:dividerHeight="2px"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bookbuildingdialogfragmentbg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/dialogtopbg">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="创建行外签约产品信息"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <include layout="@layout/checkboxlayout" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="75"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="780"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="275dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bookbuildingbg"
+                        android:divider="@drawable/gray_divider"
+                        android:orientation="vertical"
+                        android:paddingBottom="0.7dp"
+                        android:paddingLeft="0.7dp"
+                        android:paddingTop="0.7dp"
+                        android:showDividers="middle">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="签约名称："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp"></TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/et_sign_name"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|left"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textColor="#4d4d4d"
+                                    android:textSize="16.5dp"></EditText>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="签约产品："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp"></TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/spin_other_signproduct"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="36dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="35dp"
+                                    android:background="@drawable/spinnerbg"
+                                    android:clickable="true"
+                                    android:editable="false"
+                                    android:gravity="center"
+                                    android:hint=" "
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="签约机构："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp"></TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/spin_bank_signproduct"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="36dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="35dp"
+                                    android:background="@drawable/spinnerbg"
+                                    android:clickable="true"
+                                    android:editable="false"
+                                    android:gravity="center"
+                                    android:hint=" "
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="签约手机号："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp"></TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/et_sign_phone_num"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_weight="1"
+                                    android:gravity="center_vertical|left"
+                                    android:inputType="number"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textColor="#4d4d4d"
+                                    android:textSize="16.5dp"></EditText>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="签约时间："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp"></TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16">
+
+                                <TextView
+                                    android:id="@+id/tv_sign_date"
+                                    android:layout_width="220dp"
+                                    android:layout_height="36dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="@drawable/bookbuilding_datebtnbg"
+                                    android:gravity="center"
+                                    android:text=" "
+                                    android:textColor="@color/gray"
+                                    android:textSize="16.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnYes"
+                        android:layout_width="110dp"
+                        android:layout_height="41dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/bookbuildingbtnbg"
+                        android:text="保存"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+
+                    <Button
+                        android:id="@+id/btnNo"
+                        android:layout_width="110dp"
+                        android:layout_height="41dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/bookbuildingbtnbg"
+                        android:text="取消"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="94"></LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

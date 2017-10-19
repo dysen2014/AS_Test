@@ -1,0 +1,73 @@
+<resources>
+    <string name="app_name">Query</string>
+    <string name="customerType">客户类型</string>
+    <string name="customerName">客户姓名</string>
+    <string name="cardType">证件类型</string>
+    <string name="cardNumber">证件号码</string>
+    <string name="telephoneNumber">手机号码</string>
+    <string name="businessType">业务品种</string>
+    <string name="loanAfter">贷款余额</string>
+    <string name="overdueAmount">逾期金额</string>
+    <string name="overduePeriods">逾期期数</string>
+    <string name="issuingDate">发放日期</string>
+    <string name="dueDate">到期日期</string>
+    <string name="interval">区间</string>
+    <string name="intervalText">一</string>
+    <string name="classification">五级分类</string>
+    <string name="cardNumber_item">证件号码：</string>
+    <string name="telephoneNumber_item">手机号码：</string>
+    <string name="certName_item">证件类型：</string>
+    <string name="certID_item">证件号码：</string>
+    <string name="customerType_item">客户类型：</string>
+    <string name="customerName_item">客户姓名：</string>
+    <string name="level">评级等级</string>
+    <string name="hold">请输入</string>
+    <string name="name">name</string>
+    <string name="age">age</string>
+    <string name="back_left">&lt;</string>
+    <string name="back_right">返回</string>
+    <string name="customer_list">客户查询结果</string>
+    <string name="customer_details">客户查询详情</string>
+    <string name="business_list">业务查询结果</string>
+    <string name="business_details">业务查询详情</string>
+    <string name="relationName">与该客户关系：</string>
+    <string name="userName">登记人：</string>
+    <string name="orgName">登记机构：</string>
+    <string name="inputDate">输入日期：</string>
+    <string name="updateDate">更新日：</string>
+    <string name="telephone">联系电话：</string>
+    <string name="officeTime">任职时间：</string>
+    <string name="practitionerTime">从业时间：</string>
+    <!--loanafter-->
+    <string name="SerialNo_item">合同流水号：</string>
+    <string name="BusinessType_item">业务品种编号：</string>
+    <string name="ArtificialNo_item">合同编号：</string>
+    <string name="OccurTypeName_item">发生类型：</string>
+    <string name="BusinessTypeName_item">业务品种名：</string>
+    <string name="Currency_item">币种：</string>
+    <string name="BusinessSum_item">合同金额：</string>
+    <string name="ActualPutOutSum_item">实际发放金额：</string>
+    <string name="BailRatio_item">保证金比例(%)：</string>
+    <string name="Balance_item">余额：</string>
+    <string name="OverdueBalance_item">逾期金额：</string>
+    <string name="PutOutDate_item">起始日期：</string>
+    <string name="Maturity_item">到期日期：</string>
+    <string name="OperateOrgName_item">经办机构：</string>
+	
+	<!--business-->
+    <string name="customer_type">客户类型</string>
+    <string name="customer_name">客户姓名</string>
+    <string name="document_type">证件类型</string>
+    <string name="document_number">证件号码</string>
+    <string name="phone_number">手机号码</string>
+    <string name="business_varieties">业务品种</string>
+    <string name="loan_balance">贷款余额</string>
+    <string name="overdue_amount">逾期金额</string>
+    <string name="overdue_periods">逾期期数</string>
+    <string name="issuing_date">发放日期</string>
+    <string name="due_date">到期日期</string>
+    <string name="interval_text">一</string>
+    
+    <string name="s_customer">客户</string>
+    <string name="s_bussiness">业务</string>
+</resources>

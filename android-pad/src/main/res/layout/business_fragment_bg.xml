@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="horizontal"
+    >
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+            <RadioButton
+                android:id="@+id/crmDuebillInfo"
+                android:text="借据"
+                style="@style/common_view_rbtn"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_selector"
+                android:checked="true"
+                android:padding="4dp"/>
+            <RadioButton
+                android:id="@+id/crmBusinessCountract"
+                android:text="合同"
+                style="@style/common_view_rbtn"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/workpalcewornbgtr"
+                android:padding="4dp"/>
+            <RadioButton
+                android:id="@+id/crmCustomerInfo"
+                android:text="客户"
+                style="@style/common_view_rbtn"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/workpalcewornbgtr"
+                android:padding="4dp"/>
+</RadioGroup>
+
+</ScrollView>

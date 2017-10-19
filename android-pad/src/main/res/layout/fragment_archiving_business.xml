@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nowworkplacebg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:layout_width="480dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/workplaceselectorshape" >
+
+                <RelativeLayout
+                    android:id="@+id/businessframe_1_rl"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/businessframe_1_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/itembg4444" />
+
+                    <TextView
+                        android:id="@+id/businessframe_1_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="资金结算偏好"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.6dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/nowworkplacewordbg" />
+
+                <RelativeLayout
+                    android:id="@+id/businessframe_2_rl"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/businessframe_2_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null" />
+
+                    <TextView
+                        android:id="@+id/businessframe_2_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="我行业务往来信息"
+                        android:textColor="@color/nowworkplacewordbg"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <View
+                     android:visibility="gone"
+                    android:layout_width="0.6dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/nowworkplacewordbg" />
+
+                <RelativeLayout
+                    android:id="@+id/businessframe_3_rl"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" >
+
+                    <ImageView
+                        android:id="@+id/businessframe_3_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null" />
+
+                    <TextView
+                        android:id="@+id/businessframe_3_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="他行业务往来信息"
+                        android:textColor="@color/nowworkplacewordbg"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/businessframe_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp" >
+    </FrameLayout>
+
+</LinearLayout>

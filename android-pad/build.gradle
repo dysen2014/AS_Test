@@ -1,0 +1,127 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.0'
+//    compileSdkVersion rootProject.ext.compileSdkVersion
+//    buildToolsVersion rootProject.ext.buildToolsVersion
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        applicationId "com.pactera.financialmanager2"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 6
+        versionName "2.1.1"
+
+        if (project.hasProperty('buildVersionName')) {
+            versionName buildVersionName
+        }
+
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
+    }
+
+    signingConfigs {
+        releaseConfig {
+            storeFile file("hbxh_crm.keystore")
+            keyAlias "crm"
+            storePassword "hbxh_crm"
+            keyPassword "hbxh_crm"
+
+        }
+    }
+
+    buildTypes {
+        debug {
+//            buildConfigField "String", "BMC_URL_DOMAIN", "\"http://192.168.2.111:7001/\""
+            buildConfigField "String", "BMC_URL_DOMAIN", "\"http://27.17.37.104:9995/\""
+        }
+
+        release {
+            buildConfigField "String", "BMC_URL_DOMAIN", "\"http://27.17.37.104:9995/\""
+            signingConfig signingConfigs.releaseConfig
+//            multiDexEnabled true
+            minifyEnabled false  //混淆打包
+            //移除无用的资源文件
+//            shrinkResources true    //去掉不用资源
+//            zipAlignEnabled true
+//            debuggable true
+//            jniDebuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+/** eclipse 转 android studio **/
+/*
+    sourceSets {
+        main.setRoot('src/main')
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            java.srcDirs = ['src/main/java']
+            resources.srcDirs = ['src/main/java']
+            aidl.srcDirs = ['src/main/aidl']
+            res.srcDirs = ['src/main/res']
+            assets.srcDirs = ['src/main/assets']
+            jni.srcDirs = ['src/main/jni']
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }*/
+
+    /*解决程序不能在模拟器上运行*/
+//    splits {
+//        abi {
+//            enable true
+//            reset()
+//            include 'x86', 'armeabi-v7a'
+//            universalApk true
+//        }
+//    }
+}
+
+dependencies {
+    compile project(':ocr-library')
+    compile project(':ble-lib')
+    compile project(':common_res')
+    compile project(':baseitem-library')
+    compile project(':kjframe-library')
+
+    //contact
+    compile project(':contact-library')
+    //view注解
+    compile 'com.jakewharton:butterknife:7.0.1'
+    //饼图
+    //    compile'com.github.PhilJay:MPAndroidChart:v2.2.5'
+    //KJFrame
+    compile 'org.kymjs.kjframe:kjframe:2.6'
+    compile files('libs/ksoap2-android-assembly-2.5.4-jar-with-dependencies.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/bugly_crash_release__2.1.7.jar')
+    compile files('libs/YGQD_MD_CENTERM.jar')
+    compile files('libs/universal-image-loader-1.9.5.jar')
+    compile files('libs/nineoldandroids-2.4.0.jar')
+    compile files('libs/xUtils-2.6.14.jar')
+    compile files('libs/fastjson-1.1.37.jar')
+    compile files('libs/afinal_0.5.1_bin.jar')
+    compile files('libs/gson-2.3.1.jar')
+    compile files('libs/litepal-1.5.1.jar')
+}
+
+/*
+android.applicationVariants.all { variant ->
+    variant.outputs.each { output ->
+        def outputFile = output.outputFile
+        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+            def fileName = outputFile.name;
+            if (android.defaultConfig.versionName != null) {
+                fileName = fileName.replace(".apk", "-${android.defaultConfig.versionName}.apk")
+                output.outputFile = new File(outputFile.parent, fileName)
+            }
+        }
+    }
+}*/

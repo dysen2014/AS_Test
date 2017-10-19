@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_bg_main_nologo"
+    android:orientation="vertical"
+    android:weightSum="1536">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="107"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <include layout="@layout/com_title" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1429"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/cusarching_top"
+            android:layout_width="330dp"
+            android:layout_height="57dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/cusarchiving_step_top"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="客户关键信息"
+                android:textColor="@color/brown"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cusarching_check_cus"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@+id/cusarching_top"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/rgp_check_cus"
+                android:layout_width="290dp"
+                android:layout_height="38dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/workplaceselectorshape"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbtn_warnperson"
+                    style="@style/RadiobuttonWarn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/qy_btn_warn_person"
+                    android:checked="true"
+                    android:text="个人" />
+
+                <RadioButton
+                    android:id="@+id/rbtn_warncommon"
+                    style="@style/RadiobuttonWarn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/qy_btn_warn_common"
+                    android:text="对公" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cusarching_line_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cusarching_check_cus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6">
+
+                <TextView
+                    android:id="@+id/cusarchiving_step1_text1"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:singleLine="true"
+                    android:text="客户姓名:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cusarchiving_step1_text2"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/cusarchiving_step1_cardtype"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:singleLine="true"
+                    android:text="证件类别:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/cusarchiving_step1_cardtype"
+                    android:layout_width="250dp"
+                    android:layout_height="41dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/cusarchiving_step_spinner_long"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:hint=" "
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/cusarchiving_step1_cusname"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/cusarchiving_step1_text1"
+                    android:layout_centerVertical="true"
+                    android:singleLine="true"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/cusarchiving_step1_readID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/icon_readid" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cusarching_line_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cusarching_line_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/cusarchiving_step1_text3"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:paddingRight="5dp"
+                        android:singleLine="true"
+                        android:text="客户性别:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/cusarchiving_step1_sextype"
+                        android:layout_width="250dp"
+                        android:layout_height="41dp"
+                        android:background="@drawable/cusarchiving_step_spinner_long"
+                        android:clickable="true"
+                        android:editable="false"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:hint=" "
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/cusarchiving_step1_contactsname"
+                        android:layout_width="250dp"
+                        android:layout_height="41dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/cusarchiving_step1_text3"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cusarchiving_step1_text4"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/cusarchiving_step1_cardnum"
+                        android:gravity="right"
+                        android:paddingRight="5dp"
+                        android:singleLine="true"
+                        android:text="证件号码:"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/cusarchiving_step1_cardnum"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cusarching_line_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6">
+
+                <TextView
+                    android:id="@+id/cusarchiving_step1_text5"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:singleLine="true"
+                    android:text="电话号码:"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <EditText
+                    android:id="@+id/cusarchiving_step1_phonenum"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/cusarchiving_step1_text5"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:singleLine="true"
+                    android:textSize="16sp"
+                    android:visibility="invisible" />
+
+                <Button
+                    android:id="@+id/cusarchiving_step1_nextbtn"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/cusarchiving_step_next" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 颜色 -->
+    <color name="common_yellow">#FF8C00</color>
+
+    <color name="white">#ffffffff</color>
+    <color name="red2">#c0e6b4b4</color>
+    <color name="red3">#880000</color>
+    <color name="transparent">#00000000</color>
+    <color name="transparent_partly">#11000000</color>
+    <color name="lightwhite">#f7f7f7</color>
+    <color name="twittergray">#BDBEC2</color>
+    <color name="et_backgroud_gray">#EDEDED</color>
+    <color name="kcoddCell">#E7E7E7</color>
+    <!-- ywj customer_maketing -->
+    <color name="tv_customer_marketing">#858B92</color>
+    <color name="tv_customer_marketing_sell_clew">#717171</color>
+    <color name="tv_holdservice_bg">#CCCCCC</color>
+    <!-- 计算器按钮颜色 -->
+    <color name="abc_text_color">#009984</color>
+    <!-- 饼图九种用色 -->
+
+    <color name="hf_cm_piecolor01">#d9823c</color>
+    <color name="hf_cm_piecolor02">#4471a5</color>
+    <color name="hf_cm_piecolor03">#9fb85d</color>
+    <color name="hf_cm_piecolor04">#7b669e</color>
+    <color name="hf_cm_piecolor05">#4dacc2</color>
+    <color name="hf_cm_piecolor06">#f9944e</color>
+    <color name="hf_cm_piecolor07">#9a84b3</color>
+    <color name="hf_cm_piecolor08">#7a2a2b</color>
+    <color name="hf_cm_piecolor09">#60762e</color>
+    <color name="hf_cm_piecolor10">#b3ca7c</color>
+    <color name="hf_cm_piecolor11">#c77873</color>
+
+    <color name="hf_cm_piecolor_dark01">#8c582e</color>
+    <color name="hf_cm_piecolor_dark02">#324d6d</color>
+    <color name="hf_cm_piecolor_dark03">#65752e</color>
+    <color name="hf_cm_piecolor_dark04">#553969</color>
+    <color name="hf_cm_piecolor_dark05">#216c81</color>
+    <color name="hf_cm_piecolor_dark06">#a16124</color>
+    <color name="hf_cm_piecolor_dark07">#625277</color>
+    <color name="hf_cm_piecolor_dark08">#4c1d13</color>
+    <color name="hf_cm_piecolor_dark09">#3b4523</color>
+    <color name="hf_cm_piecolor_dark10">#6f7f52</color>
+    <color name="hf_cm_piecolor_dark11">#8a4741</color>
+
+    <!-- 白色 -->
+    <!-- 象牙色 -->
+    <!-- 亮黄色 -->
+    <!-- 黄色 -->
+    <!-- 雪白色 -->
+    <!-- 花白色 -->
+    <!-- 柠檬绸色 -->
+    <!-- 米绸色 -->
+    <!-- 海贝色 -->
+    <!-- 淡紫红 -->
+    <!-- 番木色 -->
+    <!-- 白杏色 -->
+    <!-- 浅玫瑰色 -->
+    <!-- 桔黄色 -->
+    <!-- 鹿皮色 -->
+    <!-- 纳瓦白 -->
+    <!-- 桃色 -->
+    <color name="gold">#FFD700</color>
+    <!-- 金色 -->
+    <!-- 粉红色 -->
+    <!-- 亮粉红色 -->
+    <color name="orange">#FFA500</color>
+    <!-- 橙色 -->
+    <!-- 亮肉色 -->
+    <color name="darkorange">#FF8C00</color>
+    <!-- 暗桔黄色 -->
+    <color name="coral">#FF7F50</color>
+    <!-- 珊瑚色 -->
+    <!-- 热粉红色 -->
+    <!-- 西红柿色 -->
+    <!-- 红橙色 -->
+    <!-- 深粉红色 -->
+    <!-- 紫红色 -->
+    <!-- 红紫色 -->
+    <color name="red">#FF0000</color>
+    <!-- 红色 -->
+    <!-- 老花色 -->
+    <!-- 亮金黄色 -->
+    <!-- 亚麻色 -->
+    <!-- 古董白 -->
+    <!-- 鲜肉色 -->
+    <!-- 幽灵白 -->
+    <!-- 薄荷色 -->
+    <color name="whitesmoke">#F5F5F5</color>
+    <!-- 烟白色 -->
+    <!-- 米色 -->
+    <!-- 浅黄色 -->
+    <!-- 沙褐色 -->
+    <!-- 天蓝色 -->
+    <!-- 蜜色 -->
+    <!-- 艾利斯兰 -->
+    <!-- 黄褐色 -->
+    <!-- 亮珊瑚色 -->
+    <!-- 苍麒麟色 -->
+    <!-- 紫罗兰色 -->
+    <!-- 暗肉色 -->
+    <!-- 淡紫色 -->
+    <!-- 亮青色 -->
+    <!-- 实木色 -->
+    <!-- 洋李色 -->
+    <!-- 淡灰色 -->
+    <!-- 暗深红色 -->
+    <!-- 苍紫罗兰色 -->
+    <!-- 金麒麟色 -->
+    <!-- 淡紫色 -->
+    <!-- 蓟色 -->
+    <color name="lightgray">#D3D3D3</color>
+    <!-- 亮灰色 -->
+    <!-- 亮灰色 -->
+    <!-- 茶色 -->
+    <!-- 巧可力色 -->
+    <!-- 秘鲁色 -->
+    <!-- 印第安红 -->
+    <!-- 中紫罗兰色 -->
+    <!-- 银色 -->
+    <!-- 暗黄褐色 -->
+    <!-- 褐玫瑰红 -->
+    <!-- 中粉紫色 -->
+    <!-- 暗金黄色 -->
+    <!-- 火砖色 -->
+    <!-- 粉蓝色 -->
+    <!-- 亮钢兰色 -->
+    <!-- 苍宝石绿 -->
+    <!-- 黄绿色 -->
+    <color name="darkgray">#505050</color>
+    <!-- 暗灰色 -->
+    <!-- 暗灰色 -->
+    <color name="brown">#A52A2A</color>
+    <!-- 褐色 -->
+    <!-- 赭色 -->
+    <!-- 暗紫色 -->
+    <!-- 苍绿色 -->
+    <!-- 暗紫罗兰色 -->
+    <!-- 中紫色 -->
+    <!-- 亮绿色 -->
+    <!-- 暗海兰色 -->
+    <!-- 重褐色 -->
+    <!-- 暗洋红 -->
+    <!-- 暗红色 -->
+    <!-- 紫罗兰蓝色 -->
+    <!-- 亮天蓝色 -->
+    <!-- 天蓝色 -->
+    <color name="gray">#808080</color>
+    <!-- 灰色2 -->
+    <color name="gray2">#D5D5D5</color>
+    <!-- 灰色 -->
+    <color name="grey">#808080</color>
+    <!-- 灰色 -->
+    <!-- 橄榄色 -->
+    <!-- 紫色 -->
+    <!-- 粟色 -->
+    <!-- 碧绿色 -->
+    <!-- 黄绿色 -->
+    <!-- 草绿色 -->
+    <!-- 中暗蓝色 -->
+    <!-- 亮蓝灰 -->
+    <!-- 亮蓝灰 -->
+    <!-- 灰石色 -->
+    <!-- 灰石色 -->
+    <!-- 深绿褐色 -->
+    <!-- 石蓝色 -->
+    <!-- 暗灰色 -->
+    <!-- 暗灰色 -->
+    <!-- 中绿色 -->
+    <!-- 菊兰色 -->
+    <!-- 军兰色 -->
+    <!-- 暗橄榄绿 -->
+    <!-- 靛青色 -->
+    <!-- 中绿宝石 -->
+    <!-- 暗灰蓝色 -->
+    <!-- 钢兰色 -->
+    <!-- 皇家蓝 -->
+    <!-- 青绿色 -->
+    <!-- 中海蓝 -->
+    <!-- 橙绿色 -->
+    <!-- 暗瓦灰色 -->
+    <!-- 暗瓦灰色 -->
+    <!-- 海绿色 -->
+    <!-- 森林绿 -->
+    <!-- 亮海蓝色 -->
+    <!-- 闪兰色 -->
+    <!-- 中灰兰色 -->
+    <!-- 浅绿色 -->
+    <!-- 青色 -->
+    <!-- 春绿色 -->
+    <!-- 酸橙色 -->
+    <!-- 中春绿色 -->
+    <!-- 暗宝石绿 -->
+    <!-- 深天蓝色 -->
+    <!-- 暗青色 -->
+    <!-- 水鸭色 -->
+    <color name="green">#008000</color>
+    <!-- 绿色 -->
+    <!-- 暗绿色 -->
+    <color name="blue">#0000FF</color>
+    <!-- 蓝色 -->
+    <!-- 中兰色 -->
+    <!-- 暗蓝色 -->
+    <!-- 海军色 -->
+    <color name="black">#000000</color>
+    <!-- 黑色 -->
+    <color name="darkgrey1">#FFA9A9A9</color>
+
+    <color name="nowworkplacebg">#F5F5F5</color>
+    <color name="nowworkplacewordbg">#960404</color>
+    <color name="workplacewordcolor">#666666</color>
+    <color name="leftwrodcolor">#81868F</color>
+    <color name="wordbgcolor">#626262</color>
+    <color name="wordbgcolor1">#db9b00</color>
+    <color name="separateline">#999999</color>
+    <color name="separatelightline">#c9c9c9</color>
+    <color name="separatelightredline">#ee7e10</color>
+    <color name="lvtopbg">#eeeeee</color>	
+    <color name="lvtopbg1">#F8F8F8</color>
+    <color name="separateline1">#d4d4d4</color>
+    
+    <color name="dialogbgcolor">#22555555</color>
+    
+    <!-- 自定义进度条颜色 -->
+   
+    <!-- 主题进度条色 -->
+    <color name="price_bg_progress_start">@color/white</color>
+    <color name="price_bg_progress_center">@color/red3</color>
+    <color name="price_bg_progress_end">@color/red3</color>
+    
+    <color name="circle_background">#fff2f2f2</color>
+    <color name="line_background">#ffcccccc</color>
+    <color name="done_text_color_normal">#ff333333</color>
+    <color name="done_text_color_disabled">#ffcccccc</color>
+    <color name="darker_blue">#ff0099cc</color>
+    <color name="date_picker_text_normal">#ff999999</color>
+    <color name="calendar_header">#ff999999</color>
+    <color name="date_picker_view_animator">#fff2f2f2</color>
+
+    <color name="ampm_text_color">#8c8c8c</color>
+    <color name="numbers_text_color">#8c8c8c</color>
+
+    <color name="transparent_black">#7F000000</color>
+    <!--签到记录的七个按钮查询色-->
+    <color name="recorde_one">#CC0000</color>
+    <color name="recorde_two">#FF0000</color>
+    <color name="record_three">#FF3300</color>
+    <color name="record_four">#FF6600</color>
+    <color name="record_five">#FF9900</color>
+    <color name="record_six">#FFCC00</color>
+    <color name="record_seven">#FFFF00</color>
+</resources>

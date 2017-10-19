@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Credit.iml" filepath="$PROJECT_DIR$/Credit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CreditDemo/CreditDemo.iml" filepath="$PROJECT_DIR$/CreditDemo/CreditDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-pad/android-pad.iml" filepath="$PROJECT_DIR$/android-pad/android-pad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseitem-library/baseitem-library.iml" filepath="$PROJECT_DIR$/baseitem-library/baseitem-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ble-lib/ble-lib.iml" filepath="$PROJECT_DIR$/ble-lib/ble-lib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common_res/common_res.iml" filepath="$PROJECT_DIR$/common_res/common_res.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gwt/gwt.iml" filepath="$PROJECT_DIR$/gwt/gwt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kjframe-library/kjframe-library.iml" filepath="$PROJECT_DIR$/kjframe-library/kjframe-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ocr-library/ocr-library.iml" filepath="$PROJECT_DIR$/ocr-library/ocr-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/search/search.iml" filepath="$PROJECT_DIR$/search/search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sms-library/sms-library.iml" filepath="$PROJECT_DIR$/sms-library/sms-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zbarscan-library/zbarscan-library.iml" filepath="$PROJECT_DIR$/zbarscan-library/zbarscan-library.iml" />
+    </modules>
+  </component>
+</project>

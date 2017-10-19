@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_bg_main_nologo"
+    android:orientation="vertical"
+    android:weightSum="1536">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="107"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <include layout="@layout/com_title" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1429"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rgp_check_cus"
+            android:layout_width="350dp"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"
+            android:background="@drawable/workplaceselectorshape"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbtn_warnperson"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radionbutton_warnperson"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="个人"
+                android:textColor="@color/radiobutton_textcolor_red"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/rbtn_warncommon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/radionbutton_warncommon"
+                android:button="@null"
+                android:gravity="center"
+                android:text="对公"
+                android:textColor="@color/radiobutton_textcolor_red"
+                android:textSize="20sp" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/querycus_line_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgp_check_cus"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"></LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/querycus_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="客户姓名："
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/querycus_cusid"
+                    android:layout_width="250dp"
+                    android:layout_height="41dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/querycus_text1"
+                    android:background="@drawable/qy_edit_bg"
+                    android:hint="请输入客户名称..."
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+                <ImageView
+                    android:id="@+id/imv_ocr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/querycus_cusid"
+                    android:src="@drawable/icon_ocr" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/querycus_papersnumber"
+                    android:text="证件号码："
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/querycus_papersnumber"
+                    android:layout_width="250dp"
+                    android:layout_height="41dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/qy_edit_bg"
+                    android:hint="请输入证件号码..."
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/querycus_line_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/querycus_line_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"></LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/txt_querycus_card_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="客户卡号："
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edittxt_querycus_card_num"
+                    android:layout_width="250dp"
+                    android:layout_height="41dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/txt_querycus_card_num"
+                    android:background="@drawable/qy_edit_bg"
+                    android:hint="请输入客户卡号..."
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/edittxt_querycus_account_num"
+                    android:text="客户帐号："
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/edittxt_querycus_account_num"
+                    android:layout_width="250dp"
+                    android:layout_height="41dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/qy_edit_bg"
+                    android:hint="请输入客户帐号..."
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/querycus_line_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/querycus_line_3"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"></LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3">
+
+                <TextView
+                    android:id="@+id/querycus_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="联系电话："
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/querycus_phonenum"
+                    android:layout_width="250dp"
+                    android:layout_height="41dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/querycus_text3"
+                    android:background="@drawable/qy_edit_bg"
+                    android:hint="请输入手机号码..."
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/querycus_et5"
+                    android:text="证件号码："
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:visibility="invisible" />
+
+                <EditText
+                    android:id="@+id/querycus_et5"
+                    android:layout_width="250dp"
+                    android:layout_height="41dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/qy_edit_bg"
+                    android:hint="请输入证件号码..."
+                    android:paddingLeft="10dp"
+                    android:singleLine="true"
+                    android:textSize="18sp"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/querycus_rl_action"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_below="@+id/querycus_line_2"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/querycus_query"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="100dp"
+                android:background="@drawable/qy_btn_red_check"
+                android:text="查询"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/querycus_clear"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/qy_btn_red_check"
+                android:text="清空"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/querycus_rl_action"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/workplaceshape"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_lvtop"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="0.7dp"
+                        android:layout_marginRight="0.7dp"
+                        android:layout_marginTop="0.7dp"
+                        android:background="@color/lvtopbg"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/cus_query_item" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.6dp"
+                        android:layout_alignBottom="@id/ll_lvtop"
+                        android:background="@color/separateline" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="1dp">
+
+                    <LinearLayout
+                        android:id="@+id/lay_loading"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ProgressBar
+                            style="?android:attr/progressBarStyleLarge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:indeterminate="false"
+                            android:indeterminateDrawable="@drawable/shape_loading_progressbar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="正在请求数据..."
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lay_nodata"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:drawablePadding="5dp"
+                            android:drawableTop="@drawable/fm_nore"
+                            android:text="抱歉，没有查询结果..."
+                            android:textColor="@color/gray"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <com.pactera.financialmanager.ui.PullToRefreshLayout
+                        android:id="@+id/refresh_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="0.7dp"
+                        android:layout_marginLeft="0.7dp"
+                        android:layout_marginRight="0.7dp"
+                        android:visibility="gone" >
+
+                        <include layout="@layout/refresh_head" />
+
+                        <com.pactera.financialmanager.ui.PullableListView
+                            android:id="@+id/lv_pulllist"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:cacheColorHint="#00000000"
+                            android:divider="#dddbdb"
+                            android:dividerHeight="1px"
+                            sp:right_width="120dp" />
+
+                        <include layout="@layout/load_more" />
+                    </com.pactera.financialmanager.ui.PullToRefreshLayout>
+
+
+                    <!--
+                    <ListView
+                        android:id="@+id/lv_resultlist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:cacheColorHint="#00000000"
+                        android:divider="#dddbdb"
+                        android:dividerHeight="1px"
+                        android:visibility="gone" />
+                         -->
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical"></LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>

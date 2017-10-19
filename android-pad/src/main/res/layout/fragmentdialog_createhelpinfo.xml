@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bookbuildingdialogfragmentbg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/dialogtopbg" >
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="创建对外担保关系"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <include layout="@layout/checkboxlayout" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="75" >
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="780"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="20dip"
+                    android:layout_weight="1" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="400dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bookbuildingbg"
+                        android:divider="@drawable/gray_divider"
+                        android:orientation="vertical"
+                        android:paddingBottom="0.7dp"
+                        android:paddingLeft="0.7dp"
+                        android:paddingTop="0.7dp"
+                        android:showDividers="middle" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="被担保人名称："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp" >
+                            </TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"
+                                android:orientation="horizontal" >
+
+                                <EditText
+                                    android:id="@+id/et_helpinfo1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:gravity="center_vertical|left"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textColor="#4d4d4d"
+                                    android:textSize="16.5dp" >
+                                </EditText>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="担保人名称："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp" >
+                            </TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <EditText
+                                android:id="@+id/et_helpinfo2"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"
+                                android:background="@null"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="4dp"
+                                android:singleLine="true"
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5dp" >
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tv_buildingdialoginfo3"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="业务种类："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp" >
+                            </TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16" >
+
+                                <EditText
+                                    android:id="@+id/et_helpinfo3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="36dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="35dp"
+                                    android:background="@drawable/spinnerbg"
+                                    android:clickable="true"
+                                    android:editable="false"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tv_buildingdialoginfo5"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="起始日期："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp" >
+                            </TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16" >
+
+                                <TextView
+                                    android:id="@+id/tv_startdate4"
+                                    android:layout_width="220dp"
+                                    android:layout_height="36dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="@drawable/bookbuilding_datebtnbg"
+                                    android:gravity="center"
+                                    android:text=" "
+                                    android:textColor="@color/gray"
+                                    android:textSize="16.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tv_buildingdialoginfo6"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="到期日期："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp" >
+                            </TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16" >
+
+                                <TextView
+                                    android:id="@+id/tv_enddate5"
+                                    android:layout_width="220dp"
+                                    android:layout_height="36dp"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="20dp"
+                                    android:background="@drawable/bookbuilding_datebtnbg"
+                                    android:gravity="center"
+                                    android:text=" "
+                                    android:textColor="@color/gray"
+                                    android:textSize="16.5sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="担保金额(元)："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp" >
+                            </TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16" >
+
+                                <EditText
+                                    android:id="@+id/et_helpinfo6"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@null"
+                                    android:inputType="numberDecimal"
+                                    android:gravity="center_vertical|left"
+                                    android:paddingLeft="4dp"
+                                    android:singleLine="true"
+                                    android:textColor="#4d4d4d"
+                                    android:textSize="16.5dp" >
+                                </EditText>
+
+                                <!--<TextView -->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="match_parent"-->
+                                    <!--android:layout_gravity="right"-->
+                                    <!--android:gravity="center_vertical"-->
+                                    <!--android:layout_marginRight="20dp"-->
+                                    <!--android:text="元"-->
+                                    <!--android:textColor="#4d4d4d"-->
+                                    <!--android:textSize="16.5dp"-->
+                                    <!--/>-->
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tv_buildingdialoginfo8"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="经办机构："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp" >
+                            </TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <EditText
+                                android:id="@+id/et_helpinfo7"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"
+                                android:background="@null"
+                                android:gravity="left"
+                                android:paddingLeft="4dp"
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5dp" >
+                            </EditText>
+                        </LinearLayout>
+<!--
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="4"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:id="@+id/tv_buildingdialoginfo8"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:background="@color/lvtopbg"
+                                android:gravity="center_vertical|right"
+                                android:text="备注："
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5sp" >
+                            </TextView>
+
+                            <View
+                                android:layout_width="0.5dp"
+                                android:layout_height="match_parent"
+                                android:background="#d4d4d4" />
+
+                            <EditText
+                                android:id="@+id/et_helpinfo8"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="16"
+                                android:background="@null"
+                                android:gravity="left"
+                                android:paddingLeft="4dp"
+                                android:textColor="#4d4d4d"
+                                android:textSize="16.5dp" >
+                            </EditText>
+                        </LinearLayout>-->
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="95dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/helpinfo_btnYes"
+                        android:layout_width="130dp"
+                        android:layout_height="46dp"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/bookbuildingbtnbg"
+                        android:text="保存"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+
+                    <Button
+                        android:id="@+id/helpinfo_btnNo"
+                        android:layout_width="130dp"
+                        android:layout_height="46dp"
+                        android:layout_marginLeft="8dp"
+                        android:background="@drawable/bookbuildingbtnbg"
+                        android:text="取消"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="94" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

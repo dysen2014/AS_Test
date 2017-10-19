@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- 用户权限 -->
+
+    <!-- 服务方式联络渠道 -->
+    <string-array name="serveModelArray">
+        <item>请选择</item>
+        <item>行内到访</item>
+        <item>登门拜访</item>
+        <item>电话</item>
+        <item>短信</item>
+        <item>电子邮件</item>
+        <item>传真</item>
+        <item>信函</item>
+        <item>其它</item>
+    </string-array>
+
+    <!-- 客户服务类型 -->
+    <string-array name="serveTypeArray">
+        <item>请选择</item>
+        <item>生日关怀</item>
+        <item>节日问候</item>
+        <item>活动开展</item>
+        <item>业务交流</item>
+    </string-array>
+
+    <!-- 执行状态 -->
+    <string-array name="cusstatus">
+        <item>请选择</item>
+        <item>未执行</item>
+        <item>已执行</item>
+    </string-array>
+
+    <!-- 区域类型 -->
+
+    <!-- 客户类型 -->
+    <!-- 配置类型 -->
+
+</resources>

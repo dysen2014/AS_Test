@@ -1,0 +1,17 @@
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.dysen.common_res"
+	>
+
+	<!--call and sms-->
+	<uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <application
+		android:allowBackup="true"
+		android:label="@string/app_name"
+		android:supportsRtl="true"
+		>
+
+	</application>
+
+</manifest>

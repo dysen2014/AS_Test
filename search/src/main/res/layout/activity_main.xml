@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/customer_type"
+            android:text="@string/customer_type"
+            />
+
+        <EditText
+            style="@style/common_edit"
+            android:id="@+id/edit1"
+            android:drawableRight="@drawable/arow_bg"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/customer_name"
+            android:text="@string/customer_name" />
+
+        <EditText
+            style="@style/common_edit"
+            android:id="@+id/edit2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/document_type"
+            android:text="@string/document_type" />
+
+        <EditText
+            style="@style/common_edit"
+            android:id="@+id/edit3"
+            android:drawableRight="@drawable/arow_bg"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/document_number"
+            android:text="@string/document_number" />
+
+        <EditText
+            style="@style/common_edit"
+            android:id="@+id/edit4"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/phone_number"
+            android:text="@string/phone_number" />
+
+        <EditText
+            style="@style/common_edit"
+            android:id="@+id/edit5"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/business_varieties"
+            android:text="@string/business_varieties" />
+
+        <EditText
+            style="@style/common_edit"
+            android:id="@+id/edit6"
+            android:drawableRight="@drawable/arow_bg"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/loan_balance"
+            android:text="@string/loan_balance" />
+
+        <Button
+            style="@style/common_btn"
+            android:text="@string/interval"
+            android:id="@+id/loan_balance_btn"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/loan_balance_before_text"/>
+
+        <TextView
+            style="@style/common_interval_text"
+            android:text="@string/interval_text"
+            android:id="@+id/loan_balance_text"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/Loan_balance_after_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/overdue_amount"
+            android:text="@string/overdue_amount" />
+        <Button
+            style="@style/common_btn"
+            android:text="@string/interval"
+            android:id="@+id/overdue_amount_btn"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/overdue_amount_before_text"/>
+
+        <TextView
+            style="@style/common_interval_text"
+            android:id="@+id/overdue_amount_text"
+            android:text="@string/interval_text"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/overdue_amount_after_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/overdue_periods"
+            android:text="@string/overdue_periods" />
+        <Button
+            style="@style/common_btn"
+            android:text="@string/interval"
+            android:id="@+id/overdue_periods_btn"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/overdue_periods_before_text"/>
+
+        <TextView
+            style="@style/common_interval_text"
+            android:id="@+id/overdue_periods_text"
+            android:text="@string/interval_text"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/overdue_periods_after_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/Issuing_date"
+            android:text="@string/issuing_date" />
+        <Button
+            style="@style/common_btn"
+            android:text="@string/interval"
+            android:id="@+id/issuing_date_btn"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/issuing_date_before_text"/>
+
+        <TextView
+            style="@style/common_interval_text"
+            android:id="@+id/issuing_date_text"
+            android:text="@string/interval_text"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/issuing_date_after_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/common_linearLayout">
+
+        <TextView
+            style="@style/common_text"
+            android:id="@+id/due_date"
+            android:text="@string/due_date" />
+        <Button
+            style="@style/common_btn"
+            android:text="@string/interval"
+            android:id="@+id/due_date_btn"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/due_date_before_text"/>
+
+        <TextView
+            style="@style/common_interval_text"
+            android:id="@+id/due_date_text"
+            android:text="@string/interval_text"
+            />
+
+        <EditText
+            style="@style/common_interval_edit"
+            android:id="@+id/due_date_after_text"/>
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

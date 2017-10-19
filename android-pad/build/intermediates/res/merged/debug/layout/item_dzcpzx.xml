@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/item_left"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:background="@color/separateline1" />
+
+        <TextView
+            android:id="@+id/lvitem_info1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="种类"
+            android:textColor="@color/workplacewordcolor"
+            android:textSize="@dimen/column_name_text_size" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/separateline1" />
+
+        <TextView
+            android:id="@+id/lvitem_info2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="发生时间"
+            android:textColor="@color/workplacewordcolor"
+            android:textSize="@dimen/column_name_text_size" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/separateline1" />
+
+        <TextView
+            android:id="@+id/lvitem_info3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="内容描述"
+            android:textColor="@color/workplacewordcolor"
+            android:textSize="@dimen/column_name_text_size" />
+        <View
+            android:id="@+id/view3"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/separateline1" />
+
+     <!--   <TextView
+            android:id="@+id/lvitem_info4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="预约时间"
+            android:textColor="@color/workplacewordcolor"
+            android:textSize="@dimen/column_name_text_size" />-->
+
+
+
+
+        <!--<TextView
+            android:id="@+id/lvitem_info5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="状态"
+            android:textColor="@color/workplacewordcolor"
+            android:textSize="@dimen/column_name_text_size" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/separateline1" />-->
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/item_right"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:background="@color/red3">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:drawableLeft="@drawable/del_icon_normal"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@color/white"
+            android:textSize="@dimen/column_name_text_size"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+</LinearLayout>

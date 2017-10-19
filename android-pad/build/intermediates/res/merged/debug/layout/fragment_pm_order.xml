@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nowworkplacebg"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:layout_width="290dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/workplaceselectorshape"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rbtn_warnperson"
+            style="@style/RadiobuttonWarn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/qy_btn_warn_person"
+            android:checked="true"
+            android:text="个人" />
+
+        <RadioButton
+            android:id="@+id/rbtn_warncommon"
+            style="@style/RadiobuttonWarn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/qy_btn_warn_common"
+            android:text="对公" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal"
+        android:weightSum="1200" >
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="60"
+            android:gravity="right"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/rbtn_person_tab01"
+                style="@style/myreport_lefttab_style"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="存\n款\n余\n额\n前\n十" />
+
+            <RadioButton
+                android:id="@+id/rbtn_person_tab02"
+                style="@style/myreport_lefttab_style"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="贷\n款\n余\n额\n前\n十" />
+
+            <RadioButton
+                android:id="@+id/rbtn_person_tab03"
+                style="@style/myreport_lefttab_style"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="理\n财\n余\n额\n前\n十" />
+
+            <!-- 隐藏按钮间距 -->
+
+            <RadioButton
+                style="@style/myreport_lefttab_style"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5"
+                android:visibility="invisible" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1140"
+            android:background="@drawable/workplacebg"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:id="@+id/lay_orgTypes"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="horizontal" >
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:background="@drawable/workplaceselectorshape"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/rbtn_type1"
+                        style="@style/RadiobuttonWarn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/rbtn_warn_personal"
+                        android:checked="true"
+                        android:text="省级排名" />
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/nowworkplacewordbg" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_type2"
+                        style="@style/RadiobuttonWarn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/rbtn_warn_center"
+                        android:text="市州排名" />
+
+                    <View
+                        android:layout_width="1px"
+                        android:layout_height="match_parent"
+                        android:background="@color/nowworkplacewordbg" />
+
+                    <RadioButton
+                        android:id="@+id/rbtn_type3"
+                        style="@style/RadiobuttonWarn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/rbtn_warn_commonality"
+                        android:text="法人排名" />
+                </RadioGroup>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/workplaceshape"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:id="@+id/ll_lvtop"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="1dp"
+                    android:background="@color/lvtopbg"
+                    android:orientation="horizontal" >
+
+                    <include layout="@layout/myreport_person_tab03_item" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_alignBottom="@id/ll_lvtop"
+                    android:background="@color/separateline" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <include layout="@layout/loading" />
+
+                    <com.pactera.financialmanager.ui.PullToRefreshLayout
+                        android:id="@+id/refresh_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="0.7dp"
+                        android:layout_marginLeft="0.7dp"
+                        android:layout_marginRight="0.7dp"
+                        android:visibility="gone"  >
+
+                        <include layout="@layout/refresh_head" />
+
+                        <com.pactera.financialmanager.ui.PullableListView
+                            android:id="@+id/lv_pulllist"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:cacheColorHint="#00000000"
+                            android:divider="#dddbdb"
+                            android:dividerHeight="1px"
+                            sp:right_width="120dp" />
+
+                        <include layout="@layout/load_more" />
+                    </com.pactera.financialmanager.ui.PullToRefreshLayout>
+                    <!--
+                    <ListView
+                        android:id="@+id/lv_results"
+                        android:layout_width="match_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_margin="1dp"
+                        android:divider="@null"
+                        android:scrollbars="none"
+                        android:visibility="gone" />
+                    -->
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

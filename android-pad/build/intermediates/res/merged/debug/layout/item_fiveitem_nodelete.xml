@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:visibility="visible" >
+
+        <LinearLayout
+            style="@style/shape_ll_biaoge"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.pactera.financialmanager.ui.commontool.TextViewMarquee
+                android:id="@+id/item_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经营项目:"
+                android:textColor="#4d4d4d"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/shape_ll_biaoge"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/item_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经营项目:"
+                android:textColor="#4d4d4d"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/shape_ll_biaoge"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/item_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经营项目:"
+                android:textColor="#4d4d4d"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/shape_ll_biaoge"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/item_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经营项目:"
+                android:textColor="#4d4d4d"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/shape_ll_biaoge"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <com.pactera.financialmanager.ui.commontool.TextViewMarquee
+                android:id="@+id/item_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="经营项目:"
+                android:textColor="#4d4d4d"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

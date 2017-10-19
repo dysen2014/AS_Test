@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bookbuildingbg"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/archiving_info_bg"
+                android:orientation="vertical"
+                android:paddingTop="5dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="关键成员信息"
+                        android:textColor="@color/workplacewordcolor"
+                        android:textSize="17.5sp" />
+
+                    <Button
+                        android:id="@+id/btn_contactcreate"
+                        android:layout_width="71dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center_vertical|left"
+                        android:layout_marginLeft="35dp"
+                        android:background="@drawable/buildingbtnbg"
+                        android:gravity="center"
+                        android:text="创建"
+                        android:textColor="@color/white"
+                        android:textSize="16.5dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.7dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@color/separatelightredline" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <View
+                        android:layout_width="0.7dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/separateline1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/gray_divider"
+                        android:dividerHeight="0.7dp"
+                        android:orientation="vertical"
+                        android:showDividers="middle" >
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@color/lvtopbg"
+                            android:orientation="horizontal" >
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:gravity="center"
+                                android:text="关键成员姓名"
+                                android:textColor="@color/workplacewordcolor"
+                                />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:gravity="center"
+                                android:text="关联客户号"
+                                android:textColor="@color/workplacewordcolor"/>
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:gravity="center"
+                                android:text="关系类型"
+                                android:textColor="@color/workplacewordcolor" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:gravity="center"
+                                android:text="证件类型"
+                                android:textColor="@color/workplacewordcolor" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="7"
+                                android:gravity="center"
+                                android:text="证件号码"
+                                android:textColor="@color/workplacewordcolor" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="4"
+                                android:gravity="center"
+                                android:text="联系电话"
+                                android:textColor="@color/workplacewordcolor"/>
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="6"
+                                android:gravity="center"
+                                android:text="备注"
+                                android:textColor="@color/workplacewordcolor" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="left"
+                                android:background="@color/separateline1" />
+                        </LinearLayout>
+
+                        <com.pactera.financialmanager.ui.SwipeListView
+                            android:id="@+id/lv_contactinfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:cacheColorHint="#00000000"
+                            android:divider="@drawable/gray_divider"
+                            android:dividerHeight="0.7dp"
+                            android:scrollbars="none"
+                            sp:right_width="120dp" >
+                        </com.pactera.financialmanager.ui.SwipeListView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:gravity="center_vertical|right"
+                    android:orientation="horizontal" >
+
+                    <Button
+                        android:id="@+id/btn_contactinfonext"
+                        android:layout_width="110dp"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="17dp"
+                        android:background="@drawable/bookbuildingbtnbg"
+                        android:text="下一步"
+                        android:textColor="@color/white"
+                        android:textSize="17sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

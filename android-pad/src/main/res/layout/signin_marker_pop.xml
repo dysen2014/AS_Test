@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 点击地图标记后，弹出的view -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="500dp"
+    android:layout_height="552dp"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/archiving_title" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="现场签到"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/regmap_close"
+            android:layout_width="36dp"
+            android:layout_height="34dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="false"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/signin_marker_pop_close" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+              style="@style/shape_ll_biaoge"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/signin_marker_edit" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/shape_ll_biaoge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+               <EditText
+                   android:id="@+id/regmap_customer"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_marginLeft="10dp"
+                   android:background="@null"
+                   android:hint="请输入用户名"
+                   android:textColor="@color/black"
+                   android:textSize="17sp" >
+
+                </EditText>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="177dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/signin_marker_pop_contents"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/regmap_contents"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="请输入工作内容"
+                android:inputType="textMultiLine"
+                android:textColor="@color/black"
+                android:textSize="17sp" >
+
+            </EditText>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp" >
+
+            <LinearLayout
+                style="@style/shape_ll_biaoge"
+                android:layout_width="53dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/signin_marker_diqiu" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/shape_ll_biaoge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+               <TextView
+                   android:id="@+id/regmap_address"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal|center"
+                   android:layout_marginLeft="10dp"
+                   android:background="@null"
+                   android:textColor="@color/black"
+                   android:textSize="17sp" >
+
+                </TextView>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="48dp"
+         android:layout_marginLeft="20dp"
+         android:layout_marginRight="20dp"
+         android:layout_marginTop="10dp" >
+
+            <LinearLayout
+                android:layout_width="52dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                style="@style/shape_ll_biaoge"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/signin_marker_time" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/shape_ll_biaoge"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+
+               <TextView
+                   android:id="@+id/regmap_time"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_vertical|center_horizontal|center"
+                   android:layout_marginLeft="10dp"
+                   android:background="@null"
+                   android:textColor="@color/black"
+                   android:textSize="17sp" >
+
+                </TextView>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+     <Button
+         android:id="@+id/regmap_btn"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:layout_marginBottom="20dp"
+         android:layout_marginTop="20dp"
+         android:background="@drawable/signin_marker_pop_btn" />
+     
+    </LinearLayout>
+
+</LinearLayout>

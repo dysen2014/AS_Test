@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--ListView的每一项布局。-->
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/rtl_"
+	style="@style/common_item"
+	>
+	<!--android:descendantFocusability="blocksDescendants">-->
+	<!--添加这个属性-->
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		>
+
+		<com.dysen.common_res.common.views.TextViewMarquee
+			android:id="@+id/data_item_tv"
+			style="@style/cell"
+			/>
+	</LinearLayout>
+
+	<View
+		android:layout_width="1px"
+		android:layout_height="match_parent"
+		android:layout_alignParentRight="true"
+		android:background="@color/bg_line"
+		android:clickable="false"
+		android:longClickable="false"
+		/>
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="1px"
+		android:layout_alignParentBottom="true"
+		android:background="@color/bg_line"
+		/>
+
+</RelativeLayout>

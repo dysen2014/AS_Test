@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_myreport_person_tab01_item1"
+    android:layout_width="fill_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/lvitem_info1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_weight="3"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="排名"
+            android:textColor="@color/workplacewordcolor" />
+
+        <TextView
+            android:id="@+id/lvitem_info2"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="客户名"
+            android:textColor="@color/workplacewordcolor" />
+
+        <TextView
+            android:id="@+id/lvitem_info3"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="存款余额(万元)"
+            android:textColor="@color/workplacewordcolor" />
+
+        <TextView
+            android:id="@+id/lvitem_info4"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="比年初"
+            android:textColor="@color/workplacewordcolor"
+            android:textSize="17sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:stretchColumns="1">
+
+        <TableRow  
+            style="@style/common_tablerow">
+            <TextView android:text="@string/customerType"
+                style="@style/common_tablerow_text"
+                />
+
+            <Spinner
+                android:id="@+id/customerType"
+                style="@style/common_tablerow_spinner"/>
+        </TableRow>
+
+        <TableRow  >
+        <TextView android:text="@string/customerName"
+            style="@style/common_tablerow_text"
+            />
+        <EditText android:id="@+id/customerName"
+            android:hint="请输入您的姓名"
+            style="@style/common_tablerow_edit"
+            />
+    </TableRow>
+
+        <TableRow  >
+            <TextView android:text="@string/cardType"
+                style="@style/common_tablerow_text"
+                />
+            <Spinner android:id="@+id/cardType"
+                style="@style/common_tablerow_spinner"
+                />
+        </TableRow>
+
+        <TableRow  >
+            <TextView android:text="@string/cardNumber"
+                style="@style/common_tablerow_text"/>
+            <EditText android:id="@+id/cardNumber"
+                android:hint="请输入证件号码"
+                style="@style/common_tablerow_edit"
+                />
+        </TableRow>
+        <TableRow  >
+            <TextView android:text="@string/telephoneNumber"
+                style="@style/common_tablerow_text"
+                />
+            <EditText android:id="@+id/telephoneNumber"
+                android:hint="请输入手机号码"
+                style="@style/common_tablerow_edit"
+                />
+        </TableRow>
+
+        <TableRow  
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <TextView android:text="@string/level"
+                style="@style/common_tablerow_text"
+                />
+            <Spinner
+                android:id="@+id/level"
+                style="@style/common_tablerow_spinner" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="0">
+        <TableRow style="@style/common_tablerow"
+            android:layout_margin="16dp"
+            >
+            <Button android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="查询"
+                android:textColor="#fff"
+                android:gravity="center"
+                />
+        </TableRow>
+    </TableLayout>
+
+</LinearLayout>

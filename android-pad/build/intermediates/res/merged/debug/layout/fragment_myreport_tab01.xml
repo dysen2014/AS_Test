@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/workplacebg"
+    android:orientation="vertical" >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_toptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/imgqueue"
+            android:drawablePadding="5dp"
+            android:gravity="bottom"
+            android:paddingBottom="4dp"
+            android:text="全行金融资产"
+            android:textColor="@color/separatelightredline"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_alignBottom="@id/tv_toptitle"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="36dp"
+            android:background="@color/separatelightredline" />
+    </RelativeLayout>
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:scrollbars="none"
+        android:background="@drawable/workplaceshape" >
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical" >
+	
+	        <LinearLayout
+	            android:id="@+id/lay_benhang"
+	            android:layout_width="fill_parent"
+	            android:layout_height="0dp"
+	            android:layout_margin="1dp"
+	            android:layout_weight="1"
+	            android:orientation="vertical" >
+	
+	            <include layout="@layout/fragment_myreport_tab01_table" />
+	        </LinearLayout>
+	
+	        <View
+	            android:layout_width="fill_parent"
+	            android:layout_height="1dp"
+	            android:background="@color/gray2" />
+	
+	        <View
+	            android:layout_width="fill_parent"
+	            android:layout_height="1dp"
+	            android:background="#F7F7F7" />
+	
+	        <LinearLayout
+	            android:id="@+id/lay_guanhang"
+	            android:layout_width="fill_parent"
+	            android:layout_height="0dp"
+	            android:layout_margin="1dp"
+	            android:layout_weight="1"
+	            android:orientation="vertical" >
+	
+	            <include layout="@layout/fragment_myreport_tab01_table" />
+	        </LinearLayout>
+	    </LinearLayout>
+	</ScrollView>
+</LinearLayout>

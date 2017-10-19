@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:background="@drawable/workplacebg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+		<TextView
+	        android:id="@+id/title_toptabs"
+	        android:layout_width="220dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="40dp"
+	        android:layout_marginTop="15dp"
+	        android:gravity="bottom"
+	        android:drawablePadding="5dp"
+	        android:paddingBottom="4dp"
+	        android:text="全部资产和贷款"
+	        android:drawableLeft="@drawable/imgqueue"
+	        android:textColor="@color/separatelightredline"
+	        android:textSize="16sp" />
+		
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_alignBottom="@id/title_toptabs"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="36dp"
+            android:background="@color/separatelightredline" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/workplaceshape"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/ll_lvtop"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0.7dp"
+                android:layout_marginRight="0.7dp"
+                android:layout_marginTop="0.7dp"
+                android:background="@color/lvtopbg"
+                android:orientation="horizontal" >
+                <TextView
+			        android:layout_width="0dp"
+			        android:layout_height="40dp"
+			        android:layout_weight="2"
+			        android:gravity="center"
+			        android:text="金融资产"
+			        android:textColor="@color/workplacewordcolor"
+			        android:textSize="17sp" />
+			
+			    <TextView
+			        android:layout_width="0dp"
+			        android:layout_height="40dp"
+			        android:layout_weight="3"
+			        android:gravity="center"
+			        android:text="存款余额"
+			        android:textColor="@color/workplacewordcolor"
+			        android:textSize="17sp" />
+			
+			    <TextView
+			        android:layout_width="0dp"
+			        android:layout_height="40dp"
+			        android:layout_weight="3"
+			        android:gravity="center"
+			        android:text="贷款余额"
+			        android:textColor="@color/workplacewordcolor"
+			        android:textSize="17sp" />
+			
+			    <TextView
+			        android:layout_width="0dp"
+			        android:layout_height="40dp"
+			        android:layout_weight="3"
+			        android:gravity="center"
+			        android:text="理财余额"
+			        android:textColor="@color/workplacewordcolor"
+			        android:textSize="17sp" />
+			    
+			    <TextView
+			        android:layout_width="0dp"
+			        android:layout_height="40dp"
+			        android:layout_weight="3"
+			        android:gravity="center"
+			        android:text="客户数量"
+			        android:textColor="@color/workplacewordcolor"
+			        android:textSize="17sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_alignBottom="@id/ll_lvtop"
+                android:background="@color/separateline" />
+        </RelativeLayout>
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0.7dp"
+            android:layout_marginRight="0.7dp"
+            android:layout_marginBottom="0.7dp"
+            android:orientation="vertical">
+            <include 
+                layout="@layout/myreport_common_tab01_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="@color/separateline"/>
+        <!-- 
+        <ListView
+            android:id="@+id/lv_property"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="0.7dp"
+            android:layout_marginRight="0.7dp"
+            android:layout_marginBottom="0.7dp"
+            android:divider="@null"
+            android:scrollbars="none" >
+        </ListView>
+         -->
+    </LinearLayout>
+
+</LinearLayout>

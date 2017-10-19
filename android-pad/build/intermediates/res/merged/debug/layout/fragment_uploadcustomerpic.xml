@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:zhy="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/BookBuildingUploadPic_con"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/archiving_info_bg"
+            android:orientation="vertical"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="6dp"
+                android:text="客户评估"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="17dp"
+                android:background="@color/separatelightredline" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginBottom="26dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bookbuildingbg"
+                android:divider="@drawable/gray_divider"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:divider="@drawable/gray_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical|right"
+                        android:text="培植方向："
+                        android:textColor="#4d4d4d"
+                        android:textSize="16.5sp"></TextView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="12"
+                        android:gravity="center">
+
+                        <EditText
+                            android:id="@+id/et_info1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/cusarchiving_spinner_table"
+                            android:clickable="true"
+                            android:editable="false"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:hint=" "
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:gravity="center_vertical|right"
+                        android:text="需求分类："
+                        android:textColor="#4d4d4d"
+                        android:textSize="16.5sp"></TextView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="12"
+                        android:gravity="center">
+
+                        <EditText
+                            android:id="@+id/et_info2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/cusarchiving_spinner_table"
+                            android:clickable="true"
+                            android:editable="false"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:hint=" "
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:divider="@drawable/gray_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical|right"
+                        android:text="是否关注："
+                        android:textColor="#4d4d4d"
+                        android:textSize="16.5sp"></TextView>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="12">
+
+                        <CheckBox
+                            android:id="@+id/et_info3"
+                            android:layout_width="78dp"
+                            android:layout_height="29dp"
+                            android:layout_gravity="center_vertical|left"
+                            android:layout_marginLeft="5dp"
+                            android:button="@drawable/checkboxselector"
+                            android:checked="true"
+                            android:paddingLeft="5dp"></CheckBox>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:gravity="center_vertical|right"
+                        android:text=""
+                        android:textColor="#4d4d4d"
+                        android:textSize="16.5sp"></TextView>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="12"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/red"
+                        android:textSize="16.5sp"></TextView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="2"
+                    android:divider="@drawable/gray_divider"
+                    android:orientation="horizontal"
+                    android:showDividers="middle">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="6"
+                        android:gravity="center_vertical|right"
+                        android:text="说明："
+                        android:textColor="#4d4d4d"
+                        android:textSize="16.5sp"></TextView>
+
+                    <EditText
+                        android:id="@+id/et_info4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="31"
+                        android:background="@null"
+                        android:gravity="left"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="4dp"
+                        android:paddingTop="3dp"
+                        android:text=""
+                        android:textColor="#4d4d4d"
+                        android:textSize="16.5sp"></EditText>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/archiving_info_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="6dp"
+                android:text="客户证件资料"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="17dp"
+                android:background="@color/separatelightredline" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:layout_marginBottom="23dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/cameranewbg" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="3">
+
+                    <com.pactera.financialmanager.util.RoundImageView
+                        android:id="@+id/iv_ibd_identityupload_iv1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        zhy:borderRadius="5dp"
+                        zhy:type="round"></com.pactera.financialmanager.util.RoundImageView>
+
+                    <ImageView
+                        android:id="@+id/iv_check_identityupload_iv1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/uploadpicdefaultbg"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="3">
+
+                    <com.pactera.financialmanager.util.RoundImageView
+                        android:id="@+id/iv_ibd_identityupload_iv2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        zhy:borderRadius="5dp"
+                        zhy:type="round"></com.pactera.financialmanager.util.RoundImageView>
+
+                    <ImageView
+                        android:id="@+id/iv_check_identityupload_iv2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/uploadpicdefaultbg"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="3">
+
+                    <com.pactera.financialmanager.util.RoundImageView
+                        android:id="@+id/iv_ibd_identityupload_iv3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        zhy:borderRadius="5dp"
+                        zhy:type="round"></com.pactera.financialmanager.util.RoundImageView>
+
+                    <ImageView
+                        android:id="@+id/iv_check_identityupload_iv3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/uploadpicdefaultbg"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/archiving_info_bg"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="6dp"
+                android:text="客户其它资料"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.7dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="17dp"
+                android:background="@color/separatelightredline" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="145dp"
+                android:layout_marginBottom="23dp"
+                android:layout_marginRight="17dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/cameranewbg" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="3">
+
+                    <com.pactera.financialmanager.util.RoundImageView
+                        android:id="@+id/iv_ibd_identityupload_iv4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        zhy:borderRadius="5dp"
+                        zhy:type="round"></com.pactera.financialmanager.util.RoundImageView>
+
+                    <ImageView
+                        android:id="@+id/iv_check_identityupload_iv4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/uploadpicdefaultbg"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="3">
+
+                    <com.pactera.financialmanager.util.RoundImageView
+                        android:id="@+id/iv_ibd_identityupload_iv5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        zhy:borderRadius="5dp"
+                        zhy:type="round"></com.pactera.financialmanager.util.RoundImageView>
+
+                    <ImageView
+                        android:id="@+id/iv_check_identityupload_iv5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/uploadpicdefaultbg"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="3">
+
+                    <com.pactera.financialmanager.util.RoundImageView
+                        android:id="@+id/iv_ibd_identityupload_iv6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        zhy:borderRadius="5dp"
+                        zhy:type="round"></com.pactera.financialmanager.util.RoundImageView>
+
+                    <ImageView
+                        android:id="@+id/iv_check_identityupload_iv6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/uploadpicdefaultbg"
+                        android:visibility="visible" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_complete"
+                android:layout_width="125dp"
+                android:layout_height="42dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/bookbuildingbtnbg"
+                android:text="完成客户建档"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

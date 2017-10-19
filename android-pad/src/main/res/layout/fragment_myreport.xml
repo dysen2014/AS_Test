@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@color/nowworkplacebg" >
+
+    <LinearLayout
+        android:layout_width="290dp"
+        android:layout_height="38dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/workplaceselectorshape"
+        android:visibility="visible" >
+        
+        <RadioGroup 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <RadioButton 
+                android:id="@+id/rbtn_warnperson"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            style="@style/RadiobuttonWarn"
+        		android:background="@drawable/qy_btn_warn_person"
+	            android:text="个人"
+	            android:checked="true"
+	            android:layout_weight="1"/>
+            <RadioButton 
+                android:id="@+id/rbtn_warncommon"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            style="@style/RadiobuttonWarn"
+        		android:background="@drawable/qy_btn_warn_common"
+	            android:text="对公"
+	            android:layout_weight="1"/>
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1200"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"  >
+
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="60"
+            android:gravity="right"
+            android:orientation="vertical" >
+            <RadioButton
+                android:id="@+id/rbtn_person_tab00"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                style="@style/myreport_lefttab_style"
+                android:checked="true"
+                android:text="金\n融\n资\n产" />
+
+
+            <RadioButton
+                android:id="@+id/rbtn_person_tab01"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                style="@style/myreport_lefttab_style"
+                android:text="金\n融\n资\n产" />
+
+            <RadioButton
+                android:id="@+id/rbtn_person_tab02"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                style="@style/myreport_lefttab_style"
+                android:text="存\n款\n趋\n势\n图"/>
+
+            <RadioButton
+                android:id="@+id/rbtn_person_tab03"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                style="@style/myreport_lefttab_style"
+                android:text="渠\n道\n签\n约\n情\n况"/>
+
+            <RadioButton
+                android:id="@+id/rbtn_person_tab04"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                style="@style/myreport_lefttab_style"
+                android:text="客\n户\n价\n值\n评\n级"/>
+           
+            <RadioButton
+                android:id="@+id/rbtn_person_tab05"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                style="@style/myreport_lefttab_style"
+                android:text="贷\n款\n回\n收\n情\n况"/>
+            
+ 			<!-- 隐藏按钮间距 -->
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                style="@style/myreport_lefttab_style"
+                android:visibility="invisible" />
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/fl_workplacemyreportperson"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1140"
+            android:background="@drawable/workplacebg" >
+        </FrameLayout>
+    </LinearLayout>
+
+</LinearLayout>

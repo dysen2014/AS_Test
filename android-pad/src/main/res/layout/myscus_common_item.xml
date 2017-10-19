@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_myscusitem"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/lvitem_info1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="企业名称"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="17sp" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:id="@+id/lvitem_info2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="企业规模"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="17sp" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:id="@+id/lvitem_info3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="企业性质"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="17sp" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:id="@+id/lvitem_info4"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="客户价值评级"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="17sp" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:id="@+id/lvitem_info5"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="培植方向"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="17sp" />
+    
+    <View
+        android:id="@+id/view5"
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:id="@+id/lvitem_info6"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="客户类型"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="17sp" />
+    
+    <View
+        android:id="@+id/view6"
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:id="@+id/lvitem_info7"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="建档时间"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="17sp" />
+    
+    <View
+        android:id="@+id/view7"
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:id="@+id/lvitem_info8"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:text="修改时间"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="17sp" />
+</LinearLayout>

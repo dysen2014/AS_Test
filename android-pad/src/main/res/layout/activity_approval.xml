@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        layout="@layout/common_title_layout"/>
+
+    <include
+        layout="@layout/common_two_rbtn"/>
+
+    <com.dysen.common_res.common.layout.reveal.RevealLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rlv_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </com.dysen.common_res.common.layout.reveal.RevealLayout>
+
+</LinearLayout>

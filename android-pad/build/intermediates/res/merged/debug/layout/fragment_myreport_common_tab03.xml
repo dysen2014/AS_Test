@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:background="@drawable/workplacebg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        
+        <RadioGroup 
+		    android:id="@+id/grp_toptabs"
+		    android:layout_width="match_parent"
+		    android:layout_height="50dp"
+		    android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rbt_itempro1"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="15dp"
+                style="@style/RadiobuttonTabsTheme"
+                android:checked="true"
+                android:text="贷款结构图"/>
+
+            <RadioButton
+                android:id="@+id/rbt_itempro2"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                style="@style/RadiobuttonTabsTheme"
+                android:text="不良贷款趋势图" />
+            
+            <RadioButton
+                android:id="@+id/rbt_itempro3"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                style="@style/RadiobuttonTabsTheme"
+                android:text="客户总占值占比" />
+            
+            <RadioButton
+                android:id="@+id/rbt_itempro4"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                style="@style/RadiobuttonTabsTheme"
+                android:text="渠道签约情况" />
+		</RadioGroup>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_alignBottom="@id/grp_toptabs"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="36dp"
+            android:background="@color/separatelightredline" />
+    </RelativeLayout>
+
+    
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginBottom="30dp"
+	        android:layout_marginLeft="20dp"
+	        android:layout_marginRight="36dp"
+	        android:layout_marginTop="10dp"
+	        android:background="@drawable/workplaceshape"
+	        android:orientation="vertical" >
+	        <WebView
+	            android:id="@+id/chartshow_wb"
+	            android:layout_width="match_parent"
+	            android:layout_height="match_parent"
+	            android:layout_margin="1dp" />
+	    </LinearLayout>
+    
+		<LinearLayout 
+		    android:id="@+id/lay_loading"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:orientation="vertical"
+		    android:gravity="center">
+		    <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+                android:indeterminateDrawable="@drawable/shape_loading_progressbar"
+                android:indeterminate="false" />
+		    <TextView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="正在生成报表..."
+		        android:textSize="18sp"
+		        android:layout_marginTop="5dp"/>
+		</LinearLayout>
+	</RelativeLayout>
+</LinearLayout>

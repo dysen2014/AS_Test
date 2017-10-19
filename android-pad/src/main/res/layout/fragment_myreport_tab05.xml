@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="25dp"
+    android:layout_marginRight="25dp"
+    android:background="@drawable/workplacebg"
+    android:orientation="vertical" >
+
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_toptitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:drawableLeft="@drawable/imgqueue"
+            android:drawablePadding="5dp"
+            android:gravity="bottom"
+            android:paddingBottom="4dp"
+            android:text="当年到期贷款收回情况"
+            android:textColor="@color/separatelightredline"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.7dp"
+            android:layout_alignBottom="@id/tv_toptitle"
+            android:layout_marginLeft="43dp"
+            android:layout_marginRight="36dp"
+            android:background="@color/separatelightredline" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/workplaceshape"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:id="@+id/ll_lvtop"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="0.7dp"
+                android:layout_marginRight="0.7dp"
+                android:layout_marginTop="0.7dp"
+                android:background="@color/lvtopbg"
+                android:orientation="horizontal" >
+                <include layout="@layout/myreport_common_tab04_item" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_alignBottom="@id/ll_lvtop"
+                android:background="@color/separateline" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lv_property"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="0.7dp"
+            android:layout_marginLeft="0.7dp"
+            android:layout_marginRight="0.7dp"
+            android:layout_weight="1"
+            android:divider="@null"
+            android:scrollbars="none" >
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>

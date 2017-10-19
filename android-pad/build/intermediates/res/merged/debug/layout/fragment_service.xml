@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    style="@style/common_service_functype"
+                    >
+                    <TextView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/service_customer_relationsgip_mgm"/>
+                    <TextView
+                        style="@style/common_service_text_title"
+                        android:layout_marginRight="8dp"
+                        android:text="客户关系管理"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/common_service_lay"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:id="@+id/txt_customerProfile"
+                            style="@style/common_service_text"
+                            android:text="@string/s_customerProfile"/>
+
+                        <TextView
+                            android:id="@+id/txt_mineProfile"
+                            style="@style/common_service_text"
+                            android:text="@string/s_mineProfile"/>
+
+                        <TextView
+                            android:id="@+id/txt_customerDistribution"
+                            style="@style/common_service_text"
+                            android:text="@string/s_customerDistribution"/>
+
+                        <TextView
+                            android:id="@+id/txt_customerData"
+                            style="@style/common_service_text"
+                            android:text="@string/s_customerData"/>
+
+                    </LinearLayout>
+                    <LinearLayout style="@style/common_service_lay"
+                                  android:layout_height="0dp"
+                                  android:layout_weight="1"
+                                  android:layout_marginTop="8dp">
+                        <TextView
+                            android:id="@+id/txt_customerSearch"
+                            style="@style/common_service_text"
+                            android:text="@string/s_customerSearch"/>
+
+                        <TextView
+                            android:id="@+id/txt_serviceRecord"
+                            style="@style/common_service_text"
+                            android:text="@string/s_serviceRecord"/>
+
+                        <TextView
+                            android:id="@+id/txt_hallManagement"
+                            style="@style/common_service_text"
+                            android:text="@string/s_hallManagement"/>
+
+                        <TextView
+                            android:id="@+id/txt_promotions"
+                            style="@style/common_service_text"
+                            android:text="@string/s_promotions"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/txt_hotProducts"
+                            style="@style/common_service_text"
+                            android:text="@string/s_hotProducts"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp">
+
+                <LinearLayout
+                    style="@style/common_service_functype">
+                    <TextView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/service_credit_card"/>
+                    <TextView
+                        style="@style/common_service_text_title"
+                        android:layout_marginRight="8dp"
+                    android:text="信用卡"/>
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/common_service_lay"
+                                  android:layout_height="0dp"
+                                  android:layout_weight="1"
+                                  android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_creditIncoming"
+                        style="@style/common_service_text"
+                        android:text="@string/s_creditIncoming"/>
+
+                    <TextView
+                        style="@style/common_service_text"
+                        android:visibility="invisible"/>
+                    <TextView
+                        style="@style/common_service_text"
+                        android:visibility="invisible"/>
+                    <TextView
+                        style="@style/common_service_text"
+                        android:visibility="invisible"/>
+                </LinearLayout>
+                    <LinearLayout
+                        style="@style/common_service_lay"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp">
+
+                <LinearLayout
+                    style="@style/common_service_functype">
+                    <TextView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/service_credit"/>
+                    <TextView
+                        style="@style/common_service_text_title"
+                        android:layout_marginRight="8dp"
+                    android:text="信贷"/>
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout style="@style/common_service_lay"
+                                  android:layout_height="0dp"
+                                  android:layout_weight="1"
+                                  android:layout_marginBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/txt_creditSearch"
+                        style="@style/common_service_text"
+                        android:text="@string/s_creditSearch"/>
+
+                    <TextView
+                        android:id="@+id/txt_interestRateCalculation"
+                        style="@style/common_service_text"
+                        android:text="@string/s_interestRatePricing"/>
+
+                    <TextView
+                        android:id="@+id/txt_study"
+                        style="@style/common_service_text"
+                        android:text="@string/s_study"/>
+
+                    <TextView
+                        android:id="@+id/txt_approval"
+                        style="@style/common_service_text"
+                        android:text="@string/s_approval"/>
+                </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/common_service_lay"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="8dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="40dp">
+
+                <LinearLayout
+                    style="@style/common_service_functype">
+                    <TextView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/service_other"/>
+                    <TextView
+                        style="@style/common_service_text_title"
+                        android:layout_marginRight="8dp"
+                    android:text="其他"/>
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                        <LinearLayout style="@style/common_service_lay"
+                                      android:layout_height="0dp"
+                                      android:layout_weight="1"
+                                      android:layout_marginBottom="8dp">
+
+                            <TextView
+                                android:id="@+id/txt_outletsMap"
+                                style="@style/common_service_text"
+                                android:text="@string/s_outletsMap"/>
+
+                            <TextView
+                                android:id="@+id/txt_checkIn"
+                                style="@style/common_service_text"
+                                android:text="@string/s_checkIn"/>
+
+                            <TextView
+                                android:id="@+id/txt_checkInRecord"
+                                style="@style/common_service_text"
+                                android:text="@string/s_checkInRecord"/>
+
+                            <TextView
+                                style="@style/common_service_text"
+                                android:visibility="invisible"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            style="@style/common_service_lay"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginTop="8dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

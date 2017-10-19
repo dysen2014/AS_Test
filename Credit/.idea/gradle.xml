@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/CreditDemo" />
+            <option value="$PROJECT_DIR$/Test" />
+            <option value="$PROJECT_DIR$/android-pad" />
+            <option value="$PROJECT_DIR$/baseitem-library" />
+            <option value="$PROJECT_DIR$/ble-lib" />
+            <option value="$PROJECT_DIR$/common_res" />
+            <option value="$PROJECT_DIR$/gwt" />
+            <option value="$PROJECT_DIR$/kjframe-library" />
+            <option value="$PROJECT_DIR$/ocr-library" />
+            <option value="$PROJECT_DIR$/search" />
+            <option value="$PROJECT_DIR$/sms-library" />
+            <option value="$PROJECT_DIR$/zbarscan-library" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

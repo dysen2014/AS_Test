@@ -1,0 +1,98 @@
+[
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_status_bg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_status_bg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_ppt.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_ppt.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_no2.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_no2.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_bg_date.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_bg_date.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_label.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_label.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_txt.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_txt.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_left.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_left.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_bottom.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_bottom.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_right.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_right.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_circle_bg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_circle_bg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_sys_setting.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_sys_setting.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_excel.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_excel.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_switch_off.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_switch_off.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_yes2.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_yes2.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_yes.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_yes.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_yess.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_yess.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_no.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_no.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_doc.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_doc.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_top.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_top.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_pdf.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_pdf.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_btn_bg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_btn_bg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_bg_tag.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_bg_tag.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_user.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_user.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_switch_on.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-ldpi-v4\\ic_switch_on.png"
+    }
+]

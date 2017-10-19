@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            style="@style/common_lay_vertical"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/common_lay_vertical"
+                android:layout_width="800dp"
+                android:layout_height="52dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_custName"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="客户姓名："/>
+
+                <LinearLayout
+                    android:id="@+id/ll_custName"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/shape_txt_bg"
+                    android:gravity="center_vertical"
+                    android:onClick="selectCustomerClick">
+
+                <Button
+                    android:id="@+id/et_custName"
+                    style="@style/common_rate_edit"
+                    android:hint="请输入客户姓名\t"
+                    android:gravity="right|center_vertical"
+                    android:layout_height="52dp"
+                    android:background="@color/transparent"
+                    android:onClick="selectCustomerClick"
+                    />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/right_arrow"
+                        android:layout_margin="16dp"
+                        android:onClick="selectCustomerClick"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/common_lay_vertical"
+                android:layout_width="800dp"
+                android:layout_height="52dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_custType"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="客户类型："/>
+                <LinearLayout
+                    android:id="@+id/ll_custType"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="3"
+                    android:background="@drawable/shape_txt_bg"
+                    android:gravity="center_vertical">
+                <Button
+                    android:id="@+id/et_custType"
+                    style="@style/common_rate_edit"
+                    android:hint="请输入客户类型\t"
+                    android:background="@color/transparent"
+                    android:gravity="right|center_vertical"
+                    android:onClick="viewCustomerClick"
+                    />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/pull_down_triangle"
+                        android:padding="16dp"
+                        android:onClick="viewCustomerClick"
+                        />
+                    </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/common_lay_vertical"
+                android:layout_width="800dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_certNo"
+                    style="@style/common_rate_text"
+                    android:text="证件号码："/>
+
+                <EditText
+                    android:id="@+id/et_certNo"
+                    style="@style/common_rate_edit"
+                    android:hint="请输入证件号码"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/common_lay_vertical"
+                android:layout_width="800dp"
+                android:layout_height="52dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_term"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="期数："/>
+
+                <EditText
+                    android:id="@+id/et_term"
+                    style="@style/common_rate_edit"
+                    android:layout_height="52dp"
+                    android:background="@drawable/shape_txt_bg"
+                    android:hint="\t请输入期数"
+                    android:numeric="integer"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/busstype"
+                style="@style/common_lay_vertical"
+                android:layout_width="800dp"
+                android:layout_height="52dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tv_busstype"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="业务品种："/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/id_industry"
+                style="@style/common_lay_vertical"
+                android:layout_width="800dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_industry"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:text="投向行业："/>
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_txt_bg"
+                    />
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:background="@drawable/shape_txt_bg"/>
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:background="@drawable/shape_txt_bg"/>
+
+                <Spinner
+                    android:id="@+id/spinner4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:visibility="invisible"
+                    android:background="@drawable/shape_txt_bg"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/estimate"
+                style="@style/common_lay_vertical"
+                android:layout_width="800dp"
+                android:layout_height="52dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="right|center_vertical"
+                    android:layout_marginTop="8dp"
+                    android:text="利率测算项："/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/common_lay_vertical"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:layout_height="52dp"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="400dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/login_btn_icon"
+                    android:onClick="clickSubmmit"
+                    android:text="测算"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

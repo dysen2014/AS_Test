@@ -1,0 +1,42 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+//def androidSupportVersion = '25.0.0'
+//
+//ext{
+//    //编译的 SDK 版本
+//    compileSdkVersion = 25
+//    //构建工具的版本 其中包括打包工具aapt，dx等
+//    buildToolsVersion = '25.0.0'
+//    //兼容最低的SDK版本
+//    minSdkVersion = 15
+//    //向前兼容，保存新旧两种逻辑，并通过if-else 方法判断执行那种逻辑
+//    targetSdkVersion = 22
+//    appcompatV7 = "com.android.support:appcompat-v7:$androidSupportVersion"
+//    constrainLayout = 'com.android.support.constraint:constraint-layout:1.0.2'
+//}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+
+        classpath 'com.novoda:bintray-release:0.3.4'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

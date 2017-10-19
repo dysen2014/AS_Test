@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <style>
+    	html,body { height:100%; width:100%; margin:0; padding:0;align:left;valign:left;}
+    </style>
+</head>
+<body>
+    <div id="main" style="height:100%;width:100%;border:0px;text-align:left;align:left;valign:left;"></div>
+    <!-- ECharts单文件引入 -->
+    <script src="./js/echarts.js"></script>
+    <script type="text/javascript">
+    //初始化路径
+    var myChart;  
+    require.config({
+        paths: {
+            echarts: './js'
+        }
+    });
+    
+    //通用属性定义
+    var options = {  
+        title : {  
+            text : "Echart"  
+        },  
+        tooltip : {  
+            show : false  
+        },   
+        toolbox : {  
+            show : false
+        },  
+    }; 
+
+
+    //创建折线图
+    function createLineChart(titleArray, dataArray){
+    	options = {
+			legend: {
+				data:['意向','预购','成交']
+			},
+			calculable : false,
+			xAxis : [
+				{
+					type : 'category',
+					boundaryGap : false,
+					data : ['周一','周二','周三','周四','周五','周六','周日']
+				}
+			],
+			yAxis : [
+				{
+					type : 'value'
+				}
+			],
+	        series : [
+				{
+					name:'成交',
+					type:'line',
+					smooth:true,
+					itemStyle: {normal: {areaStyle: {type: 'default'}}},
+					data:[10, 12, 21, 54, 260, 830, 710]
+				},
+				{
+					name:'预购',
+					type:'line',
+					smooth:true,
+					itemStyle: {normal: {areaStyle: {type: 'default'}}},
+					data:[30, 182, 434, 791, 390, 30, 10]
+				},
+				{
+					name:'意向',
+					type:'line',
+					smooth:true,
+					itemStyle: {normal: {areaStyle: {type: 'default'}}},
+					data:[1320, 1132, 601, 234, 120, 90, 20]
+				}
+			]
+        };
+    }
+
+    //创建柱状图
+    function createBarChart(titleArray,dataArray){
+       options = {
+            xAxis : [
+                {
+                    type : 'category',
+                    data : titleArray
+                }
+            ],
+            yAxis : [
+                {
+                    type : 'value'
+                }
+            ],
+            series : [
+                {
+                    name:'成交',
+                    type:'bar',
+                    data:dataArray
+                }
+            ]
+        };
+                    
+    }
+
+    //创建饼状图
+    function createNewPieChart(titleArray, dataArray){
+        options = {
+			title : {
+				text: '李晓晓',
+				subtext: '资产:20,000,000',
+				x:'center',
+				y:'center'
+			},
+			tooltip : {
+				trigger: 'item',
+				formatter: "{a} <br/>{b} : {c} ({d}%)"
+			},
+			legend: {
+				orient : 'horizontal',
+				data:titleArray,
+				x:'center',
+				y:'95%'
+			},
+			toolbox: {
+				show : true,
+				feature : {
+					mark : {show: false},
+					dataView : {show: true, readOnly: true},
+					restore : {show: true},
+					saveAsImage : {show: false}
+				}
+			},
+			calculable : false,
+			series : [
+				{
+					name:'访问来源',
+					type:'pie',
+                	radius:['25%, 55%'],
+					center: ['50%', '50%'],
+					data:dataArray
+				}
+			]
+        };
+    }
+
+	// 开始创建图表
+    function createChart(chartKind, titleArray, dataArray){
+        if (chartKind=='line') {
+            doCreatChart(createLineChart(titleArray,dataArray));
+        };
+        if (chartKind=='bar') {
+            doCreatChart(createBarChart(titleArray,dataArray));
+        };
+        if (chartKind=='pie') {
+            doCreatChart(createNewPieChart(titleArray,dataArray));
+        };
+        if (chartKind=='bar2') {
+            doCreatChart(createBarChart(titleArray,dataArray));
+        };
+    }
+    
+    function doCreatChart(specificChartFunction){
+        require(
+	        ['echarts',
+	        'echarts/theme/macarons',
+	        'echarts/chart/line',
+	        'echarts/chart/bar',
+	        'echarts/chart/pie'
+	        ],
+	        
+	        function(ec,theme){
+		        myChart =ec.init(document.getElementById('main'),theme);
+		        myChart.showLoading({  
+		            text : "图表数据正在努力加载..."  
+		        }
+		    ); 
+	        specificChartFunction;
+		        myChart.setOption(options); //先把可选项注入myChart中  
+		        myChart.hideLoading(); 
+	        }
+	    );
+    }
+
+    </script>
+</body>

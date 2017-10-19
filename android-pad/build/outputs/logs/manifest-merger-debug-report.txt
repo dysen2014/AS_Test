@@ -1,0 +1,708 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:2:1-393:12
+	package
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:4:5-43
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:3:5-51
+	xmlns:android
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:6:5-75
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:6:22-72
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:7:5-76
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:7:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:8:22-76
+uses-permission#android.permission.INTERNET
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:9:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:10:5-78
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:10:22-75
+uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:12:5-84
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:12:22-81
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:14:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:15:5-80
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:15:22-77
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:17:5-81
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:17:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:19:5-79
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:19:22-76
+uses-permission#android.permission.CHANGE_WIFI_STATE
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:21:5-76
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:21:22-73
+uses-permission#com.android.launcher.permission.READ_SETTINGS
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:22:5-85
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:22:22-82
+uses-permission#android.permission.WAKE_LOCK
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:23:5-68
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:23:22-65
+uses-permission#android.permission.GET_TASKS
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:24:22-65
+uses-permission#android.permission.WRITE_SETTINGS
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:25:5-73
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:25:22-70
+uses-permission#android.permission.READ_LOGS
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:31:5-68
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:31:22-65
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:32:5-68
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:32:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:33:5-74
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:33:22-71
+uses-permission#android.permission.CAMERA
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:36:5-65
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:36:22-62
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:37:5-81
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:37:22-78
+uses-permission#android.permission.FLASHLIGHT
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:38:5-69
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:38:22-66
+uses-permission#android.permission.CALL_PHONE
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:41:5-68
+MERGED from [Credit:common_res:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\common_res\build\intermediates\bundles\default\AndroidManifest.xml:12:5-69
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:41:22-66
+uses-permission#android.permission.SEND_SMS
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:42:5-66
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:42:22-64
+uses-permission#android.permission.READ_SMS
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:43:5-66
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:43:22-64
+uses-feature#android.hardware.bluetooth_le
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:45:5-47:35
+	android:required
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:47:9-32
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:46:9-53
+uses-feature#android.hardware.camera
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:48:5-60
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:48:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:49:5-70
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:49:19-67
+application
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:51:5-391:19
+MERGED from [Credit:ocr-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ocr-library\build\intermediates\bundles\default\AndroidManifest.xml:9:5-13:19
+MERGED from [Credit:ble-lib:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ble-lib\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [Credit:baseitem-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\baseitem-library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [org.kymjs.kjframe:kjframe-library:2.6.0.1] D:\dysen\Android\AS_Test\nx\releas\Credit\kjframe-library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-14:38
+MERGED from [Credit:contact-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\contact-library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [Credit:common_res:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\common_res\build\intermediates\bundles\default\AndroidManifest.xml:14:5-18:19
+MERGED from [com.android.support:percent:25.0.0] C:\Users\dysen\.android\build-cache\cfdc9427977414bd3ec7a2697d2e86aa7593f551\output\AndroidManifest.xml:22:5-20
+MERGED from [com.jwenfeng.pulltorefresh:library:1.0.3] C:\Users\dysen\.android\build-cache\d49bd956f1c77f5a942d85d33c9506a2676c53eb\output\AndroidManifest.xml:11:5-15:19
+MERGED from [q.rorbin:badgeview:1.1.2] C:\Users\dysen\.android\build-cache\5818efe4f85eb2fb1ca065a0c58694a3606b4473\output\AndroidManifest.xml:11:5-20
+MERGED from [Credit:tab_bar-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\tab_bar-library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [com.jaeger.statusbarutil:status_bar-library:1.4.0] D:\dysen\Android\AS_Test\nx\releas\Credit\status_bar-library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-20
+MERGED from [com.android.support:design:25.3.1] C:\Users\dysen\.android\build-cache\6ea839e9a90426e0b0498f4bc13875d09eaa3849\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\dysen\.android\build-cache\914e4c19d34e056d5ce283bf0d6b40ed96dac9ac\output\AndroidManifest.xml:26:5-20
+MERGED from [com.github.pinguo-zhouwei:popwindow-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\popwindow-library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [org.kymjs.kjframe:kjframe:2.6] C:\Users\dysen\.android\build-cache\cc34a6782518797a42e1a910d9159d34050cf213\output\AndroidManifest.xml:11:5-47
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dysen\.android\build-cache\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\dysen\.android\build-cache\d00f2a2c26bb4da14fd21efe140242fb21ef54a5\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\dysen\.android\build-cache\aa8214ad38307f16718098f6672e373fdae76444\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\dysen\.android\build-cache\c2d30c463f0de1c0a829f4b0b94b2145fc0687d3\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\dysen\.android\build-cache\bf609dcc325c3c790f170dfbcf5f2e202480037b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\dysen\.android\build-cache\d193f39ae50febe3e915cbc4b0f185c831b6dd71\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\dysen\.android\build-cache\49f6063a8dce8b376a8d53dd91bdf5c3a78ac34b\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\dysen\.android\build-cache\c789ba728885d5df440d61c7216766e14e5ecd96\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\dysen\.android\build-cache\d9463dd12d881f9b20d3d750c0f91d150689283f\output\AndroidManifest.xml:29:5-20
+	android:label
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:55:9-41
+	android:supportsRtl
+		ADDED from [Credit:ocr-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ocr-library\build\intermediates\bundles\default\AndroidManifest.xml:12:9-35
+	android:allowBackup
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:53:9-35
+	android:icon
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:54:9-45
+	android:theme
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:56:9-40
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:52:9-42
+activity#com.pactera.financialmanager.ui.LogoActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:57:9-65:20
+	android:label
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:59:13-45
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:58:13-44
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:60:13-64:29
+action#android.intent.action.MAIN
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:61:17-69
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:61:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:63:17-77
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:63:27-74
+activity#com.pactera.financialmanager.ui.hallfirst.HallFirstActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:69:9-74:75
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:73:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:72:13-44
+	android:windowSoftInputMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:74:13-72
+	android:configChanges
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:71:13-63
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:70:13-59
+activity#com.pactera.financialmanager.ui.hallfirst.CustomerMarketingActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:75:9-78:53
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:78:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:77:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:76:13-67
+activity#com.pactera.financialmanager.ui.hallfirst.CMMarketingActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:79:9-82:53
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:82:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:81:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:80:13-61
+activity#com.pactera.financialmanager.ui.hallfirst.CMMarketingActivity2
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:83:9-86:53
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:86:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:85:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:84:13-62
+activity#com.pactera.financialmanager.ui.bookbuildingfrocompany.ActivityBaseInfo
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:89:9-94:75
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:93:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:92:13-44
+	android:windowSoftInputMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:94:13-72
+	android:configChanges
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:91:13-63
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:90:13-71
+activity#com.pactera.financialmanager.ui.nowproject.WorkPlaceActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:95:9-98:53
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:98:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:97:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:96:13-60
+activity#com.pactera.financialmanager.ui.nowproject.FinancialDemandItemDeailActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:101:9-105:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:104:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:103:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:102:13-75
+activity#com.pactera.financialmanager.ui.NewLoginActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:108:9-113:75
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:112:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:111:13-44
+	android:windowSoftInputMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:113:13-72
+	android:configChanges
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:110:13-63
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:109:13-48
+activity#com.pactera.financialmanager.ui.MainActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:116:9-119:53
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:119:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:118:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:117:13-44
+activity#com.pactera.financialmanager.ui.commontool.CalculatorActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:122:9-125:53
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:125:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:124:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:123:13-61
+activity#com.pactera.financialmanager.ui.notice.NoticeActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:130:9-134:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:133:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:132:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:131:13-53
+activity#com.pactera.financialmanager.ui.commontool.SetPassWordActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:136:9-140:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:139:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:138:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:137:13-62
+activity#com.pactera.financialmanager.ui.commontool.CustomerMapActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:143:9-147:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:146:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:145:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:144:13-62
+activity#com.pactera.financialmanager.ui.fragment.SigninRecordActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:149:9-153:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:152:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:151:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:150:13-61
+activity#com.pactera.financialmanager.ui.productcenter.HotProductActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:157:9-161:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:160:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:159:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:158:13-64
+activity#com.pactera.financialmanager.ui.productcenter.ProductIndexActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:163:9-167:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:166:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:165:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:164:13-66
+activity#com.pactera.financialmanager.ui.commontool.CommonToolActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:169:9-173:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:172:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:171:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:170:13-61
+activity#com.pactera.financialmanager.ui.productcenter.HotProductInfoActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:177:9-181:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:180:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:179:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:178:13-68
+activity#com.pactera.financialmanager.ui.productcenter.PromotionsActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:183:9-187:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:186:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:185:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:184:13-64
+activity#com.pactera.financialmanager.ui.productcenter.PromotionsMoreActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:189:9-193:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:192:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:191:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:190:13-68
+activity#com.pactera.financialmanager.ui.customermanager.CusArchivingActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:196:9-200:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:199:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:198:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:197:13-68
+activity#com.pactera.financialmanager.ui.customermanager.CusArchivingStepOne
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:202:9-206:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:205:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:204:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:203:13-67
+activity#com.pactera.financialmanager.ui.customermanager.CusArchivingStepTwo
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:208:9-212:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:211:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:210:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:209:13-67
+activity#com.pactera.financialmanager.ui.customermanager.PersonArchiving
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:214:9-218:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:217:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:216:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:215:13-63
+activity#com.pactera.financialmanager.ui.customermanager.MyscusActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:220:9-224:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:223:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:222:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:221:13-62
+activity#com.pactera.financialmanager.ui.ReturnCusActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:226:9-230:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:229:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:228:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:227:13-49
+activity#com.pactera.financialmanager.ui.ReturnCusUpdateActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:232:9-236:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:235:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:234:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:233:13-55
+activity#com.pactera.financialmanager.ui.QuerycusActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:238:9-241:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:240:13-50
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:239:13-48
+activity#com.pactera.financialmanager.ui.DiscoverCardActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:246:9-251:75
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:249:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:248:13-44
+	android:windowSoftInputMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:251:13-72
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:247:13-52
+activity#com.pactera.financialmanager.ui.credit.CreditCardApplyListActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:254:9-259:75
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:257:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:256:13-44
+	android:windowSoftInputMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:259:13-72
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:255:13-66
+activity#com.pactera.financialmanager.ui.credit.CreditCardApplyActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:261:9-266:75
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:264:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:263:13-44
+	android:windowSoftInputMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:266:13-72
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:262:13-62
+activity#com.pactera.financialmanager.ui.credit.IDCheck
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:268:9-273:75
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:271:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:270:13-44
+	android:windowSoftInputMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:273:13-72
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:269:13-46
+activity#com.pactera.financialmanager.ui.commontool.CalculatorIncomeActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:276:9-280:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:279:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:278:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:277:13-67
+activity#com.pactera.financialmanager.ui.commontool.CalculatorCompoundingActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:282:9-286:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:285:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:284:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:283:13-72
+activity#com.pactera.financialmanager.ui.commontool.CalculatorCreditActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:288:9-292:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:291:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:290:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:289:13-67
+activity#com.pactera.financialmanager.ui.commontool.CalculatorEarlyCreditActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:294:9-298:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:297:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:296:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:295:13-72
+activity#com.pactera.financialmanager.ui.commontool.CalculatorCompareActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:300:9-304:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:303:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:302:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:301:13-68
+activity#com.pactera.financialmanager.ui.commontool.CalculatorCompareResultActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:306:9-310:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:309:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:308:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:307:13-74
+activity#com.pactera.financialmanager.ui.commontool.BranchMapActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:312:9-316:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:315:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:314:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:313:13-60
+activity#com.pactera.financialmanager.ui.commontool.MeasureActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:318:9-321:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:320:13-50
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:319:13-58
+activity#com.pactera.financialmanager.ui.commontool.DeviceSettingActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:323:9-327:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:326:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:325:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:324:13-64
+activity#com.pactera.financialmanager.ocr.IDCardInfoReaderActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:328:9-332:17
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:331:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:330:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:329:13-57
+activity#com.pactera.financialmanager.ocr.IdCardCameraNew
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:333:9-336:53
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:336:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:335:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:334:13-48
+activity#com.pactera.financialmanager.credit.CreditActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:338:9-340:59
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:340:19-56
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:339:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:338:19-56
+activity#com.pactera.financialmanager.credit.main.service.search.Query
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:343:9-345:52
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:345:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:344:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:343:19-67
+activity#com.pactera.financialmanager.credit.main.service.search.QueryDetails
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:346:9-348:52
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:348:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:347:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:346:19-74
+activity#com.pactera.financialmanager.credit.main.service.search.QueryList
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:349:9-351:52
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:351:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:350:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:349:19-71
+activity#com.pactera.financialmanager.credit.main.service.search.BusinessDetails
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:352:9-354:52
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:354:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:353:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:352:19-77
+activity#com.pactera.financialmanager.credit.main.service.search.BusinessList
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:355:9-357:52
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:357:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:356:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:355:19-74
+activity#com.pactera.financialmanager.credit.main.service.search.BusinessTypeBg
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:358:9-360:52
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:360:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:359:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:358:19-76
+activity#com.pactera.financialmanager.credit.main.service.study.StudyActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:362:9-364:52
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:364:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:363:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:362:19-74
+activity#com.pactera.financialmanager.credit.main.service.rate.RateActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:365:9-368:74
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:367:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:366:13-44
+	android:windowSoftInputMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:368:13-72
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:365:19-72
+activity#com.pactera.financialmanager.credit.main.service.CheckIn
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:370:9-372:52
+	android:screenOrientation
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:372:13-50
+	android:launchMode
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:371:13-44
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:370:19-62
+activity#com.pactera.financialmanager.credit.main.warn.DataListActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:373:9-70
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:373:19-68
+activity#com.pactera.financialmanager.credit.main.service.rate.ContactCustomerActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:376:9-85
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:376:19-83
+activity#com.pactera.financialmanager.credit.main.service.approval.ApprovalActivity
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:377:9-82
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:377:19-80
+service#com.pactera.financialmanager.ui.notice.NoticeService
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:381:9-60
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:381:18-57
+meta-data#com.baidu.lbsapi.API_KEY
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:383:9-385:64
+	android:value
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:385:13-61
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:384:13-52
+service#com.baidu.location.f
+ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:387:9-390:41
+	android:enabled
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:389:13-35
+	android:process
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:390:13-38
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:388:13-48
+uses-sdk
+INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\dysen\.android\build-cache\fce8751aeed9d033a09e5810e01e0c2206fec2af\output\AndroidManifest.xml:18:5-42
+MERGED from [Credit:ocr-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ocr-library\build\intermediates\bundles\default\AndroidManifest.xml:5:5-7:41
+MERGED from [Credit:ble-lib:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ble-lib\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [Credit:baseitem-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\baseitem-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [org.kymjs.kjframe:kjframe-library:2.6.0.1] D:\dysen\Android\AS_Test\nx\releas\Credit\kjframe-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [Credit:contact-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\contact-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [Credit:common_res:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\common_res\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:percent:25.0.0] C:\Users\dysen\.android\build-cache\cfdc9427977414bd3ec7a2697d2e86aa7593f551\output\AndroidManifest.xml:20:5-43
+MERGED from [com.jwenfeng.pulltorefresh:library:1.0.3] C:\Users\dysen\.android\build-cache\d49bd956f1c77f5a942d85d33c9506a2676c53eb\output\AndroidManifest.xml:7:5-9:41
+MERGED from [q.rorbin:badgeview:1.1.2] C:\Users\dysen\.android\build-cache\5818efe4f85eb2fb1ca065a0c58694a3606b4473\output\AndroidManifest.xml:7:5-9:41
+MERGED from [Credit:tab_bar-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\tab_bar-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.jaeger.statusbarutil:status_bar-library:1.4.0] D:\dysen\Android\AS_Test\nx\releas\Credit\status_bar-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.3.1] C:\Users\dysen\.android\build-cache\6ea839e9a90426e0b0498f4bc13875d09eaa3849\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:transition:25.3.1] C:\Users\dysen\.android\build-cache\914e4c19d34e056d5ce283bf0d6b40ed96dac9ac\output\AndroidManifest.xml:20:5-44
+MERGED from [com.github.pinguo-zhouwei:popwindow-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\popwindow-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\dysen\.android\build-cache\bf8eff99141f4d4b4d288b07f0f969b548441fda\output\AndroidManifest.xml:20:5-43
+MERGED from [Credit:expandable-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\expandable-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [org.kymjs.kjframe:kjframe:2.6] C:\Users\dysen\.android\build-cache\cc34a6782518797a42e1a910d9159d34050cf213\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dysen\.android\build-cache\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\dysen\.android\build-cache\d00f2a2c26bb4da14fd21efe140242fb21ef54a5\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\dysen\.android\build-cache\aa8214ad38307f16718098f6672e373fdae76444\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\dysen\.android\build-cache\c2d30c463f0de1c0a829f4b0b94b2145fc0687d3\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\dysen\.android\build-cache\bf609dcc325c3c790f170dfbcf5f2e202480037b\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\dysen\.android\build-cache\d193f39ae50febe3e915cbc4b0f185c831b6dd71\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\dysen\.android\build-cache\49f6063a8dce8b376a8d53dd91bdf5c3a78ac34b\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\dysen\.android\build-cache\c789ba728885d5df440d61c7216766e14e5ecd96\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\dysen\.android\build-cache\d9463dd12d881f9b20d3d750c0f91d150689283f\output\AndroidManifest.xml:21:5-23:58
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:25.3.1] C:\Users\dysen\.android\build-cache\6ea839e9a90426e0b0498f4bc13875d09eaa3849\output\AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+		INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:25.3.1] C:\Users\dysen\.android\build-cache\6ea839e9a90426e0b0498f4bc13875d09eaa3849\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\dysen\.android\build-cache\914e4c19d34e056d5ce283bf0d6b40ed96dac9ac\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\dysen\.android\build-cache\bf8eff99141f4d4b4d288b07f0f969b548441fda\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dysen\.android\build-cache\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\dysen\.android\build-cache\d00f2a2c26bb4da14fd21efe140242fb21ef54a5\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\dysen\.android\build-cache\aa8214ad38307f16718098f6672e373fdae76444\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\dysen\.android\build-cache\c2d30c463f0de1c0a829f4b0b94b2145fc0687d3\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\dysen\.android\build-cache\bf609dcc325c3c790f170dfbcf5f2e202480037b\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\dysen\.android\build-cache\d193f39ae50febe3e915cbc4b0f185c831b6dd71\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\dysen\.android\build-cache\49f6063a8dce8b376a8d53dd91bdf5c3a78ac34b\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\dysen\.android\build-cache\c789ba728885d5df440d61c7216766e14e5ecd96\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\dysen\.android\build-cache\d9463dd12d881f9b20d3d750c0f91d150689283f\output\AndroidManifest.xml:25:5-27:34
+	android:value
+		ADDED from [com.android.support:design:25.3.1] C:\Users\dysen\.android\build-cache\6ea839e9a90426e0b0498f4bc13875d09eaa3849\output\AndroidManifest.xml:27:9-31
+	android:name
+		ADDED from [com.android.support:design:25.3.1] C:\Users\dysen\.android\build-cache\6ea839e9a90426e0b0498f4bc13875d09eaa3849\output\AndroidManifest.xml:26:9-47

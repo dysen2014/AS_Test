@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <!--<ScrollView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--&gt;-->
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="0,1,2"
+        android:orientation="horizontal">
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/crmDuebillInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/common_yellow"
+                android:textColor="#fff"
+                android:text="借据"
+                android:focusable="true"/>
+            <Button
+                android:id="@+id/crmBusinessCountract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/common_yellow"
+                android:textColor="#fff"
+                android:text="合同"
+                android:focusable="false"/>
+            <Button
+                android:id="@+id/crmCustomerInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/common_yellow"
+                android:textColor="#fff"
+                android:text="客户"
+                android:focusable="false"/>
+        </TableRow>
+    </TableLayout>
+    <!--</ScrollView>-->
+
+
+</LinearLayout>

@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sp="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/archiving_info_bg"
+                android:orientation="vertical"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/customer_create_doc_keymember_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title_text_size" />
+
+                    <Button
+                        android:id="@+id/btn_createcontactinfo"
+                        android:layout_width="71dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center_vertical|left"
+                        android:layout_marginLeft="35dp"
+                        android:background="@drawable/buildingbtnbg"
+                        android:gravity="center"
+                        android:text="创建"
+                        android:textColor="@color/white"
+                        android:textSize="16.5dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@color/separatelightredline" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0.7dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/separateline1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/gray_divider"
+                        android:dividerHeight="0.7dp"
+                        android:orientation="vertical"
+                        android:showDividers="middle">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@color/lvtopbg"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_keymemberlist_txt_1"
+                                android:gravity="center"
+                                android:text="@string/customer_create_doc_keymember_column1"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_keymemberlist_txt_2"
+                                android:gravity="center"
+                                android:text="@string/customer_create_doc_keymember_column2"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_keymemberlist_txt_3"
+                                android:gravity="center"
+                                android:text="@string/customer_create_doc_keymember_column3"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_keymemberlist_txt_4"
+                                android:gravity="center"
+                                android:text="@string/customer_create_doc_keymember_column4"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_keymemberlist_txt_5"
+                                android:gravity="center"
+                                android:text="@string/customer_create_doc_keymember_column5"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_keymemberlist_txt_6"
+                                android:gravity="center"
+                                android:text="@string/customer_create_doc_keymember_column6"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_keymemberlist_txt_7"
+                                android:gravity="center"
+                                android:text="@string/customer_create_doc_keymember_column7"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_keymemberlist_txt_8"
+                                android:gravity="center"
+                                android:text="@string/customer_create_doc_keymember_column8"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="left"
+                                android:background="@color/separateline1" />
+                        </LinearLayout>
+
+                        <com.pactera.financialmanager.ui.SwipeListView
+                            android:id="@+id/lv_gudonginfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:cacheColorHint="#00000000"
+                            android:divider="@drawable/gray_divider"
+                            android:dividerHeight="0.7dp"
+                            android:scrollbars="none"
+                            sp:right_width="120dp"></com.pactera.financialmanager.ui.SwipeListView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/archiving_info_bg"
+                android:orientation="vertical"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/customer_create_doc_corelation_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title_text_size" />
+
+                    <Button
+                        android:id="@+id/btn_creategteamrelation"
+                        android:layout_width="71dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center_vertical|left"
+                        android:layout_marginLeft="35dp"
+                        android:background="@drawable/buildingbtnbg"
+                        android:gravity="center"
+                        android:text="创建"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@color/separatelightredline" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0.7dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/separateline1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/gray_divider"
+                        android:dividerHeight="0.7dp"
+                        android:orientation="vertical"
+                        android:showDividers="middle">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@color/lvtopbg"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_corelation_txt_1"
+                                android:gravity="center"
+                                android:text="集团总公司名称"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_corelation_txt_2"
+                                android:gravity="center"
+                                android:text="上级企业名称"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_corelation_txt_3"
+                                android:gravity="center"
+                                android:text="关联关系"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_corelation_txt_4"
+                                android:gravity="center"
+                                android:text="持股比例(%)"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_corelation_txt_5"
+                                android:gravity="center"
+                                android:text="备注"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:background="@color/separateline1" />
+                        </LinearLayout>
+
+                        <com.pactera.financialmanager.ui.SwipeListView
+                            android:id="@+id/lv_teamrelation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:cacheColorHint="#00000000"
+                            android:divider="@drawable/gray_divider"
+                            android:dividerHeight="0.7dp"
+                            android:scrollbars="none"
+                            sp:right_width="120dp"></com.pactera.financialmanager.ui.SwipeListView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/archiving_info_bg"
+                android:orientation="vertical"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/customer_create_doc_externalguarantee_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title_text_size" />
+
+                    <Button
+                        android:id="@+id/btn_helpinfo"
+                        android:layout_width="71dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center_vertical|left"
+                        android:layout_marginLeft="35dp"
+                        android:background="@drawable/buildingbtnbg"
+                        android:gravity="center"
+                        android:text="创建"
+                        android:textColor="@color/white"
+                        android:textSize="16.5dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@color/separatelightredline" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0.7dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/separateline1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/gray_divider"
+                        android:dividerHeight="0.7dp"
+                        android:orientation="vertical"
+                        android:showDividers="middle">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@color/lvtopbg"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_externalguarantee_txt_1"
+                                android:gravity="center"
+                                android:text="被担保人名称"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_externalguarantee_txt_2"
+                                android:gravity="center"
+                                android:text="担保人名称"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_externalguarantee_txt_3"
+                                android:gravity="center"
+                                android:text="业务种类"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_externalguarantee_txt_4"
+                                android:gravity="center"
+                                android:text="起始日期"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_externalguarantee_txt_5"
+                                android:gravity="center"
+                                android:text="到期日期"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_externalguarantee_txt_6"
+                                android:gravity="center"
+                                android:text="担保金额(元)"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_externalguarantee_txt_7"
+                                android:gravity="center"
+                                android:text="经办机构"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <!--   <View
+                                   android:layout_width="0.7dp"
+                                   android:layout_height="match_parent"
+                                   android:layout_gravity="right"
+                                   android:background="@color/separateline1"/>
+
+                               <TextView
+                                   android:layout_width="0dp"
+                                   android:layout_height="match_parent"
+                                   android:layout_weight="5"
+                                   android:gravity="center"
+                                   android:text="备注"
+                                   android:textColor="@color/workplacewordcolor"
+                                   android:textSize="15.5sp"/>
+                           -->
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:background="@color/separateline1" />
+                        </LinearLayout>
+
+                        <com.pactera.financialmanager.ui.SwipeListView
+                            android:id="@+id/lv_helpinfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:cacheColorHint="#00000000"
+                            android:divider="@drawable/gray_divider"
+                            android:dividerHeight="0.7dp"
+                            android:scrollbars="none"
+                            sp:right_width="120dp"></com.pactera.financialmanager.ui.SwipeListView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/archiving_info_bg"
+                android:orientation="vertical"
+                android:paddingTop="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="@string/customer_create_doc_other_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/title_text_size" />
+
+                    <Button
+                        android:id="@+id/btn_businessrelation"
+                        android:layout_width="71dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center_vertical|left"
+                        android:layout_marginLeft="35dp"
+                        android:background="@drawable/buildingbtnbg"
+                        android:gravity="center"
+                        android:text="创建"
+                        android:textColor="@color/white"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@color/separatelightredline" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="26dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="18dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="0.7dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/separateline1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@drawable/gray_divider"
+                        android:dividerHeight="0.7dp"
+                        android:orientation="vertical"
+                        android:showDividers="middle">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@color/lvtopbg"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_other_txt_1"
+                                android:gravity="center"
+                                android:text="关联方名称"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_other_txt_2"
+                                android:gravity="center"
+                                android:text="关联方证件类型"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_other_txt_3"
+                                android:gravity="center"
+                                android:text="关联方证件号码"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_other_txt_4"
+                                android:gravity="center"
+                                android:text="关联关系"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_other_txt_5"
+                                android:gravity="center"
+                                android:text="法人代表名称"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="@dimen/weight_customerrelation_other_txt_6"
+                                android:gravity="center"
+                                android:text="备注"
+                                android:textColor="@color/workplacewordcolor"
+                                android:textSize="@dimen/column_name_text_size" />
+
+                            <View
+                                android:layout_width="0.7dp"
+                                android:layout_height="match_parent"
+                                android:background="@color/separateline1" />
+                        </LinearLayout>
+
+                        <com.pactera.financialmanager.ui.SwipeListView
+                            android:id="@+id/lv_businessrealtion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:cacheColorHint="#00000000"
+                            android:divider="@drawable/gray_divider"
+                            android:dividerHeight="0.7dp"
+                            android:scrollbars="none"
+                            sp:right_width="120dp"></com.pactera.financialmanager.ui.SwipeListView>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:background="@color/separateline1" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:gravity="center_vertical|right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/bookbuildingbtnbg"
+                    android:text="下一步"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

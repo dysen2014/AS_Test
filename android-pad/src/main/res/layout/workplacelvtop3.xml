@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_workplaceitem3"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="客户姓名"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3.5"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="贷款帐号"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="业务品种"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <com.pactera.financialmanager.ui.commontool.TextViewMarquee
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="贷款利率"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="14sp" />
+
+    <View
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="到期金额"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="14sp" />
+    
+    <View
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    
+	<TextView
+	    android:layout_width="0dp"
+	    android:layout_height="match_parent"
+	    android:layout_weight="2.5"
+	    android:gravity="center_vertical|center_horizontal"
+	    android:text="发放日期"
+	    android:textColor="@color/workplacewordcolor"
+	    android:textSize="14sp" />
+
+    <View
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+    
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="到期日期"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="14sp" />
+    <View
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+
+    <com.pactera.financialmanager.ui.commontool.TextViewMarquee
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="第一责任人"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="14sp" />
+    
+    <View
+        android:layout_width="0.6dp"
+        android:layout_height="match_parent"
+        android:background="@color/separateline" />
+    
+	<TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:gravity="center_vertical|center_horizontal"
+        android:singleLine="true"
+        android:text="管理机构"
+        android:textColor="@color/workplacewordcolor"
+        android:textSize="14sp" />
+
+</LinearLayout>

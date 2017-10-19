@@ -1,0 +1,426 @@
+[
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\dialogtopbg.9.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\dialogtopbg.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_bg_date.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_bg_date.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_015.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\icon_back.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\icon_back.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_excel.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_excel.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_status_bg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_status_bg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\camera_4.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\camera_4.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\btn_red_selector.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\btn_red_selector.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_light.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\workwarn.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\workwarn.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_txt.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_txt.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_user.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_user.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\camera_3.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\camera_3.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_yess.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_yess.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_cab_background_top_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_dark.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_text_select_handle_left_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_list_longpressed_holo.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\spinner_bg.9.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\spinner_bg.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_btn_bg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_btn_bg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_pdf.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_pdf.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\btn_red01.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\btn_red01.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_top.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_top.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\item_bg.9.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\item_bg.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\topbgaaa.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\topbgaaa.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\infobg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\infobg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\camera_1.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\camera_1.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_015.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_015.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\workplaceback.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\workplaceback.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\itembg5.9.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\itembg5.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_yes2.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_yes2.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\bg_comm.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\bg_comm.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_switch_off.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_switch_off.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_switch_on.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_switch_on.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_circle_bg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_circle_bg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_textfield_search_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_light.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_star_half_black_48dp.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_right.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_right.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_star_black_48dp.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_star_black_48dp.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_light.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_text_select_handle_middle_mtrl_light.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_doc.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_doc.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_sys_setting.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_sys_setting.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_yes.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_yes.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_left.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_left.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\main_ad_dot_select.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\main_ad_dot_select.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\workwarn01.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\workwarn01.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_no2.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_no2.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_list_focused_holo.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\design_ic_visibility.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\6ea839e9a90426e0b0498f4bc13875d09eaa3849\\output\\res\\drawable-mdpi-v4\\design_ic_visibility.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\workplacesmallicon.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\workplacesmallicon.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\rlbg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\rlbg.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_36dp.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00012.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\selectorbg.9.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\selectorbg.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_dark.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\camera_2.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\camera_2.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\com_input_bg.9.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\com_input_bg.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\shape_txt_bg_selected.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\shape_txt_bg_selected.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\btn_red02.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\btn_red02.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_bg_tag.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_bg_tag.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_textfield_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_ppt.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_ppt.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\main_ad_dot_normal.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\main_ad_dot_normal.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\workplaceadmin.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\workplaceadmin.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\itembg4444.9.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\itembg4444.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\design_ic_visibility_off.png",
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\6ea839e9a90426e0b0498f4bc13875d09eaa3849\\output\\res\\drawable-mdpi-v4\\design_ic_visibility_off.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_label.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_label.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_bottom.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_bottom.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\putongka.jpg",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\drawable-mdpi\\putongka.jpg"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_no.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-mdpi-v4\\ic_no.png"
+    }
+]

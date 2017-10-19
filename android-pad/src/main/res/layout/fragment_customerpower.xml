@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp" 
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="活期金额："
+            android:textColor="@color/workplacewordcolor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_huoqijine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="--"
+            android:textColor="@color/workplacewordcolor"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/hallcustomerinfonewbg"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical" >
+            
+            <include 
+                layout="@layout/customer_power_item"/>
+            
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="0.7dp"
+            android:layout_marginLeft="0.7dp"
+            android:layout_marginRight="0.7dp"
+            android:background="@drawable/hallcustomerinfollbg" >
+
+            <include 
+                layout="@layout/loading"/>
+            
+            <ListView
+                android:id="@+id/lv_customerpower"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:scrollbars="none" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

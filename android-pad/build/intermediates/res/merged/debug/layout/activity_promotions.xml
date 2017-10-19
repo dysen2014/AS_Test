@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/common_bg_main_nologo"
+    android:orientation="vertical"
+    android:weightSum="1536">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="107"
+        android:orientation="horizontal">
+
+        <include layout="@layout/com_title" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1429">
+
+        <LinearLayout
+            android:id="@+id/activity_promotions_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"></LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="40dp"
+                android:layout_weight="6">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="false"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical|center"
+                    android:orientation="vertical">
+
+                    <com.pactera.financialmanager.ui.CircleImageView
+                        android:id="@+id/promotions_imageView_big"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/activity_promotions_ll_img"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.pactera.financialmanager.ui.CircleImageView
+                                android:id="@+id/promotions_imageView1"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:src="@drawable/promotions_demo1" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.pactera.financialmanager.ui.CircleImageView
+                                android:id="@+id/promotions_imageView2"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:src="@drawable/promotions_demo2" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.pactera.financialmanager.ui.CircleImageView
+                                android:id="@+id/promotions_imageView3"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:src="@drawable/promotions_demo4" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_gravity="right"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.pactera.financialmanager.ui.CircleImageView
+                                android:id="@+id/promotions_imageView_more"
+                                android:layout_width="120dp"
+                                android:layout_height="120dp"
+                                android:src="@drawable/salemanager_preferential_more" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/activity_promotions_info_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:translationY="-5000dp">
+
+                <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" >-->
+                <!---->
+                <!--<ImageView-->
+                <!--android:id="@+id/promotions_imageView_close"-->
+                <!--android:layout_width="60dp"-->
+                <!--android:layout_height="60dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:paddingTop="10dp"-->
+                <!--android:paddingRight="15dp"-->
+                <!--android:src="@drawable/icon_guanbi" />-->
+
+                <com.pactera.financialmanager.ui.photoview.PhotoView
+                    android:id="@+id/promotions_imageView_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></com.pactera.financialmanager.ui.photoview.PhotoView>
+                <!--</RelativeLayout>-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

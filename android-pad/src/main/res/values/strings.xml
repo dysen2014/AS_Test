@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<string name="app_name">农商银行</string>-->
+    <string name="app_name">客户经理</string>
+
+    <string name="cm_send_msg_success">短信发送成功</string>
+    <string name="cm_send_msg_folder">短信发送失败，请稍候重试</string>
+
+    <string name="unNetwork">无网络连接</string>
+    <string name="use_offline_login">请您使用离线登录模式</string>
+    <string name="no_user_code">未输入用户名！</string>
+    <string name="no_user_psd">未输入密码！</string>
+    <string name="get_data_false">获取数据失败，请重新获取数据</string>
+    <string name="unresolved_address">当前无法链接</string>
+    <!-- 主模块 -->
+    <!-- 通知模块 -->
+
+    <string name="notice_name">通知</string>
+    <string name="notice_noturgency">紧急程度</string>
+    <string name="notice_notDetail">公告内容</string>
+    <string name="notice_notImport">重要性</string>
+    <string name="notice_notTitle">公告标题</string>
+
+    <!-- 登陆页面 -->
+    <!-- 厅堂首页 -->
+    <string name="hall_first_cust_num">排队号码</string>
+    <!-- 客户营销 -->
+
+    <string name="cm_precision_marketing_production_summary_fund1" formatted="false">博时沪深300基金为股票型基金，成立于2003年8月26日，其投资范围是：股票资产比例95%以内，现金或者到期日在一年内的政府债券比例不低于5%。\n\n截止2011年9月30日，该基金三个月收益率为-9.09%,在394只股票型基金中排名305位。\n\n现任基金经理汤义峰,博士。2006年毕业于中国科学院学术与系统科学研究院。2008年6月加入博时基金管理有限公司，历任金融工程师、股票投资部数量化研究员、数量化研究员兼任博时特许价值股票基金、基金裕泽的基金经理助理。\n2009年5月任投资经理兼数量化研究员。现任博时裕富沪深300指数证券投资基金、博时特许价值股票型证券投资基金的基金经理(2010年3月12日至今)。\n\n现任基金经理张峰，博士。1988年先后在Haugen Financial System，花旗集团TIMCO资产管部、摩根士丹利投资公司、ASTEN INVESTMENT ADVISORS工作。2010年2月加入博时基金管理有限公司，现任股票投资部总经理兼任成长组投资总监。兼任博时沪深300指数基金经理(2010年10月11日至今)</string>
+    <!-- 产品中心 -->
+    <!-- 产品中心-理财产品 -->
+
+    <!-- 优惠活动 -->
+    <!-- 资讯 -->
+    <string name="customer_market_title">客户信息</string>
+    <string name="customer_info">客户基本信息</string>
+    <string name="cm_other_info1">签约信息</string>
+    <string name="cm_other_info2">管户信息</string>
+    <string name="bt_hold_server">持有的服务/理财</string>
+    <!-- 嘉讯财富锦囊 -->
+    <!-- 快捷链接 -->
+    <!-- 敏捷营销 -->
+    <!-- TextView 文字   YWJ -->
+    <string name="tv_optimal_recommend_products_no">序号</string>
+    <string name="tv_optimal_recommend_products_name">产品名称</string>
+    <string name="tv_optimal_recommend_products_introduction">话术</string>
+    <string name="et_customer_contract_server">客户签约服务</string>
+    <string name="et_customer_hold_product">资产及负债信息(单位:%)</string>
+    <string name="et_dialog_cause_title">原因</string>
+
+    <!-- 登录返回标志 -->
+
+    <!-- 客户基本信息 -->
+
+    <string name="tv_customer_birthday">出生日期:</string>
+    <string name="tv_customer_age">年龄:</string>
+    <string name="tv_service">种服务</string>
+    <string name="tv_cm_sex">性别:</string>
+    <string name="tv_cm_mobiletel">电话:</string>
+    <string name="tv_cm_haddr">住址:</string>
+
+    <!-- 客户基本信息:签约和管户客户 -->
+    <string name="tv_cm_staffname1">签约客户经理姓名:</string>
+    <string name="tv_cm_mphone1">签约客户经理手机:</string>
+    <string name="tv_cm_updata">数据更新日期:</string>
+    <string name="tv_cm_orgnamezh1">签约支行:</string>
+    <string name="tv_cm_orgname1">签约网点:</string>
+    <string name="tv_cm_orgid1">签约pcrm机构号:</string>
+    <string name="tv_cm_maporg1">签约ABIS机构号:</string>
+    <string name="tv_cm_staffname2">管户客户经理姓名:</string>
+    <string name="tv_cm_mphone2">管户客户经理手机:</string>
+    <string name="tv_cm_orgnamezh2">管户支行:</string>
+    <string name="tv_cm_orgname2">管户网点:</string>
+    <string name="tv_cm_orgid2">管户pcrm机构号:</string>
+    <string name="tv_cm_maporg2">管户ABIS机构号:</string>
+
+    <!-- 客户服务 -->
+
+    <!-- 客户级别 -->
+    <string name="tv_cm_goup01">客户评价</string>
+    <string name="tv_cm_cardtype">最高贵宾卡类型</string>
+    <string name="tv_cm_rank">客户级别</string>
+    <!-- 客户存款类型 -->
+    <string name="tv_cm_goup02">金融资产</string>
+    <string name="tv_cm_maxdpsttm">最高存款金额</string>
+    <string name="tv_cm_maxloantm">最高贷款金额</string>
+    <string name="tv_cm_fayavg">年日均金融资产</string>
+    <string name="tv_cm_famavg">月日均金融资产</string>
+    <string name="tv_cm_fachgsenday">七天金融资产变动情况</string>
+    <string name="tv_cm_fachgmonaul">月金融资产变动情况</string>
+    <string name="tv_cm_curdpst">当前活期存款</string>
+    <!-- 客户存款资产余额 -->
+    <string name="tv_cm_goup03">渠道信息</string>
+    <string name="tv_cm_dpst">存款余额</string>
+    <string name="tv_cm_loan">贷款余额</string>
+    <string name="tv_cm_fund">基金余额</string>
+    <string name="tv_cm_debt">国债余额</string>
+    <string name="tv_cm_fp">理财余额</string>
+    <string name="tv_cm_fex">外汇宝</string>
+    <string name="tv_cm_isrc">投资型保险</string>
+    <string name="tv_cm_third">三方存款余额</string>
+    <string name="tv_cm_futures">银期转账</string>
+    <string name="tv_cm_gold">黄金</string>
+    <string name="tv_cm_null">无资产</string>
+    <!--
+         客户信息说明
+    <string name="tv_cm_infor_didtp">110001\b110002为身份证</string>
+    <string name="tv_cm_infor_rsn">DP存款达标LN贷款达标IV投资达标 MN手工增加（如果同时满足条件，优先记录前面的原因）</string>
+    <string name="tv_cm_infor_cardtype">NULL无贵宾卡 5金卡 6白金卡 9钻石卡（只记录客户拥有的卡状态正常的卡种）</string>
+    <string name="tv_cm_infor_cardid">NULL无贵宾卡 </string>
+    <string name="tv_cm_infor_rank1">TG目标客户(不包含可指派) </string>
+    <string name="tv_cm_infor_rank2">CA可指派客户(不含贵宾客户) </string>
+    <string name="tv_cm_infor_rank3">03金卡 </string>
+    <string name="tv_cm_infor_rank4">04白金卡 </string>
+    <string name="tv_cm_infor_rank5">05钻石卡 </string>
+    <string name="tv_cm_infor_rank_null">普通客户 </string>
+    <string name="tv_cm_infor_curdpst">此数据为分行使用pcrm数据统计 </string>
+    <string name="tv_cm_infor_dpst_null">从未开通过此产品 </string>
+    <string name="tv_cm_infor_1">有</string>
+    <string name="tv_cm_infor_null">无</string>
+    <string name="tv_cm_infor_credit2">显示客户共有几张贷记卡</string>
+    <string name="tv_cm_infor_third">显示为三方存款余额，股票现值不计入</string>
+    <string name="tv_cm_infor_third2">仅显示此客户排队网点的管户经理信息；若此客户的管户经理不在排队网点，则不显示</string>
+    <string name="tv_cm_infor_gold">显示为余额</string>
+    <string name="tv_cm_infor_qyghu">仅显示此客户排队网点的管户经理信息；若此客户的管户经理不在排队网点，则不显示</string>
+
+
+
+
+
+    -->
+
+
+    <!-- 客户业务类型 -->
+    <string name="tv_cm_credit">贷记卡</string>
+    <string name="tv_cm_online">网上银行</string>
+    <string name="tv_cm_mobiel">手机银行</string>
+    <string name="tv_cm_phone">电话银行</string>
+    <string name="tv_cm_sms">消息服务</string>
+    <string name="tv_cm_trsf">转账电话</string>
+    <!-- 产品中心 -->
+    <!-- 理财计算器 -->
+
+    <string name="auxiliary_huandai2">提前还款日期必须在最后一次还\n款日期之前，请重新调整还款日期。</string>
+    <!-- pull_refresh_string -->
+
+    <!-- 自动更新 -->
+
+    <string name="done_label" msgid="7007948707597430919">"完成"</string>
+    <string name="hour_picker_description" msgid="7586639618712934060">"小时转盘"</string>
+    <string name="minute_picker_description" msgid="6024811202872705251">"分钟转盘"</string>
+    <string name="select_hours" msgid="7651068754188418859">"选择小时"</string>
+    <string name="select_minutes" msgid="8327182090226828481">"选择分钟"</string>
+    <string name="day_picker_description" msgid="3968620852217927702">"按月份划分的日期网格"</string>
+    <string name="year_picker_description" msgid="6963340404644587098">"年份列表"</string>
+    <string name="select_day" msgid="3973338219107019769">"选择月份和日期"</string>
+    <string name="select_year" msgid="2603330600102539372">"选择年份"</string>
+   <string name="item_is_selected" msgid="2674929164900463786">"已选择 </string>
+    <string name="deleted_key" msgid="6908431551612331381">"已删除 </string>
+   
+    <string name="sans_serif" translatable="false">sans-serif</string>
+    <string name="day_of_week_label_typeface" translatable="false">sans-serif</string>
+    <string name="time_placeholder" translatable="false">--</string>
+    <string name="time_separator" translatable="false">:</string>
+    <string name="radial_numbers_typeface" translatable="false">sans-serif</string>
+
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新&#8230;</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="loading">正在加载&#8230;</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+
+
+    <!--关键成员信息-->
+    <string name="customer_create_doc_keymember_title">关键成员信息</string>
+    <string name="customer_create_doc_keymember_column1">关键成员姓名</string>
+    <string name="customer_create_doc_keymember_column2">关系类型</string>
+    <string name="customer_create_doc_keymember_column3">证件类型</string>
+    <string name="customer_create_doc_keymember_column4">证件号码</string>
+    <string name="customer_create_doc_keymember_column5">联系电话</string>
+    <string name="customer_create_doc_keymember_column6">关键人情况</string>
+    <string name="customer_create_doc_keymember_column7">任职时间</string>
+    <string name="customer_create_doc_keymember_column8">从业时间</string>
+    <!--集团关系-->
+    <string name="customer_create_doc_corelation_title">集团关系</string>
+    <!--对外担保信息-->
+    <string name="customer_create_doc_externalguarantee_title">对外担保信息</string>
+    <!--其他方联方情况-->
+    <string name="customer_create_doc_other_title">其它关联方情况</string>
+
+    <string name="action_settings">Return</string>
+
+    <string name="queryByAnything">请输入客户经理名字</string>
+
+
+    <!---->
+    <string name="title_activity_study">StudyActivity</string>
+    <string name="title_activity_rate">RateActivity</string>
+
+
+    <string name="tab_warn">提醒</string>
+    <string name="tab_service">服务</string>
+    <string name="tab_report">报表</string>
+    <string name="tab_mine">我的</string>
+
+    <!---->
+    <string name="customerType">客户类型</string>
+    <string name="customerName">客户姓名</string>
+    <string name="cardType">证件类型</string>
+    <string name="cardNumber">证件号码</string>
+    <string name="telephoneNumber">手机号码</string>
+    <string name="businessType">业务品种</string>
+    <string name="loanAfter">贷款余额</string>
+    <string name="overdueAmount">逾期金额</string>
+    <string name="overduePeriods">逾期期数</string>
+    <string name="issuingDate">发放日期</string>
+    <string name="dueDate">到期日期</string>
+    <string name="interval">区间</string>
+    <string name="intervalText">一</string>
+    <string name="classification">五级分类</string>
+    <string name="cardNumber_item">证件号码：</string>
+    <string name="telephoneNumber_item">手机号码：</string>
+    <string name="certName_item">证件类型：</string>
+    <string name="certID_item">证件号码：</string>
+    <string name="customerType_item">客户类型：</string>
+    <string name="customerName_item">客户姓名：</string>
+    <string name="level">评级等级</string>
+    <string name="hold">请输入</string>
+    <string name="name">name</string>
+    <string name="age">age</string>
+    <string name="back_left">&lt;</string>
+    <string name="back_right">返回</string>
+    <string name="customer_list">客户查询结果</string>
+    <string name="customer_details">客户查询详情</string>
+    <string name="business_list">业务查询结果</string>
+    <string name="business_details">业务查询详情</string>
+    <string name="relationName">与该客户关系：</string>
+    <string name="userName">登记人：</string>
+    <string name="orgName">登记机构：</string>
+    <string name="inputDate">输入日期：</string>
+    <string name="updateDate">更新日：</string>
+    <string name="telephone">联系电话：</string>
+    <string name="officeTime">任职时间：</string>
+    <string name="practitionerTime">从业时间：</string>
+    <!--loanafter-->
+    <string name="SerialNo_item">合同流水号：</string>
+    <string name="BusinessType_item">业务品种编号：</string>
+    <string name="ArtificialNo_item">合同编号：</string>
+    <string name="OccurTypeName_item">发生类型：</string>
+    <string name="BusinessTypeName_item">业务品种名：</string>
+    <string name="Currency_item">币种：</string>
+    <string name="BusinessSum_item">合同金额：</string>
+    <string name="ActualPutOutSum_item">实际发放金额：</string>
+    <string name="BailRatio_item">保证金比例(%)：</string>
+    <string name="Balance_item">余额：</string>
+    <string name="OverdueBalance_item">逾期金额：</string>
+    <string name="PutOutDate_item">起始日期：</string>
+    <string name="Maturity_item">到期日期：</string>
+    <string name="OperateOrgName_item">经办机构：</string>
+
+    <!--business-->
+    <string name="customer_type">客户类型</string>
+    <string name="customer_name">客户姓名</string>
+    <string name="document_type">证件类型</string>
+    <string name="document_number">证件号码</string>
+    <string name="phone_number">手机号码</string>
+    <string name="business_varieties">业务品种</string>
+    <string name="loan_balance">贷款余额</string>
+    <string name="overdue_amount">逾期金额</string>
+    <string name="overdue_periods">逾期期数</string>
+    <string name="issuing_date">发放日期</string>
+    <string name="due_date">到期日期</string>
+    <string name="interval_text">一</string>
+
+    <string name="s_customer">客户</string>
+    <string name="s_bussiness">业务</string>
+    <string name="s_customerProfile">客户建档</string>
+    <string name="s_mineProfile">我的建档</string>
+    <string name="s_customerDistribution">客户分布</string>
+    <string name="s_customerData">客户数据</string>
+    <string name="s_customerSearch">客户查询</string>
+    <string name="s_serviceRecord">服务记录</string>
+    <string name="s_hallManagement">厅堂管理</string>
+    <string name="s_promotions">优惠活动</string>
+    <string name="s_hotProducts">热销产品</string>
+    <string name="s_creditIncoming">信用卡进件</string>
+    <string name="s_creditSearch">信贷查询</string>
+    <string name="s_interestRateCalculation">利率测算</string>
+    <string name="s_interestRatePricing">利率定价</string>
+    <string name="s_study">学习园地</string>
+    <string name="s_approval">审批</string>
+    <string name="s_outletsMap">网点地图</string>
+    <string name="s_checkIn">签到</string>
+    <string name="s_checkInRecord">签到记录</string>
+</resources>
