@@ -142,6 +142,7 @@ MERGED from [com.jaeger.statusbarutil:status_bar-library:1.4.0] D:\dysen\Android
 MERGED from [com.android.support:design:25.3.1] C:\Users\dysen\.android\build-cache\6ea839e9a90426e0b0498f4bc13875d09eaa3849\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.1] C:\Users\dysen\.android\build-cache\914e4c19d34e056d5ce283bf0d6b40ed96dac9ac\output\AndroidManifest.xml:26:5-20
 MERGED from [com.github.pinguo-zhouwei:popwindow-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\popwindow-library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-15:19
+MERGED from [com.wuxiaolong.pullloadmorerecyclerview:pull_loadmore-library:1.1.2] D:\dysen\Android\AS_Test\nx\releas\Credit\pull_loadmore-library\build\intermediates\bundles\default\AndroidManifest.xml:11:5-47
 MERGED from [org.kymjs.kjframe:kjframe:2.6] C:\Users\dysen\.android\build-cache\cc34a6782518797a42e1a910d9159d34050cf213\output\AndroidManifest.xml:11:5-47
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dysen\.android\build-cache\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\dysen\.android\build-cache\d00f2a2c26bb4da14fd21efe140242fb21ef54a5\output\AndroidManifest.xml:29:5-20
@@ -654,6 +655,7 @@ ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\Androi
 		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:388:13-48
 uses-sdk
 INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\dysen\.android\build-cache\fce8751aeed9d033a09e5810e01e0c2206fec2af\output\AndroidManifest.xml:18:5-42
 MERGED from [Credit:ocr-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ocr-library\build\intermediates\bundles\default\AndroidManifest.xml:5:5-7:41
 MERGED from [Credit:ble-lib:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ble-lib\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [Credit:baseitem-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\baseitem-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
@@ -668,8 +670,9 @@ MERGED from [com.jaeger.statusbarutil:status_bar-library:1.4.0] D:\dysen\Android
 MERGED from [com.android.support:design:25.3.1] C:\Users\dysen\.android\build-cache\6ea839e9a90426e0b0498f4bc13875d09eaa3849\output\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:transition:25.3.1] C:\Users\dysen\.android\build-cache\914e4c19d34e056d5ce283bf0d6b40ed96dac9ac\output\AndroidManifest.xml:20:5-44
 MERGED from [com.github.pinguo-zhouwei:popwindow-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\popwindow-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
-MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\dysen\.android\build-cache\bf8eff99141f4d4b4d288b07f0f969b548441fda\output\AndroidManifest.xml:20:5-43
 MERGED from [Credit:expandable-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\expandable-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.wuxiaolong.pullloadmorerecyclerview:pull_loadmore-library:1.1.2] D:\dysen\Android\AS_Test\nx\releas\Credit\pull_loadmore-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\dysen\.android\build-cache\bf8eff99141f4d4b4d288b07f0f969b548441fda\output\AndroidManifest.xml:20:5-43
 MERGED from [org.kymjs.kjframe:kjframe:2.6] C:\Users\dysen\.android\build-cache\cc34a6782518797a42e1a910d9159d34050cf213\output\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\dysen\.android\build-cache\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.1] C:\Users\dysen\.android\build-cache\d00f2a2c26bb4da14fd21efe140242fb21ef54a5\output\AndroidManifest.xml:21:5-23:54

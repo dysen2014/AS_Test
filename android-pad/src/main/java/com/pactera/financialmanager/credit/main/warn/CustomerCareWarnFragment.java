@@ -112,10 +112,10 @@ public class CustomerCareWarnFragment extends ParentFragment implements BaseRefr
     private List<String> mListTop = new ArrayList<>();
     private List<List<Object>> mListData = new ArrayList<>();
     private HResponse response;
-    private List<WarnCrmParamBean> warnCrmParamList;
-    private List<WarnCrmInfoBean.CareInfoBean.KHSR> warnCrmInfoListKHSR;
-    private List<WarnCrmInfoBean.CareInfoBean.kHSJJ> warnCrmInfoListKHSJJ;
-    private List<BeanHeader> warnCrmInfoHeaderList;
+    private List<WarnCrmParamBean> warnCrmParamList = new ArrayList<>();
+    private List<WarnCrmInfoBean.CareInfoBean.KHSR> warnCrmInfoListKHSR = new ArrayList<>();
+    private List<WarnCrmInfoBean.CareInfoBean.kHSJJ> warnCrmInfoListKHSJJ = new ArrayList<>();
+    private List<BeanHeader> warnCrmInfoHeaderList = new ArrayList<>();
 
     private int index1 = 1;
     private int itemIndex = 0;
@@ -147,6 +147,7 @@ public class CustomerCareWarnFragment extends ParentFragment implements BaseRefr
     };
     private TextView textView;
     private String itenName0, itenName1;
+    private String count;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -202,6 +203,7 @@ public class CustomerCareWarnFragment extends ParentFragment implements BaseRefr
                     if (warnCrmParamList.size() == 2) {
                         commonTxt0.setVisibility(View.VISIBLE);
                         commonTxt1.setVisibility(View.VISIBLE);
+                        count = warnCrmParamList.get(itemIndex).getRows();
                         commonTxt0.setText(warnCrmParamList.get(0).getTITLENAME() + "(" + warnCrmParamList.get(0).getRows() + ")");
                         commonTxt1.setText(warnCrmParamList.get(1).getTITLENAME() + "(" + warnCrmParamList.get(1).getRows() + ")");
                         itenName0 = warnCrmParamList.get(0).getSUBTYPE();
@@ -418,7 +420,7 @@ public class CustomerCareWarnFragment extends ParentFragment implements BaseRefr
     @Override
     public void loadMore() {
 
-        if (mListLeft.size() < Integer.parseInt(warnCrmParamList.get(itemIndex).getRows()) - 1) {
+        if (mListLeft.size() < Integer.parseInt(count)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

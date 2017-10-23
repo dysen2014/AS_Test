@@ -122,6 +122,7 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
         }
     };
 
+    private int count;
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -137,6 +138,7 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
 //
 //                    afterTheLoanList.add(list.get(i));
 //                }
+                count = afterTheLoanList.size();
                 afterTheLoanList = parseList(bundle.getString("data"));
                 if (afterTheLoanListHeader.size() > 0)
                     initView();
@@ -270,7 +272,7 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
 
     @Override
     public void loadMore() {
-//        if (mListLeft.size() < Integer.parseInt(afterTheLoanList.get(0).getCount())) {
+        if (mListLeft.size() < count) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -280,10 +282,10 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
                     ptrLayout.finishLoadMore();
                 }
             }, 2000);
-//        }else {
-//            toast("已全部加载完毕！");
-//            ptrLayout.finishLoadMore();
-//        }
+        }else {
+            toast("已全部加载完毕！");
+            ptrLayout.finishLoadMore();
+        }
     }
 
     private void clearList() {

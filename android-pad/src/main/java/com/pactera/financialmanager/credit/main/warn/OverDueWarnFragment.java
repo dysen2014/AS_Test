@@ -13,7 +13,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -39,7 +38,6 @@ import com.pactera.financialmanager.credit.common.bean.http.BeOverdue;
 import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.bean.http.OverDueReminders;
 import com.pactera.financialmanager.credit.common.bean.http.OverdueCustomer;
-import com.pactera.financialmanager.credit.common.views.NoscrollListView;
 import com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView;
 import com.pactera.financialmanager.ui.ParentFragment;
 
@@ -109,6 +107,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
     private int index1, index2;
     private boolean overDueFlag;
     private static String mItemNo;
+    private int itemIndex = 0;
 
     public OverDueWarnFragment() {
         // Required empty public constructor
@@ -135,6 +134,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
     List<OverdueCustomer> overdueCustomersList = new ArrayList<>();
     List<BeanHeader> overdueCustomersListHeader = new ArrayList<>();
 
+    private String count;
     Handler handler = new Handler() {
 
         @Override
@@ -161,6 +161,8 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
 //                    setBadgeView(commonTxt2, beOverdueList.get(2).getCount());
 //                    setBadgeView(commonTxt3, beOverdueList.get(3).getCount());
                     commonTxt0.setVisibility(View.VISIBLE);
+
+                    count = beOverdueList.get(itemIndex).getCount();
                     commonTxt0.setText(topName.get(0) + "(" + beOverdueList.get(0).getCount() + ")");
                     commonTxt1.setVisibility(View.VISIBLE);
                     commonTxt1.setText(topName.get(1) + "(" + beOverdueList.get(1).getCount() + ")");
@@ -367,7 +369,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
 
     @Override
     public void loadMore() {
-        if (mListLeft.size() < Integer.parseInt(beOverdueList.get(0).getCount())) {
+        if (mListLeft.size() < Integer.parseInt(count)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -424,18 +426,19 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.common_txt_0:
-                setSelectView(commonTxt0, 0);
+                itemIndex = 0;
                 break;
             case R.id.common_txt_1:
-                setSelectView(commonTxt1, 1);
+                itemIndex = 1;
                 break;
             case R.id.common_txt_2:
-                setSelectView(commonTxt2, 2);
+                itemIndex = 2;
                 break;
             case R.id.common_txt_3:
-                setSelectView(commonTxt3, 3);
+                itemIndex = 3;
                 break;
         }
+        setSelectView(commonTxt3, itemIndex);
     }
 
     private void setSelectView(TextView commonTxt0, int i) {

@@ -11,5 +11,6 @@
     <include
         layout="@layout/common_two_rbtn"/>
 
-    <include layout="common_recyclerview_layout"/>
+    <include
+        layout="@layout/common_pull_loadmore_layout"/>
 </LinearLayout>

@@ -212,6 +212,10 @@
         "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\common_rlv_layout.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\layout\\common_rlv_layout.xml"
+    },
+    {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\sch_cm_info03_griditem.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\layout\\sch_cm_info03_griditem.xml"
     },
@@ -246,6 +250,10 @@
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\time_picker_dialog.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\layout\\time_picker_dialog.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\footer_layout.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\pull_loadmore-library\\build\\intermediates\\bundles\\default\\res\\layout\\footer_layout.xml"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\popwindow_business_otherlicai.xml",
@@ -768,10 +776,6 @@
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\layout\\fragment_personitemprodate.xml"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\common_recyclerview_layout.xml",
-        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\layout\\common_recyclerview_layout.xml"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\popwindow_business_otherdeposit.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\layout\\popwindow_business_otherdeposit.xml"
     },
@@ -858,6 +862,10 @@
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
         "source": "C:\\Users\\dysen\\.android\\build-cache\\e369a2f65f30754420cb04f2b0c8e54ef6aaf85e\\output\\res\\layout\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\common_pull_loadmore_layout.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\layout\\common_pull_loadmore_layout.xml"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\item_fiveitem.xml",
@@ -966,6 +974,10 @@
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\popwindow_homeinfo_newcontacts.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\layout\\popwindow_homeinfo_newcontacts.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\pull_loadmore_layout.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\pull_loadmore-library\\build\\intermediates\\bundles\\default\\res\\layout\\pull_loadmore_layout.xml"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\cm.xml",

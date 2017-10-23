@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -33,12 +32,9 @@ import com.pactera.financialmanager.credit.common.bean.InitData;
 import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.bean.warn.WarnCrmInfoBean;
 import com.pactera.financialmanager.credit.common.bean.warn.WarnCrmParamBean;
-import com.pactera.financialmanager.credit.common.views.NoscrollListView;
 import com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView;
 import com.pactera.financialmanager.ui.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
-import com.pactera.financialmanager.ui.service.HConnection;
-import com.pactera.financialmanager.ui.service.HResponse;
 import com.pactera.financialmanager.util.Tool;
 
 import org.json.JSONArray;
@@ -152,6 +148,7 @@ public class CustomerTransactionWarnFragment extends ParentFragment implements B
     };
     private TextView textView;
     private String itenName0, itenName1, itenName2, itenName3;
+    private String count;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -212,6 +209,8 @@ public class CustomerTransactionWarnFragment extends ParentFragment implements B
 //                        setBadgeView(commonTxt1, warnCrmParamList.get(1).getRows());
 //                        setBadgeView(commonTxt2, warnCrmParamList.get(2).getRows());
 //                        setBadgeView(commonTxt3, warnCrmParamList.get(3).getRows());
+
+                        count = warnCrmParamList.get(itemIndex).getRows();
                         commonTxt0.setText(warnCrmParamList.get(0).getTITLENAME()+"("+ warnCrmParamList.get(0).getRows()+")");
                         commonTxt1.setText(warnCrmParamList.get(1).getTITLENAME()+"("+warnCrmParamList.get(1).getRows()+")");
                         commonTxt2.setText(warnCrmParamList.get(2).getTITLENAME()+"("+warnCrmParamList.get(2).getRows()+")");
@@ -511,7 +510,7 @@ public class CustomerTransactionWarnFragment extends ParentFragment implements B
 
     @Override
     public void loadMore() {
-        if (mListLeft.size() < Integer.parseInt(warnCrmParamList.get(itemIndex).getRows())-1) {
+        if (mListLeft.size() < Integer.parseInt(count)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

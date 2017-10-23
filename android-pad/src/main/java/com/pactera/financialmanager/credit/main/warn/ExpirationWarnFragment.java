@@ -11,12 +11,10 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.utils.HttpThread;
-import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
 import com.dysen.common_res.common.views.TextViewMarquee;
@@ -36,7 +34,6 @@ import com.pactera.financialmanager.credit.common.bean.InitData;
 import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.bean.http.DailyReminder;
 import com.pactera.financialmanager.credit.common.bean.http.ExpirationReminder;
-import com.pactera.financialmanager.credit.common.views.NoscrollListView;
 import com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView;
 import com.pactera.financialmanager.ui.ParentFragment;
 
@@ -140,6 +137,7 @@ public class ExpirationWarnFragment extends ParentFragment implements BaseRefres
     };
 
 
+    private int count;
     Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -155,6 +153,7 @@ public class ExpirationWarnFragment extends ParentFragment implements BaseRefres
 //
 //                    expirationReminderList.add(list.get(i));
 //                }
+                count = expirationReminderList.size();
                 expirationReminderList = parseList(bundle.getString("data"));
                 if (expirationReminderListHeader.size() > 0)
                     initView();
@@ -292,7 +291,7 @@ public class ExpirationWarnFragment extends ParentFragment implements BaseRefres
 
     @Override
     public void loadMore() {
-//        if (mListLeft.size() < Integer.parseInt(expirationReminderList.get(0).getCount())) {
+        if (mListLeft.size() < count) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -302,10 +301,10 @@ public class ExpirationWarnFragment extends ParentFragment implements BaseRefres
                     ptrLayout.finishLoadMore();
                 }
             }, 2000);
-//        }else {
-//            toast("已全部加载完毕！");
-//            ptrLayout.finishLoadMore();
-//        }
+        }else {
+            toast("已全部加载完毕！");
+            ptrLayout.finishLoadMore();
+        }
     }
     private void clearList() {
 

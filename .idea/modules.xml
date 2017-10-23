@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/kjframe-library/kjframe-library.iml" filepath="$PROJECT_DIR$/kjframe-library/kjframe-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/ocr-library/ocr-library.iml" filepath="$PROJECT_DIR$/ocr-library/ocr-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/popwindow-library/popwindow-library.iml" filepath="$PROJECT_DIR$/popwindow-library/popwindow-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pull_loadmore-library/pull_loadmore-library.iml" filepath="$PROJECT_DIR$/pull_loadmore-library/pull_loadmore-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/search/search.iml" filepath="$PROJECT_DIR$/search/search.iml" />
       <module fileurl="file://$PROJECT_DIR$/sms-library/sms-library.iml" filepath="$PROJECT_DIR$/sms-library/sms-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/status_bar-library/status_bar-library.iml" filepath="$PROJECT_DIR$/status_bar-library/status_bar-library.iml" />

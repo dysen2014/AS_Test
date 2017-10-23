@@ -5,9 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.test.espresso.core.deps.guava.reflect.TypeToken;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.RadioButton;
@@ -18,9 +15,10 @@ import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
+import com.dysen.common_res.common.views.uber.UberProgressView;
+import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.jwenfeng.library.pulltorefresh.BaseRefreshListener;
 import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
 
 import org.json.JSONException;
@@ -33,7 +31,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ApprovalActivity extends ParentActivity implements BaseRefreshListener {
+public class ApprovalActivity extends ParentActivity implements PullLoadMoreRecyclerView.PullLoadMoreListener{
 
     @Bind(R.id.txt_title)
     TextView txtTitle;
@@ -41,13 +39,19 @@ public class ApprovalActivity extends ParentActivity implements BaseRefreshListe
     RadioButton rbtn0;
     @Bind(R.id.rbtn_1)
     RadioButton rbtn1;
-    @Bind(R.id.rlv_data)
-    RecyclerView rlvData;
+//    @Bind(R.id.rlv_data)
+//    RecyclerView rlvData;
     @Bind(R.id.ptr_layout)
     PullToRefreshLayout ptrLayout;
 
     boolean finishedFlag = false;
     String FinishedFlag;
+    @Bind(R.id.tv_hide_data)
+    TextView tvHideData;
+    @Bind(R.id.uber_pgsview)
+    UberProgressView uberPgsview;
+    @Bind(R.id.pull_load_more)
+    PullLoadMoreRecyclerView pullLoadMore;
 
     private List<ApprovalBean.ExamineBean> listData = new ArrayList<>();
 
@@ -57,24 +61,31 @@ public class ApprovalActivity extends ParentActivity implements BaseRefreshListe
             super.handleMessage(msg);
 
             if (msg.what == -1) {
-                toast("请求失败！");
+//                toast("请求失败！");
+                tvHideData.setText("请求错误！");
             }
-
+            uberPgsview.setVisibility(View.INVISIBLE);
             if (msg.obj != null) {
                 try {
                     listData = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
-                    if (listData != null && listData.size() > 0) {
-                        LogUtils.d(listData.size() + "---------" + listData.get(0).getCustomerName());
                         initData(listData);
-                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+            } else {
+                tvHideData.setVisibility(View.VISIBLE);
             }
         }
     };
 
     private void initData(List<ApprovalBean.ExamineBean> listData) {
+        if (listData != null && listData.size() > 0) {
+            tvHideData.setVisibility(View.INVISIBLE);
+        }else {
+            tvHideData.setVisibility(View.VISIBLE);
+            listData.clear();
+        }
         BusinessApprovalActivity.setData(listData);
         approvalAdapter = new ApprovalAdapter(this, listData, new OnItemClickCallback<Integer>() {
             @Override
@@ -89,7 +100,7 @@ public class ApprovalActivity extends ParentActivity implements BaseRefreshListe
 
             }
         });
-        rlvData.setAdapter(approvalAdapter);
+        pullLoadMore.setAdapter(approvalAdapter);
     }
 
     private ApprovalAdapter approvalAdapter;
@@ -134,9 +145,9 @@ public class ApprovalActivity extends ParentActivity implements BaseRefreshListe
 
         rbtn0.setText("待审批");
         rbtn1.setText("已审批");
-        LinearLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        rlvData.setLayoutManager(layoutManager);
-        ptrLayout.setRefreshListener(this);
+        pullLoadMore.setGridLayout(2);
+        pullLoadMore.setOnPullLoadMoreListener(this);
+//        ptrLayout.setRefreshListener(this);
     }
 
     @OnClick({R.id.rbtn_0, R.id.rbtn_1})
@@ -149,11 +160,16 @@ public class ApprovalActivity extends ParentActivity implements BaseRefreshListe
                 finishedFlag = true;
                 break;
         }
+        curPage = 1;
         sendRequest();
     }
 
+    private void clearList() {
+        listData.clear();
+    }
+
     @Override
-    public void refresh() {
+    public void onRefresh() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -161,26 +177,22 @@ public class ApprovalActivity extends ParentActivity implements BaseRefreshListe
                 clearList();
                 sendRequest();
                 // 结束刷新
-                ptrLayout.finishRefresh();
+                pullLoadMore.setPullLoadMoreCompleted();
             }
         }, 2000);
     }
 
     @Override
-    public void loadMore() {
+    public void onLoadMore() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                curPage ++;
+                curPage++;
                 clearList();
                 sendRequest();
                 // 结束刷新
-                ptrLayout.finishLoadMore();
+                pullLoadMore.setPullLoadMoreCompleted();
             }
         }, 2000);
-    }
-
-    private void clearList() {
-        listData.clear();
     }
 }

@@ -1171,6 +1171,7 @@
     <string msgid="2674929164900463786" name="item_is_selected">"已选择 </string>
     <string name="level">评级等级</string>
     <string name="load_fail">加载失败</string>
+    <string name="load_more_text">正在加载...</string>
     <string name="load_succeed">加载成功</string>
     <string name="loading">正在加载…</string>
     <string name="loanAfter">贷款余额</string>

@@ -11,8 +11,6 @@ import android.util.Log;
 
 import java.net.NetworkInterface;
 
-import static com.tencent.bugly.crashreport.inner.InnerAPI.context;
-
 public class GetDeviceSerialNumberUtil {
 
     /**
@@ -127,9 +125,7 @@ public class GetDeviceSerialNumberUtil {
      * @return
      */
     public static String getSerialNumber() {
-        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-            return "";
-        }
+
         return android.os.Build.SERIAL;
     }
 

@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -33,7 +32,6 @@ import com.pactera.financialmanager.credit.common.bean.InitData;
 import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.bean.warn.WarnCrmInfoBean;
 import com.pactera.financialmanager.credit.common.bean.warn.WarnCrmParamBean;
-import com.pactera.financialmanager.credit.common.views.NoscrollListView;
 import com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView;
 import com.pactera.financialmanager.ui.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
@@ -148,6 +146,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
     };
     private TextView textView;
     private String itenName0, itenName1;
+    private String count;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -204,6 +203,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
                     if (warnCrmParamList.size() == 2) {
                         commonTxt0.setVisibility(View.VISIBLE);
                         commonTxt1.setVisibility(View.VISIBLE);
+                        count = warnCrmParamList.get(itemIndex).getRows();
                         commonTxt0.setText(warnCrmParamList.get(0).getTITLENAME()+"("+ warnCrmParamList.get(0).getRows()+")");
                         commonTxt1.setText(warnCrmParamList.get(1).getTITLENAME()+"("+ warnCrmParamList.get(1).getRows()+")");
 //                        setBadgeView(commonTxt0, warnCrmParamList.get(0).getRows());
@@ -409,6 +409,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
                 break;
         }
         textView = (TextView) view;
+        count = warnCrmParamList.get(itemIndex).getRows();
         setSelectView((TextView) view, itemIndex, itemIndexType);
     }
 
@@ -430,7 +431,8 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
     @Override
     public void loadMore() {
 
-        if (mListLeft.size() < Integer.parseInt(warnCrmParamList.get(itemIndex).getRows())-1) {
+        LogUtils.v("mListData="+mListData.size()+"\tcount="+count+"\tmListLeft="+mListLeft.size());
+        if (mListLeft.size() < Integer.parseInt(count)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

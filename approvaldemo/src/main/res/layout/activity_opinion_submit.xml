@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dysen.approvaldemo.OpinionSubmitActivity"
+    android:gravity="center"
     android:orientation="vertical"
-    android:gravity="center">
+    tools:context="com.dysen.approvaldemo.OpinionSubmitActivity">
 
     <include
         layout="@layout/common_title_layout"/>
@@ -15,21 +14,24 @@
     <LinearLayout
         android:layout_width="800dp"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_margin="8dp"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="18sp"
-            android:text="意见选择列表："/>
+            android:text="意见选择列表："
+            android:textSize="18sp"/>
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rlv_data"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1">
+
+            <include
+                layout="@layout/common_pull_loadmore_layout"/>
+        </LinearLayout>
 
     </LinearLayout>
 

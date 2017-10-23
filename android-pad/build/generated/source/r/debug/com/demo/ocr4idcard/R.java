@@ -67,7 +67,7 @@ public final class R {
         public static final int white = 0x7f0c0173;
     }
     public static final class dimen {
-        public static final int activity_horizontal_margin = 0x7f080056;
+        public static final int activity_horizontal_margin = 0x7f08001d;
         public static final int activity_vertical_margin = 0x7f080057;
     }
     public static final class drawable {
@@ -86,36 +86,36 @@ public final class R {
         public static final int imv_light_on = 0x7f020134;
     }
     public static final class id {
-        public static final int IDPIC = 0x7f0e0384;
-        public static final int action_settings = 0x7f0e08bc;
-        public static final int btn_back = 0x7f0e081e;
-        public static final int btn_get_idcard_photo = 0x7f0e082b;
-        public static final int btn_ok = 0x7f0e0366;
-        public static final int camera_view = 0x7f0e069b;
-        public static final int edit_address = 0x7f0e0822;
-        public static final int edit_create = 0x7f0e0826;
-        public static final int edit_date = 0x7f0e0824;
+        public static final int IDPIC = 0x7f0e0386;
+        public static final int action_settings = 0x7f0e08c4;
+        public static final int btn_back = 0x7f0e0826;
+        public static final int btn_get_idcard_photo = 0x7f0e0833;
+        public static final int btn_ok = 0x7f0e0368;
+        public static final int camera_view = 0x7f0e06a0;
+        public static final int edit_address = 0x7f0e082a;
+        public static final int edit_create = 0x7f0e082e;
+        public static final int edit_date = 0x7f0e082c;
         public static final int edit_id = 0x7f0e00b6;
-        public static final int edit_limit_date_end = 0x7f0e082a;
-        public static final int edit_limit_date_start = 0x7f0e0828;
+        public static final int edit_limit_date_end = 0x7f0e0832;
+        public static final int edit_limit_date_start = 0x7f0e0830;
         public static final int edit_name = 0x7f0e00b7;
-        public static final int edit_sex = 0x7f0e0823;
-        public static final int edit_type = 0x7f0e0821;
-        public static final int imv_back = 0x7f0e069d;
-        public static final int imv_light = 0x7f0e069e;
-        public static final int layout_create = 0x7f0e0825;
-        public static final int layout_limit_date_end = 0x7f0e0829;
-        public static final int layout_limit_date_start = 0x7f0e0827;
-        public static final int preview_view = 0x7f0e069a;
-        public static final int scllowview_read_idcard = 0x7f0e0820;
-        public static final int tv_title = 0x7f0e0367;
-        public static final int tv_userName = 0x7f0e081f;
-        public static final int txtMsg = 0x7f0e069c;
+        public static final int edit_sex = 0x7f0e082b;
+        public static final int edit_type = 0x7f0e0829;
+        public static final int imv_back = 0x7f0e06a2;
+        public static final int imv_light = 0x7f0e06a3;
+        public static final int layout_create = 0x7f0e082d;
+        public static final int layout_limit_date_end = 0x7f0e0831;
+        public static final int layout_limit_date_start = 0x7f0e082f;
+        public static final int preview_view = 0x7f0e069f;
+        public static final int scllowview_read_idcard = 0x7f0e0828;
+        public static final int tv_title = 0x7f0e0369;
+        public static final int tv_userName = 0x7f0e0827;
+        public static final int txtMsg = 0x7f0e06a1;
     }
     public static final class layout {
-        public static final int eidpic = 0x7f040093;
-        public static final int idcard_camera = 0x7f0400eb;
-        public static final int read_idcard_info_new = 0x7f040150;
+        public static final int eidpic = 0x7f040094;
+        public static final int idcard_camera = 0x7f0400ed;
+        public static final int read_idcard_info_new = 0x7f040153;
     }
     public static final class menu {
         public static final int main = 0x7f0f0000;

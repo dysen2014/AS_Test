@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
@@ -18,9 +16,12 @@ import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
+import com.dysen.common_res.common.views.uber.UberProgressView;
+import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
+import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
 import com.yinglan.alphatabs.AlphaTabView;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 import com.yinglan.alphatabs.OnTabChangedListner;
@@ -60,6 +61,12 @@ class BusinessApprovalActivity extends ParentActivity {
     RecyclerView rlvData;
     @Bind(R.id.btn_submit)
     Button btnSubmit;
+    @Bind(R.id.ptr_layout)
+    PullToRefreshLayout ptrLayout;
+    @Bind(R.id.tv_hide_data)
+    TextView tvHideData;
+    @Bind(R.id.uber_pgsview)
+    UberProgressView uberPgsview;
 
     AlphaTabView[] tabViews = new AlphaTabView[]{tab0, tab1, tab2, tab3, tab4};
     String[] tabNames = new String[]{"申请信息", "客户信息", "担保信息", "调查报告", "处理意见"};
@@ -68,6 +75,8 @@ class BusinessApprovalActivity extends ParentActivity {
     List<String> data = new ArrayList<>();
 
     private static List<ApprovalBean.ExamineBean> examineBeanList = new ArrayList<>();
+    @Bind(R.id.pull_load_more)
+    PullLoadMoreRecyclerView pullLoadMore;
     private List<ApprovalBean.ApplyInfoBean> listData = new ArrayList<>();
     private ApprovalBusinessAdapter approvalBusinessAdapter;
 
@@ -78,14 +87,16 @@ class BusinessApprovalActivity extends ParentActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            if (msg.what == -1) {
+            uberPgsview.setVisibility(View.INVISIBLE);
 
-            } else {
-                try {
+            try {
+                if (msg.obj != null) {
                     initData(msg.what, msg.obj.toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                } else {
+                    tvHideData.setVisibility(View.VISIBLE);
                 }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
     };
@@ -95,28 +106,31 @@ class BusinessApprovalActivity extends ParentActivity {
     private void initData(int tabIndex, String jsonStr) throws JSONException {
         switch (tabIndex) {
 
+            case -1:
+                tvHideData.setText("请求错误！");
+                break;
             case 0:
             case 1:
-                    jsonArray = HttpThread.parseJSON(jsonStr).getJSONArray("array");
-                    listData = parseListApplyInfo(jsonArray.getJSONObject(0).getJSONArray("groupColArray").toString());
-                    rlvData.setAdapter(new ApprovalBusinessAdapter(this, listData, new OnItemClickCallback<Integer>() {
-                        @Override
-                        public void onClick(View view, Integer info) {
+                jsonArray = HttpThread.parseJSON(jsonStr).getJSONArray("array");
+                listData = parseListApplyInfo(jsonArray.getJSONObject(0).getJSONArray("groupColArray").toString());
+                pullLoadMore.setAdapter(new ApprovalBusinessAdapter(this, listData, new OnItemClickCallback<Integer>() {
+                    @Override
+                    public void onClick(View view, Integer info) {
 
-                            CallAndSMS.call(BusinessApprovalActivity.this, listData.get(info).getValue());
-                        }
+                        CallAndSMS.call(BusinessApprovalActivity.this, listData.get(info).getValue());
+                    }
 
-                        @Override
-                        public void onLongClick(View view, Integer info) {
+                    @Override
+                    public void onLongClick(View view, Integer info) {
 
-                        }
-                    }));
+                    }
+                }));
 
                 break;
             case 2:
                 try {
                     listDataGuaranty = parseListGuarantyInfo(HttpThread.parseJSONWithGson(jsonStr));
-                    rlvData.setAdapter(new BusinessGuarantyAdapter(this, listDataGuaranty));
+                    pullLoadMore.setAdapter(new BusinessGuarantyAdapter(this, listDataGuaranty));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -136,8 +150,7 @@ class BusinessApprovalActivity extends ParentActivity {
                     data.add(listDataOpinion.get(i).getEndTime());
                     data.add(listDataOpinion.get(i).getIdea());
                 }
-//                rlvData.setAdapter(new MyRecycleViewAdapter(BusinessApprovalActivity.this, -1,  data));
-                rlvData.setAdapter(new ApprovalOpinionAdapter(BusinessApprovalActivity.this,  listDataOpinion, new OnItemClickCallback<Integer>() {
+                pullLoadMore.setAdapter(new ApprovalOpinionAdapter(BusinessApprovalActivity.this, listDataOpinion, new OnItemClickCallback<Integer>() {
                     @Override
                     public void onClick(View view, Integer info) {
                     }
@@ -217,10 +230,11 @@ class BusinessApprovalActivity extends ParentActivity {
 
     private void initView() {
 
+        pullLoadMore.setPullRefreshEnable(false);
+        pullLoadMore.setPushRefreshEnable(false);
+        pullLoadMore.setGridLayout(2);
         index = getIntent().getIntExtra("index", 0);
         LogUtils.v("index" + index);
-        LinearLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        rlvData.setLayoutManager(layoutManager);
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
@@ -16,8 +14,11 @@ import android.widget.TextView;
 import com.dysen.common_res.common.adapter.MyRecycleViewAdapter;
 import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.HttpThread;
+import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
+import com.dysen.common_res.common.views.uber.UberProgressView;
+import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
@@ -47,6 +48,12 @@ public class OpinionSubmitActivity extends ParentActivity {
 
     private static List<ApprovalBean.ExamineBean> examineBeanList;
     private static String opinionType, opinionContent;
+    @Bind(R.id.tv_hide_data)
+    TextView tvHideData;
+    @Bind(R.id.uber_pgsview)
+    UberProgressView uberPgsview;
+    @Bind(R.id.pull_load_more)
+    PullLoadMoreRecyclerView pullLoadMore;
     private boolean isFlag;
     private String IsFlag;
     private static int index;
@@ -56,8 +63,14 @@ public class OpinionSubmitActivity extends ParentActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
+            uberPgsview.setVisibility(View.INVISIBLE);
+            LogUtils.v(msg.obj.toString());
             try {
-                initData(msg);
+                if (msg.obj != null) {
+                    initData(msg);
+                } else {
+                    tvHideData.setVisibility(View.VISIBLE);
+                }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -69,16 +82,17 @@ public class OpinionSubmitActivity extends ParentActivity {
 
     private void initData(Message msg) throws JSONException {
         switch (msg.what) {
+            case -1:
+                tvHideData.setText("请求错误！");
+                break;
             case 0:
-                if (msg.obj != null) {
-                    idea = HttpThread.parseJSON(msg.obj.toString()).getString("Idea");
-                    //ftSerialNo:贷款流程树编号,phaseOpinion:("同意"||"不同意")获取上个界面Idea,
-                    // nexNewPhaseAction:给空值即可（流程定制需要次参数，目前无需给值）,UserId:登陆用户id
-                    jsonObject = ParamUtils.setParams("nextActionOperator", "nextActionOperator", new Object[]{
-                            examineBeanList.get(index).getFlowTaskNo(),
-                            idea, "", ParamUtils.UserIdApproval}, 4);
-                    sendRequest(jsonObject, 1);
-                }
+                idea = HttpThread.parseJSON(msg.obj.toString()).getString("Idea");
+                //ftSerialNo:贷款流程树编号,phaseOpinion:("同意"||"不同意")获取上个界面Idea,
+                // nexNewPhaseAction:给空值即可（流程定制需要次参数，目前无需给值）,UserId:登陆用户id
+                jsonObject = ParamUtils.setParams("nextActionOperator", "nextActionOperator", new Object[]{
+                        examineBeanList.get(index).getFlowTaskNo(),
+                        idea, "", ParamUtils.UserIdApproval}, 4);
+                sendRequest(jsonObject, 1);
                 break;
             case 1://下一步
                 listData = parseList(HttpThread.parseJSON(msg.obj.toString()).getJSONArray("array").toString());
@@ -86,7 +100,7 @@ public class OpinionSubmitActivity extends ParentActivity {
                 for (int i = 0; i < listData.size(); i++) {
                     list.add(listData.get(i).getActionValue());
                 }
-                rlvData.setAdapter(new MyRecycleViewAdapter(OpinionSubmitActivity.this, -1, list, new OnItemClickCallback<String>() {
+                pullLoadMore.setAdapter(new MyRecycleViewAdapter(OpinionSubmitActivity.this, -1, list, new OnItemClickCallback<String>() {
                     @Override
                     public void onClick(View view, String info) {
 
@@ -141,17 +155,12 @@ public class OpinionSubmitActivity extends ParentActivity {
 
     private void initView() {
 
-//        index = getIntent().getIntExtra("index", 0);
-//        LogUtils.v("index" + index);
-
-//        opinionType = getIntent().getStringExtra("opinion_type");
-//        opinionContent = getIntent().getStringExtra("opinion_content");
         txtTitle.setText("签署意见");
         btnSubmit.setText("保存并提交");
         txtBack.setText("上一步");
 
-        LinearLayoutManager layoutManager = new GridLayoutManager(this, 1);
-        rlvData.setLayoutManager(layoutManager);
+        pullLoadMore.setGridLayout(2);
+        pullLoadMore.setPushRefreshEnable(false);
 //        rlvData.setAdapter(new OpiniosAdapter(this, examineBeanList));
 
         if (isFlag) {
@@ -173,17 +182,17 @@ public class OpinionSubmitActivity extends ParentActivity {
     @OnClick({R.id.btn_submit, R.id.lay_back})
     public void onViewClicked(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.btn_submit:
                 if (phaseAction != null) {
-                //ftSerialNo:贷款流程树编号,phaseAction:下一步提交人（由下一步（获取提交人）获得）,phaseOpinion:选择的意见（"同意"||"不同意"  由签署意见里获得）
-                //        ,nexNewPhaseAction:给空（该参数为流程定制，目前无需给值）,UserId:登陆用户id
-                jsonObject = ParamUtils.setParams("doMySubmit", "doMySubmit", new String[]{examineBeanList.get(index).getFlowTaskNo(),
-                        phaseAction, opinionType, "", ParamUtils.UserIdApproval}, 5);
-                sendRequest(jsonObject, 2);
-            } else {
-                toast("请选择意见！");
-            }
+                    //ftSerialNo:贷款流程树编号,phaseAction:下一步提交人（由下一步（获取提交人）获得）,phaseOpinion:选择的意见（"同意"||"不同意"  由签署意见里获得）
+                    //        ,nexNewPhaseAction:给空（该参数为流程定制，目前无需给值）,UserId:登陆用户id
+                    jsonObject = ParamUtils.setParams("doMySubmit", "doMySubmit", new String[]{examineBeanList.get(index).getFlowTaskNo(),
+                            phaseAction, opinionType, "", ParamUtils.UserIdApproval}, 5);
+                    sendRequest(jsonObject, 2);
+                } else {
+                    toast("请选择意见！");
+                }
                 break;
             case R.id.lay_back:
                 //FlowTaskNo:贷款流程树编号,ObjectNo:贷款编号, UserId:登陆用户id

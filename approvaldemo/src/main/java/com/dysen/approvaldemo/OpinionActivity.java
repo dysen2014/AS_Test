@@ -1,26 +1,24 @@
 package com.dysen.approvaldemo;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dysen.common_res.common.adapter.MyRecycleViewAdapter;
 import com.dysen.common_res.common.base.ParentActivity;
-import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.views.ViewUtils;
+import com.dysen.common_res.common.views.uber.UberProgressView;
+import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
 import com.yinglan.alphatabs.AlphaTabView;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 import com.yinglan.alphatabs.OnTabChangedListner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -51,6 +49,12 @@ public class OpinionActivity extends ParentActivity {
     Button btnSubmit;
 
     private static List<ApprovalBean.ExamineBean> examineBeanList;
+    @Bind(R.id.uber_pgsview)
+    UberProgressView uberPgsview;
+    @Bind(R.id.tv_hide_data)
+    TextView tvHideData;
+    @Bind(R.id.pull_load_more)
+    PullLoadMoreRecyclerView pullLoadMore;
     private String opinionType = "同意";
     private Intent intent;
     static int index;
@@ -83,98 +87,37 @@ public class OpinionActivity extends ParentActivity {
         txtTitle.setText("签署意见");
         btnSubmit.setText("保存并提交");
 
-        LinearLayoutManager layoutManager = new GridLayoutManager(this, 2);
-        rlvData.setLayoutManager(layoutManager);
-        rlvData.setAdapter(new OpiniosAdapter(this, examineBeanList));
+        pullLoadMore.setGridLayout(2);
+        pullLoadMore.setPushRefreshEnable(false);
+        pullLoadMore.setPullRefreshEnable(false);
+        if (examineBeanList != null && examineBeanList.size() > 0) {
+            List<String> list = new ArrayList<>();
+            list.add("业务品种:\t" + examineBeanList.get(index).getBusinessName());
+            list.add("客户名称:\t" + examineBeanList.get(index).getCustomerName());
+            list.add("申请金额:\t" + examineBeanList.get(index).getBusinessSum());
+            list.add("登记机构:\t" + examineBeanList.get(index).getOrgName());
+            pullLoadMore.setAdapter(new MyRecycleViewAdapter(this, -1, list));
+        } else
+            tvHideData.setVisibility(View.VISIBLE);
+        uberPgsview.setVisibility(View.INVISIBLE);
     }
 
     @OnClick(R.id.btn_submit)
     public void onViewClicked() {
 
-        if (!ViewUtils.getText(opinionEdt).equals("")){
+        if (!ViewUtils.getText(opinionEdt).equals("")) {
             intent = new Intent(OpinionActivity.this, OpinionSubmitActivity.class);
 //            intent.putExtra("index", index);
 //            intent.putExtra("opinion_type", opinionType);
 //            intent.putExtra("opinion_content", ViewUtils.getText(opinionEdt));
             OpinionSubmitActivity.setData(examineBeanList, index, opinionType, ViewUtils.getText(opinionEdt));
             startActivity(intent);
-        }else
+        } else
             toast("请填写签署意见！");
     }
 
     public static void setData(List<ApprovalBean.ExamineBean> listData, int mIndex) {
         examineBeanList = listData;
         index = mIndex;
-    }
-
-    private class OpiniosAdapter extends RecyclerView.Adapter<OpiniosAdapter.ViewHolder> {
-
-        Context context;
-        List<ApprovalBean.ExamineBean> list;
-        OnItemClickCallback callback;
-
-        public OpiniosAdapter(Context context, List<ApprovalBean.ExamineBean> list) {
-            this.context = context;
-            this.list = list;
-        }
-
-        public OpiniosAdapter(Context context, List<ApprovalBean.ExamineBean> list, OnItemClickCallback callback) {
-            this.context = context;
-            this.list = list;
-            this.callback = callback;
-        }
-
-        @Override
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-            View view = LayoutInflater.from(context).inflate(R.layout.approval_item, null);
-
-            ViewHolder viewHolder = new ViewHolder(view);
-            return viewHolder;
-        }
-
-        @Override
-        public void onBindViewHolder(ViewHolder holder, final int position) {
-
-            holder.approvalImg.setVisibility(View.GONE);
-
-            holder.approvalBusinessName.setText("业务品种:\t" + list.get(position).getBusinessName());
-            holder.approvalName.setText("客户名称:\t" + list.get(position).getCustomerName());
-            holder.approvalBusinessSum.setText("申请金额:\t" + list.get(position).getBusinessSum());
-            holder.approvalOrgName.setText("登记机构:\t" + list.get(position).getOrgName());
-
-            holder.approvalLay.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    callback.onClick(view, position);
-                }
-            });
-        }
-
-        @Override
-        public int getItemCount() {
-            return list.size();
-        }
-
-        public class ViewHolder extends RecyclerView.ViewHolder {
-
-            TextView approvalImg;
-            TextView approvalName;
-            TextView approvalBusinessSum;
-            TextView approvalBusinessName;
-            TextView approvalOrgName;
-            LinearLayout approvalLay;
-
-            public ViewHolder(View itemView) {
-                super(itemView);
-                approvalImg = (TextView) itemView.findViewById(R.id.approval_img);
-                approvalName = (TextView) itemView.findViewById(R.id.approval_name);
-                approvalBusinessName = (TextView) itemView.findViewById(R.id.approval_businessName);
-                approvalBusinessSum = (TextView) itemView.findViewById(R.id.approval_businessSum);
-                approvalOrgName = (TextView) itemView.findViewById(R.id.approval_orgName);
-                approvalLay = (LinearLayout) itemView.findViewById(R.id.approval_lay);
-            }
-        }
     }
 }

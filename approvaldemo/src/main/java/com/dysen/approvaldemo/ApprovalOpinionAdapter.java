@@ -55,17 +55,17 @@ public class ApprovalOpinionAdapter extends RecyclerView.Adapter<ApprovalOpinion
         if (list != null) {
 
             holder.dataName.setText(list.get(position).getUserName());
-            holder.dataName.setBackgroundResource(R.color.gray2);
+            holder.llName.setBackgroundResource(R.color.gray2);
             holder.dataName.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
                     callback.onClick(v, position);
-                    count++;
                     if (count % 2 == 0)
-                    holder.llContent.setVisibility(View.GONE);
+                        holder.llContent.setVisibility(View.GONE);
                     else
                         holder.llContent.setVisibility(View.VISIBLE);
+                    count++;
                 }
             });
             holder.data0.setText(mNanes[0]);
@@ -92,9 +92,8 @@ public class ApprovalOpinionAdapter extends RecyclerView.Adapter<ApprovalOpinion
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 
-
         TextView dataName;
-        LinearLayout llContent;
+        LinearLayout llContent, llName;
         TextView data0,data1,data2,data3,data4,data5,data6,data7,data8,data9,data10,data11,data12,data13;
 
         public MyViewHolder(View itemView) {
@@ -115,6 +114,7 @@ public class ApprovalOpinionAdapter extends RecyclerView.Adapter<ApprovalOpinion
             data11 = (TextView) itemView.findViewById(R.id.data_11);
             data12 = (TextView) itemView.findViewById(R.id.data_12);
             data13 = (TextView) itemView.findViewById(R.id.data_13);
+            llName = (LinearLayout) itemView.findViewById(R.id.ll_name);
             llContent = (LinearLayout)itemView.findViewById(R.id.ll_content);
         }
     }
