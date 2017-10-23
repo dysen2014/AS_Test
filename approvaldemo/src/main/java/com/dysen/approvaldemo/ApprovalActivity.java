@@ -125,7 +125,7 @@ public class ApprovalActivity extends ParentActivity implements BaseRefreshListe
         } else
             FinishedFlag = "N";
         //{"deviceType":"Android","RequestParams":{"BSTypeFlag":"credit","UserId":"B129103","FinishedFlag":"Y","SearchKey":"","CurPage":"1","PageSize":"20"}}
-        JSONObject jsonObject = ParamUtils.setParams("examine", "examine", new Object[]{"credit", ParamUtils.UserId, FinishedFlag, "", curPage, ParamUtils.pageSize}, 6);
+        JSONObject jsonObject = ParamUtils.setParams("examine", "examine", new Object[]{"credit", ParamUtils.UserIdApproval, FinishedFlag, "", curPage, ParamUtils.pageSize}, 6);
 
         HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
     }

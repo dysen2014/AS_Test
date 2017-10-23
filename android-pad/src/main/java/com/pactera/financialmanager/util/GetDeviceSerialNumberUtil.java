@@ -1,12 +1,17 @@
 package com.pactera.financialmanager.util;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.net.wifi.WifiManager;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 
 import java.net.NetworkInterface;
+
+import static com.tencent.bugly.crashreport.inner.InnerAPI.context;
 
 public class GetDeviceSerialNumberUtil {
 
@@ -17,6 +22,10 @@ public class GetDeviceSerialNumberUtil {
      * @return
      */
     public static String getIMEI(Context context) {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+
+            return "";
+        }
         return ((TelephonyManager) context
                 .getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId();
     }
@@ -28,6 +37,9 @@ public class GetDeviceSerialNumberUtil {
      * @return
      */
     public static String getAndroidId(Context context) {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return "";
+        }
         // androidID
         String androidID = android.provider.Settings.Secure.getString(context.getContentResolver(),//eb9b3a8e8908dc7d
                 android.provider.Settings.Secure.ANDROID_ID);
@@ -101,6 +113,9 @@ public class GetDeviceSerialNumberUtil {
      * @return
      */
     public static String getSimSerialNumber(Context context) {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return "";
+        }
         return ((TelephonyManager) context
                 .getSystemService(Context.TELEPHONY_SERVICE))
                 .getSimSerialNumber();
@@ -112,9 +127,11 @@ public class GetDeviceSerialNumberUtil {
      * @return
      */
     public static String getSerialNumber() {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return "";
+        }
         return android.os.Build.SERIAL;
     }
-
 
     public static void displayDevice(Context context) {
         Log.i("displayDevice", "isTestDevice: "

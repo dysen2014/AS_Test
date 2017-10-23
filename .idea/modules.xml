@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/ble-lib/ble-lib.iml" filepath="$PROJECT_DIR$/ble-lib/ble-lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/common_res/common_res.iml" filepath="$PROJECT_DIR$/common_res/common_res.iml" />
       <module fileurl="file://$PROJECT_DIR$/contact-library/contact-library.iml" filepath="$PROJECT_DIR$/contact-library/contact-library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/expandable-library/expandable-ibrary.iml" filepath="$PROJECT_DIR$/expandable-library/expandable-ibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/expandable-library/expandable-library.iml" filepath="$PROJECT_DIR$/expandable-library/expandable-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/filedownload/filedownload.iml" filepath="$PROJECT_DIR$/filedownload/filedownload.iml" />
       <module fileurl="file://$PROJECT_DIR$/gwt/gwt.iml" filepath="$PROJECT_DIR$/gwt/gwt.iml" />

@@ -7,4 +7,128 @@
 package com.demo.ocr4idcard;
 
 public final class R {
+    public static final class color {
+        public static final int basic_orange = 0x7f0c0013;
+        public static final int blue = 0x7f0c0019;
+        public static final int blue_gb = 0x7f0c001a;
+        public static final int blue_hd = 0x7f0c001b;
+        public static final int bt_red = 0x7f0c0024;
+        public static final int buttonTextColor = 0x7f0c0029;
+        public static final int button_back = 0x7f0c002a;
+        public static final int contentBackgroundColor = 0x7f0c0037;
+        public static final int content_bg = 0x7f0c0038;
+        public static final int contents_text = 0x7f0c0039;
+        public static final int deep_gray = 0x7f0c005a;
+        public static final int dlg_msg = 0x7f0c006f;
+        public static final int encode_view = 0x7f0c0073;
+        public static final int gray = 0x7f0c0080;
+        public static final int help_button_view = 0x7f0c0085;
+        public static final int help_view = 0x7f0c0086;
+        public static final int idcard_field_title = 0x7f0c00ab;
+        public static final int idcard_info_text = 0x7f0c00ac;
+        public static final int light_gray = 0x7f0c00bb;
+        public static final int list_deep = 0x7f0c00d4;
+        public static final int list_dev = 0x7f0c00d5;
+        public static final int list_divider = 0x7f0c00d6;
+        public static final int list_item_dark = 0x7f0c00d7;
+        public static final int list_item_light = 0x7f0c00d8;
+        public static final int list_item_select = 0x7f0c00d9;
+        public static final int list_light = 0x7f0c00da;
+        public static final int list_outside = 0x7f0c00db;
+        public static final int middle_gray = 0x7f0c00f8;
+        public static final int mode_text = 0x7f0c00fd;
+        public static final int navigationTitleTextColor = 0x7f0c00ff;
+        public static final int possible_result_points = 0x7f0c0116;
+        public static final int progressMsgColor = 0x7f0c0123;
+        public static final int progress_bg = 0x7f0c0124;
+        public static final int result_image_border = 0x7f0c0130;
+        public static final int result_minor_text = 0x7f0c0131;
+        public static final int result_points = 0x7f0c0132;
+        public static final int result_text = 0x7f0c0133;
+        public static final int result_view = 0x7f0c0134;
+        public static final int sbc_header_text = 0x7f0c013d;
+        public static final int sbc_header_view = 0x7f0c013e;
+        public static final int sbc_layout_view = 0x7f0c013f;
+        public static final int sbc_list_item = 0x7f0c0140;
+        public static final int sbc_page_number_text = 0x7f0c0141;
+        public static final int sbc_snippet_text = 0x7f0c0142;
+        public static final int setPrintColor = 0x7f0c014d;
+        public static final int share_text = 0x7f0c014e;
+        public static final int share_view = 0x7f0c014f;
+        public static final int status_text = 0x7f0c0158;
+        public static final int status_view = 0x7f0c0159;
+        public static final int stausAreaTextColor = 0x7f0c015a;
+        public static final int titileTextColor = 0x7f0c0163;
+        public static final int transparent = 0x7f0c0165;
+        public static final int view_line = 0x7f0c016d;
+        public static final int viewfinder_frame = 0x7f0c016e;
+        public static final int viewfinder_laser = 0x7f0c016f;
+        public static final int viewfinder_mask = 0x7f0c0170;
+        public static final int white = 0x7f0c0173;
+    }
+    public static final class dimen {
+        public static final int activity_horizontal_margin = 0x7f080056;
+        public static final int activity_vertical_margin = 0x7f080057;
+    }
+    public static final class drawable {
+        public static final int bg_comm = 0x7f02006c;
+        public static final int btn_red01 = 0x7f020082;
+        public static final int btn_red02 = 0x7f020083;
+        public static final int btn_red_selector = 0x7f020084;
+        public static final int camera_1 = 0x7f02009b;
+        public static final int camera_2 = 0x7f02009c;
+        public static final int camera_3 = 0x7f02009d;
+        public static final int camera_4 = 0x7f02009e;
+        public static final int com_input_bg = 0x7f0200ab;
+        public static final int icon_back = 0x7f02011c;
+        public static final int imv_back = 0x7f020132;
+        public static final int imv_light_off = 0x7f020133;
+        public static final int imv_light_on = 0x7f020134;
+    }
+    public static final class id {
+        public static final int IDPIC = 0x7f0e0384;
+        public static final int action_settings = 0x7f0e08bc;
+        public static final int btn_back = 0x7f0e081e;
+        public static final int btn_get_idcard_photo = 0x7f0e082b;
+        public static final int btn_ok = 0x7f0e0366;
+        public static final int camera_view = 0x7f0e069b;
+        public static final int edit_address = 0x7f0e0822;
+        public static final int edit_create = 0x7f0e0826;
+        public static final int edit_date = 0x7f0e0824;
+        public static final int edit_id = 0x7f0e00b6;
+        public static final int edit_limit_date_end = 0x7f0e082a;
+        public static final int edit_limit_date_start = 0x7f0e0828;
+        public static final int edit_name = 0x7f0e00b7;
+        public static final int edit_sex = 0x7f0e0823;
+        public static final int edit_type = 0x7f0e0821;
+        public static final int imv_back = 0x7f0e069d;
+        public static final int imv_light = 0x7f0e069e;
+        public static final int layout_create = 0x7f0e0825;
+        public static final int layout_limit_date_end = 0x7f0e0829;
+        public static final int layout_limit_date_start = 0x7f0e0827;
+        public static final int preview_view = 0x7f0e069a;
+        public static final int scllowview_read_idcard = 0x7f0e0820;
+        public static final int tv_title = 0x7f0e0367;
+        public static final int tv_userName = 0x7f0e081f;
+        public static final int txtMsg = 0x7f0e069c;
+    }
+    public static final class layout {
+        public static final int eidpic = 0x7f040093;
+        public static final int idcard_camera = 0x7f0400eb;
+        public static final int read_idcard_info_new = 0x7f040150;
+    }
+    public static final class menu {
+        public static final int main = 0x7f0f0000;
+    }
+    public static final class string {
+        public static final int action_settings = 0x7f07002f;
+        public static final int app_name = 0x7f070032;
+        public static final int hello_world = 0x7f07006e;
+    }
+    public static final class style {
+        public static final int AppBaseTheme = 0x7f0900a8;
+        public static final int AppTheme = 0x7f0900a9;
+        public static final int IDCardFieldTitle = 0x7f0900d8;
+        public static final int MyDialog = 0x7f0900d9;
+    }
 }

@@ -768,6 +768,10 @@
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\layout\\fragment_personitemprodate.xml"
     },
     {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\common_recyclerview_layout.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\layout\\common_recyclerview_layout.xml"
+    },
+    {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout\\popwindow_business_otherdeposit.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\layout\\popwindow_business_otherdeposit.xml"
     },

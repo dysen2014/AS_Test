@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.base.ParentActivity;
+import com.dysen.common_res.common.utils.CallAndSMS;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
@@ -98,7 +99,18 @@ class BusinessApprovalActivity extends ParentActivity {
             case 1:
                     jsonArray = HttpThread.parseJSON(jsonStr).getJSONArray("array");
                     listData = parseListApplyInfo(jsonArray.getJSONObject(0).getJSONArray("groupColArray").toString());
-                    rlvData.setAdapter(new ApprovalBusinessAdapter(this, listData));
+                    rlvData.setAdapter(new ApprovalBusinessAdapter(this, listData, new OnItemClickCallback<Integer>() {
+                        @Override
+                        public void onClick(View view, Integer info) {
+
+                            CallAndSMS.call(BusinessApprovalActivity.this, listData.get(info).getValue());
+                        }
+
+                        @Override
+                        public void onLongClick(View view, Integer info) {
+
+                        }
+                    }));
 
                 break;
             case 2:
@@ -128,7 +140,6 @@ class BusinessApprovalActivity extends ParentActivity {
                 rlvData.setAdapter(new ApprovalOpinionAdapter(BusinessApprovalActivity.this,  listDataOpinion, new OnItemClickCallback<Integer>() {
                     @Override
                     public void onClick(View view, Integer info) {
-
                     }
 
                     @Override
@@ -285,7 +296,7 @@ class BusinessApprovalActivity extends ParentActivity {
                 jsonObject = ParamUtils.setParams("examine", "examine", new Object[]{"credit", "B129103", "Y", "", curPage, ParamUtils.pageSize}, 1);
                 break;
         }
-        toast("tabIndex" + tabIndex);
+//        toast("tabIndex" + tabIndex);
         sendRequest(jsonObject, tabIndex);
     }
 

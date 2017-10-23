@@ -1,10 +1,12 @@
 package com.pactera.financialmanager.ui.model;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 
 import com.pactera.financialmanager.ui.ParentActivity;
@@ -59,9 +61,12 @@ public class User {
 	// 用户所在法人清算中心
 	private String clearingCenterBrCode;
 	public User(Context context) throws Exception {
+		if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+			return ;
+		}
 		// 设备序列号
 		this.imei = GetDeviceSerialNumberUtil.getAndroidId(context);
-		if(TextUtils.isEmpty(imei)){
+		if(TextUtils.isEmpty(imei) || imei == null){
 			// androidID
 			this.imei = GetDeviceSerialNumberUtil.getSerialNumber();
 		}

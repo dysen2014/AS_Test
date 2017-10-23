@@ -24,6 +24,7 @@ public class CallAndSMS {
      */
     public static void call2(Context mContext, String phone) {
 
+        LogUtils.v("tel:"+phone);
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phone));
         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             return;
@@ -36,8 +37,12 @@ public class CallAndSMS {
      * @param phone 电话号码
      */
     public static void call(Context mContext, String phone) {
+        LogUtils.v("tel:"+phone);
         Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"+phone));
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
         mContext.startActivity(intent);
     }
 

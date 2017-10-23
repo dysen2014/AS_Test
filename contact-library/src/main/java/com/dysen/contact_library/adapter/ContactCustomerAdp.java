@@ -2,22 +2,17 @@ package com.dysen.contact_library.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.views.ViewUtils;
 import com.dysen.contact_library.R;
 import com.dysen.contact_library.bean.ContactBean;
 import com.dysen.contact_library.utils.OnItemClickCallback;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 import static android.support.v7.widget.RecyclerView.ViewHolder;
@@ -81,7 +76,7 @@ public class ContactCustomerAdp extends RecyclerView.Adapter<ContactCustomerAdp.
             holder.tvName.setText(mDataList.get(position).getName()+"---"+mDataList.get(position).getPinyin());
 
         holder.tvNameBg.setText(ViewUtils.getText(holder.tvName).substring(0, 1));
-        holder.tvNameId.setText(mDataList.get(position).getId());
+        holder.tvNameId.setText(mDataList.get(position).getCertID());
         holder.contactItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

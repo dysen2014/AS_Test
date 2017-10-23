@@ -19,7 +19,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -30,7 +29,6 @@ import com.dysen.common_res.common.utils.ParamUtils;
 import com.example.zhouwei.library.CustomPopWindow;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.jaeger.library.StatusBarUtil;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.credit.common.bean.rate.BussType;
 import com.pactera.financialmanager.credit.common.bean.rate.Customer;
@@ -163,9 +161,7 @@ public class RateActivity extends ParentActivity {
             if (msg.what == 5) {
 
                 if (customer != null && customer.size() > 0) {
-                    ContactCustomerActivity.setData(customer);
-                    llCustName.setEnabled(true);
-                    startActivityForResult(new Intent(RateActivity.this, ContactCustomerActivity.class), 99);
+//                    startActivityForResult(new Intent(RateActivity.this, ContactCustomerActivity.class), 99);
                 }
             }
 
@@ -863,8 +859,8 @@ public class RateActivity extends ParentActivity {
      * @param view
      */
     public void selectCustomerClick(View view) {
-        reqCustBody();
-//        startActivityForResult(new Intent(this, ContactCustomerActivity.class), 99);
+//        reqCustBody();
+        startActivityForResult(new Intent(this, ContactCustomerActivity.class), 99);
     }
 
     public void viewCustomerClick(View view) {

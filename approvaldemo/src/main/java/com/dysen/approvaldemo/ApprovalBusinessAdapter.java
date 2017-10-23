@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.utils.CallAndSMS;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.views.ViewUtils;
 
@@ -29,7 +28,7 @@ class ApprovalBusinessAdapter extends RecyclerView.Adapter<ApprovalBusinessAdapt
         this.list = list;
     }
 
-    public ApprovalBusinessAdapter(Context context, List<ApprovalBean.ApplyInfoBean> list, OnItemClickCallback callback) {
+    public ApprovalBusinessAdapter(Context context, List<ApprovalBean.ApplyInfoBean> list, OnItemClickCallback<Integer> callback) {
         this.context = context;
         this.list = list;
         this.callback = callback;
@@ -56,7 +55,8 @@ class ApprovalBusinessAdapter extends RecyclerView.Adapter<ApprovalBusinessAdapt
             holder.dataListTxtValue.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    CallAndSMS.call2(context, list.get(position).getValue());
+                    callback.onClick(view, position);
+//                    CallAndSMS.call(context, list.get(position).getValue());
                 }
             });
         }
