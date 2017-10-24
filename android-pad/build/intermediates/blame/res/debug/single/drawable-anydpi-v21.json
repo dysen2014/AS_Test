@@ -8,12 +8,12 @@
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_right.xml"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_ppt.xml",
-        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_ppt.xml"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_user.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_user.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_ppt.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_ppt.xml"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_yes2.xml",
@@ -32,12 +32,12 @@
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_bottom.xml"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_switch_off.xml",
-        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_switch_off.xml"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_excel.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_excel.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_switch_off.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_switch_off.xml"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_pdf.xml",

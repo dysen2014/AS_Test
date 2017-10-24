@@ -45,15 +45,15 @@ public class OpinionSubmitActivity extends ParentActivity {
     TextView txtBack;
     @Bind(R.id.lay_back)
     LinearLayout layBack;
-
-    private static List<ApprovalBean.ExamineBean> examineBeanList;
-    private static String opinionType, opinionContent;
     @Bind(R.id.tv_hide_data)
     TextView tvHideData;
     @Bind(R.id.uber_pgsview)
     UberProgressView uberPgsview;
     @Bind(R.id.pull_load_more)
     PullLoadMoreRecyclerView pullLoadMore;
+
+    private static List<ApprovalBean.ExamineBean> examineBeanList;
+    private static String opinionType, opinionContent;
     private boolean isFlag;
     private String IsFlag;
     private static int index;

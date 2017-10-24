@@ -196,7 +196,6 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
             super.handleMessage(msg);
 
             if (msg.obj != null) {
-                progressLoading.setVisibility(View.GONE);
                 try {
                     HttpThread.parseJSONWithGson((String) msg.obj, mHandler);
                 } catch (JSONException e) {
@@ -369,7 +368,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
 
     @Override
     public void loadMore() {
-        if (mListLeft.size() < Integer.parseInt(count)) {
+        if (mListLeft.size() <= Integer.parseInt(count)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

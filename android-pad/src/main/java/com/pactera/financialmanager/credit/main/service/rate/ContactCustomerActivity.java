@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.KeyEvent;
@@ -91,6 +90,8 @@ public class ContactCustomerActivity extends ParentActivity implements
             }
         }
     };
+    private GridLayoutManager layoutManager;
+    private boolean move;
 
     public static List<Customer> parseList(String jsonData) throws JsonSyntaxException {
 
@@ -112,15 +113,15 @@ public class ContactCustomerActivity extends ParentActivity implements
         ButterKnife.bind(this);
         //初始化数据
         initData();
-
+        //初始化列表
+        initListView();
         //设置列表点击滑动监听
         words.setOnWordsChangeListener(this);
     }
 
     private void initListView() {
-        LinearLayoutManager layoutManager = new GridLayoutManager(this, 3);
+        layoutManager = new GridLayoutManager(this, 1);
         dataRecyclerView.setLayoutManager(layoutManager);
-
         dataRecyclerView.setAdapter(new ContactCustomerAdp(this, R.layout.contact_customer_item, listData, new OnItemClickCallback<Integer>() {
             @Override
             public void onClick(View view, Integer info) {
@@ -129,7 +130,7 @@ public class ContactCustomerActivity extends ParentActivity implements
                 bundle.putString("name",listData.get(info).getName());
                 bundle.putString("id",listData.get(info).getCertID());
                 intent.putExtra("data",bundle);
-                toast("info"+info+"\nname:"+bundle.getString("name")+"\tid:"+bundle.getString("id"));
+//                toast("info"+info+"\nname:"+bundle.getString("name")+"\tid:"+bundle.getString("id"));
                 LogUtils.v("view id:"+view.getId()+"\tname:"+bundle.getString("name")+"\tid:"+bundle.getString("id"));
                 setResult(0, intent);
                 finish();
@@ -146,13 +147,13 @@ public class ContactCustomerActivity extends ParentActivity implements
      * 初始化联系人列表信息
      */
     private void initData() {
-        reqCustBody();
+//        reqCustBody();
     }
 
     void reqCustBody() {
         //利率测算(选择客户)		UserId:登陆用户id,CustomerName:客户名称，CustomerType:客户类型, CertID:证件号码，CurPage:页码, PageSize:每页条数
-        JSONObject jsonObject = ParamUtils.setParams("cust", "crmCustomerList", new Object[]{ParamUtils.UserId, "", "", "", curPage, ParamUtils.pageSize}, 6);
-            HttpThread.sendRequestWithOkHttp(url, jsonObject, handler);
+        JSONObject jsonObject = ParamUtils.setParams("rate", "crmCustomerList", new Object[]{ParamUtils.UserId, "", "", "", curPage, ParamUtils.pageSize}, 6);
+        HttpThread.sendRequestWithOkHttp(url, jsonObject, handler);
     }
 
     //手指按下字母改变监听回调
@@ -169,6 +170,7 @@ public class ContactCustomerActivity extends ParentActivity implements
 
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+        LogUtils.v("firstVisibleItem="+firstVisibleItem+"\tvisibleItemCount="+visibleItemCount+"\ttotalItemCount="+totalItemCount);
         //当滑动列表的时候，更新右侧字母列表的选中状态
         words.setTouchIndex(listData.get(firstVisibleItem).getHeaderWord());
     }
@@ -182,11 +184,33 @@ public class ContactCustomerActivity extends ParentActivity implements
             //将手指按下的字母与列表中相同字母开头的项找出来
             if (words.equals(headerWord)) {
                 //将列表选中哪一个
-//                dataRecyclerView.setSelection(i);
+//                dataRecyclerView.scrollToPosition(i);
                 //找到开头的一个即可
+                moveToPosition(i);
                 return;
             }
         }
+    }
+
+    private void moveToPosition(int n) {
+        //先从RecyclerView的LayoutManager中获取第一项和最后一项的Position
+        int firstItem = layoutManager.findFirstVisibleItemPosition();
+        int lastItem = layoutManager.findLastVisibleItemPosition();
+        //然后区分情况
+        if (n <= firstItem ){
+            //当要置顶的项在当前显示的第一个项的前面时
+            dataRecyclerView.scrollToPosition(n);
+        }else if ( n <= lastItem ){
+            //当要置顶的项已经在屏幕上显示时
+            int top = dataRecyclerView.getChildAt(n - firstItem).getTop();
+            dataRecyclerView.scrollBy(0, top);
+        }else{
+            //当要置顶的项在当前显示的最后一项的后面时
+            dataRecyclerView.scrollToPosition(n);
+            //这里这个变量是用在RecyclerView滚动监听里面的
+            move = true;
+        }
+
     }
 
     /**
@@ -214,5 +238,24 @@ public class ContactCustomerActivity extends ParentActivity implements
             setResult(-1);
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    public static void setData(List<Customer> customer) {
+        if (customer!= null){
+            listData.clear();
+            for(Customer cus : customer){
+
+                ContactBean contactBean = new ContactBean(cus.getCustomerName(), cus.getCertID());
+                listData.add(contactBean);
+            }
+            //对集合排序
+            Collections.sort(listData, new Comparator<ContactBean>() {
+                @Override
+                public int compare(ContactBean lhs, ContactBean rhs) {
+                    //根据拼音进行排序
+                    return lhs.getPinyin().compareTo(rhs.getPinyin());
+                }
+            });
+        }
     }
 }

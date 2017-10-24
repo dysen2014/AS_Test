@@ -52,19 +52,6 @@ protected void backActivity(View v){
 	finish();
 }
 
-	public static String getTypeName(String customerType) {
-
-		String name = "";
-		if (customerType.equals("010"))
-			name = "公";
-		if (customerType.equals("030"))
-			name = "个";
-		if (customerType.equals("040"))
-			name = "农";
-
-		return name;
-	}
-
 	/**
 	 * 绑定 View
 	 * */

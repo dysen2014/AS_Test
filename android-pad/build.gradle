@@ -90,7 +90,6 @@ dependencies {
     compile project(':common_res')
     compile project(':baseitem-library')
     compile project(':kjframe-library')
-
     //contact
     compile project(':contact-library')
     //view注解
@@ -110,6 +109,7 @@ dependencies {
     compile files('libs/afinal_0.5.1_bin.jar')
     compile files('libs/gson-2.3.1.jar')
     compile files('libs/litepal-1.5.1.jar')
+    compile files('libs/okhttp-3.8.1.jar')
 }
 
 /*

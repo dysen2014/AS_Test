@@ -73,7 +73,8 @@ public class ContactCustomerAdp extends RecyclerView.Adapter<ContactCustomerAdp.
         }else {
             holder.tvWord.setVisibility(View.GONE);
         }
-            holder.tvName.setText(mDataList.get(position).getName()+"---"+mDataList.get(position).getPinyin());
+//            holder.tvName.setText(mDataList.get(position).getName()+"---"+mDataList.get(position).getPinyin());
+            holder.tvName.setText(mDataList.get(position).getName());
 
         holder.tvNameBg.setText(ViewUtils.getText(holder.tvName).substring(0, 1));
         holder.tvNameId.setText(mDataList.get(position).getCertID());

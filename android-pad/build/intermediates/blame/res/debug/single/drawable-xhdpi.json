@@ -120,6 +120,10 @@
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\drawable-xhdpi\\service_other.png"
     },
     {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\tab_bg_normal.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\drawable-xhdpi\\tab_bg_normal.png"
+    },
+    {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\mine_quit.png",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\drawable-xhdpi\\mine_quit.png"
     },
@@ -134,6 +138,10 @@
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\file_multiple.png",
         "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\drawable-xhdpi\\file_multiple.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\tab_bg_selected.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\src\\main\\res\\drawable-xhdpi\\tab_bg_selected.png"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\clipboard_account.png",

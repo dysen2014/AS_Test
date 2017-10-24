@@ -26,6 +26,7 @@ import com.dysen.common_res.common.adapter.MyRecycleViewAdapter;
 import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.ParamUtils;
+import com.dysen.common_res.common.utils.Utils;
 import com.example.zhouwei.library.CustomPopWindow;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -47,13 +48,12 @@ import java.util.Random;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import okhttp3.MediaType;
+import butterknife.OnClick;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
-import okhttp3.Response;
 
-import static com.dysen.common_res.common.utils.ParamUtils.url;
+import static com.dysen.common_res.common.utils.HttpThread.MEDIA_TYPE_JSON;
 
 public class RateActivity extends ParentActivity {
     private static final String TAG = "RateActivity";
@@ -86,11 +86,10 @@ public class RateActivity extends ParentActivity {
     LinearLayout llCustName;
     @Bind(R.id.ll_custType)
     LinearLayout llCustType;
+    
     String errorMsg = null;
     private ArrayAdapter<CharSequence> adapteEdu = null;
     private List<CharSequence> dataEdu = null;
-    private String responseData = null;
-    public static final MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
     private List<BussType> bussType = new ArrayList<>();
     private List<Customer> customer = new ArrayList<>();
     private JSONObject rateTol = null;      //测试结果
@@ -124,8 +123,8 @@ public class RateActivity extends ParentActivity {
 
     //定义动态id
     @IdRes
-    int TAG2 = 2,TAG3 = 3,TAG4 = 4,TAG5 = 5,TAG6 = 6,TAG7 = 7,TAG8 = 8,TAG9 = 9,TAG10 = 10,TAG11 = 11, TAG12 = 12, TAG1301 = 1301,
-            TAG1302 = 1302,TAG1303 = 1303,TAG1304 = 1304,TAG1305 = 1305,TAG1401 = 1401, TAG1402 = 1402,TAG1403 = 1403,TAG1404 = 1404,TAG15 = 15,TAG16 = 16;
+    int TAG2 = 2, TAG3 = 3, TAG4 = 4, TAG5 = 5, TAG6 = 6, TAG7 = 7, TAG8 = 8, TAG9 = 9, TAG10 = 10, TAG11 = 11, TAG12 = 12, TAG1301 = 1301,
+            TAG1302 = 1302, TAG1303 = 1303, TAG1304 = 1304, TAG1305 = 1305, TAG1401 = 1401, TAG1402 = 1402, TAG1403 = 1403, TAG1404 = 1404, TAG15 = 15, TAG16 = 16;
 
     private String sortNo;
 
@@ -161,7 +160,9 @@ public class RateActivity extends ParentActivity {
             if (msg.what == 5) {
 
                 if (customer != null && customer.size() > 0) {
-//                    startActivityForResult(new Intent(RateActivity.this, ContactCustomerActivity.class), 99);
+
+                    ContactCustomerActivity.setData(customer);
+                    startActivityForResult(new Intent(RateActivity.this, ContactCustomerActivity.class), 99);
                 }
             }
 
@@ -187,7 +188,7 @@ public class RateActivity extends ParentActivity {
         int mColor = 0xff000000 | random.nextInt(0xffffff);
 //        StatusBarUtil.setColorDiff(this, mColor);
         txtTitle.setText("选定客户");
-        reqCustBody();
+
         //获取业务品种信息
         reqBussBody(null);
     }
@@ -204,15 +205,10 @@ public class RateActivity extends ParentActivity {
         else
             sortNo = bussType.getSortNo();
         JSONObject jsonObject = ParamUtils.setParams("search", "businessType", new Object[]{ParamUtils.UserId, sortNo, "C"}, 3);
-        try {
-            if (bussType == null) {
-                sendRequestWithOkHttp(url, jsonObject, "buss", "");
-            } else {
-                sendRequestWithOkHttp(url, jsonObject, "buss", bussType.getTypeNo());
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (bussType == null) {
+            sendRequestWithOkHttp(ParamUtils.url, jsonObject, "buss", "");
+        }else {
+            sendRequestWithOkHttp(ParamUtils.url, jsonObject, "buss", bussType.getTypeNo());
         }
     }
 
@@ -223,18 +219,13 @@ public class RateActivity extends ParentActivity {
      */
     void reqRateBody(String sortNo) {
 
-        JSONObject jsonObject = ParamUtils.setParams("rate", "crmInterest", new Object[]{ParamUtils.UserId, "11029801", "", "", sortNo, "010"}, 66);//66为了和6区分
+        JSONObject jsonObject = ParamUtils.setParams("rate", "crmInterest", new Object[]{ParamUtils.UserId, ParamUtils.orgId, "", "", sortNo, "010"}, 66);//66为了和6区分
 
         if (sortNo != null && sortNo.length() > 0) {
             bussTypeVal = sortNo;
         }
-        try {
-
-            Log.d(TAG, "json:" + "" + url + "\n" + jsonObject.toString());
-            sendRequestWithOkHttp(url, jsonObject, "rate", sortNo);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Log.d(TAG, "json:" + "" + ParamUtils.url + "\n" + jsonObject.toString());
+        sendRequestWithOkHttp(ParamUtils.url, jsonObject, "rate", sortNo);
     }
 
     /**
@@ -246,23 +237,19 @@ public class RateActivity extends ParentActivity {
         if (bussTypeVal == null && bussTypeVal.length() > 0) {
             bussTypeVal = sortNoVal;
         }
-        JSONObject jsonObject = ParamUtils.setParams("rate", "crmInterest", new Object[]{ParamUtils.UserId, "11029804", "", ""
+        JSONObject jsonObject = ParamUtils.setParams("rate", "crmInterest", new Object[]{ParamUtils.UserId, ParamUtils.orgId, "", ""
                 , bussTypeVal, "020", interesArray}, 7);
-        try {
-            sendRequestWithOkHttp(url, jsonObject, "rateTol", "");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sendRequestWithOkHttp(ParamUtils.url, jsonObject, "rateTol", "");
     }
 
+    /**
+     * 选定客户
+     */
     void reqCustBody() {
         //利率测算(选择客户)		UserId:登陆用户id,CustomerName:客户名称，CustomerType:客户类型, CertID:证件号码，CurPage:页码, PageSize:每页条数
-        JSONObject jsonObject = ParamUtils.setParams("cust", "crmCustomerList", new Object[]{ParamUtils.UserId, "", "", "", "1", "10"}, 6);
-        try {
-            sendRequestWithOkHttp(url, jsonObject, "cust", "");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        JSONObject jsonObject = ParamUtils.setParams("rate", "crmCustomerList", new Object[]{ParamUtils.UserId, "", "", "", curPage, ParamUtils.pageSize}, 6);
+
+        sendRequestWithOkHttp(ParamUtils.url, jsonObject, "cust", "");
     }
 
     /**
@@ -273,7 +260,7 @@ public class RateActivity extends ParentActivity {
      * @return
      * @throws IOException
      */
-    public void sendRequestWithOkHttp(final String url, final JSONObject json, final String type, final String sortNo) throws IOException {
+    public void sendRequestWithOkHttp(final String url, final JSONObject json, final String type, final String sortNo) {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -282,9 +269,9 @@ public class RateActivity extends ParentActivity {
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder().url(url).post(body).build();
                     LogUtils.d("request: " + request + "" + json);
-                    Response response = client.newCall(request).execute();
+                    okhttp3.Response response = client.newCall(request).execute();
                     //Log.d(TAG, "body: "+response.body());
-                    responseData = response.body().string();
+                    String responseData = response.body().string();
                     LogUtils.d("responseData: " + responseData);
                     if (sortNo != null && sortNo.length() > 0) {
                         bussTypeVal = sortNo;
@@ -463,7 +450,7 @@ public class RateActivity extends ParentActivity {
         rateTol = jsonArray.getJSONObject(jsonArray.length() - 1);
         //Log.d(TAG, "jsonObject: "+tolObj.getString("基础利率 （%）"));
         /*Gson gson = new Gson();
-        bussType = gson.fromJson(jsonArray, new TypeToken<List<BussType>>(){}.getType());
+        bussType = gson.fromJson(jsonArray, new TypeToken<List<bussType>>(){}.getType());
         Log.d(TAG, "bussType: "+bussType);*/
 
         Message msg = new Message();
@@ -686,7 +673,7 @@ public class RateActivity extends ParentActivity {
     void setSpinner(String id, String title) {
         try {
             if ("001".equals(id)) {
-                LinearLayout industryLoyout = (LinearLayout) findViewById(R.id.id_industry);
+                LinearLayout industryLoyout = (LinearLayout) findViewById(R.id.id_industry);//投向行业
                 if (industryType != null) {
                     industryLoyout.setVisibility(View.VISIBLE);
                     //获取第一级数据
@@ -700,7 +687,7 @@ public class RateActivity extends ParentActivity {
                     return;
                 }
             }
-            LinearLayout layout = (LinearLayout) findViewById(R.id.estimate);
+            LinearLayout layout = (LinearLayout) findViewById(R.id.estimate);//利率测算项
 //            GridLayout layout = (GridLayout) findViewById(R.id.estimate);
             final LinearLayout layout2 = new LinearLayout(this);
             layout2.setOrientation(LinearLayout.HORIZONTAL);
@@ -786,7 +773,6 @@ public class RateActivity extends ParentActivity {
                 }
             }
 
-
             this.adapteEdu = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, this.dataEdu);
             this.adapteEdu.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(this.adapteEdu);
@@ -844,25 +830,6 @@ public class RateActivity extends ParentActivity {
         }
     }
 
-    /**
-     * 获取客户信息
-     *
-     * @param view
-     */
-    public void clickCustRate(View view) {
-        reqCustBody();
-    }
-
-    /**
-     * 选定客户
-     *
-     * @param view
-     */
-    public void selectCustomerClick(View view) {
-//        reqCustBody();
-        startActivityForResult(new Intent(this, ContactCustomerActivity.class), 99);
-    }
-
     public void viewCustomerClick(View view) {
         showPopListView();
     }
@@ -870,7 +837,7 @@ public class RateActivity extends ParentActivity {
     private void showPopListView() {
 
         View contentView = LayoutInflater.from(this).inflate(R.layout.pop_list, null);
-        RecyclerView recyclerView = (RecyclerView) contentView.findViewById(com.example.zhouwei.library.R.id.recyclerView);
+        RecyclerView recyclerView = (RecyclerView) contentView.findViewById(R.id.recyclerView);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 4);
         recyclerView.setLayoutManager(layoutManager);
         //处理popWindow 显示内容
@@ -883,31 +850,6 @@ public class RateActivity extends ParentActivity {
                 .setBgDarkAlpha(0.6f)
                 .create()
                 .showAsDropDown(etCustType, 0, 200);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-//        LogUtils.v(resultCode + "~~~~~~~~~~~~~~~~~~~~" + requestCode);
-        if (resultCode == 0)
-            if (requestCode == 99) {
-                Bundle bundle = data.getBundleExtra("data");
-                String name = bundle.getString("name");
-                String id = bundle.getString("id");
-                for (Customer cus : customer) {
-                LogUtils.v(name+"==="+cus.getCustomerName()+"\t\t"+id+"==="+cus.getCertID());
-                    if (cus.getCustomerName().equals(name) && cus.getCertID().equals(id)) {
-                        listData.add(0, cus.getCustomerID());
-                        listData.add(1, cus.getCustomerName());
-                        listData.add(2, cus.getCustomerType());
-                        listData.add(3, cus.getCertID());
-                        etCustName.setText(cus.getCustomerName());
-                        etCustType.setText(cus.getCustomerType());
-                        llCustType.setEnabled(true);
-                    }
-                }
-            }
     }
 
     public String getRateUrl() {
@@ -1248,6 +1190,38 @@ public class RateActivity extends ParentActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
+    }
+
+    @OnClick(R.id.ll_custName)
+    public void onViewClicked() {
+        reqCustBody();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+//        LogUtils.v(resultCode + "~~~~~~~~~~~~~~~~~~~~" + requestCode);
+        if (resultCode == 0)
+            if (requestCode == 99) {
+                Bundle bundle = data.getBundleExtra("data");
+                String name = bundle.getString("name");
+                String id = bundle.getString("id");
+                listData.clear();
+                for (Customer cus : customer) {
+                    LogUtils.v(name + "===" + cus.getCustomerName() + "\t\t" + id + "===" + cus.getCertID());
+                    if (cus.getCustomerName().equals(name) && cus.getCertID().equals(id)) {
+                        listData.add(0, cus.getCustomerID());
+                        listData.add(1, cus.getCustomerName());
+                        String customerType = Utils.getTypeName(cus.getCustomerType());
+                        listData.add(2, customerType);
+                        listData.add(3, cus.getCertID());
+                        etCustName.setText(cus.getCustomerName());
+                        etCustType.setText(customerType);
+                        llCustType.setClickable(true);
+                    }
+                }
+            }
     }
 }
 

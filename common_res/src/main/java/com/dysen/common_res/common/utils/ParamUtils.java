@@ -13,6 +13,11 @@ public class ParamUtils {
 	public static String UserId =
 //            "001810";
 			"E071316";
+	public static String userName;
+	public static String orgId;
+	public static String orgName;
+	public static String approvals;
+
 	public static String UserIdApproval = "B129103";
 	public static String paramIp =
 //            "http://192.168.1.100:9080";

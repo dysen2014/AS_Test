@@ -169,57 +169,6 @@ public class HttpThread extends Thread {
         }
     }
 
-    public static void sendRequestWithOkHttp(final String url, final JSONObject obj, final String type, final Handler handler) {
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                try {
-                    RequestBody body = RequestBody.create(MEDIA_TYPE_MARKDOWN,  String.valueOf(obj));
-                    OkHttpClient client = new OkHttpClient();
-                    Request request = new Request.Builder()
-                            .url(url)//请求地址
-                            .post(body)//post 请求参数
-                            .build();
-                    LogUtils.d("http", request+"\nsendRequestWithOkHttp:"+url+obj.toString());
-                    Response response = client.newCall(request).execute();
-                    LogUtils.d("http", "response:"+String.valueOf(response));
-                    String responseData = response.body().string();
-
-                    LogUtils.d("http", "Response completed: " + responseData);
-//                    jsonData = parseJSONWithGson(responseData);
-                    Message msg = new Message();
-//                    if (parseJSON(responseData).get("returnCode").toString().equals("SUCCESS")){//返回成功
-//                        if (parseJSON(responseData, "Result").has("Result")){
-//                            if (parseJSON(responseData, "Result").toString().equals("N")) {//参数有无
-//
-//                            } }else {//
-                            msg.obj = responseData;
-                            if("buss".equals(type)){        //业务品种
-                                msg.what = 1;
-                            }else if("cust".equals(type)){      //客户信息
-                                msg.what = 2;
-                            }else if("rate".equals(type)){      //测算项信息
-                                msg.what = 3;
-                            }else if("rateTol".equals(type)){       //测算结果
-                                msg.what = 4;
-                            }
-//                        }
-//                    }else {//返回失败
-//
-//                    }
-                    handler.sendMessage(msg);
-                } catch (Exception e) {
-                    LogUtils.d("http", "sokect time out");
-                    Message msg = new Message();
-                    msg.what = -1;
-                    handler.sendMessage(msg);
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
-
     public static JSONObject parseJSON(String jsonData, String name) throws JSONException {
         if (!TextUtils.isEmpty(jsonData) || jsonData != null){
             JSONObject jsonObject = new JSONObject(jsonData);

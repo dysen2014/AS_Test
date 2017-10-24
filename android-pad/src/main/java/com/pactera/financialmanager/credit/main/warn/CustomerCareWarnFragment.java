@@ -420,7 +420,7 @@ public class CustomerCareWarnFragment extends ParentFragment implements BaseRefr
     @Override
     public void loadMore() {
 
-        if (mListLeft.size() < Integer.parseInt(count)) {
+        if (mListLeft.size() <= Integer.parseInt(count)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

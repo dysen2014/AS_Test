@@ -655,7 +655,6 @@ ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\Androi
 		ADDED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml:388:13-48
 uses-sdk
 INJECTED from D:\dysen\Android\AS_Test\nx\releas\Credit\android-pad\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:multidex:1.0.1] C:\Users\dysen\.android\build-cache\fce8751aeed9d033a09e5810e01e0c2206fec2af\output\AndroidManifest.xml:18:5-42
 MERGED from [Credit:ocr-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ocr-library\build\intermediates\bundles\default\AndroidManifest.xml:5:5-7:41
 MERGED from [Credit:ble-lib:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\ble-lib\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41
 MERGED from [Credit:baseitem-library:unspecified] D:\dysen\Android\AS_Test\nx\releas\Credit\baseitem-library\build\intermediates\bundles\default\AndroidManifest.xml:7:5-9:41

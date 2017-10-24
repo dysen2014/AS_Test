@@ -8,8 +8,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
+import com.dysen.common_res.common.utils.Utils;
 
 import java.util.List;
 
@@ -46,7 +46,7 @@ public class ApprovalAdapter extends RecyclerView.Adapter<ApprovalAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        String imgName = ParentActivity.getTypeName(list.get(position).getCustomerType());
+        String imgName = Utils.getTypeName(list.get(position).getCustomerType());
 
         holder.approvalImg.setText(imgName);
         holder.approvalName.setText("客户名称:\t"+list.get(position).getCustomerName());

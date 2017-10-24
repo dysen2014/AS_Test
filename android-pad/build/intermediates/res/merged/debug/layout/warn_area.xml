@@ -61,35 +61,38 @@
             app:textColorNormal="#999999"
             app:textColorSelected="#ea452f"/>
 
-        <com.yinglan.alphatabs.AlphaTabView
-            android:id="@+id/tab_5"
-            style="@style/common_tab_bar"
-            app:tabIconNormal="@drawable/warn_tab_overdue"
-            app:tabIconSelected="@drawable/warn_tab_overdue_selected"
-            app:tabText="贷款逾期"
-            app:tabTextSize="13sp"
-            app:textColorNormal="#999999"
-            app:textColorSelected="#ea452f"/>
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/tab_5"
+                style="@style/common_tab_bar"
+                app:tabIconNormal="@drawable/warn_tab_overdue"
+                app:tabIconSelected="@drawable/warn_tab_overdue_selected"
+                app:tabText="贷款逾期"
+                app:tabTextSize="13sp"
+                app:textColorNormal="#999999"
+                app:textColorSelected="#ea452f"
+                android:clickable="false"/>
 
-        <com.yinglan.alphatabs.AlphaTabView
-            android:id="@+id/tab_6"
-            style="@style/common_tab_bar"
-            app:tabIconNormal="@drawable/warn_tab_expiration"
-            app:tabIconSelected="@drawable/warn_tab_expiration_selected"
-            app:tabText="贷款到期"
-            app:tabTextSize="13sp"
-            app:textColorNormal="#999999"
-            app:textColorSelected="#ea452f"/>
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/tab_6"
+                style="@style/common_tab_bar"
+                app:tabIconNormal="@drawable/warn_tab_expiration"
+                app:tabIconSelected="@drawable/warn_tab_expiration_selected"
+                app:tabText="贷款到期"
+                app:tabTextSize="13sp"
+                app:textColorNormal="#999999"
+                app:textColorSelected="#ea452f"
+                android:clickable="false"/>
 
-        <com.yinglan.alphatabs.AlphaTabView
-            android:id="@+id/tab_7"
-            style="@style/common_tab_bar"
-            app:tabIconNormal="@drawable/warn_tab_after"
-            app:tabIconSelected="@drawable/warn_tab_after_selected"
-            app:tabText="贷后管理"
-            app:tabTextSize="13sp"
-            app:textColorNormal="#999999"
-            app:textColorSelected="#ea452f"/>
+            <com.yinglan.alphatabs.AlphaTabView
+                android:id="@+id/tab_7"
+                style="@style/common_tab_bar"
+                app:tabIconNormal="@drawable/warn_tab_after"
+                app:tabIconSelected="@drawable/warn_tab_after_selected"
+                app:tabText="贷后管理"
+                app:tabTextSize="13sp"
+                app:textColorNormal="#999999"
+                app:textColorSelected="#ea452f"
+                android:clickable="false"/>
 
         <com.yinglan.alphatabs.AlphaTabView
             android:visibility="gone"

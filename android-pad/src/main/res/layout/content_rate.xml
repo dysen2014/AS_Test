@@ -41,8 +41,7 @@
                     android:layout_height="52dp"
                     android:layout_weight="3"
                     android:background="@drawable/shape_txt_bg"
-                    android:gravity="center_vertical"
-                    android:onClick="selectCustomerClick">
+                    android:gravity="center_vertical">
 
                 <Button
                     android:id="@+id/et_custName"
@@ -80,7 +79,8 @@
                     android:layout_height="52dp"
                     android:layout_weight="3"
                     android:background="@drawable/shape_txt_bg"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:clickable="false">
                 <Button
                     android:id="@+id/et_custType"
                     style="@style/common_rate_edit"

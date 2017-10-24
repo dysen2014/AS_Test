@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.ParamUtils;
-import com.dysen.common_res.common.views.ViewUtils;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
@@ -35,7 +34,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 import static com.dysen.common_res.common.utils.HttpThread.parseJSON;
 import static com.dysen.common_res.common.utils.ParamUtils.UserId;
@@ -63,7 +61,6 @@ public class CreditActivity extends ParentActivity {
     private List<CreditLoginBean> dataList;
     JSONObject jsonObject;
 
-    public static String userId;
     View[] views = new AlphaTabView[]{tab1, tab1, tab2, tab3};
 
     private Handler mHandler = new Handler() {
@@ -85,8 +82,11 @@ public class CreditActivity extends ParentActivity {
                     } else {
 //                        dataList = parseList(HttpThread.parseJSON((String) msg.obj).toString());
                         jsonObject = HttpThread.parseJSON((String) msg.obj);
-                        userId = (String) jsonObject.get("UserID");
-                        ParamUtils.setUserId(userId);
+                        ParamUtils.UserId = (String) jsonObject.get("UserID");
+                        ParamUtils.userName = (String) jsonObject.get("UserName");
+                        ParamUtils.orgId = (String) jsonObject.get("OrgID");
+                        ParamUtils.orgName = (String) jsonObject.get("OrgName");
+                        ParamUtils.approvals = (String) jsonObject.get("Approvals");
                         LogUtils.d("test", "crmName:" + LogoActivity.user.getUsername() + "\tcrmOrg" + LogoActivity.user.getBrName() +
                                 "\tcredit id" + UserId);
                     }

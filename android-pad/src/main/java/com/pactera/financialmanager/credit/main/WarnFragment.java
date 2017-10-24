@@ -16,7 +16,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
@@ -54,7 +53,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -168,12 +166,18 @@ public class WarnFragment extends ParentFragment {
         if (mDailyRemindersListCredit.size() <= 0) {
             flWorkplacewrokwarn.setVisibility(View.INVISIBLE);
             ShowDialog(getActivity(), "无数据！");
+            tab5.setVisibility(View.INVISIBLE);
+            tab6.setVisibility(View.INVISIBLE);
+            tab7.setVisibility(View.INVISIBLE);
         } else {
             if (mDailyRemindersListCredit.size() == 3) {
                 flagCredit = false;
                 sPastDue = mDailyRemindersListCredit.get(0).getCount();
                 sMatured = mDailyRemindersListCredit.get(1).getCount();
                 sLater = mDailyRemindersListCredit.get(2).getCount();
+                tab5.setClickable(true);
+                tab5.setClickable(true);
+                tab5.setClickable(true);
 //                setBadgeView(item8Txt, sPastDue);
 //                setBadgeView(item7Txt, sMatured);
 //                setBadgeView(item6Txt, sLater);
@@ -233,12 +237,12 @@ public class WarnFragment extends ParentFragment {
                     case 7:
                         setFragmentAll(tab7);
                         break;
-                    case 8:
-                        setFragmentAll(tab8);
-                        break;
-                    case 9:
-                        setFragmentAll(tab9);
-                        break;
+//                    case 8:
+//                        setFragmentAll(tab8);
+//                        break;
+//                    case 9:
+//                        setFragmentAll(tab9);
+//                        break;
                 }
             }
         });
@@ -290,9 +294,10 @@ public class WarnFragment extends ParentFragment {
 
     //先隐藏其他所有的fragment
     private void hideFragments(FragmentTransaction transaction) {
-        if (customerApprovalWarnFragment != null) {
-            transaction.hide(customerApprovalWarnFragment);
-        }
+//        if (customerApprovalWarnFragment != null) {
+//            transaction.hide(customerApprovalWarnFragment);
+//        }
+
         if (customerDefaultWarnFragment != null) {
             transaction.hide(customerDefaultWarnFragment);
         }
@@ -350,7 +355,7 @@ public class WarnFragment extends ParentFragment {
                     customerCareWarnFragment = new CustomerCareWarnFragment();
                     transaction.add(R.id.fl_warn, customerCareWarnFragment);
                 } else {
-                    transaction.show(afterWarnFragment);
+                    transaction.show(customerCareWarnFragment);
                 }
                 break;
             case R.id.tab_3://金融需求提醒
@@ -358,7 +363,7 @@ public class WarnFragment extends ParentFragment {
                     financialNeedsWarnFragment = new FinancialNeedsWarnFragment();
                     transaction.add(R.id.fl_warn, financialNeedsWarnFragment);
                 } else {
-                    transaction.show(afterWarnFragment);
+                    transaction.show(financialNeedsWarnFragment);
                 }
                 break;
             case R.id.tab_4://产品到期提醒

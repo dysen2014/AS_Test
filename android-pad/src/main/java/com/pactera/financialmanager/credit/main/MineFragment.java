@@ -8,11 +8,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dysen.common_res.common.base.ParentFragment;
+import com.dysen.common_res.common.utils.ParamUtils;
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.credit.CreditActivity;
 import com.pactera.financialmanager.ui.LogoActivity;
 import com.pactera.financialmanager.ui.NewLoginActivity;
-import com.pactera.financialmanager.ui.ParentFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -62,7 +62,7 @@ public class MineFragment extends ParentFragment {
 
         mineTextName.setText(LogoActivity.user.getUsername());
         mineTextOrg.setText(LogoActivity.user.getBrName());
-        mineTextSystem.setText(CreditActivity.userId);
+        mineTextSystem.setText(ParamUtils.UserId);
 //
 ////        baseItemMine.setBackgroundColor(Color.parseColor("#d1d4d9"));
 //

@@ -36,6 +36,8 @@ public class User {
 	private String roleCode;
 	private String roleDesc;
 	private String roleName;
+	private String orgId;
+	private String OrgName;
 
 	private String USERVALIDSTATUS;
 	private String ENABLEFLAG;
@@ -87,6 +89,25 @@ public class User {
 		}
 
 	}
+
+	public String getOrgId() {
+		return orgId;
+	}
+
+	public User setOrgId(String orgId) {
+		this.orgId = orgId;
+		return this;
+	}
+
+	public String getOrgName() {
+		return OrgName;
+	}
+
+	public User setOrgName(String orgName) {
+		OrgName = orgName;
+		return this;
+	}
+
 	public String getRightStr() {
 		return rightStr;
 	}
