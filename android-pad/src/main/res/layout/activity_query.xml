@@ -9,16 +9,8 @@
 	tools:context=".credit.main.service.search.Query"
 	>
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="64dp"
-		android:gravity="center_vertical"
-		>
-
-		<include
-			layout="@layout/common_two_rbtn"
-			/>
-	</LinearLayout>
+	<include
+		layout="@layout/common_top_lay"/>
 
 	<FrameLayout
 		android:id="@+id/fragment_query"

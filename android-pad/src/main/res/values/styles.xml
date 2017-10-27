@@ -212,12 +212,15 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:width">60dp</item>
         <item name="android:visibility">invisible</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:singleLine">true</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:textColor">#ea452f</item>
+        <item name="android:textColor">@color/gray</item>
         <item name="android:background">@drawable/workplaceitemchosebgselector</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
     </style>
 
     <style name="workwarn_num_style">
@@ -284,6 +287,15 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="common_lay_bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:background">@drawable/shape_view_bg</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="common_view_rbtn_group">
@@ -322,7 +334,7 @@
         <item name="android:paddingLeft">24dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">48dp</item>
-        <item name="android:background">@drawable/shape_txt_bg</item>
+        <item name="android:background">@drawable/shape_view_bg</item>
     </style>
     <style name="common_service_text">
         <item name="android:layout_width">0dp</item>

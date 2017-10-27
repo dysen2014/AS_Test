@@ -30,12 +30,12 @@ import com.yinglan.alphatabs.OnTabChangedListner;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static com.dysen.common_res.common.utils.HttpThread.parseJSON;
 import static com.dysen.common_res.common.utils.ParamUtils.UserId;
 
 public class CreditActivity extends ParentActivity {
@@ -58,10 +58,8 @@ public class CreditActivity extends ParentActivity {
     private ServiceFragment serviceFragment;//服务
     private ReportFragment reportFragment;//报表
     private MineFragment mineFragment;//我的
-    private List<CreditLoginBean> dataList;
+    private List<CreditLoginBean> listData = new ArrayList<>();
     JSONObject jsonObject;
-
-    View[] views = new AlphaTabView[]{tab1, tab1, tab2, tab3};
 
     private Handler mHandler = new Handler() {
 
@@ -71,25 +69,16 @@ public class CreditActivity extends ParentActivity {
             if (msg.obj != null) {
 
                 try {
-                    if (parseJSON((String) msg.obj).has("return")) {
-                        if (parseJSON((String) msg.obj).get("return").equals("Y")) {
-                            dataList = parseList(parseJSON((String) msg.obj).toString());
-                            LogUtils.d("test", "crmName:" + LogoActivity.user.getUsername() + "\tcrmOrg" + LogoActivity.user.getBrName() +
-                                    "\tcredit id" + dataList.get(0).getUserID());
-                        } else {
-//                            ShowDialog(CreditActivity.this, parseJSON((String) msg.obj).get("return").toString());
-                        }
-                    } else {
-//                        dataList = parseList(HttpThread.parseJSON((String) msg.obj).toString());
-                        jsonObject = HttpThread.parseJSON((String) msg.obj);
-                        ParamUtils.UserId = (String) jsonObject.get("UserID");
-                        ParamUtils.userName = (String) jsonObject.get("UserName");
-                        ParamUtils.orgId = (String) jsonObject.get("OrgID");
-                        ParamUtils.orgName = (String) jsonObject.get("OrgName");
-                        ParamUtils.approvals = (String) jsonObject.get("Approvals");
+                        jsonObject = HttpThread.parseJSON(msg.obj.toString());
+                        listData = parseList(jsonObject.toString());
+                        ParamUtils.UserId = jsonObject.get("UserID").toString();
+                        ParamUtils.userName =  jsonObject.get("UserName").toString();
+                        ParamUtils.orgId = jsonObject.get("OrgID").toString();
+                        ParamUtils.orgName = jsonObject.get("OrgName").toString();
+                        ParamUtils.approvals = jsonObject.get("Approvals").toString();
                         LogUtils.d("test", "crmName:" + LogoActivity.user.getUsername() + "\tcrmOrg" + LogoActivity.user.getBrName() +
-                                "\tcredit id" + UserId);
-                    }
+                                "\tcredit id" + UserId+"\torgId"+ParamUtils.orgId);
+                        LogUtils.v(listData.get(0).getOrgID()+"===================="+listData.get(0).getApprovals());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

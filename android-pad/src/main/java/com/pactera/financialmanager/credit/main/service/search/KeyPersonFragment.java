@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 
 import com.dysen.common_res.common.base.ParentFragment;
@@ -30,9 +29,8 @@ import com.pactera.financialmanager.credit.common.adapters.DataAdapter;
 import com.pactera.financialmanager.credit.common.adapters.DataAdapterNew;
 import com.pactera.financialmanager.credit.common.adapters.LeftAdapter;
 import com.pactera.financialmanager.credit.common.adapters.TopDataAdapter;
-import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.bean.InitData;
-import com.pactera.financialmanager.credit.common.views.NoscrollListView;
+import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView;
 import com.pactera.financialmanager.credit.main.warn.DataListActivity;
 
@@ -87,8 +85,7 @@ public class KeyPersonFragment extends ParentFragment implements BaseRefreshList
 	private List<BeanHeader> beanListHeader = new ArrayList<>();
 	private List<KeyPersonBean.Customer> listCustomer = new ArrayList<>();
 	private List<KeyPersonBean.Business> listBusiness = new ArrayList<>();
-	private String CustomerId;
-	private String CustomerType;
+	private String customerId, customerType;
 	private boolean flagCustomer;
 
 	private Handler handler = new Handler() {
@@ -203,22 +200,26 @@ public class KeyPersonFragment extends ParentFragment implements BaseRefreshList
 		View view = inflater.inflate(R.layout.fragment_key_person, container, false);
 		ButterKnife.bind(this, view);
 
-		Bundle bundle = QueryDetails.bundle;
-		CustomerId = bundle.getString("CustomerID");
-		CustomerType = bundle.getString("CustomerType");
-		if (CustomerType.equals("030") || CustomerType.equals("040")){
+		if (QueryDetails.type.equals("customer")){
+			customerType = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerType();
+			customerId = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerId();
+		}else if (QueryDetails.type.equals("business")){
+			customerType = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerType();
+			customerId = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerID();
+		}
+		if (customerType.equals("030") || customerType.equals("040")){
 			flagCustomer = true;
 		}else {
 			flagCustomer = false;
 		}
-LogUtils.d("flagCustomer:"+flagCustomer+"\tCustomerId:"+CustomerId+"\tCustomerType:"+CustomerType);
+LogUtils.d("flagCustomer:"+flagCustomer+"\tCustomerId:"+customerId+"\tCustomerType:"+customerType);
 		sendRequest();
 		return view;
 	}
 
 	private void sendRequest() {
 
-		JSONObject jsonObject = ParamUtils.setParams("CustomerSearch", "crmEntKeyman", new Object[]{CustomerId, CustomerType, curPage, PAGE_SIZE}, 4);
+		JSONObject jsonObject = ParamUtils.setParams("CustomerSearch", "crmEntKeyman", new Object[]{customerId, customerType, curPage, PAGE_SIZE}, 4);
 		HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
 	}
 

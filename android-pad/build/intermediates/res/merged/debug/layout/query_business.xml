@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:background="#fff"
     android:orientation="vertical">
 
     <ScrollView
@@ -27,10 +26,13 @@
                     <TextView
                         style="@style/common_tablerow_text"
                         android:text="@string/customerType" />
+                    <LinearLayout
+                        style="@style/common_lay_bg">
 
                     <Spinner
                         android:id="@+id/customerType"
-                        style="@style/common_tablerow_spinner" />
+                        style="@style/common_rate_edit" />
+                    </LinearLayout>
                 </TableRow>
 
                 <TableRow style="@style/common_tablerow">
@@ -50,10 +52,13 @@
                     <TextView
                         style="@style/common_tablerow_text"
                         android:text="@string/cardType" />
+                    <LinearLayout
+                        style="@style/common_lay_bg">
 
                     <Spinner
                         android:id="@+id/cardType"
-                        style="@style/common_tablerow_spinner" />
+                        style="@style/common_rate_edit" />
+                    </LinearLayout>
                 </TableRow>
 
                 <TableRow style="@style/common_tablerow">
@@ -85,11 +90,35 @@
                     <TextView
                         style="@style/common_tablerow_text"
                         android:text="@string/businessType" />
+                    <LinearLayout
+                        style="@style/common_lay_bg">
 
                     <Spinner
                         android:id="@+id/businessType"
-                        style="@style/common_tablerow_spinner" />
+                        style="@style/common_rate_edit" />
+                    </LinearLayout>
                 </TableRow>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:stretchColumns="1">
+
+                    <TableRow style="@style/common_tablerow">
+
+                        <TextView
+                            style="@style/common_tablerow_text"
+                            android:text="@string/classification" />
+                        <LinearLayout
+                            style="@style/common_lay_bg">
+
+                        <Spinner
+                            android:id="@+id/level"
+                            style="@style/common_rate_edit" />
+                        </LinearLayout>
+                    </TableRow>
+                </TableLayout>
             </TableLayout>
 
             <TableLayout
@@ -221,24 +250,6 @@
                     <EditText
                         android:id="@+id/dueDate_after_text"
                         style="@style/common_interval_edit" />
-                </TableRow>
-            </TableLayout>
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingTop="5dp"
-                android:stretchColumns="1">
-
-                <TableRow style="@style/common_tablerow">
-
-                    <TextView
-                        style="@style/common_tablerow_text"
-                        android:text="@string/classification" />
-
-                    <Spinner
-                        android:id="@+id/level"
-                        style="@style/common_tablerow_spinner" />
                 </TableRow>
             </TableLayout>
 

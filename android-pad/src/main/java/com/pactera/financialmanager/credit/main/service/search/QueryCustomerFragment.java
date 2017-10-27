@@ -13,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dysen.common_res.common.base.ParentFragment;
-import com.dysen.common_res.common.utils.ParamUtils;
 import com.pactera.financialmanager.R;
 
 /**
@@ -90,7 +89,6 @@ public class QueryCustomerFragment extends ParentFragment implements View.OnClic
 		bundle.putString("CertID", cardNumbers);
 		bundle.putString("MobilePhone", telephoneNumbers);
 		bundle.putString("IrscreditLevel", Level_value);
-		bundle.putString("UserID", ParamUtils.UserId);
 		intent.putExtras(bundle);
 		/*
          * 1 是请求的一个标志  requestCode

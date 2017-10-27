@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
               android:gravity="center"
-    android:background="#fff"
     android:orientation="vertical"
     >
     <ScrollView
@@ -25,13 +24,16 @@
             <TextView android:text="@string/customerType"
                 style="@style/common_tablerow_text"
                 />
-
+            <LinearLayout
+                style="@style/common_lay_bg">
             <Spinner
                 android:id="@+id/customerType"
-                style="@style/common_tablerow_spinner"/>
+                style="@style/common_rate_edit"/>
+            </LinearLayout>
         </TableRow>
 
-        <TableRow  >
+        <TableRow
+            style="@style/common_tablerow">
         <TextView android:text="@string/customerName"
             style="@style/common_tablerow_text"
             />
@@ -41,16 +43,22 @@
             />
     </TableRow>
 
-        <TableRow  >
+        <TableRow
+            style="@style/common_tablerow">
             <TextView android:text="@string/cardType"
                 style="@style/common_tablerow_text"
                 />
+
+            <LinearLayout
+                style="@style/common_lay_bg">
             <Spinner android:id="@+id/cardType"
-                style="@style/common_tablerow_spinner"
+                style="@style/common_rate_edit"
                 />
+            </LinearLayout>
         </TableRow>
 
-        <TableRow  >
+        <TableRow
+            style="@style/common_tablerow">
             <TextView android:text="@string/cardNumber"
                 style="@style/common_tablerow_text"/>
             <EditText android:id="@+id/cardNumber"
@@ -58,7 +66,8 @@
                 style="@style/common_tablerow_edit"
                 />
         </TableRow>
-        <TableRow  >
+        <TableRow
+            style="@style/common_tablerow">
             <TextView android:text="@string/telephoneNumber"
                 style="@style/common_tablerow_text"
                 />
@@ -68,7 +77,8 @@
                 />
         </TableRow>
 
-        <TableRow  
+        <TableRow
+            style="@style/common_tablerow"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -76,11 +86,7 @@
                 style="@style/common_tablerow_text"
                 />
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:background="@drawable/shape_txt_bg">
+                style="@style/common_lay_bg">
                 <Spinner
                     android:id="@+id/level"
                     style="@style/common_rate_edit"

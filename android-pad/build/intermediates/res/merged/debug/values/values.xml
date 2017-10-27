@@ -153,6 +153,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="common_red">#960404</color>
+    <color name="common_tab_bg">#EA452F</color>
     <color name="common_yellow">#FF8C00</color>
     <color name="contentBackgroundColor">#ffffffff</color>
     <color name="content_bg">#ffffffff</color>
@@ -1107,7 +1108,7 @@
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="bt_hold_server">持有的服务/理财</string>
     <string name="businessType">业务品种</string>
-    <string name="business_details">业务查询详情</string>
+    <string name="business_details">信贷业务查询详情</string>
     <string name="business_list">业务查询结果</string>
     <string name="business_varieties">业务品种</string>
     <string name="cardNumber">证件号码</string>
@@ -2965,10 +2966,18 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="common_lay_bg">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">52dp</item>
+        <item name="android:background">@drawable/shape_view_bg</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
     <style name="common_lay_vertical">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginBottom">20dp</item>
     </style>
     <style name="common_linearLayout">
 		<item name="android:layout_height">wrap_content</item>
@@ -3038,13 +3047,14 @@
     <style name="common_tablerow">
 		<item name="android:layout_width">match_parent</item>
 		<item name="android:layout_height">48dp</item>
-		<item name="android:background">@color/white</item>
+		<item name="android:background">@color/transparent</item>
+		<item name="android:layout_marginBottom">20dp</item>
 	</style>
     <style name="common_tablerow_edit">
         <item name="android:paddingLeft">24dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">48dp</item>
-        <item name="android:background">@drawable/shape_txt_bg</item>
+        <item name="android:background">@drawable/shape_view_bg</item>
     </style>
     <style name="common_tablerow_spinner">
     <item name="android:layout_width">match_parent</item>
@@ -3062,6 +3072,7 @@
 		<item name="android:paddingBottom">8dp</item>
 		<item name="android:paddingLeft">16dp</item>
 		<item name="android:paddingRight">16dp</item>
+		<item name="android:background">@color/transparent</item>
 	</style>
     <style name="common_text">
         <item name="android:layout_width">0dp</item>
@@ -3115,7 +3126,7 @@
 		<item name="android:orientation">horizontal</item>
 		<item name="android:gravity">center</item>
 		<item name="android:button">@null</item>
-		<item name="android:textColor">@color/radiobutton_textcolor_red</item>
+		<item name="android:textColor">@color/gray</item>
 	</style>
     <style name="common_view_rbtn_group">
         <item name="android:layout_width">0dp</item>
@@ -3280,12 +3291,15 @@
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:width">60dp</item>
         <item name="android:visibility">invisible</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:singleLine">true</item>
         <item name="android:textSize">12sp</item>
-        <item name="android:textColor">#ea452f</item>
+        <item name="android:textColor">@color/gray</item>
         <item name="android:background">@drawable/workplaceitemchosebgselector</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
     </style>
     <style name="workwarn_itemtext_style">
         <item name="android:gravity">center</item>

@@ -79,8 +79,6 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
     SyncHorizontalScrollView dataHorizontal;
     @Bind(R.id.ptr_layout)
     PullToRefreshLayout ptrLayout;
-    @Bind(R.id.common_txt_rlv)
-    RecyclerView commonTxtRlv;
     @Bind(R.id.common_txt_rlv2)
     RecyclerView commonTxtRlv2;
     @Bind(R.id.common_txt_00)
@@ -104,8 +102,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
     int curPage = 1;
     @Bind(R.id.tv_hide_data)
     TextView tvHideData;
-    private int index1, index2;
-    private boolean overDueFlag;
+    private int index1;
     private static String mItemNo;
     private int itemIndex = 0;
 
@@ -144,11 +141,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
             if (msg.obj != null) {
                 progressLoading.setVisibility(View.GONE);
 
-                try {
                     beOverdueList = parseList(HttpThread.parseJSONWithGson((String) msg.obj));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
                 for (int i = 0; i < beOverdueList.size(); i++) {
                     ItemNo.add(beOverdueList.get(i).getItemno());
                     topName.add(beOverdueList.get(i).getName());
@@ -273,10 +266,9 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
 
     public void sendRequest() {//逾期提醒(金额)
 
-        overDueFlag = false;
         progressLoading.setVisibility(View.VISIBLE);
         JSONObject jsonObject = ParamUtils.setParams("warn", "crmBeOverdue", new Object[]{ParamUtils.UserId}, 1);
-        LogUtils.d("url:" + ParamUtils.url + "\tjsonOnject:" + jsonObject.toString());
+//        LogUtils.d("url:" + ParamUtils.url + "\tjsonOnject:" + jsonObject.toString());
         HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
     }
 
@@ -284,7 +276,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
 
     private void sendRequest(int index) {//逾期提醒详情
         LogUtils.d(ItemNo.get(index) + "-------------" );
-        overDueFlag = true;
+        mItemNo = ItemNo.get(index);
 
         progressLoading.setVisibility(View.VISIBLE);
         JSONObject jsonObject = ParamUtils.setParams("warn", "crmOverdueCustomer", new Object[]{ParamUtils.UserId, mItemNo, PAGE_SIZE, curPage}, 4);
@@ -393,9 +385,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
         mListTop.clear();
     }
     /**
-     * 设置头背景
-     *
-     * @param tv
+     * 设置头背景c
      */
     private void setBgAndTextColor(TextView tv) {
         commonTxt0.setEnabled(true);
@@ -403,22 +393,38 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
         commonTxt2.setEnabled(true);
         commonTxt3.setEnabled(true);
 
-        commonTxt0.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt1.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt2.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt3.setTextColor(getResources().getColor(R.color.separatelightredline));
+        commonTxt0.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt1.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt2.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt3.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt0.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt1.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt2.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt3.setBackgroundResource(R.drawable.tab_bg_normal);
         tv.setEnabled(false);
-        tv.setTextColor(getResources().getColor(R.color.white));
+        tv.setTextColor(getResources().getColor(R.color.common_tab_bg));
+        tv.setBackgroundResource(R.drawable.tab_bg_selected);
     }
-
+    /**
+     * 设置头背景
+     */
     private void setBgAndTextColor2(TextView tv) {
         commonTxt00.setEnabled(true);
         commonTxt01.setEnabled(true);
         commonTxt02.setEnabled(true);
         commonTxt03.setEnabled(true);
-        commonTxt04.setEnabled(true);
+
+        commonTxt00.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt01.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt02.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt03.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt00.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt01.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt02.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt03.setBackgroundResource(R.drawable.tab_bg_normal);
         tv.setEnabled(false);
-        tv.setTextColor(getResources().getColor(R.color.white));
+        tv.setTextColor(getResources().getColor(R.color.common_tab_bg));
+        tv.setBackgroundResource(R.drawable.tab_bg_selected);
     }
 
     @OnClick({R.id.common_txt_0, R.id.common_txt_1, R.id.common_txt_2, R.id.common_txt_3})
@@ -437,7 +443,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
                 itemIndex = 3;
                 break;
         }
-        setSelectView(commonTxt3, itemIndex);
+        setSelectView((TextView) view, itemIndex);
     }
 
     private void setSelectView(TextView commonTxt0, int i) {

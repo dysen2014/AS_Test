@@ -238,7 +238,7 @@
     <string name="customer_list">客户查询结果</string>
     <string name="customer_details">客户查询详情</string>
     <string name="business_list">业务查询结果</string>
-    <string name="business_details">业务查询详情</string>
+    <string name="business_details">信贷业务查询详情</string>
     <string name="relationName">与该客户关系：</string>
     <string name="userName">登记人：</string>
     <string name="orgName">登记机构：</string>

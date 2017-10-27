@@ -128,12 +128,8 @@ class BusinessApprovalActivity extends ParentActivity {
 
                 break;
             case 2:
-                try {
                     listDataGuaranty = parseListGuarantyInfo(HttpThread.parseJSONWithGson(jsonStr));
                     pullLoadMore.setAdapter(new BusinessGuarantyAdapter(this, listDataGuaranty));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
                 break;
             case 3:
                 break;

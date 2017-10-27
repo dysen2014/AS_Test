@@ -16,16 +16,11 @@ import com.google.gson.reflect.TypeToken;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xml.sax.SAXException;
-import org.xml.sax.XMLReader;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParserFactory;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -144,29 +139,19 @@ public class HttpThread extends Thread {
 
                     Message msg = new Message();
                             msg.obj = responseData;
+                    String json = parseJSONWithGson(msg.obj.toString());
+                    if (json.equals("[]")){
+                        handler.sendEmptyMessage(-100);
+                    }
 
                     handler.sendMessage(msg);
                 } catch (Exception e) {
-                    LogUtils.d("http", "sokect time out");
-                    Message msg = new Message();
-                    msg.what = -1;
-                    handler.sendMessage(msg);
+                    LogUtils.d("http", e+"\t\tsokect time out");
+                    handler.sendEmptyMessage(-1);
                     e.printStackTrace();
                 }
             }
         }).start();
-    }
-
-    public static void parseXMLWithSAX(String xmlData){
-        SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-        try {
-            XMLReader xmlReader = saxParserFactory.newSAXParser().getXMLReader();
-            MyContentHandler contentHandler = new MyContentHandler() ;
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        }
     }
 
     public static JSONObject parseJSON(String jsonData, String name) throws JSONException {
@@ -197,10 +182,20 @@ public class HttpThread extends Thread {
      * @return
      * @throws JSONException
      */
-    public static String parseJSONWithGson(String jsonData) throws JSONException {
+    public static String parseJSONWithGson(String jsonData) {
         if (!TextUtils.isEmpty(jsonData) || jsonData != null){
-            JSONObject jsonObject = new JSONObject(jsonData);
-            String jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array").toString();
+            JSONObject jsonObject = null;
+            try {
+                jsonObject = new JSONObject(jsonData);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            String jsonArray = null;
+            try {
+                jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array").toString();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
             LogUtils.d("http parse", "jsonObject: " + jsonArray);
 
             return jsonArray;

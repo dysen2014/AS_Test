@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.HttpThread;
-import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
 import com.dysen.common_res.common.views.uber.UberProgressView;
@@ -21,7 +20,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -66,13 +64,8 @@ public class ApprovalActivity extends ParentActivity implements PullLoadMoreRecy
             }
             uberPgsview.setVisibility(View.INVISIBLE);
             if (msg.obj != null) {
-                try {
                     listData = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
                         initData(listData);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
             } else {
                 tvHideData.setVisibility(View.VISIBLE);
             }

@@ -25,6 +25,11 @@ public class MyAdaptorInfo extends BaseAdapter {
         mInflater = LayoutInflater.from(context);
         this.type = type;
     }
+    public MyAdaptorInfo(Context context, List<InfoItem> list){
+        this.mList = list;
+        mInflater = LayoutInflater.from(context);
+        this.type = type;
+    }
     @Override
     public int getCount() {
         return mList.size();
@@ -48,12 +53,9 @@ public class MyAdaptorInfo extends BaseAdapter {
         }
         TextView Type = (TextView) convertView.findViewById(R.id.Type_left);
         TextView Name = (TextView) convertView.findViewById(R.id.Type);
-        InfoItem bean = mList.get(position);
-        Arrays arrays = new Arrays();
-        String thisType = arrays.getCustomerType_name(type);
-        Name.setText(bean.Value);
+        Name.setText(mList.get(position).getValue());
         Name.setHeight(48);
-        Type.setText(bean.KeyName+"：");
+        Type.setText(mList.get(position).getKeyName()+"：");
         return convertView;
     }
 }

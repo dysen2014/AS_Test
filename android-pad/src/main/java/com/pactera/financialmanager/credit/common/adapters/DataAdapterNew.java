@@ -69,8 +69,6 @@ public class DataAdapterNew extends RecyclerView.Adapter<DataAdapterNew.ViewHold
                         callback.onClick(view, position);
                     }
                 });
-            }
-            for (int i = 0; i < listData.size(); i++) {
 
                 if (position % 2 != 0) {
                     viewHolder.views[i].setBackgroundResource(R.color.white);

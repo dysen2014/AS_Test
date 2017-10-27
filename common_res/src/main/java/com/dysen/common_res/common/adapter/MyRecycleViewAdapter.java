@@ -40,13 +40,6 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter<MyRecycleViewAdap
         mContext = context;
     }
 
-    public MyRecycleViewAdapter(Context context, List<Object> datalist) {
-        mLayoutInflater = LayoutInflater.from(context);
-        mItemLayout = -1;
-        list = datalist;
-        mContext = context;
-    }
-
     public MyRecycleViewAdapter(Context context, int itemLayout, List<String> datalist, OnItemClickCallback<String> onItemClickCallback) {
         mLayoutInflater = LayoutInflater.from(context);
         mItemLayout = itemLayout;

@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.dysen.common_res.common.base.ParentActivity;
 import com.pactera.financialmanager.R;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -44,7 +46,11 @@ public class BusinessDetails extends ParentActivity {
 	private DuebillInfoFragment duebillInfoFragment;//
 	private BusinessCountractFragment businessCountractFragment;//
 	private InfoFragment infoFragment;//
-	public static Bundle bundle;
+
+	public static List<ListBusinessList> listData;
+	public static int index;
+	private int tabIndex;
+
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.business_details);
@@ -58,17 +64,19 @@ public class BusinessDetails extends ParentActivity {
 
 	private void initView() {
 
-		txtTitle.setText(getString(R.string.customer_details));
+		txtTitle.setText(getString(R.string.business_details));
 		fragmentManager = getSupportFragmentManager();
-		bundle = this.getIntent().getExtras();
+
 	}
 
 	@OnClick({R.id.crmDuebillInfo, R.id.crmBusinessCountract, R.id.crmCustomerInfo})
 	public void onViewClicked(View view) {
 		switch (view.getId()) {
 			case R.id.crmDuebillInfo:
+				tabIndex = 0;
 				break;
 			case R.id.crmBusinessCountract:
+				tabIndex = 1;
 				break;
 			case R.id.crmCustomerInfo:
 				break;
@@ -79,7 +87,13 @@ public class BusinessDetails extends ParentActivity {
 	}
 
 	private void showFragment(View view) {
-		view.setBackgroundResource(R.drawable.bg_selector);
+//		view.setSelected(true);
+//		setSelectorItemColor(view, R.drawable.bg_selector);
+		crmDuebillInfo.setTextColor(getResources().getColor(R.color.gray));
+		crmCustomerInfo.setTextColor(getResources().getColor(R.color.gray));
+		crmBusinessCountract.setTextColor(getResources().getColor(R.color.gray));
+		view.setBackgroundResource(R.drawable.tab_bg_selector);
+		((RadioButton)view).setTextColor(getResources().getColor(R.color.common_tab_bg));
 	}
 
 	//先隐藏其他所有的fragment
@@ -126,8 +140,10 @@ public class BusinessDetails extends ParentActivity {
 //				} else
 //					transaction.show(infoFragment);
 //				break;
+
 				Intent intent = new Intent(getApplicationContext(), QueryDetails.class);
-				intent.putExtras(bundle);
+				QueryDetails.setData(null, listData, index);
+				intent.putExtra("type", "business");
 				startActivity(intent);
 		}
 
@@ -137,6 +153,20 @@ public class BusinessDetails extends ParentActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		setFragmentAll(crmDuebillInfo);
+
+		if (tabIndex == 0) {
+			showFragment(crmDuebillInfo);
+			setFragmentAll(crmDuebillInfo);
+			crmDuebillInfo.setChecked(true);
+		} else {
+			showFragment(crmBusinessCountract);
+			setFragmentAll(crmBusinessCountract);
+			crmBusinessCountract.setChecked(true);
+		}
+	}
+
+	public static void setData(List<ListBusinessList> list, int i) {
+		listData = list;
+		index = i ;
 	}
 }

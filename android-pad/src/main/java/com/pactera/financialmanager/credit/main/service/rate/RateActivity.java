@@ -17,7 +17,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -52,6 +51,7 @@ import butterknife.OnClick;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
+import okhttp3.Response;
 
 import static com.dysen.common_res.common.utils.HttpThread.MEDIA_TYPE_JSON;
 
@@ -86,8 +86,16 @@ public class RateActivity extends ParentActivity {
     LinearLayout llCustName;
     @Bind(R.id.ll_custType)
     LinearLayout llCustType;
-    
+
     String errorMsg = null;
+    @Bind(R.id.txt_rate)
+    TextView txtRate;
+    @Bind(R.id.ll_rate)
+    LinearLayout llRate;
+    @Bind(R.id.ll_busstype)
+    LinearLayout llBusstype;
+    @Bind(R.id.tv_busstype)
+    TextView tvBusstype;
     private ArrayAdapter<CharSequence> adapteEdu = null;
     private List<CharSequence> dataEdu = null;
     private List<BussType> bussType = new ArrayList<>();
@@ -207,7 +215,7 @@ public class RateActivity extends ParentActivity {
         JSONObject jsonObject = ParamUtils.setParams("search", "businessType", new Object[]{ParamUtils.UserId, sortNo, "C"}, 3);
         if (bussType == null) {
             sendRequestWithOkHttp(ParamUtils.url, jsonObject, "buss", "");
-        }else {
+        } else {
             sendRequestWithOkHttp(ParamUtils.url, jsonObject, "buss", bussType.getTypeNo());
         }
     }
@@ -219,6 +227,7 @@ public class RateActivity extends ParentActivity {
      */
     void reqRateBody(String sortNo) {
 
+        LogUtils.v("orgId+++" + ParamUtils.orgId);
         JSONObject jsonObject = ParamUtils.setParams("rate", "crmInterest", new Object[]{ParamUtils.UserId, ParamUtils.orgId, "", "", sortNo, "010"}, 66);//66为了和6区分
 
         if (sortNo != null && sortNo.length() > 0) {
@@ -269,7 +278,7 @@ public class RateActivity extends ParentActivity {
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder().url(url).post(body).build();
                     LogUtils.d("request: " + request + "" + json);
-                    okhttp3.Response response = client.newCall(request).execute();
+                    Response response = client.newCall(request).execute();
                     //Log.d(TAG, "body: "+response.body());
                     String responseData = response.body().string();
                     LogUtils.d("responseData: " + responseData);
@@ -483,41 +492,25 @@ public class RateActivity extends ParentActivity {
         handler.sendMessage(msg);
     }
 
+    /**
+     * 业务品种
+     */
     void reqBussType() {
         LinearLayout layout = (LinearLayout) findViewById(R.id.busstype);
-//        final LinearLayout layout2 = new LinearLayout(this);
-//        layout2.setOrientation(LinearLayout.HORIZONTAL);
-        final GridLayout layout2 = new GridLayout(this);
-        GridLayoutManager grid = new GridLayoutManager(this, 2);
-        layout2.setColumnCount(2);
-        layout2.setRowCount(2);
-        TextView textView1 = new TextView(this);
-        layout2.addView(textView1);
+        llBusstype.setOrientation(LinearLayout.HORIZONTAL);
+        tvBusstype.setText("业务品种");
+//        layout.addView(tvBusstype);
         Spinner spinner = new Spinner(this);
-        /*this.dataEdu = new ArrayList<CharSequence>();
-        this.dataEdu.add("请选择");
-        for(int i=0; i<bussType.size(); i++){
-            this.dataEdu.add(bussType.get(i).getTypeName());
-        }
-        this.adapteEdu=new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item,this.dataEdu);
-        this.adapteEdu.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);*/
         bussType.add(0, new BussType("请选择", "", "", "", ""));
         BussAdapter bussAdapter = new BussAdapter(this, bussType);
         spinner.setAdapter(bussAdapter);
-        layout2.addView(spinner);
-        layout.addView(layout2);
+        llBusstype.addView(spinner);
+//        layout.addView(llBusstype);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                //Log.d(TAG, "getTypeName: "+bussType.get(position).getTypeName());
-                //Log.d(TAG, "getSortNo: "+bussType.get(position).getSortNo());
                 LinearLayout layout11 = (LinearLayout) findViewById(R.id.busstype);
                 int count = layout11.getChildCount();
-                //Log.d(TAG, "length: "+bussType.get(position).getSortNo().length());
-                Log.d(TAG, "count: " + layout11.getChildCount());
-                Log.d(TAG, "id: " + id);
-                Log.d(TAG, "position: " + position);
-                Log.d(TAG, "view: " + parent.getItemAtPosition(position).toString());
                 BussType bussType1 = (BussType) parent.getItemAtPosition(position);
                 String sortNo = bussType1.getSortNo();
                 if (0 != id) {
@@ -547,13 +540,6 @@ public class RateActivity extends ParentActivity {
                         layout11.removeViewAt(2);
                     }
                 }
-
-
-                /*if(count >= 5 && bussType.get(position).getSortNo().length()==1){
-                    layout11.removeViewAt(4);
-                }*/
-
-                //Toast.makeText(RateActivity.this,"您选择的月份是："+bussType.get(position),Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -680,7 +666,7 @@ public class RateActivity extends ParentActivity {
                     loadIndutry("", spinner1);
                     return;
                 } else {
-                    industryLoyout.setVisibility(View.INVISIBLE);
+                    industryLoyout.setVisibility(View.GONE);
                     spinner2.setVisibility(View.GONE);
                     spinner3.setVisibility(View.GONE);
                     spinner4.setVisibility(View.GONE);
@@ -689,16 +675,17 @@ public class RateActivity extends ParentActivity {
             }
             LinearLayout layout = (LinearLayout) findViewById(R.id.estimate);//利率测算项
 //            GridLayout layout = (GridLayout) findViewById(R.id.estimate);
-            final LinearLayout layout2 = new LinearLayout(this);
-            layout2.setOrientation(LinearLayout.HORIZONTAL);
-            TextView textView = new TextView(this);
-            textView.setText(title);
-            layout2.addView(textView);
-            TextView textView1 = new TextView(this);
-            //textView1.setText("请选择");
-            layout2.addView(textView1);
+
+            llRate.setOrientation(LinearLayout.HORIZONTAL);
+            txtRate.setText(title);
+
+            layout.addView(txtRate);
+//            TextView textView1 = new TextView(this);
+//            //textView1.setText("请选择");
+//            layout2.addView(textView1);
             Spinner spinner = new Spinner(this);
             spinner.setId(Integer.parseInt(id));
+            llRate.removeAllViews();
             this.dataEdu = new ArrayList<CharSequence>();
             if ("002".equals(id)) {
                 for (int i = 0; i < professionCanal.length(); i++) {
@@ -776,8 +763,8 @@ public class RateActivity extends ParentActivity {
             this.adapteEdu = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, this.dataEdu);
             this.adapteEdu.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(this.adapteEdu);
-            layout2.addView(spinner);
-            layout.addView(layout2);
+            llRate.addView(spinner);
+            layout.addView(llRate);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -1192,7 +1179,7 @@ public class RateActivity extends ParentActivity {
         });
     }
 
-    @OnClick(R.id.ll_custName)
+    @OnClick({R.id.ll_custName, R.id.et_custName})
     public void onViewClicked() {
         reqCustBody();
     }

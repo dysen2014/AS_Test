@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\eidpic.xml",
-        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\debug\\res\\layout\\eidpic.xml"
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\ocr-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\eidpic.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\ocr-library\\build\\intermediates\\bundles\\debug\\res\\layout\\eidpic.xml"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\read_idcard_info_new.xml",
-        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\debug\\res\\layout\\read_idcard_info_new.xml"
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\ocr-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\read_idcard_info_new.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\ocr-library\\build\\intermediates\\bundles\\debug\\res\\layout\\read_idcard_info_new.xml"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\idcard_camera.xml",
-        "source": "D:\\dysen\\Android\\AS_Test\\nx\\releas\\Credit\\ocr-library\\build\\intermediates\\bundles\\debug\\res\\layout\\idcard_camera.xml"
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\ocr-library\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\idcard_camera.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\ocr-library\\build\\intermediates\\bundles\\debug\\res\\layout\\idcard_camera.xml"
     }
 ]

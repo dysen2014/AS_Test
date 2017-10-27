@@ -10,6 +10,7 @@ public class CreditLoginBean {
 	String UserName;//登陆用户名，
 	String OrgID;//登陆机构id，
 	String OrgName;//登陆机构名，
+	String Approvals;//审批
 //	String result;//反馈信息（Y表示成功；非Y,会有说明，例如;//信贷系统中不存在证件号为5114231987031300117 的的用户！）
 
 	public String getUserID() {
@@ -48,7 +49,16 @@ public class CreditLoginBean {
 		return this;
 	}
 
-//	public String getResult() {
+	public String getApprovals() {
+		return Approvals;
+	}
+
+	public CreditLoginBean setApprovals(String approvals) {
+		Approvals = approvals;
+		return this;
+	}
+
+	//	public String getResult() {
 //		return result;
 //	}
 //

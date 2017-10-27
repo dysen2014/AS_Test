@@ -1,20 +1,21 @@
 package com.pactera.financialmanager.credit.main.service.search;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
+import com.dysen.common_res.common.utils.HttpThread;
+import com.dysen.common_res.common.utils.ParamUtils;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.ui.ParentFragment;
@@ -24,135 +25,117 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
-/** 贷款证(农户)
+/**
+ * 贷款证(农户)
  * Created by lenovo on 2017/7/17.
  */
 
 public class CreditProveFragment extends ParentFragment {
-    private Context mContext;
-    private Button back;
-    private ListView listView;
-    private Intent intent;
-    private JSONObject jsonObject;
-    private JSONObject jsonObject1;
-    private String customerType;
-    private List<CreditProveItem> CreditProveItem;
-    private Handler handler;
-    //    private Boolean aBoolean;
-    private String jsonArray;
+    @Bind(R.id.listView)
+    ListView listView;
+    @Bind(R.id.pgb)
+    ProgressBar pgb;
+    @Bind(R.id.tv_hide_data)
+    TextView tvHideData;
+    private String customerType, customerId;
+    private List<InfoItem> InfoItem;
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Log.i("msg", String.valueOf(msg.obj));
+
+            if (msg.what == -1) {
+//                    ShowDialog(QueryList.this, "无数据");
+//                    toast("无数据");
+                tvHideData.setVisibility(View.VISIBLE);
+                tvHideData.setText("请求" + msg.obj);
+                return;
+            } else if (msg.what == -100) {
+                tvHideData.setVisibility(View.VISIBLE);
+            }
+            pgb.setVisibility(View.INVISIBLE);
+
+            if (msg.obj != null) {
+                List<ListCreditProve> list = new ArrayList<>();
+                try {
+                    list = parseList(HttpThread.parseJSON(msg.obj.toString()).getJSONArray("array")
+                            .getJSONObject(0).getJSONArray("groupColArray").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+                if (list != null)
+                    initData(list);
+            }
+        }
+    };
+
+    private void initData(List<ListCreditProve> list) {
+        for (int i = 0; i < list.size(); i++) {
+            InfoItem.add(new InfoItem(
+                    list.get(i).getKeyName(),
+                    list.get(i).getValue()
+            ));
+        }
+
+        listView.setAdapter(new MyAdaptorInfo(getActivity(), InfoItem, customerType));
+    }
+
+    protected List<ListCreditProve> parseList(String jsonData) throws JsonSyntaxException {
+
+        if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
+            Gson gson = new Gson();
+
+            List<ListCreditProve> list = gson.fromJson(jsonData, new TypeToken<List<ListCreditProve>>() {
+            }.getType());
+
+            return list;
+        } else
+            return null;
+    }
+
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO Auto-generated method stub
 //        inflater = LayoutInflater.from(context);
-        View v = inflater.inflate(R.layout.query_details_creditprove, container, false);
-        CreditProveItem = new ArrayList<>();
-        listView = (ListView) v.findViewById(R.id.listViewCreditProve);
-        mContext = getActivity();
-        Log.i("mContext:", String.valueOf(mContext));
-        jsonObject1 = new JSONObject();
-        jsonObject = new JSONObject();
-        Bundle bundle = QueryDetails.bundle;
-//        Bundle bundle = new Bundle();
-//        bundle.putString("CustomerID","20070927000004");
-//        bundle.putString("CustomerType","030");
-        Log.i("bundle", String.valueOf(bundle));
-        Set<String> keys = bundle.keySet();
-        for(String key:keys){
-            Log.i("ddd",key+bundle.get(key));
-            if(key.equals("CustomerID")){
-                try {
-                    Log.i("ddd",key+bundle.get(key));
-                    jsonObject1.put(key, JSONObject.wrap(bundle.get(key)));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        customerType = (String) bundle.get("CustomerType");
-        try {
-            jsonObject.put("deviceType","Android");
-            jsonObject.put("RequestParams",jsonObject1);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+        View v = inflater.inflate(R.layout.query_details_info, container, false);
+        ButterKnife.bind(this, v);
 
-        Log.i("jsonObject", String.valueOf(jsonObject));
-        new HttpThread().sendRequestWithOkHttp("http://192.168.1.100:9080/ALS7M/JSONService?method=crmCreditProve",jsonObject);
-        handler = new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                super.handleMessage(msg);
-                Log.i("msg", String.valueOf(msg.obj));
-                if (msg.obj != null) {
-                    final List<ListCreditProve> list = (List<ListCreditProve>) msg.obj;
-                    for (int i = 0; i < list.size(); i++) {
-                        CreditProveItem.add(new CreditProveItem(
-                                list.get(i).getKeyName(),
-                                list.get(i).getValue()
-                        ));
-                    }
+        initView();
+        sendRequest();
 
-//                Log.i("","listView:"+listView+"\tlist size:"+keymanItem.size());
-                    listView.setAdapter(new MyAdaptorCreditProve(mContext, CreditProveItem,customerType));
-                }
-            }
-        };
         return v;
     }
-    class HttpThread extends Thread {
-        private final MediaType MEDIA_TYPE_MARKDOWN = MediaType.parse("application/json; charset=utf-8");
 
-        protected void sendRequestWithOkHttp(final String url, final JSONObject jsonObject) {
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        OkHttpClient client = new OkHttpClient();
-                        RequestBody body = RequestBody.create(MEDIA_TYPE_MARKDOWN, jsonObject.toString());
-                        Log.i("rrr", String.valueOf(jsonObject));
-                        Request request = new Request.Builder().url(url).post(body).build();
-                        Response response = client.newCall(request).execute();
-                        Log.i("lh", String.valueOf(response));
-                        String responseData = response.body().string();
-//                        JSONObject t = responseData;
-                        Log.i("gh",responseData);
-                        if(!TextUtils.isEmpty(responseData)||responseData!=null){
-                            parseJSONWithGson(responseData);
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
-            }).start();
-        }
+    protected void sendRequest() {
+        //客户查询table-基本信息 crmCustomerInfo CustomerID：客户id
+        //客户查询tab-贷款证（农户） crmCreditProve  CustomerID：客户id(目前1.100里，只有20070927000004 有数据)
+        JSONObject jsonObject = ParamUtils.setParams("CustomerSearch", "crmCreditProve", new Object[]{customerId}, 1);
+        HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
+    }
 
-        private Object parseJSONWithGson(String jsonData) throws JSONException {
-            if (!TextUtils.isEmpty(jsonData) || jsonData != null){
-                JSONObject jsonObject2 = new JSONObject(jsonData);
-//                if(aBoolean == true){
-//                    jsonArray = jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("IndRelative").toString();
-//                }else{
-                Log.i("jsonArray",jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("groupColArray").toString());
-                jsonArray = jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("groupColArray").toString();
-//                }
-                Log.d("tag10", "jsonObject: " + jsonArray);
-                Gson gson = new Gson();
-                List<ListCreditProve> customerList = gson.fromJson(jsonArray, new TypeToken<List<ListCreditProve>>(){}.getType());
-                Log.i("tag11", "customerList: " + customerList);
-                Message msg = new Message();
-                msg.obj = customerList;
-                handler.sendMessage(msg);
-                return customerList;
-            }else
-                return false;
+    private void initView() {
+
+        InfoItem = new ArrayList<>();
+
+        if (QueryDetails.type.equals("customer")){
+            customerType = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerType();
+            customerId = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerId();
+        }else if (QueryDetails.type.equals("business")){
+            customerType = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerType();
+            customerId = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerID();
         }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
     }
 }

@@ -79,8 +79,6 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
     ViewStub stub;
     @Bind(R.id.progress_loading)
     ProgressBar progressLoading;
-    @Bind(R.id.common_txt_rlv)
-    RecyclerView commonTxtRlv;
     @Bind(R.id.tv_hide_data)
     TextView tvHideData;
 
@@ -299,8 +297,6 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
 
     /**
      * 设置头背景
-     *
-     * @param tv
      */
     private void setBgAndTextColor(TextView tv) {
         commonTxt0.setEnabled(true);
@@ -308,12 +304,17 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
         commonTxt2.setEnabled(true);
         commonTxt3.setEnabled(true);
 
-        commonTxt0.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt1.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt2.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt3.setTextColor(getResources().getColor(R.color.separatelightredline));
+        commonTxt0.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt1.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt2.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt3.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt0.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt1.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt2.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt3.setBackgroundResource(R.drawable.tab_bg_normal);
         tv.setEnabled(false);
-        tv.setTextColor(getResources().getColor(R.color.white));
+        tv.setTextColor(getResources().getColor(R.color.common_tab_bg));
+        tv.setBackgroundResource(R.drawable.tab_bg_selected);
     }
 
     @Override

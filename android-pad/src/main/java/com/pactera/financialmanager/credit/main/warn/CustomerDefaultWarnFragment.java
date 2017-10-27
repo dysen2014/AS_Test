@@ -9,15 +9,19 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
+import com.dysen.common_res.common.utils.TabSwitchHelper;
 import com.dysen.common_res.common.views.TextViewMarquee;
+import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
@@ -56,8 +60,7 @@ import butterknife.OnClick;
  */
 
 public class CustomerDefaultWarnFragment extends ParentFragment implements BaseRefreshListener {
-    @Bind(R.id.common_txt_rlv)
-    RecyclerView commonTxtRlv;
+
     @Bind(R.id.common_txt_rlv2)
     RecyclerView commonTxtRlv2;
     @Bind(R.id.common_txt_0)
@@ -102,6 +105,9 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
     LinearLayout leftTopItemLay;
     @Bind(R.id.tv_hide_data)
     TextView tvHideData;
+    PullLoadMoreRecyclerView commonTxtTab;
+    @Bind(R.id.left_header_horizontal)
+    SyncHorizontalScrollView leftHeaderHorizontal;
 
     private TopDataAdapter mTopDataAdapter;
     private DataAdapter mDataAdapter;
@@ -144,7 +150,6 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
             }
         }
     };
-    private TextView textView;
     private String itenName0, itenName1;
     private String count;
 
@@ -204,10 +209,11 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
                         commonTxt0.setVisibility(View.VISIBLE);
                         commonTxt1.setVisibility(View.VISIBLE);
                         count = warnCrmParamList.get(itemIndex).getRows();
-                        commonTxt0.setText(warnCrmParamList.get(0).getTITLENAME()+"("+ warnCrmParamList.get(0).getRows()+")");
-                        commonTxt1.setText(warnCrmParamList.get(1).getTITLENAME()+"("+ warnCrmParamList.get(1).getRows()+")");
-//                        setBadgeView(commonTxt0, warnCrmParamList.get(0).getRows());
-//                        setBadgeView(commonTxt1, warnCrmParamList.get(1).getRows());
+
+                        commonTxt0.setText(warnCrmParamList.get(0).getTITLENAME() + "(" + warnCrmParamList.get(0).getRows() + ")");
+                        commonTxt1.setText(warnCrmParamList.get(1).getTITLENAME() + "(" + warnCrmParamList.get(1).getRows() + ")");
+//                        setBadgeView(rbTab0, warnCrmParamList.get(0).getRows());
+//                        setBadgeView(rbTab1, warnCrmParamList.get(1).getRows());
                         itenName0 = warnCrmParamList.get(0).getSUBTYPE();
                         itenName1 = warnCrmParamList.get(1).getSUBTYPE();
                         setSelectView(commonTxt0, itemIndex, infoIndex1);
@@ -246,37 +252,54 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
         headerHorizontal.setScrollView(dataHorizontal);
         dataHorizontal.setScrollView(headerHorizontal);
 
-//		commonTxtRlv2.setVisibility(View.VISIBLE);
-        initData();
-        mTopDataAdapter = new TopDataAdapter(getActivity(), mListTop);
-        mLeftAdapter = new LeftAdapter(getActivity(), mListLeft);
+        commonTxt0.setVisibility(View.VISIBLE);
+        commonTxt1.setVisibility(View.VISIBLE);
 
-        setRecyclerView(topData).setAdapter(mTopDataAdapter);
-        setRecyclerView(leftData, 1).setAdapter(mLeftAdapter);
-//        lvData.setAdapter(mDataAdapter);
-        setRecyclerView(lvData, 1).setAdapter(new DataAdapterNew(getActivity(), mListData, new OnItemClickCallback<Integer>() {
-            @Override
-            public void onClick(View view, Integer info) {
+    initData();
 
-                List<String> listDataName = mListTop;
-                List<Object> listDataValue = null;
-                    listDataValue = mListData.get(info);
+    mTopDataAdapter =new
+
+    TopDataAdapter(getActivity(),mListTop);
+    mLeftAdapter =new
+
+    LeftAdapter(getActivity(),mListLeft);
+
+    setRecyclerView(topData).
+
+    setAdapter(mTopDataAdapter);
+
+    setRecyclerView(leftData, 1).
+
+    setAdapter(mLeftAdapter);
+
+    //        lvData.setAdapter(mDataAdapter);
+    setRecyclerView(lvData, 1).
+
+    setAdapter(new DataAdapterNew(getActivity(),mListData, new OnItemClickCallback<Integer>()
+
+    {
+        @Override
+        public void onClick (View view, Integer info){
+
+        List<String> listDataName = mListTop;
+        List<Object> listDataValue = null;
+        listDataValue = mListData.get(info);
 //
-                LogUtils.v("info---"+info+"\n"+listDataName+"==="+listDataValue);
-                DataListActivity.setData(listDataName, listDataValue);
+        LogUtils.v("info---" + info + "\n" + listDataName + "===" + listDataValue);
+        DataListActivity.setData(listDataName, listDataValue);
 //				setSelectorItemColor(view, R.color.colorAccent);
-                Intent intent = new Intent(getActivity(), DataListActivity.class);
-                startActivity(intent);
-            }
+        Intent intent = new Intent(getActivity(), DataListActivity.class);
+        startActivity(intent);
+    }
 
-            @Override
-            public void onLongClick(View view, Integer info) {
+        @Override
+        public void onLongClick (View view, Integer info){
 
-            }
-        }));
+    }
+    }));
 
         ptrLayout.setRefreshListener(this);
-    }
+}
 
     protected List<WarnCrmInfoBean.DefaultInfoBean.Daikuan> infoListDK(String jsonData) throws JsonSyntaxException {
 
@@ -347,6 +370,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
 
     /**
      * 判断数据内容是否为空
+     *
      * @param count
      */
     private void checkDataValid(int count) {
@@ -355,7 +379,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
 //            toast("no data");
             tvHideData.setVisibility(View.VISIBLE);
             return;
-        }else {
+        } else {
             ptrLayout.setVisibility(View.VISIBLE);
             tvHideData.setVisibility(View.INVISIBLE);
         }
@@ -373,8 +397,6 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
 
     /**
      * 设置头背景
-     *
-     * @param tv
      */
     private void setBgAndTextColor(TextView tv) {
         commonTxt0.setEnabled(true);
@@ -382,12 +404,17 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
         commonTxt2.setEnabled(true);
         commonTxt3.setEnabled(true);
 
-        commonTxt0.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt1.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt2.setTextColor(getResources().getColor(R.color.separatelightredline));
-        commonTxt3.setTextColor(getResources().getColor(R.color.separatelightredline));
+        commonTxt0.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt1.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt2.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt3.setTextColor(getResources().getColor(R.color.gray));
+        commonTxt0.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt1.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt2.setBackgroundResource(R.drawable.tab_bg_normal);
+        commonTxt3.setBackgroundResource(R.drawable.tab_bg_normal);
         tv.setEnabled(false);
-        tv.setTextColor(getResources().getColor(R.color.white));
+        tv.setTextColor(getResources().getColor(R.color.common_tab_bg));
+        tv.setBackgroundResource(R.drawable.tab_bg_selected);
     }
 
     @Override
@@ -408,7 +435,6 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
                 itemIndexType = infoIndex2;
                 break;
         }
-        textView = (TextView) view;
         count = warnCrmParamList.get(itemIndex).getRows();
         setSelectView((TextView) view, itemIndex, itemIndexType);
     }
@@ -421,7 +447,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
             public void run() {
                 index1 = 1;
                 clearList();
-                setSelectView(textView == null ? commonTxt0 : textView, itemIndex, itemIndexType);
+                setSelectView(commonTxt0, itemIndex, itemIndexType);
                 // 结束刷新
                 ptrLayout.finishRefresh();
             }
@@ -431,19 +457,19 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
     @Override
     public void loadMore() {
 
-        LogUtils.v("mListData="+mListData.size()+"\tcount="+count+"\tmListLeft="+mListLeft.size());
+        LogUtils.v("mListData=" + mListData.size() + "\tcount=" + count + "\tmListLeft=" + mListLeft.size());
         if (mListLeft.size() < Integer.parseInt(count)) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
 
                     index1++;
-                    setSelectView(textView == null ? commonTxt0 : textView, itemIndex, itemIndexType);
+                    setSelectView(commonTxt0, itemIndex, itemIndexType);
                     // 结束加载更多
                     ptrLayout.finishLoadMore();
                 }
             }, 2000);
-        }else {
+        } else {
             toast("已全部加载完毕！");
             ptrLayout.finishLoadMore();
         }

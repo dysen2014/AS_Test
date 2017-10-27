@@ -26,7 +26,6 @@ import com.google.gson.reflect.TypeToken;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.credit.common.bean.rate.Customer;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -63,11 +62,7 @@ public class ContactCustomerActivity extends ParentActivity implements
             super.handleMessage(msg);
             if (msg.obj != null){
 
-                try {
                     customer = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
             }
 
             if (customer!= null){

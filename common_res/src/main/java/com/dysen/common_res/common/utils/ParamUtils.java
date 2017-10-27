@@ -14,7 +14,7 @@ public class ParamUtils {
 //            "001810";
 			"E071316";
 	public static String userName;
-	public static String orgId;
+	public static String orgId = "110599079901";
 	public static String orgName;
 	public static String approvals;
 
@@ -227,12 +227,11 @@ public class ParamUtils {
 
 			switch (paramCount) {
 				case 17://crmBusinessQuery 业务查询
-					// UserId：登陆用户,CustomerType:客户类型, CustomerName:客户名称, CertType:证件类型, CertID:证件号码, MobileTelephone:手机号码,
-					// BusinessType:业务产品, Balance:贷款余额, OverDueBalance:逾期金额, LcaTimes:逾期期数, ActualPutOutDate:发放日期,
-					// ActualMaturity:到期日期, ClassifyResult:五级分类, BusinessSum:合同金额, OverDueDay:逾期天数, CurPage:页码, PageSize:每页条数
-					paramKeysVariate = new String[]{"UserId", "CustomerType", "CustomerName", "CertType", "CertID", "MobileTelephone", "BusinessType"
-							, "Balance", "OverDueBalance", "LcaTimes", "ActualPutOutDate", "ActualMaturity", "ClassifyResult", "BusinessSum"
-							, "OverDueDay", "CurPage", "PageSize"};
+					// UserID：登陆用户, BusinessSum:合同金额, OverDueDay:逾期天数, CertType:证件类型, OverDueBalance:逾期金额, LcaTimes:逾期期数, ClassifyResult:五级分类
+					// , BusinessTypeBg:业务产品, CustomerName:客户名称,CustomerType:客户类型,MobileTelephone:手机号码, Balance:贷款余额,ActualMaturity:到期日期
+					// ,ActualPutOutDate:发放日期,CertID:证件号码, CurPage:页码, PageSize:每页条数
+					paramKeysVariate = new String[]{"UserID", "BusinessSum", "OverDueDay", "CertType", "OverDueBalance", "LcaTimes", "ClassifyResult", "BusinessTypeBg"
+							, "CustomerName", "CustomerType", "MobileTelephone", "Balance", "ActualMaturity", "ActualPutOutDate", "CertID", "CurPage", "PageSize"};
 					break;
 				case 1://crmDuebillInfo 业务查询table-借据详情  SerialNo：借据流水号
 					paramKeysVariate = new String[]{"SerialNo"};

@@ -194,12 +194,12 @@
 		<item name="android:orientation">horizontal</item>
 		<item name="android:gravity">center</item>
 		<item name="android:button">@null</item>
-		<item name="android:textColor">@color/radiobutton_textcolor_red</item>
+		<item name="android:textColor">@color/gray</item>
 	</style>
 	<style name="common_view_rbtn_group">
 		<item name="android:layout_width">0dp</item>
-		<item name="android:layout_height">wrap_content</item>
-		<item name="android:textSize">13sp</item>
+		<item name="android:layout_height">48dp</item>
+		<item name="android:textSize">14sp</item>
 		<item name="android:gravity">center_vertical</item>
 		<item name="android:orientation">horizontal</item>
 		<item name="android:background">@drawable/workplaceselectorshape</item>
@@ -283,7 +283,8 @@
 	<style name="common_tablerow">
 		<item name="android:layout_width">match_parent</item>
 		<item name="android:layout_height">48dp</item>
-		<item name="android:background">@color/white</item>
+		<item name="android:background">@color/transparent</item>
+		<item name="android:layout_marginBottom">20dp</item>
 	</style>
 
 	<style name="common_tablerow_spinner">
@@ -301,6 +302,7 @@
 		<item name="android:paddingBottom">8dp</item>
 		<item name="android:paddingLeft">16dp</item>
 		<item name="android:paddingRight">16dp</item>
+		<item name="android:background">@color/transparent</item>
 	</style>
 	<style name="common_tablerow_edit">
 		<item name="android:paddingLeft">24dp</item>

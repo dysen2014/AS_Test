@@ -12,6 +12,9 @@ import android.widget.TextView;
 import com.dysen.common_res.common.base.ParentActivity;
 import com.pactera.financialmanager.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -48,7 +51,11 @@ public class QueryDetails extends ParentActivity {
 	private KeyPersonFragment keyPersonFragment;//关键人
 	private LoanAfterFragment loanAfterFragment;//未结清授信业务
 	private CreditProveFragment creditProveFragment;//贷款证(农户)
-	public static Bundle bundle;
+
+	public static int index;
+	public static String type;
+	public static List<ListPerson> listCustomer = new ArrayList<>();
+	public static List<ListBusinessList> listBusiness= new ArrayList<>();
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -61,9 +68,9 @@ public class QueryDetails extends ParentActivity {
 
 	private void initView() {
 
-		txtTitle.setText(getString(R.string.customer_details));
+		txtBack.setText(getString(R.string.business_details));
 		fragmentManager = getSupportFragmentManager();
-		bundle = this.getIntent().getExtras();
+		type = getIntent().getStringExtra("type");
 
 	}
 
@@ -89,7 +96,13 @@ public class QueryDetails extends ParentActivity {
 	private void showFragment(View view) {
 //		view.setSelected(true);
 //		setSelectorItemColor(view, R.drawable.bg_selector);
-		view.setBackgroundResource(R.drawable.bg_selector);
+		crmCreditProve.setTextColor(getResources().getColor(R.color.gray));
+		crmCustomerInfo.setTextColor(getResources().getColor(R.color.gray));
+		crmEntOwner.setTextColor(getResources().getColor(R.color.gray));
+		loanafter.setTextColor(getResources().getColor(R.color.gray));
+		keyman.setTextColor(getResources().getColor(R.color.gray));
+		view.setBackgroundResource(R.drawable.tab_bg_selector);
+		((RadioButton)view).setTextColor(getResources().getColor(R.color.common_tab_bg));
 	}
 
 	//先隐藏其他所有的fragment
@@ -146,5 +159,11 @@ public class QueryDetails extends ParentActivity {
 		}
 
 		transaction.commitAllowingStateLoss();
+	}
+
+	public static void setData(List<ListPerson> list, List<ListBusinessList> list2, int i) {
+		listCustomer = list;
+		listBusiness = list2;
+		index = i;
 	}
 }

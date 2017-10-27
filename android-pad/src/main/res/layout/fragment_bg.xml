@@ -18,7 +18,7 @@
 			style="@style/common_view_rbtn"
 			android:layout_height="48dp"
 			android:layout_margin="8dp"
-			android:background="@drawable/bg_selector"
+			android:background="@drawable/tab_bg_selector"
 			android:checked="true"
 			android:padding="4dp"
 			/>
@@ -28,7 +28,7 @@
 			style="@style/common_view_rbtn"
 			android:layout_height="48dp"
 			android:layout_margin="8dp"
-			android:background="@drawable/workpalcewornbgtr"
+			android:background="@drawable/tab_bg_selector"
 			android:padding="4dp"
 			android:text="关键人"
 			/>
@@ -38,7 +38,7 @@
 			style="@style/common_view_rbtn"
 			android:layout_height="48dp"
 			android:layout_margin="8dp"
-			android:background="@drawable/workpalcewornbgtr"
+			android:background="@drawable/tab_bg_selector"
 			android:padding="4dp"
 			android:text="未结清授信业务"
 			/>
@@ -48,7 +48,7 @@
 			style="@style/common_view_rbtn"
 			android:layout_height="48dp"
 			android:layout_margin="8dp"
-			android:background="@drawable/workpalcewornbgtr"
+			android:background="@drawable/tab_bg_selector"
 			android:padding="4dp"
 			android:text="贷款证（农户）"
 			/>
@@ -58,7 +58,7 @@
 			style="@style/common_view_rbtn"
 			android:layout_height="48dp"
 			android:layout_margin="8dp"
-			android:background="@drawable/workpalcewornbgtr"
+			android:background="@drawable/tab_bg_selector"
 			android:focusable="false"
 			android:padding="4dp"
 			android:text="资本构成（企业）"

@@ -5,6 +5,24 @@ package com.pactera.financialmanager.credit.main.service.search;
  */
 
 public class InfoItem {
+    public String getKeyName() {
+        return KeyName;
+    }
+
+    public InfoItem setKeyName(String keyName) {
+        KeyName = keyName;
+        return this;
+    }
+
+    public String getValue() {
+        return Value;
+    }
+
+    public InfoItem setValue(String value) {
+        Value = value;
+        return this;
+    }
+
     public String KeyName;
     public String Value;
     public InfoItem(String KeyName,String Value){

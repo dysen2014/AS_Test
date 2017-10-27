@@ -92,10 +92,10 @@ dependencies {
     compile project(':kjframe-library')
     //contact
     compile project(':contact-library')
-    //view注解
-    compile 'com.jakewharton:butterknife:7.0.1'
     //饼图
     //    compile'com.github.PhilJay:MPAndroidChart:v2.2.5'
+    //view注解
+    compile 'com.jakewharton:butterknife:7.0.1'
     //KJFrame
     compile 'org.kymjs.kjframe:kjframe:2.6'
     compile files('libs/ksoap2-android-assembly-2.5.4-jar-with-dependencies.jar')
@@ -109,7 +109,9 @@ dependencies {
     compile files('libs/afinal_0.5.1_bin.jar')
     compile files('libs/gson-2.3.1.jar')
     compile files('libs/litepal-1.5.1.jar')
-    compile files('libs/okhttp-3.8.1.jar')
+
+    //okhttp
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
 }
 
 /*

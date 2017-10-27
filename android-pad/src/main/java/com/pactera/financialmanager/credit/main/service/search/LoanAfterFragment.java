@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
 import android.widget.ProgressBar;
 
 import com.dysen.common_res.common.utils.HttpThread;
@@ -29,10 +28,9 @@ import com.pactera.financialmanager.credit.common.adapters.DataAdapter;
 import com.pactera.financialmanager.credit.common.adapters.DataAdapterNew;
 import com.pactera.financialmanager.credit.common.adapters.LeftAdapter;
 import com.pactera.financialmanager.credit.common.adapters.TopDataAdapter;
-import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.bean.InitData;
+import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.bean.search.LoanAfterBean;
-import com.pactera.financialmanager.credit.common.views.NoscrollListView;
 import com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView;
 import com.pactera.financialmanager.credit.main.warn.DataListActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
@@ -176,9 +174,13 @@ public class LoanAfterFragment extends ParentFragment implements BaseRefreshList
 		View view = inflater.inflate(R.layout.fragment_key_loanafter, container, false);
 		ButterKnife.bind(this, view);
 
-		Bundle bundle = QueryDetails.bundle;
-		CustomerId = bundle.getString("CustomerID");
-		CustomerType = bundle.getString("CustomerType");
+		if (QueryDetails.type.equals("customer")){
+			CustomerType = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerType();
+			CustomerId = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerId();
+		}else if (QueryDetails.type.equals("business")){
+			CustomerType = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerType();
+			CustomerId = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerID();
+		}
 		sendRequest();
 		return view;
 	}

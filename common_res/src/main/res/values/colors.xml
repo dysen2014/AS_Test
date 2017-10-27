@@ -7,6 +7,7 @@
 	<!-- 颜色 -->
 	<color name="common_red">#960404</color>
 	<color name="common_yellow">#FF8C00</color>
+	<color name="common_tab_bg">#EA452F</color>
 
 	<color name="white">#ffffffff</color>
 	<color name="red2">#ffc90401</color>

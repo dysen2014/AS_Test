@@ -45,7 +45,6 @@ import com.yinglan.alphatabs.AlphaTabView;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 import com.yinglan.alphatabs.OnTabChangedListner;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -130,11 +129,7 @@ public class WarnFragment extends ParentFragment {
             }
             if (msg.obj != null) {
                 List<DailyReminder> dataList = new ArrayList<>();
-                try {
                     dataList = parseList(HttpThread.parseJSONWithGson((String) msg.obj));
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
 
                 if (checkObjValid(dataList) || dataList.size() > 0)
                     setData(dataList);

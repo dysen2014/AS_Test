@@ -56,10 +56,14 @@ public class Query extends ParentActivity {
 	}
 
 	private void showFragment(View view) {
+
+		rbtn0.setTextColor(getResources().getColor(R.color.white));
+		rbtn1.setTextColor(getResources().getColor(R.color.white));
 		if (view.getId() == R.id.rbtn_0)
-			view.setBackgroundResource(R.drawable.rbtn_warn_personal);
+			view.setBackgroundResource(R.drawable.rbt_bg_selector_left);
 		else
-			view.setBackgroundResource(R.drawable.rbtn_warn_commonality);
+			view.setBackgroundResource(R.drawable.rbt_bg_selector_right);
+		((RadioButton)view).setTextColor(getResources().getColor(R.color.common_tab_bg));
 	}
 
 	//先隐藏其他所有的fragment
@@ -74,7 +78,7 @@ public class Query extends ParentActivity {
 
 	//all
 	private void setFragmentAll(View view) {
-
+		showFragment(view);
 		FragmentTransaction transaction = fragmentManager.beginTransaction();
 		hideFragments(transaction);
 

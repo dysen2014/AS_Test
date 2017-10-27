@@ -24,8 +24,7 @@ import butterknife.ButterKnife;
  */
 
 public class InsuffcientBalanceWarnFragment extends ParentFragment {
-    @Bind(R.id.common_txt_rlv)
-    RecyclerView commonTxtRlv;
+
     @Bind(R.id.common_txt_rlv2)
     RecyclerView commonTxtRlv2;
     @Bind(R.id.common_txt_0)

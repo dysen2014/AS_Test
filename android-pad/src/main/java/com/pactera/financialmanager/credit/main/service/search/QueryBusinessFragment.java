@@ -27,7 +27,6 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.pactera.financialmanager.R;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -109,11 +108,7 @@ public class QueryBusinessFragment extends ParentFragment implements View.OnClic
 			arry = new ArrayList<String>();
 			if (msg.obj != null) {
 				List<ListQueryBusiness> list = null;
-				try {
 					list = parseList(HttpThread.parseJSONWithGson((String) msg.obj));
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
 				for (int i = 0; i < list.size(); i++) {
 					Log.d("list当前的：", list.get(i).getValue() + "list当前的TypeNo:" + list.get(i).getTypeNo());
 					TypeNo.add(list.get(i).getTypeNo());
@@ -205,11 +200,6 @@ public class QueryBusinessFragment extends ParentFragment implements View.OnClic
 		bundle.putString("MobileTelephone", telephoneNumber_value);
 		bundle.putString("BusinessTypeBg", TypeNo_value);
 		putinString(bundle);
-//                bundle.putString("Balance","");
-//                bundle.putString("OverDueBalance","");
-//                bundle.putString("LcaTimes","");
-//                bundle.putString("ActualPutOutDate","");
-//                bundle.putString("ActualMaturity","");
 		bundle.putString("ClassifyResult", classifyResult_value);
 		bundle.putString("BusinessSum", "");
 		bundle.putString("OverDueDay", "");
