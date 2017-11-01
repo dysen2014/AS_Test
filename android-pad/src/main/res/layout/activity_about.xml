@@ -19,5 +19,21 @@
         android:gravity="center"
         android:layout_marginTop="16dp">
 
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:text="@string/about_txt"
+            android:textSize="24sp"
+            android:layout_marginBottom="64dp"/>
+        <ImageView
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:src="@drawable/app_download_qrcode"/>
+        <WebView
+            android:id="@+id/wb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
     </LinearLayout>
 </LinearLayout>

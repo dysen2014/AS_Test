@@ -1192,9 +1192,11 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="about_txt">客户经理APP是为客户经理打造的统一移动化作业平台。包括各类重要事件提醒、客户管理、智慧厅堂、移动贷款办理等众多功能。为我行客户经理移动化开展业务提供高效便捷、安全精准的功能及数据服务。</string>
     <string name="action_settings">Return</string>
     <string name="age">age</string>
     <item format="float" name="ampm_circle_radius_multiplier" type="string">0.19</item>
+    <string name="app_download">https://biz.cli.im/Pcview?name=https%3A%2F%2Fbiz.cli.im%2Ftest%2FAS166665%3Fcoding%3DJ24agD%26qrurl%3Dhttp%253A%252F%252Fqr21.cn%252FJ24agD%26uname%3D136****9333%26gtype%3D2&amp;time=1</string>
     <string name="app_name">客户经理</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="auxiliary_huandai2">提前还款日期必须在最后一次还\n款日期之前，请重新调整还款日期。</string>
@@ -3043,7 +3045,7 @@
 		<item name="android:layout_width">80dp</item>
 		<item name="android:layout_height">40dp</item>
 		<item name="android:background">@drawable/edit_bg</item>
-		<!--<item name="android:layout_gravity">top</item>-->
+		
 		<item name="android:layout_marginLeft">5dp</item>
 		<item name="android:layout_marginRight">5dp</item>
 		<item name="android:layout_marginTop">6dp</item>

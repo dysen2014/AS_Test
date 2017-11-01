@@ -72,6 +72,10 @@
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-xxhdpi\\map_marker_multiple.png"
     },
     {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\app_download_qrcode.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-xxhdpi\\app_download_qrcode.png"
+    },
+    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi\\bank.png",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-xxhdpi\\bank.png"
     }

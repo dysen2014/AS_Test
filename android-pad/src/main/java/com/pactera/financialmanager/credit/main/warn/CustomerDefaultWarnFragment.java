@@ -133,12 +133,16 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             progressLoading.setVisibility(View.GONE);
+            tvHideData.setVisibility(View.GONE);
             if (msg.what == -1) {
 
 //                    toast("请求超时！");
                 tvHideData.setVisibility(View.VISIBLE);
-                tvHideData.setText("请求超时！");
-            } else {
+                tvHideData.setText(R.string.request_timeout);
+            }
+            if (msg.what == -100){
+                tvHideData.setVisibility(View.VISIBLE);
+            }
                 if (msg.obj != null) {
                     JSONObject jsonObject = ((JSONObject) msg.obj);
                     try {
@@ -147,7 +151,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
                         e.printStackTrace();
                     }
                 }
-            }
+
         }
     };
     private String itenName0, itenName1;
@@ -243,7 +247,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
                 if (checkObjValid(warnCrmInfoHeaderList) && warnCrmInfoHeaderList.size() > 0) {
                     initView();
                 } else {
-                    ShowDialog(getActivity(), "无数据");
+
                 }
             }
         }
@@ -286,7 +290,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
         List<Object> listDataValue = null;
         listDataValue = mListData.get(info);
 //
-        LogUtils.v("info---" + info + "\n" + listDataName + "===" + listDataValue);
+//        LogUtils.v("info---" + info + "\n" + listDataName + "===" + listDataValue);
         DataListActivity.setData(listDataName, listDataValue);
 //				setSelectorItemColor(view, R.color.colorAccent);
         Intent intent = new Intent(getActivity(), DataListActivity.class);
@@ -459,7 +463,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
     public void loadMore() {
 
         LogUtils.v("mListData=" + mListData.size() + "\tcount=" + count + "\tmListLeft=" + mListLeft.size());
-        if (mListLeft.size() < Integer.parseInt(count)) {
+        if (Integer.parseInt(count) % Integer.parseInt(ParamUtils.pageSize) == 0) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

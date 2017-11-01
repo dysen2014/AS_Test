@@ -289,7 +289,7 @@ public class ExpirationWarnFragment extends ParentFragment implements BaseRefres
 
     @Override
     public void loadMore() {
-        if (mListLeft.size() < count) {
+        if (count % Integer.parseInt(ParamUtils.pageSize) == 0) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

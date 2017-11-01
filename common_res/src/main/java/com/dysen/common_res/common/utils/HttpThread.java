@@ -66,11 +66,15 @@ public class HttpThread extends Thread {
                 JSONArray dataJsonArray = null;
                 try {
                     tmpBody = getJsonString(response.body().byteStream(), "UTF-8");
+                    LogUtils.v("tmpBody==="+tmpBody);
                     if (tmpBody.startsWith("[")) {
                         dataJsonArray = new JSONArray(tmpBody);
                     } else {
                         dataJsonObject = new JSONObject(tmpBody);
                     }
+
+                    if (tmpBody.contains("[]"))
+                        handler.sendEmptyMessage(-100);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

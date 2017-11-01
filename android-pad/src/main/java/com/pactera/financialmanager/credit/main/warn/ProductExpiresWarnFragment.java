@@ -469,7 +469,7 @@ public class ProductExpiresWarnFragment extends ParentFragment implements BaseRe
     @Override
     public void loadMore() {
 
-        if (mListLeft.size() < Integer.parseInt(count)) {
+        if (Integer.parseInt(count) % Integer.parseInt(ParamUtils.pageSize) == 0) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

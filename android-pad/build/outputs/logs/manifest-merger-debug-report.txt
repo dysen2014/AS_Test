@@ -165,12 +165,12 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\dy
 		ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:56:9-40
 	android:name
 		ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:52:9-42
-activity#com.pactera.financialmanager.credit.main.service.approval.ApprovalActivity
+activity#com.pactera.financialmanager.ui.LogoActivity
 ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:57:9-65:20
 	android:label
 		ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:59:13-45
 	android:name
-		ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:58:13-74
+		ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:58:13-44
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
 ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:60:13-64:29
 action#android.intent.action.MAIN
@@ -631,6 +631,10 @@ activity#com.pactera.financialmanager.credit.main.service.rate.ContactCustomerAc
 ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:354:9-85
 	android:name
 		ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:354:19-83
+activity#com.pactera.financialmanager.credit.main.service.approval.ApprovalActivity
+ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:356:10-83
+	android:name
+		ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:356:20-81
 activity#com.pactera.financialmanager.credit.main.service.approval.BusinessApprovalActivity
 ADDED from D:\dysen\Android\AS_Test\Code_Test\Credit_new\android-pad\src\main\AndroidManifest.xml:357:9-90
 	android:name

@@ -1,6 +1,9 @@
 package com.pactera.financialmanager.credit.main.mine;
 
 import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.base.ParentActivity;
@@ -15,6 +18,14 @@ public class AboutActivity extends ParentActivity {
     TextView txtBack;
     @Bind(R.id.txt_title)
     TextView txtTitle;
+    @Bind(R.id.lay_back)
+    LinearLayout layBack;
+    @Bind(R.id.txt_)
+    TextView txt;
+    @Bind(R.id.tv_about)
+    TextView tvAbout;
+    @Bind(R.id.wb)
+    WebView wb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +39,7 @@ public class AboutActivity extends ParentActivity {
     private void initView() {
         txtBack.setText(R.string.tab_mine);
         txtTitle.setText("关于");
+        wb.setVisibility(View.VISIBLE);
+        wb.loadUrl(String.valueOf(R.string.app_download));
     }
 }

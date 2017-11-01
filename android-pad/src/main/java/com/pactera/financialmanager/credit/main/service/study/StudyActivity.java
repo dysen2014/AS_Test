@@ -69,6 +69,7 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
     private List<Filestudy> filestudies = new ArrayList<>();
 
     private FilestudyAdapter filestudyAdapter;
+    private int count;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -86,6 +87,7 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
                     filestudyAdapter.notifyDataSetChanged();
                 }else {
                 filestudies = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
+                count = filestudies.size();
                 filestudyAdapter = new FilestudyAdapter(StudyActivity.this, R.layout.file, filestudies);
                 listView.setAdapter(filestudyAdapter);
                 //单击listView中的view
@@ -388,14 +390,19 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
 
     @Override
     public void loadMore() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                curPage++;
-                sendRequest("", curPage);
-                // 结束刷新
-                ptrLayout.finishLoadMore();
-            }
-        }, 2000);
+        if (count % Integer.parseInt(ParamUtils.pageSize) == 0) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    curPage++;
+                    sendRequest("", curPage);
+                    // 结束刷新
+                    ptrLayout.finishLoadMore();
+                }
+            }, 2000);
+        }else {
+            toast("已全部加载完毕！");
+            ptrLayout.finishLoadMore();
+        }
     }
 }

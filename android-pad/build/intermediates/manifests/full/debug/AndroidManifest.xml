@@ -65,7 +65,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.pactera.financialmanager.credit.main.service.approval.ApprovalActivity"
+            android:name="com.pactera.financialmanager.ui.LogoActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -363,7 +363,7 @@
         <!-- 选定客户 -->
         <activity android:name="com.pactera.financialmanager.credit.main.service.rate.ContactCustomerActivity" />
         <!-- 审批 -->
-        <!-- <activity android:name=".credit.main.service.approval.ApprovalActivity"/> -->
+        <activity android:name="com.pactera.financialmanager.credit.main.service.approval.ApprovalActivity" />
         <activity android:name="com.pactera.financialmanager.credit.main.service.approval.BusinessApprovalActivity" />
         <activity android:name="com.pactera.financialmanager.credit.main.service.approval.OpinionActivity" />
         <activity android:name="com.pactera.financialmanager.credit.main.service.approval.OpinionSubmitActivity" />
