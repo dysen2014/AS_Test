@@ -143,17 +143,7 @@
 		<item name="android:gravity">right|center_vertical</item>
 		<item name="android:layout_marginLeft">8dp</item>
 	</style>
-	<!--common lay-->\
-	<style name="common_lay">
-		<item name="android:layout_width">match_parent</item>
-		<item name="android:layout_height">wrap_content</item>
-		<item name="android:gravity">center_vertical</item>
-	</style>
-	<style name="common_lay_vertical">
-		<item name="android:layout_width">match_parent</item>
-		<item name="android:layout_height">0dp</item>
-		<item name="android:layout_weight">1</item>
-	</style>
+
 	<!--comon view-->
 	<style name="common_view">
 		<item name="android:layout_width">0dp</item>
@@ -213,15 +203,57 @@
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:layout_width">match_parent</item>
 	</style>
-	<style name="common_text">
+	<!--common lay-->\
+
+	<style name="common_lay">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:orientation">horizontal</item>
+	</style>
+
+	<style name="common_lay_vertical">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">0dp</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:layout_marginBottom">16dp</item>
+	</style>
+	<style name="common_lay_horizontal">
+		<item name="android:layout_width">0dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_weight">1</item>
+		<item name="android:layout_marginBottom">16dp</item>
+	</style>
+
+	<style name="common_lay_bg">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">52dp</item>
+		<item name="android:background">@drawable/shape_view_bg</item>
+		<item name="android:orientation">horizontal</item>
+		<item name="android:gravity">center_vertical</item>
+	</style>
+	<style name="common_lay_txt">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:orientation">horizontal</item>
+	</style>
+
+	<style name="common_left_txt">
+		<item name="android:layout_width">100dp</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:gravity">center_vertical</item>
+		<item name="android:textColor">@color/common_left_txt</item>
+	</style>
+
+	<style name="common_right_txt">
 		<item name="android:layout_width">0dp</item>
 		<item name="android:layout_weight">1</item>
-		<item name="android:layout_height">match_parent</item>
-		<item name="android:padding">8dp</item>
-		<item name="android:textSize">16sp</item>
-		<item name="android:layout_gravity">center</item>
-		<item name="android:paddingLeft">10dp</item>
-		<item name="android:textColor">#bb000000</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:textSize">14sp</item>
+		<item name="android:gravity">center_vertical|left</item>
+		<item name="android:textColor">@color/common_right_txt</item>
 	</style>
 
 	<style name="common_edit">
@@ -235,6 +267,7 @@
 		<item name="android:layout_width">0dp</item>
 		<item name="android:layout_weight">1</item>
 		<item name="android:layout_height">match_parent</item>
+		<item name="android:gravity">center</item>
 	</style>
 
 	<style name="common_btn">

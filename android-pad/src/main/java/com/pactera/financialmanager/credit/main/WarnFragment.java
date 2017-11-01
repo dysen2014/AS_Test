@@ -16,7 +16,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
+import com.dysen.common_res.common.base.ParentFragment;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.ParamUtils;
@@ -38,7 +40,6 @@ import com.pactera.financialmanager.credit.main.warn.InsuffcientBalanceWarnFragm
 import com.pactera.financialmanager.credit.main.warn.OverDueWarnFragment;
 import com.pactera.financialmanager.credit.main.warn.ProductExpiresWarnFragment;
 import com.pactera.financialmanager.ui.LogoActivity;
-import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HRequest;
 import com.yinglan.alphatabs.AlphaTabView;
@@ -54,7 +55,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * A simple {@link Fragment} subclass.
+ * level_a simple {@link Fragment} subclass.
  */
 public class WarnFragment extends ParentFragment {
 
@@ -92,6 +93,12 @@ public class WarnFragment extends ParentFragment {
     LinearLayout dotIndicator;
     @Bind(R.id.uber)
     UberProgressView uber;
+    @Bind(R.id.lay_back)
+    LinearLayout layBack;
+    @Bind(R.id.txt_title)
+    TextView txtTitle;
+    @Bind(R.id.tv_hide_data)
+    TextView tvHideData;
 //    @Bind(R.id.uber)
 //    UberProgressView uber;
 
@@ -123,15 +130,16 @@ public class WarnFragment extends ParentFragment {
             super.handleMessage(msg);
 
             if (msg.what == -1) {
-                ShowDialog(getActivity(), "请求超时！");
+                tvHideData.setVisibility(View.VISIBLE);
+                tvHideData.setText(R.string.request_timeout);
                 if (progressLoading != null)
                     progressLoading.setVisibility(View.GONE);
             }
             if (msg.obj != null) {
                 List<DailyReminder> dataList = new ArrayList<>();
-                    dataList = parseList(HttpThread.parseJSONWithGson((String) msg.obj));
+                dataList = parseList(HttpThread.parseJSONWithGson((String) msg.obj));
 
-                if (checkObjValid(dataList) || dataList.size() > 0)
+                if (checkObjValid(dataList) && dataList.size() > 0)
                     setData(dataList);
 //                setFragmentAfterWarn();
             }
@@ -160,28 +168,29 @@ public class WarnFragment extends ParentFragment {
 
         if (mDailyRemindersListCredit.size() <= 0) {
             flWorkplacewrokwarn.setVisibility(View.INVISIBLE);
-            ShowDialog(getActivity(), "无数据！");
+
+            tvHideData.setVisibility(View.VISIBLE);
             tab5.setVisibility(View.INVISIBLE);
             tab6.setVisibility(View.INVISIBLE);
             tab7.setVisibility(View.INVISIBLE);
         } else {
             if (mDailyRemindersListCredit.size() == 3) {
                 flagCredit = false;
-                sPastDue = mDailyRemindersListCredit.get(0).getCount();
+                sPastDue = mDailyRemindersListCredit.get(2).getCount();
                 sMatured = mDailyRemindersListCredit.get(1).getCount();
-                sLater = mDailyRemindersListCredit.get(2).getCount();
+                sLater = mDailyRemindersListCredit.get(0).getCount();
                 tab5.setClickable(true);
-                tab5.setClickable(true);
-                tab5.setClickable(true);
+                tab6.setClickable(true);
+                tab7.setClickable(true);
 //                setBadgeView(item8Txt, sPastDue);
 //                setBadgeView(item7Txt, sMatured);
 //                setBadgeView(item6Txt, sLater);
-                ViewUtils.setText(getContext(), mDailyRemindersListCredit.get(0).getName(), tab8);
-                ViewUtils.setText(getContext(), mDailyRemindersListCredit.get(1).getName(), tab7);
-                ViewUtils.setText(getContext(), mDailyRemindersListCredit.get(2).getName(), tab6);
+                ViewUtils.setText(getContext(), mDailyRemindersListCredit.get(0).getName(), tab7);
+                ViewUtils.setText(getContext(), mDailyRemindersListCredit.get(1).getName(), tab6);
+                ViewUtils.setText(getContext(), mDailyRemindersListCredit.get(2).getName(), tab5);
 
-//LogUtils.d(mDailyRemindersListCredit.get(0).getItemNo()+"==="+mDailyRemindersListCredit.get(1).getItemNo()
-//        +"==="+mDailyRemindersListCredit.get(2).getItemNo());
+LogUtils.d(mDailyRemindersListCredit.get(0).getItemNo()+"==="+mDailyRemindersListCredit.get(1).getItemNo()
+        +"==="+mDailyRemindersListCredit.get(2).getItemNo());
                 AfterWarnFragment.setItenNo(mDailyRemindersListCredit.get(0).getItemNo());
                 ExpirationWarnFragment.setItenNo(mDailyRemindersListCredit.get(1).getItemNo());
                 OverDueWarnFragment.setItenNo(mDailyRemindersListCredit.get(2).getItemNo());
@@ -275,7 +284,8 @@ public class WarnFragment extends ParentFragment {
     private void setupView(View view) {
 
         fragmentManager = getFragmentManager();
-
+        txtTitle.setText("提醒");
+        layBack.setVisibility(View.INVISIBLE);
         tab8.setVisibility(View.GONE);
         tab9.setVisibility(View.GONE);
     }

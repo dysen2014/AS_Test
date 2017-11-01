@@ -1,5 +1,25 @@
 [
     {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_approval.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\activity_approval.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\guaranty_item.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\guaranty_item.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_business_approval.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\activity_business_approval.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\opinion_item.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\opinion_item.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_opinion.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\activity_opinion.xml"
+    },
+    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\time_picker_dialog.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\time_picker_dialog.xml"
     },
@@ -12,7 +32,15 @@
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\date_picker_dialog.xml"
     },
     {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\approval_item.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\approval_item.xml"
+    },
+    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\fragmentdialog_createotherbanksignproduct.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\fragmentdialog_createotherbanksignproduct.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\layout-land\\activity_opinion_submit.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\layout-land\\activity_opinion_submit.xml"
     }
 ]

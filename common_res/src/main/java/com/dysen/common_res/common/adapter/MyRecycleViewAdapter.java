@@ -70,7 +70,7 @@ public class MyRecycleViewAdapter extends RecyclerView.Adapter<MyRecycleViewAdap
             holder.mTextView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    setSelectorItemColor(view, R.color.gray);
+//                    setSelectorItemColor(view, R.color.gray);
                     if (callback != null)
                         callback.onClick(view, mDataList.get(index));
                 }

@@ -128,7 +128,9 @@ public class ProductExpiresWarnFragment extends ParentFragment implements BaseRe
 
             progressLoading.setVisibility(View.GONE);
             if (msg.what == -1) {
-                ShowDialog(getActivity(), "请求错误！");
+//                    toast("请求超时！");
+                tvHideData.setVisibility(View.VISIBLE);
+                tvHideData.setText("请求超时！");
             } else {
                 if (msg.obj != null) {
                     JSONObject jsonObject = ((JSONObject) msg.obj);
@@ -185,7 +187,8 @@ public class ProductExpiresWarnFragment extends ParentFragment implements BaseRe
         if (Tool.haveNet(getActivity())) {
             HttpThread.sendRequestGet(ParamUtils.urlTempCrm, param, handler, warnType);
         } else {
-            ShowDialog(getActivity(), "请检查网络是否连接!");
+            tvHideData.setVisibility(View.VISIBLE);
+            tvHideData.setText(R.string.unNetwork);
         }
     }
 
@@ -221,7 +224,7 @@ public class ProductExpiresWarnFragment extends ParentFragment implements BaseRe
                         || checkObjValid(warnCrmInfoListDQCK) && warnCrmInfoListDQCK.size() > 0) {
                     initView();
                 } else {
-                    ShowDialog(getActivity(), "无数据");
+                    tvHideData.setVisibility(View.VISIBLE);
                 }
             }
         } else if (index == infoIndex2) {
@@ -247,7 +250,7 @@ public class ProductExpiresWarnFragment extends ParentFragment implements BaseRe
                         || checkObjValid(warnCrmInfoListDKCP) && warnCrmInfoListDKCP.size() > 0) {
                     initView();
                 } else {
-                    ShowDialog(getActivity(), "无数据");
+                    tvHideData.setVisibility(View.VISIBLE);
                 }
             }
         }

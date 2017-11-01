@@ -7,48 +7,34 @@ package com.pactera.financialmanager.credit.common.bean.http;
 
 public class OverdueCustomer {
 
+
 	/**
-	 * InterestBalance : 8002.05
-	 * ConTractNo : BC2016012100000190
-	 * BusinessName1 : 农村经营大户综合贷款
-	 * CustomerName : 测试用户F2200601164026
-	 * CustomerID : F2200601164026
-	 * BusinessType : 308040
-	 * BusinessSum : 500000
-	 * Balance : 500000
-	 * OverDueBalance : 508002.05
-	 * DueBillNO : 31010000021518050
-	 * OfficeTel : null
-	 * ActualMaturity : 2017/01/21
+	 * InterestBalance : 16145.05
+	 * ConTractNo : BC2015072100000708
+	 * BusinessName1 : 商户联保贷款
+	 * OverDueDays : 517
+	 * CustomerName : 危先容
+	 * CustomerID : 2014121600000276
+	 * BusinessSum : 100000
+	 * Balance : 100000
+	 * OverDueBalance : 116145.05
+	 * DueBillNO : 31010000020583427
+	 * OfficeTel : 13997670288
+	 * ActualMaturity : 2016/07/22
 	 */
 
 	private double InterestBalance;
 	private String ConTractNo;
 	private String BusinessName1;
+	private String OverDueDays;
 	private String CustomerName;
 	private String CustomerID;
-	private String BusinessType;
-	private double BusinessSum;
-	private double Balance;
+	private int BusinessSum;
+	private int Balance;
 	private String OverDueBalance;
 	private String DueBillNO;
-	private Object OfficeTel;
+	private String OfficeTel;
 	private String ActualMaturity;
-
-	public OverdueCustomer(double interestBalance, String conTractNo, String businessName1, String customerName, String customerID, String businessType, double businessSum, double balance, String overDueBalance, String dueBillNO, Object officeTel, String actualMaturity) {
-		InterestBalance = interestBalance;
-		ConTractNo = conTractNo;
-		BusinessName1 = businessName1;
-		CustomerName = customerName;
-		CustomerID = customerID;
-		BusinessType = businessType;
-		BusinessSum = businessSum;
-		Balance = balance;
-		OverDueBalance = overDueBalance;
-		DueBillNO = dueBillNO;
-		OfficeTel = officeTel;
-		ActualMaturity = actualMaturity;
-	}
 
 	public double getInterestBalance() {
 		return InterestBalance;
@@ -74,6 +60,14 @@ public class OverdueCustomer {
 		this.BusinessName1 = BusinessName1;
 	}
 
+	public String getOverDueDays() {
+		return OverDueDays;
+	}
+
+	public void setOverDueDays(String OverDueDays) {
+		this.OverDueDays = OverDueDays;
+	}
+
 	public String getCustomerName() {
 		return CustomerName;
 	}
@@ -90,15 +84,7 @@ public class OverdueCustomer {
 		this.CustomerID = CustomerID;
 	}
 
-	public String getBusinessType() {
-		return BusinessType;
-	}
-
-	public void setBusinessType(String BusinessType) {
-		this.BusinessType = BusinessType;
-	}
-
-	public double getBusinessSum() {
+	public int getBusinessSum() {
 		return BusinessSum;
 	}
 
@@ -106,7 +92,7 @@ public class OverdueCustomer {
 		this.BusinessSum = BusinessSum;
 	}
 
-	public double getBalance() {
+	public int getBalance() {
 		return Balance;
 	}
 
@@ -130,11 +116,11 @@ public class OverdueCustomer {
 		this.DueBillNO = DueBillNO;
 	}
 
-	public Object getOfficeTel() {
+	public String getOfficeTel() {
 		return OfficeTel;
 	}
 
-	public void setOfficeTel(Object OfficeTel) {
+	public void setOfficeTel(String OfficeTel) {
 		this.OfficeTel = OfficeTel;
 	}
 

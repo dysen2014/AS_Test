@@ -1191,8 +1191,8 @@ public final class Tool {
 	 * @since Monlyu 2009-1-11
 	 */
 	public static boolean cheakOrgCode(String str) {
-		final String[] codeNo = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B",
-				"C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P", "Q", "R", "S",
+		final String[] codeNo = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "level_a", "level_b",
+				"level_c", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "O", "P", "Q", "R", "S",
 				"T", "U", "V", "W", "X", "Y", "Z" };
 		final String[] staVal = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11",
 				"12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24",

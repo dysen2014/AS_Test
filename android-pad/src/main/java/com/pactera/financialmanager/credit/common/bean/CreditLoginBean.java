@@ -5,6 +5,13 @@ package com.pactera.financialmanager.credit.common.bean;
  */
 
 public class CreditLoginBean {
+	/**
+	 * UserID : E071316
+	 * UserName : 白金花
+	 * OrgID : 110599079901
+	 * OrgName : 秭归农村商业银行营业部
+	 * Approvals : Y
+	 */
 
 	String UserID;//登陆用户id，
 	String UserName;//登陆用户名，
@@ -57,6 +64,7 @@ public class CreditLoginBean {
 		Approvals = approvals;
 		return this;
 	}
+
 
 	//	public String getResult() {
 //		return result;

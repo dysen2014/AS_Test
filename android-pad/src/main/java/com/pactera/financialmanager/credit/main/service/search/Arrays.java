@@ -46,7 +46,7 @@ public class Arrays extends AppCompatActivity{
         return cardType_value;
     }
     protected String getLevel(String level_name,String[] items){
-        String[] level = {"AAA","AA+","AA","AA-","A+","A","A-","BBB+","BBB","BBB-","BB","B","C","D"};
+        String[] level = {"AAA","AA+","AA","AA-","level_a+","level_a","level_a-","BBB+","BBB","BBB-","BB","level_b","level_c","D"};
         for(int i=0;i<items.length;i++){
             if(level_name.equals (items[i])){
                 level_value = level[i];

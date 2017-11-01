@@ -8,6 +8,9 @@
 	<color name="common_red">#960404</color>
 	<color name="common_yellow">#FF8C00</color>
 	<color name="common_tab_bg">#EA452F</color>
+	<color name="common_view_txt">#D90000</color>
+	<color name="common_left_txt">#999999</color>
+	<color name="common_right_txt">#333333</color>
 
 	<color name="white">#ffffffff</color>
 	<color name="red2">#ffc90401</color>

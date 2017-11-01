@@ -202,8 +202,8 @@ public class ExpirationWarnFragment extends ParentFragment implements BaseRefres
     }
 
     private void sendRequest() {
-
-        JSONObject jsonObject = ParamUtils.setParams("warn", "crmExpirationReminder", new Object[]{ParamUtils.UserId, mItemNo, PAGE_SIZE, curPage}, 4);
+//mItemNo  020：到期提醒(90天内)节点标识
+        JSONObject jsonObject = ParamUtils.setParams("warn", "crmExpirationReminder", new Object[]{ParamUtils.UserId, "020", ParamUtils.pageSize, curPage}, 4);
         HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
     }
 

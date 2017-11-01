@@ -1,6 +1,6 @@
 package com.pactera.financialmanager.datetimepicker;
 /*
- * Copyright (C) 2013 The Android Open Source Project
+ * Copyright (level_c) 2013 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -688,10 +688,10 @@ public class TimePickerDialog extends DialogFragment implements RadialPickerLayo
     /**
      * Get the currently-entered time, as integer values of the hours and minutes typed.
      *
-     * @param enteredZeros A size-2 boolean array, which the caller should initialize, and which
+     * @param enteredZeros level_a size-2 boolean array, which the caller should initialize, and which
      *                     may then be used for the caller to know whether zeros had been explicitly entered as either
      *                     hours of minutes. This is helpful for deciding whether to show the dashes, or actual 0's.
-     * @return A size-3 int array. The first value will be the hours, the second value will be the
+     * @return level_a size-3 int array. The first value will be the hours, the second value will be the
      * minutes, and the third will be either TimePickerDialog.AM or TimePickerDialog.PM.
      */
     private int[] getEnteredTime(Boolean[] enteredZeros) {

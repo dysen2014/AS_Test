@@ -250,7 +250,7 @@ public class Catevalue {
 //	/**
 //	 * 所属行业
 //	 */
-//	public static String[] corptpID =  { "A", "B", "C", "D", "E",
+//	public static String[] corptpID =  { "level_a", "level_b", "level_c", "D", "E",
 //			"F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
 //			"S" };
 //	public static String[] corptpStr = { "农、林、牧、渔业", "采矿业", "制造业",

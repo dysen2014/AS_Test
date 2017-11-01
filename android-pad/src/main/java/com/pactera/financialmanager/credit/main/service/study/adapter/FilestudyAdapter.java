@@ -6,11 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.utils.FileUtils;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.views.TextViewMarquee;
 import com.pactera.financialmanager.R;
@@ -24,30 +22,33 @@ import java.util.List;
  * Created by admin on 2017-7-5.
  */
 
-public class FilestudyAdapter extends ArrayAdapter<Filestudy>{
+public class FilestudyAdapter extends ArrayAdapter<Filestudy> {
 
     private static final String TAG = "FilestudyAdapter";
+    private static File mFile;
     private int resourceId;
     Context mContext;
+    List<Filestudy> list;
 
-    public FilestudyAdapter(Context context, int textViewResourceId, List<Filestudy> objects){
+    public FilestudyAdapter(Context context, int textViewResourceId, List<Filestudy> objects) {
         super(context, textViewResourceId, objects);
         resourceId = textViewResourceId;
         mContext = context;
+        list = objects;
     }
 
-    public View getView(int postion, View convertView, ViewGroup parent){
+    public View getView(int postion, View convertView, ViewGroup parent) {
         Filestudy filestudy = getItem(postion);
-        Log.d(TAG, "filestudy: "+filestudy);
+        Log.d(TAG, "filestudy: " + filestudy);
         View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
         TextViewMarquee fileType = (TextViewMarquee) view.findViewById(R.id.textView);
         TextViewMarquee fileName = (TextViewMarquee) view.findViewById(R.id.textView2);
-        Button btnOpenFile = (Button) view.findViewById(R.id.btn_file);
+        TextView btnOpenFile = (TextView) view.findViewById(R.id.btn_file);
         ImageView img = (ImageView) view.findViewById(R.id.imageView);
         String type = filestudy.getFileName();
         type = type.substring(type.indexOf("."));
-        LogUtils.d("type:"+type);
-        switch (type){
+        LogUtils.d("type:" + type);
+        switch (type) {
             case ".doc":
             case ".docx":
                 img.setBackgroundResource(R.drawable.ic_doc);
@@ -67,16 +68,21 @@ public class FilestudyAdapter extends ArrayAdapter<Filestudy>{
         }
         fileType.setText(filestudy.getDocName());
         fileName.setText(filestudy.getFileName());
-        final File file = new File(FileUtils.getSDdir("download"), filestudy.getFileName());
-        if (file.exists()) {
+//        final File file = new File(FileUtils.getSDdir("download"), filestudy.getFileName());
+        if (mFile != null)
+        if (mFile.exists()) {
             btnOpenFile.setVisibility(View.VISIBLE);
+            btnOpenFile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    new StudyActivity().openFile(mContext, mFile);
+                }
+            });
         }
-        btnOpenFile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new StudyActivity().openFile(mContext, file);
-            }
-        });
         return view;
+    }
+
+    public static void setData(File file) {
+        mFile = file;
     }
 }

@@ -1,17 +1,11 @@
 package com.pactera.financialmanager.credit.main.warn;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Paint;
-import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +13,6 @@ import android.widget.TextView;
 
 import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.CallAndSMS;
-import com.dysen.common_res.common.utils.GridDivider;
 import com.dysen.common_res.common.views.ViewUtils;
 import com.pactera.financialmanager.R;
 
@@ -95,18 +88,17 @@ public class DataListActivity extends ParentActivity {
 
         @Override
         public void onBindViewHolder(ViewHolder holder, final int position) {
-            holder.dataListTxtName.setText(nameList.get(position) + ":");
-            holder.dataListTxtValue.setText(valueList.get(position) + "");
-            holder.dataListTxtName.setBackgroundResource(R.color.lvtopbg);
+            holder.dataListTxtName.setText("\t"+nameList.get(position) + ":");
+            holder.dataListTxtValue.setText("\t"+valueList.get(position) + "");
 
             if (ViewUtils.getText(holder.dataListTxtName).equals("客户电话:")){
-                holder.dataListTxtValue.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG|Paint.ANTI_ALIAS_FLAG);
+                holder.dataListTxtValue.setText(Html.fromHtml("\t"+valueList.get(position) + ""));
                 holder.dataListTxtValue.setTextColor(getResources().getColor(R.color.blue));
                 holder.dataListTxtValue.setTextSize(26);
                 holder.dataListTxtValue.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        CallAndSMS.call2(mContext, valueList.get(position).toString());
+                        CallAndSMS.call(mContext, valueList.get(position).toString());
                     }
                 });
             }

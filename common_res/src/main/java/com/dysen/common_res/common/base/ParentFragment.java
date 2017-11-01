@@ -2,6 +2,7 @@ package com.dysen.common_res.common.base;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
@@ -20,6 +21,7 @@ import com.dysen.common_res.R;
 import com.dysen.common_res.common.utils.DialogAlert;
 import com.dysen.common_res.common.utils.FormatUtil;
 import com.dysen.common_res.common.utils.LogUtils;
+import com.jaeger.library.StatusBarUtil;
 
 import q.rorbin.badgeview.QBadgeView;
 
@@ -40,6 +42,7 @@ public class ParentFragment extends Fragment {
                              Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
 
+        StatusBarUtil.setColor(getActivity(), Color.parseColor("#ea452f"), 0);
         return textView;
     }
 

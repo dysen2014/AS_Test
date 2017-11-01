@@ -132,7 +132,9 @@ public class CustomerTransactionWarnFragment extends ParentFragment implements B
 
             progressLoading.setVisibility(View.GONE);
             if (msg.what == -1) {
-                ShowDialog(getActivity(), "请求错误！");
+//                    toast("请求超时！");
+                tvHideData.setVisibility(View.VISIBLE);
+                tvHideData.setText("请求超时！");
             } else {
                 if (msg.obj != null) {
                     JSONObject jsonObject = ((JSONObject) msg.obj);
@@ -189,7 +191,8 @@ public class CustomerTransactionWarnFragment extends ParentFragment implements B
         if (Tool.haveNet(getActivity())) {
             HttpThread.sendRequestGet(ParamUtils.urlTempCrm, param, handler, warnType);
         } else {
-            ShowDialog(getActivity(), "请检查网络是否连接!");
+            tvHideData.setVisibility(View.VISIBLE);
+            tvHideData.setText(R.string.unNetwork);
         }
     }
 
@@ -243,7 +246,7 @@ public class CustomerTransactionWarnFragment extends ParentFragment implements B
                 if (checkObjValid(warnCrmInfoHeaderList) && warnCrmInfoHeaderList.size() > 0 || checkObjValid(warnCrmInfoListTRANSACTION) && warnCrmInfoListTRANSACTION.size() > 0) {
                     initView();
                 } else {
-                    ShowDialog(getActivity(), "无数据");
+                    tvHideData.setVisibility(View.VISIBLE);
                 }
             }
         } else if (index == infoIndex3) {
@@ -273,7 +276,7 @@ public class CustomerTransactionWarnFragment extends ParentFragment implements B
                         || checkObjValid(warnCrmInfoListZJDR) && warnCrmInfoListZJDR.size() > 0) {
                     initView();
                 } else {
-                    ShowDialog(getActivity(), "无数据");
+                    tvHideData.setVisibility(View.VISIBLE);
                 }
             }
         }

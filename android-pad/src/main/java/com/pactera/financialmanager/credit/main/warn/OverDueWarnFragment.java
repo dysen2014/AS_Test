@@ -52,7 +52,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * A simple {@link Fragment} subclass.
+ * level_a simple {@link Fragment} subclass.
  * 逾期提醒
  */
 public class OverDueWarnFragment extends ParentFragment implements BaseRefreshListener {
@@ -141,7 +141,8 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
             if (msg.obj != null) {
                 progressLoading.setVisibility(View.GONE);
 
-                    beOverdueList = parseList(HttpThread.parseJSONWithGson((String) msg.obj));
+                    beOverdueList = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
+
                 for (int i = 0; i < beOverdueList.size(); i++) {
                     ItemNo.add(beOverdueList.get(i).getItemno());
                     topName.add(beOverdueList.get(i).getName());
@@ -360,7 +361,7 @@ public class OverDueWarnFragment extends ParentFragment implements BaseRefreshLi
 
     @Override
     public void loadMore() {
-        if (mListLeft.size() <= Integer.parseInt(count)) {
+        if (Integer.parseInt(count) % Integer.parseInt(ParamUtils.pageSize) == 0) {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {

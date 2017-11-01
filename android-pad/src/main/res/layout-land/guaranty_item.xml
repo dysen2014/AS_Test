@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/data_name"
+        android:layout_height="48dp"
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:textSize="14sp"
+        android:background="@drawable/shape_item_bg_white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/common_lay_txt"
+            android:layout_height="48dp">
+
+            <TextView
+                android:id="@+id/data_credit_num"
+                style="@style/common_text_left"/>
+
+            <TextView
+                android:id="@+id/data_credit_num_value"
+                style="@style/common_text_right"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/common_lay_txt"
+            android:layout_height="48dp">
+
+            <TextView
+                android:id="@+id/data_guaranty_customser"
+                style="@style/common_text_left"/>
+
+            <TextView
+                android:id="@+id/data_guaranty_customser_value"
+                style="@style/common_text_right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/common_lay_txt"
+            android:layout_height="48dp">
+
+            <TextView
+                android:id="@+id/data_guaranty_type"
+                style="@style/common_text_left"/>
+
+            <TextView
+                android:id="@+id/data_guaranty_type_value"
+                style="@style/common_text_right"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/common_lay_txt"
+            android:layout_height="48dp">
+
+            <TextView
+                android:id="@+id/data_guaranty_style"
+                style="@style/common_text_left"/>
+
+            <TextView
+                android:id="@+id/data_guaranty_style_value"
+                style="@style/common_text_right"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/common_lay_txt"
+            android:layout_height="48dp">
+
+            <TextView
+                android:id="@+id/data_guaranty_amount"
+                style="@style/common_text_left"/>
+
+            <TextView
+                android:id="@+id/data_guaranty_amount_value"
+                style="@style/common_text_right"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

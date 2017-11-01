@@ -1,6 +1,6 @@
 package com.pactera.financialmanager.datetimepicker;
 /*
- * Copyright (C) 2013 The Android Open Source Project
+ * Copyright (level_c) 2013 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

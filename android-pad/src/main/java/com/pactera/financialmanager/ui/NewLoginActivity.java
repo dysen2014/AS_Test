@@ -199,7 +199,6 @@ public class NewLoginActivity extends ParentActivity implements
         switch (connectionIndex) {
             case HConnection.RESPONSE_ERROR://做哪些处理比较好？
                 Toast.makeText(this,"系统请求错误",Toast.LENGTH_SHORT).show();//2016/11/29添加错误吐司
-                startActivity(new Intent(NewLoginActivity.this, CreditActivity.class));
                 break;
             // 登录返回信息
             case loginIndex:

@@ -8,12 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.ParamUtils;
+import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
@@ -35,12 +35,13 @@ import butterknife.ButterKnife;
  */
 
 public class CreditProveFragment extends ParentFragment {
-    @Bind(R.id.listView)
-    ListView listView;
+
     @Bind(R.id.pgb)
     ProgressBar pgb;
     @Bind(R.id.tv_hide_data)
     TextView tvHideData;
+    @Bind(R.id.pull_load_more)
+    PullLoadMoreRecyclerView pullLoadMore;
     private String customerType, customerId;
     private List<InfoItem> InfoItem;
 
@@ -49,7 +50,7 @@ public class CreditProveFragment extends ParentFragment {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             Log.i("msg", String.valueOf(msg.obj));
-
+            pgb.setVisibility(View.GONE);
             if (msg.what == -1) {
 //                    ShowDialog(QueryList.this, "无数据");
 //                    toast("无数据");
@@ -59,7 +60,6 @@ public class CreditProveFragment extends ParentFragment {
             } else if (msg.what == -100) {
                 tvHideData.setVisibility(View.VISIBLE);
             }
-            pgb.setVisibility(View.INVISIBLE);
 
             if (msg.obj != null) {
                 List<ListCreditProve> list = new ArrayList<>();
@@ -84,7 +84,7 @@ public class CreditProveFragment extends ParentFragment {
             ));
         }
 
-        listView.setAdapter(new MyAdaptorInfo(getActivity(), InfoItem, customerType));
+        pullLoadMore.setAdapter(new MyAdaptorInfo.CommonListAdapter(getActivity(), InfoItem));
     }
 
     protected List<ListCreditProve> parseList(String jsonData) throws JsonSyntaxException {
@@ -124,13 +124,16 @@ public class CreditProveFragment extends ParentFragment {
 
         InfoItem = new ArrayList<>();
 
-        if (QueryDetails.type.equals("customer")){
-            customerType = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerType();
-            customerId = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerId();
-        }else if (QueryDetails.type.equals("business")){
+        if (QueryDetails.type.equals("customer")) {
+            customerType = QueryDetails.listCustomer.get(QueryDetails.index).getCustomerType();
+            customerId = QueryDetails.listCustomer.get(QueryDetails.index).getCustomerId();
+        } else if (QueryDetails.type.equals("business")) {
             customerType = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerType();
             customerId = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerID();
         }
+        pullLoadMore.setGridLayout(2);
+        pullLoadMore.setPullRefreshEnable(false);
+        pullLoadMore.setPushRefreshEnable(false);
     }
 
     @Override

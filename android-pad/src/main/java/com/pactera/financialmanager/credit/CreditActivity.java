@@ -7,8 +7,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.ParamUtils;
@@ -22,7 +24,6 @@ import com.pactera.financialmanager.credit.main.ReportFragment;
 import com.pactera.financialmanager.credit.main.ServiceFragment;
 import com.pactera.financialmanager.credit.main.WarnFragment;
 import com.pactera.financialmanager.ui.LogoActivity;
-import com.pactera.financialmanager.ui.ParentActivity;
 import com.yinglan.alphatabs.AlphaTabView;
 import com.yinglan.alphatabs.AlphaTabsIndicator;
 import com.yinglan.alphatabs.OnTabChangedListner;
@@ -31,17 +32,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static com.dysen.common_res.common.utils.ParamUtils.UserId;
-
 public class CreditActivity extends ParentActivity {
 
-    @Bind(R.id.txt_tab)
-    TextView txtTab;
     @Bind(R.id.tab_0)
     AlphaTabView tab0;
     @Bind(R.id.tab_1)
@@ -52,6 +50,10 @@ public class CreditActivity extends ParentActivity {
     AlphaTabView tab3;
     @Bind(R.id.alphaIndicator)
     AlphaTabsIndicator alphaIndicator;
+    @Bind(R.id.lay_back)
+    LinearLayout layBack;
+    @Bind(R.id.txt_title)
+    TextView txtTitle;
 
     private FragmentManager fragmentManager;
     private WarnFragment warnFragment;//提醒
@@ -61,24 +63,51 @@ public class CreditActivity extends ParentActivity {
     private List<CreditLoginBean> listData = new ArrayList<>();
     JSONObject jsonObject;
 
-    private Handler mHandler = new Handler() {
+    Handler mHandler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if (msg.obj != null) {
+            if (msg.what == -1){
+                toast("信贷登录请求超时");
+            }else if (msg.what == -100){
 
+                toast("信贷登录请求返回为空");
+            }
+            LogUtils.v("what="+msg.what);
+            if (msg.obj != null) {
                 try {
-                        jsonObject = HttpThread.parseJSON(msg.obj.toString());
-                        listData = parseList(jsonObject.toString());
-                        ParamUtils.UserId = jsonObject.get("UserID").toString();
-                        ParamUtils.userName =  jsonObject.get("UserName").toString();
-                        ParamUtils.orgId = jsonObject.get("OrgID").toString();
-                        ParamUtils.orgName = jsonObject.get("OrgName").toString();
-                        ParamUtils.approvals = jsonObject.get("Approvals").toString();
-                        LogUtils.d("test", "crmName:" + LogoActivity.user.getUsername() + "\tcrmOrg" + LogoActivity.user.getBrName() +
-                                "\tcredit id" + UserId+"\torgId"+ParamUtils.orgId);
-                        LogUtils.v(listData.get(0).getOrgID()+"===================="+listData.get(0).getApprovals());
+                    jsonObject = HttpThread.parseJSON(msg.obj.toString());
+//                    if (jsonObject.has("return")) {
+//                        if (jsonObject.get("return").equals("Y")) {
+//                            listData = parseList(jsonObject.toString());
+//                            ParamUtils.UserId = jsonObject.get("UserID").toString();
+//                            ParamUtils.userName = jsonObject.get("UserName").toString();
+//                            ParamUtils.orgId = jsonObject.get("OrgID").toString();
+//                            ParamUtils.orgName = jsonObject.get("OrgName").toString();
+//                            ParamUtils.approvals = jsonObject.get("Approvals").toString();
+//                            LogUtils.d("test", "crmName:" + LogoActivity.user.getUsername() + "\tcrmOrg" + LogoActivity.user.getBrName() +
+//                                    "\tcredit id" + UserId + "\torgId" + ParamUtils.orgId);
+//                            LogUtils.v(listData.get(0).getOrgID() + "====================" + listData.get(0).getApprovals());
+//                            LogUtils.d("test", "crmName:" + LogoActivity.user.getUsername() + "\tcrmOrg" + LogoActivity.user.getBrName() +
+//                                    "\tcredit id" + listData.get(0).getUserID());
+//                        } else {
+//                            ShowDialog(CreditActivity.this, jsonObject.get("return").toString());
+//                        }
+//                    }
+//                    listData = parseList(jsonObject.toString());
+                    Gson gson = new Gson();
+                    listData = Arrays.asList(gson.fromJson(jsonObject.toString(),CreditLoginBean.class));
+
+//                    CreditLoginBean creditLoginBean = gson.fromJson(jsonObject.toString(), CreditLoginBean.class);
+                    ParamUtils.UserId = jsonObject.get("UserID").toString();
+                    ParamUtils.userName = jsonObject.get("UserName").toString();
+                    ParamUtils.orgId = jsonObject.get("OrgID").toString();
+                    ParamUtils.orgName = jsonObject.get("OrgName").toString();
+                    ParamUtils.approvals = jsonObject.get("Approvals").toString();
+                    LogUtils.d("test", "crmName:" + LogoActivity.user.getUsername() + "\tcrmOrg" + LogoActivity.user.getBrName() +
+                            "\tcredit id" + ParamUtils.UserId + "\torgId" + ParamUtils.orgId);
+                    LogUtils.v(listData.get(0).getOrgID() + "====================" + listData.get(0).getApprovals());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -107,6 +136,7 @@ public class CreditActivity extends ParentActivity {
         tab2.setVisibility(View.GONE);
         fragmentManager = getSupportFragmentManager();
 
+        layBack.setVisibility(View.INVISIBLE);
         setFragmentAll(tab0);
 
         sendRequest(LogoActivity.user.getCERTCODE());
@@ -134,13 +164,13 @@ public class CreditActivity extends ParentActivity {
 
     /**
      * 信贷登录接口
+     *
      * @param id 从CRM登陆 获取到的身份证
      */
     private void sendRequest(String id) {
         JSONObject jsonObject = ParamUtils.setParams("login", "crmlogon", new Object[]{id}, 1);
         HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, mHandler);
     }
-
 
     //先隐藏其他所有的fragment
     private void hideFragments(FragmentTransaction transaction) {
@@ -160,7 +190,7 @@ public class CreditActivity extends ParentActivity {
 
     // 提醒
     private void setFragmentWarn() {
-        txtTab.setText(getString(R.string.tab_warn));
+        txtTitle.setText(getString(R.string.tab_warn));
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         hideFragments(transaction);
         if (warnFragment == null) {
@@ -174,7 +204,7 @@ public class CreditActivity extends ParentActivity {
 
     //服务
     private void setFragmentService() {
-        txtTab.setText(getString(R.string.tab_service));
+        txtTitle.setText(getString(R.string.tab_service));
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         hideFragments(transaction);
         if (serviceFragment == null) {
@@ -188,7 +218,7 @@ public class CreditActivity extends ParentActivity {
 
     //报表
     private void setFragmentReport() {
-        txtTab.setText(getString(R.string.tab_report));
+        txtTitle.setText(getString(R.string.tab_report));
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         hideFragments(transaction);
         if (reportFragment == null) {
@@ -202,7 +232,7 @@ public class CreditActivity extends ParentActivity {
 
     //我的
     private void setFragmentMine() {
-        txtTab.setText(getString(R.string.tab_mine));
+        txtTitle.setText(getString(R.string.tab_mine));
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         hideFragments(transaction);
         if (mineFragment == null) {
@@ -222,7 +252,7 @@ public class CreditActivity extends ParentActivity {
 
         switch (view.getId()) {
             case R.id.tab_0:
-                txtTab.setText(getString(R.string.tab_warn));
+                txtTitle.setText(getString(R.string.tab_warn));
                 if (warnFragment == null) {
                     warnFragment = new WarnFragment();
                     transaction.add(R.id.frameLayout_tab_credit, warnFragment);
@@ -230,7 +260,7 @@ public class CreditActivity extends ParentActivity {
                     transaction.show(warnFragment);
                 break;
             case R.id.tab_1:
-                txtTab.setText(getString(R.string.tab_service));
+                txtTitle.setText(getString(R.string.tab_service));
                 if (serviceFragment == null) {
                     serviceFragment = new ServiceFragment();
                     transaction.add(R.id.frameLayout_tab_credit, serviceFragment);
@@ -238,7 +268,7 @@ public class CreditActivity extends ParentActivity {
                     transaction.show(serviceFragment);
                 break;
             case R.id.tab_2:
-                txtTab.setText(getString(R.string.tab_report));
+                txtTitle.setText(getString(R.string.tab_report));
                 if (reportFragment == null) {
                     reportFragment = new ReportFragment();
                     transaction.add(R.id.frameLayout_tab_credit, reportFragment);
@@ -246,7 +276,7 @@ public class CreditActivity extends ParentActivity {
                     transaction.show(reportFragment);
                 break;
             case R.id.tab_3:
-                txtTab.setText(getString(R.string.tab_mine));
+                txtTitle.setText(getString(R.string.tab_mine));
                 if (mineFragment == null) {
                     mineFragment = new MineFragment();
                     transaction.add(R.id.frameLayout_tab_credit, mineFragment);

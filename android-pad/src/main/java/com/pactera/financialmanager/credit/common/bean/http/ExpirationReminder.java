@@ -7,34 +7,31 @@ package com.pactera.financialmanager.credit.common.bean.http;
 
 public class ExpirationReminder {
 
-
 	/**
 	 * InterestBalance : 0
-	 * ConTractNo : BC2016032300001127
-	 * BusinessName1 : 一般流动资金贷款
-	 * CustomerName : 测试用户2014031400000802
-	 * CustomerID : 2014031400000802
-	 * BusinessType : 1010
-	 * BusinessSum : 16000000
-	 * Balance : 16000000
-	 * DueBillNO : 35010000001898610
-	 * OfficeTel : 13872146366
-	 * ActualMaturity : 2017/03/24
+	 * ConTractNo : BC2016111500000743
+	 * BusinessName1 : null
+	 * CustomerName : 李昌群
+	 * CustomerID : 20120320000256
+	 * BusinessSum : 200000
+	 * Balance : 100000
+	 * DueBillNO : 31010000023657795
+	 * OfficeTel : 13872577789
+	 * ActualMaturity : 2017/11/15
 	 */
 
-	private double InterestBalance;
+	private int InterestBalance;
 	private String ConTractNo;
-	private String BusinessName1;
+	private Object BusinessName1;
 	private String CustomerName;
 	private String CustomerID;
-	private String BusinessType;
-	private double BusinessSum;
-	private double Balance;
+	private int BusinessSum;
+	private int Balance;
 	private String DueBillNO;
 	private String OfficeTel;
 	private String ActualMaturity;
 
-	public double getInterestBalance() {
+	public int getInterestBalance() {
 		return InterestBalance;
 	}
 
@@ -50,11 +47,11 @@ public class ExpirationReminder {
 		this.ConTractNo = ConTractNo;
 	}
 
-	public String getBusinessName1() {
+	public Object getBusinessName1() {
 		return BusinessName1;
 	}
 
-	public void setBusinessName1(String BusinessName1) {
+	public void setBusinessName1(Object BusinessName1) {
 		this.BusinessName1 = BusinessName1;
 	}
 
@@ -74,15 +71,7 @@ public class ExpirationReminder {
 		this.CustomerID = CustomerID;
 	}
 
-	public String getBusinessType() {
-		return BusinessType;
-	}
-
-	public void setBusinessType(String BusinessType) {
-		this.BusinessType = BusinessType;
-	}
-
-	public double getBusinessSum() {
+	public int getBusinessSum() {
 		return BusinessSum;
 	}
 
@@ -90,7 +79,7 @@ public class ExpirationReminder {
 		this.BusinessSum = BusinessSum;
 	}
 
-	public double getBalance() {
+	public int getBalance() {
 		return Balance;
 	}
 

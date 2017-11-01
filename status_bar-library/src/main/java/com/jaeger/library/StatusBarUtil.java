@@ -49,7 +49,7 @@ public class StatusBarUtil {
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             // 虚拟导航键
-            activity.getWindow().setNavigationBarColor(Color.TRANSPARENT);
+//            activity.getWindow().setNavigationBarColor(Color.TRANSPARENT);
             activity.getWindow().setStatusBarColor(calculateStatusColor(color, statusBarAlpha));
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);

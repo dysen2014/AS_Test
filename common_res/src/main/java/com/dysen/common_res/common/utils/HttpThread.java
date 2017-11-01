@@ -54,9 +54,7 @@ public class HttpThread extends Thread {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Message msg = new Message();
-                msg.what = -1;
-                handler.sendMessage(msg);
+                handler.sendEmptyMessage(-1);
             }
 
             @Override
@@ -131,20 +129,15 @@ public class HttpThread extends Thread {
                     String responseData = response.body().string();
 
                     LogUtils.d("http", "Response completed: " + responseData);
-//                    jsonData = parseJSONWithGson(responseData);
-//
-//                    Message msg = new Message();
-//                    msg.obj = jsonData;
-//                    handler.sendMessage(msg);
 
                     Message msg = new Message();
                             msg.obj = responseData;
-                    String json = parseJSONWithGson(msg.obj.toString());
-                    if (json.equals("[]")){
+                    handler.sendMessage(msg);
+                    JSONObject json = parseJSON(responseData);
+                    if (json.has("array") && json.equals("[]")){
                         handler.sendEmptyMessage(-100);
                     }
 
-                    handler.sendMessage(msg);
                 } catch (Exception e) {
                     LogUtils.d("http", e+"\t\tsokect time out");
                     handler.sendEmptyMessage(-1);
@@ -168,9 +161,12 @@ public class HttpThread extends Thread {
     public static JSONObject parseJSON(String jsonData) throws JSONException {
         if (!TextUtils.isEmpty(jsonData) || jsonData != null){
             JSONObject jsonObject = new JSONObject(jsonData);
-            JSONObject json = jsonObject.getJSONObject("ResponseParams");
-            LogUtils.d("http parse", "jsonObject: " + json.toString());
-
+            JSONObject json = null;
+            if (jsonObject.has("ResponseParams")) {
+                json = jsonObject.getJSONObject("ResponseParams");
+                LogUtils.d("http parse", "jsonObject: " + jsonObject.getJSONObject("ResponseParams").toString());
+            }else
+            return null;
             return json;
         }else
             return null;
@@ -213,9 +209,15 @@ public class HttpThread extends Thread {
     public static String parseJSONWithGson(String jsonData, Handler handler) throws JSONException {
         if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
             JSONObject jsonObject = new JSONObject(jsonData);
-            String jsonArrayHeader = jsonObject.getJSONObject("ResponseParams").getJSONArray("header").toString();
-            String jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array").toString();
-            LogUtils.d("http parse", jsonArrayHeader+"===============json parse==============" +  jsonArray);
+            String jsonArrayHeader = null;
+            String jsonArray = null;
+
+                    jsonArrayHeader = jsonObject.getJSONObject("ResponseParams").getJSONArray("header").toString();
+                    LogUtils.d("http parse", jsonArrayHeader+"===============json parse==============");
+
+                    jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array").toString();
+                    LogUtils.d("http parse", "===============json parse==============" +  jsonArray);
+
 
             Message msg = new Message();
             Bundle bundle = new Bundle();
@@ -342,9 +344,7 @@ public class HttpThread extends Thread {
                     handler.sendMessage(msg);
                 } catch (Exception e) {
                     LogUtils.d("http", "sokect time out");
-                    Message msg = new Message();
-                    msg.what = -1;
-                    handler.sendMessage(msg);
+                    handler.sendEmptyMessage(-1);
                     e.printStackTrace();
                 }
             }

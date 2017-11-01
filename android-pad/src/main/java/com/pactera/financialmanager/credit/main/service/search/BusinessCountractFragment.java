@@ -10,12 +10,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.ParamUtils;
+import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
@@ -36,12 +36,12 @@ import butterknife.ButterKnife;
 
 public class BusinessCountractFragment extends Fragment {
 
-    @Bind(R.id.listView)
-    ListView listView;
     @Bind(R.id.pgb)
     ProgressBar pgb;
     @Bind(R.id.tv_hide_data)
     TextView tvHideData;
+    @Bind(R.id.pull_load_more)
+    PullLoadMoreRecyclerView pullLoadMore;
 
     private Context mContext;
     private List<InfoItem> DuebillInfoItem = new ArrayList<>();
@@ -52,7 +52,7 @@ public class BusinessCountractFragment extends Fragment {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             Log.i("msg", String.valueOf(msg.obj));
-
+            pgb.setVisibility(View.GONE);
             if (msg.what == -1) {
 //                    ShowDialog(QueryList.this, "无数据");
 //                    toast("无数据");
@@ -75,8 +75,8 @@ public class BusinessCountractFragment extends Fragment {
                 if (list != null)
                     initData(list);
             }
-            }
-        };
+        }
+    };
 
     private void initData(List<ListDuebillInfo> list) {
         for (int i = 0; i < list.size(); i++) {
@@ -86,8 +86,9 @@ public class BusinessCountractFragment extends Fragment {
             ));
         }
 
-        listView.setAdapter(new MyAdaptorInfo(mContext, DuebillInfoItem));
+        pullLoadMore.setAdapter(new MyAdaptorInfo.CommonListAdapter(mContext, DuebillInfoItem));
     }
+
     protected List<ListDuebillInfo> parseList(String jsonData) throws JsonSyntaxException {
 
         if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
@@ -100,6 +101,7 @@ public class BusinessCountractFragment extends Fragment {
         } else
             return null;
     }
+
     @Override
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -124,6 +126,9 @@ public class BusinessCountractFragment extends Fragment {
         mContext = getActivity();
         SerialNo = BusinessDetails.listData.get(BusinessDetails.index).getSerialNo();
         BusinessType = BusinessDetails.listData.get(BusinessDetails.index).getTypeNo();
+        pullLoadMore.setGridLayout(2);
+        pullLoadMore.setPushRefreshEnable(false);
+        pullLoadMore.setPullRefreshEnable(false);
 
     }
 

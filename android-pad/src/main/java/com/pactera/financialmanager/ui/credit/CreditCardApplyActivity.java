@@ -242,9 +242,9 @@ public class CreditCardApplyActivity extends ParentActivity implements View.OnCl
                         spinMindustryCode = (Spinner) findViewById(R.id.spin_m_industry_code);
                         initSpinner(spinMindustryCode, new SpinnerItem[]{
                                 DEFAULT_SPINNER_ITEM,
-                                new SpinnerItem("A", "农、林、牧、渔业"),
-                                new SpinnerItem("B", "采矿业"),
-                                new SpinnerItem("C", "制造业"),
+                                new SpinnerItem("level_a", "农、林、牧、渔业"),
+                                new SpinnerItem("level_b", "采矿业"),
+                                new SpinnerItem("level_c", "制造业"),
                                 new SpinnerItem("D", "电力、燃气及水的生产和供应业"),
                                 new SpinnerItem("E", "建筑业"),
                                 new SpinnerItem("F", "交通运输、仓库和邮政业"),

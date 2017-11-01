@@ -497,8 +497,9 @@ public class RateActivity extends ParentActivity {
      */
     void reqBussType() {
         LinearLayout layout = (LinearLayout) findViewById(R.id.busstype);
+//        llBusstype = new LinearLayout(this);
         llBusstype.setOrientation(LinearLayout.HORIZONTAL);
-        tvBusstype.setText("业务品种");
+//        tvBusstype.setText("业务品种");
 //        layout.addView(tvBusstype);
         Spinner spinner = new Spinner(this);
         bussType.add(0, new BussType("请选择", "", "", "", ""));
@@ -1205,7 +1206,7 @@ public class RateActivity extends ParentActivity {
                         listData.add(3, cus.getCertID());
                         etCustName.setText(cus.getCustomerName());
                         etCustType.setText(customerType);
-                        llCustType.setClickable(true);
+                        llCustType.setEnabled(true);
                     }
                 }
             }

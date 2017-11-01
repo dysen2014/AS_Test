@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Credit.iml" filepath="$PROJECT_DIR$/Credit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Credit_new.iml" filepath="$PROJECT_DIR$/Credit_new.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-pad/android-pad.iml" filepath="$PROJECT_DIR$/android-pad/android-pad.iml" />
       <module fileurl="file://$PROJECT_DIR$/approvaldemo/approvaldemo.iml" filepath="$PROJECT_DIR$/approvaldemo/approvaldemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/baseitem-library/baseitem-library.iml" filepath="$PROJECT_DIR$/baseitem-library/baseitem-library.iml" />

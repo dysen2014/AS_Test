@@ -9,8 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.base.ParentFragment;
+import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.ParamUtils;
 import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.credit.main.mine.AboutActivity;
+import com.pactera.financialmanager.credit.main.mine.ProposalActivity;
 import com.pactera.financialmanager.ui.LogoActivity;
 import com.pactera.financialmanager.ui.NewLoginActivity;
 
@@ -46,6 +49,10 @@ public class MineFragment extends ParentFragment {
     LinearLayout mineTxtAbout;
     @Bind(R.id.mine_txt_quit)
     LinearLayout mineTxtQuit;
+    @Bind(R.id.lay_back)
+    LinearLayout layBack;
+    @Bind(R.id.txt_title)
+    TextView txtTitle;
 
 
     @Override
@@ -60,9 +67,12 @@ public class MineFragment extends ParentFragment {
 
     private void initView() {
 
+        txtTitle.setText("我的");
+        layBack.setVisibility(View.INVISIBLE);
         mineTextName.setText(LogoActivity.user.getUsername());
         mineTextOrg.setText(LogoActivity.user.getBrName());
-        mineTextSystem.setText(ParamUtils.UserId);
+        LogUtils.v(ParamUtils.orgName+"\tmine"+ParamUtils.UserId+"\t orgId="+ParamUtils.orgId);
+        mineTextSystem.setText("???"+ParamUtils.UserId);
 //
 ////        baseItemMine.setBackgroundColor(Color.parseColor("#d1d4d9"));
 //
@@ -92,19 +102,19 @@ public class MineFragment extends ParentFragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.mine_txt_security://安全中心
-                startActivity(new Intent(getActivity(), NewLoginActivity.class));
+//                startActivity(new Intent(getActivity(), NewLoginActivity.class));
                 break;
             case R.id.mine_txt_suggest://建议
-                startActivity(new Intent(getActivity(), NewLoginActivity.class));
+                startActivity(new Intent(getActivity(), ProposalActivity.class));
                 break;
             case R.id.mine_txt_follow://关注
-                startActivity(new Intent(getActivity(), NewLoginActivity.class));
+//                startActivity(new Intent(getActivity(), NewLoginActivity.class));
                 break;
             case R.id.mine_txt_memo://备忘录
-                startActivity(new Intent(getActivity(), NewLoginActivity.class));
+//                startActivity(new Intent(getActivity(), NewLoginActivity.class));
                 break;
             case R.id.mine_txt_about://关于
-                startActivity(new Intent(getActivity(), NewLoginActivity.class));
+                startActivity(new Intent(getActivity(), AboutActivity.class));
                 break;
             case R.id.mine_txt_quit://退出
                 startActivity(new Intent(getActivity(), NewLoginActivity.class));

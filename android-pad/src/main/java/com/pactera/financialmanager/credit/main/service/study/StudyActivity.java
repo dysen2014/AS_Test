@@ -7,19 +7,20 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.FileUtils;
+import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.ParamUtils;
 import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.jwenfeng.library.pulltorefresh.BaseRefreshListener;
 import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
@@ -28,26 +29,26 @@ import com.pactera.financialmanager.credit.common.views.NoscrollListView;
 import com.pactera.financialmanager.credit.main.service.study.adapter.FilestudyAdapter;
 import com.pactera.financialmanager.credit.main.service.study.bean.Filestudy;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class StudyActivity extends ParentActivity implements BaseRefreshListener {
@@ -65,17 +66,28 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
     @Bind(R.id.list_view)
     NoscrollListView listView;
 
-    final int PAGE_SIZE = 10;
-    int curPage = 1;
-
     private List<Filestudy> filestudies = new ArrayList<>();
 
+    private FilestudyAdapter filestudyAdapter;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what == COMPLETED) {
-                FilestudyAdapter adapter = new FilestudyAdapter(StudyActivity.this, R.layout.file, filestudies);
-                listView.setAdapter(adapter);
+
+            if (msg.what == 100){
+                if (filestudyAdapter != null){
+                    FilestudyAdapter.setData(file);
+                    filestudyAdapter.notifyDataSetChanged();
+                }
+            }
+            if (msg.obj != null) {
+
+                if (msg.obj.toString().equals("0000")){
+                    FilestudyAdapter.setData(file);
+                    filestudyAdapter.notifyDataSetChanged();
+                }else {
+                filestudies = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
+                filestudyAdapter = new FilestudyAdapter(StudyActivity.this, R.layout.file, filestudies);
+                listView.setAdapter(filestudyAdapter);
                 //单击listView中的view
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
@@ -103,51 +115,36 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
                     }
                 });
             }
+            }
         }
     };
+    private File file;
+
+    protected List<Filestudy> parseList(String jsonData) throws JsonSyntaxException {
+
+        if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
+            Gson gson = new Gson();
+
+            List<Filestudy> list = gson.fromJson(jsonData, new TypeToken<List<Filestudy>>() {
+            }.getType());
+
+            return list;
+        } else
+            return null;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study);
         ButterKnife.bind(this);
-        ptrLayout.setRefreshListener(this);
+        initView();
         //获取文件列表
-        reqFileList("", curPage);
+        sendRequest("", curPage);
     }
 
-    private void sendRequestWithOkHttpPost(final String url, final JSONObject obj) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    RequestBody body = RequestBody.create(MEDIA_TYPE_JSON, obj.toString());
-                    OkHttpClient client = new OkHttpClient();
-                    Request request = new Request.Builder().url(url).post(body).build();
-                    LogUtils.d("http", "sendRequest: " + url + obj);
-                    Response response = client.newCall(request).execute();
-                    //Log.d(TAG, "body: "+response.body());
-                    String responseData = response.body().string();
-                    LogUtils.d("http", "Response completed: : " + responseData);
-                    parseJSONWithGson(responseData);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
-    }
+    private void initView() {
 
-    private void parseJSONWithGson(String jsonData) throws JSONException {
-        JSONObject jsonObject = new JSONObject(jsonData);
-        String jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array").toString();
-        Log.d("http", "jsonObject: " + jsonArray);
-        Gson gson = new Gson();
-        filestudies = gson.fromJson(jsonArray, new TypeToken<List<Filestudy>>() {
-        }.getType());
-        Log.d("http", "filestudies: " + filestudies);
-        Message msg = new Message();
-        msg.what = COMPLETED;
-        handler.sendMessage(msg);
     }
 
     /**
@@ -163,43 +160,70 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setMessage("文件获取中，请稍候.....");
         progressDialog.show();
+        file = new File(FileUtils.getSDdir("download"), fileName); //在刚刚建立好的目录下建立文件
+        //如果文件已存在直接打开
+        if (file.exists()) {
+            progressDialog.dismiss();
+            handler.sendEmptyMessage(100);
+            return;
+        }
+        try {
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        sendRequestGet(urlString, fileName, file, handler);
+    }
 
-        final Runnable runnable = new Runnable() {
+
+
+
+    public void sendRequestGet(final String url, final String params, final File file, final Handler handler){
+
+        //创建okHttpClient对象
+        OkHttpClient mOkHttpClient = new OkHttpClient();
+        //创建一个Request
+        final Request request = new Request.Builder()
+                .url(url + params)
+//                .url("https://github.com/hongyangAndroid")
+                .build();
+        //new call
+        Call call = mOkHttpClient.newCall(request);
+        //请求加入调度
+        call.enqueue(new Callback() {
             @Override
-            public void run() {
+            public void onFailure(Call call, IOException e) {
+
+                handler.sendEmptyMessage(-1);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) {
+
                 int byteread = 0;
+                LogUtils.d("http", "sendRequest:"+String.valueOf(response));
+                InputStream inputStream = response.body().byteStream();
+                OutputStream outputStream = null;
                 try {
-                    //final String fileName = resourceId + "." + fileType;//把resourceId 与filetype拼接成文件的名称
-                    final File file = new File(FileUtils.getSDdir("download"), fileName); //在刚刚建立好的目录下建立文件
-                    //如果文件已存在直接打开
-                    if (file.exists()) {
-                        progressDialog.dismiss();
-                        openFile(StudyActivity.this, file);
-                        return;
-                    }
-                    file.createNewFile();
-                    //Log.d(TAG, "urlString: "+new String(urlString.getBytes("UTF-8")));
-                    //Log.d(TAG, "urlString: "+URL+java.net.URLEncoder.encode(urlString,"UTF-8"));
-                    final URL url = new URL(urlString);
-                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-                    InputStream inputStream = connection.getInputStream();
-                    OutputStream outputStream = new FileOutputStream(file);
-                    byte buffer[] = new byte[4 * 1024];
+                    outputStream = new FileOutputStream(file);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                byte buffer[] = new byte[4 * 1024];
+                try {
                     while ((byteread = inputStream.read(buffer)) != -1) {
                         outputStream.write(buffer, 0, byteread);
                     }
-                    outputStream.close();
-                    inputStream.close();
-                    connection.disconnect();
-                    Log.d(TAG, "file: 文件下载成功" + file.length());
-                    progressDialog.dismiss();
-                    openFile(StudyActivity.this, file);
-                } catch (Exception e) {
+                outputStream.close();
+                inputStream.close();
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
+                Message msg = new Message();
+                msg.obj = "0000";
+                handler.sendMessage(msg);
             }
-        };
-        new Thread(runnable).start();
+        });
     }
 
     /**
@@ -339,25 +363,14 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
         EditText editText1 = (EditText) findViewById(R.id.et_fileName);
         str1 = editText1.getText().toString();
         Log.d(TAG, "clickInStudy: " + str1);
-        reqFileList(str1, 1);
+        sendRequest(str1, 1);
     }
 
-    void reqFileList(String searchKey, int pageNo) {
-        try {
-            String url = ParamUtils.paramIp + "/ALS7M/JSONService?method=studyList";
-            JSONObject object = new JSONObject();
-            JSONObject jsonObj = new JSONObject();
-            jsonObj.put("pageSize", PAGE_SIZE);
-            jsonObj.put("pageNo", pageNo);
-            jsonObj.put("UserId", ParamUtils.UserId);
-            jsonObj.put("SearchKey", searchKey);
-            object.put("deviceType", "Android");
-            object.put("RequestParams", jsonObj);
-            sendRequestWithOkHttpPost(url, object);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    private void sendRequest(String searchKey, int pageNo) {
+        //{pageSize:每页数据条数, pageNo:页码, UserId:登陆用户id, SearchKey:查询条件, DocNo:类型标识}
+        JSONObject jsonObject = ParamUtils.setParams("download", "studyList", new Object[]{ParamUtils.pageSize, pageNo
+                , ParamUtils.UserId, searchKey, getIntent().getStringExtra("DocNo")}, 5);
+        HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
     }
 
     @Override
@@ -366,7 +379,7 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
             @Override
             public void run() {
 
-                reqFileList("", 1);
+                sendRequest("", 1);
                 // 结束刷新
                 ptrLayout.finishRefresh();
             }
@@ -379,7 +392,7 @@ public class StudyActivity extends ParentActivity implements BaseRefreshListener
             @Override
             public void run() {
                 curPage++;
-                reqFileList("", curPage);
+                sendRequest("", curPage);
                 // 结束刷新
                 ptrLayout.finishLoadMore();
             }

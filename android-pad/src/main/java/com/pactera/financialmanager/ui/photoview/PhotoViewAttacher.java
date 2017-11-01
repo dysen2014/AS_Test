@@ -238,9 +238,8 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
 
     /**
      * Clean-up the resources attached to this object. This needs to be called when the ImageView is
-     * no longer used. A good example is from {@link View#onDetachedFromWindow()} or
+     * no longer used. level_a good example is from {@link View#onDetachedFromWindow()} or
      * from {@link android.app.Activity#onDestroy()}. This is automatically called if you are using
-     * {@link uk.co.senab.photoview.PhotoView}.
      */
     @SuppressWarnings("deprecation")
     public void cleanup() {
@@ -992,7 +991,7 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
     public interface OnPhotoTapListener {
 
         /**
-         * A callback to receive where the user taps on a photo. You will only receive a callback if
+         * level_a callback to receive where the user taps on a photo. You will only receive a callback if
          * the user taps on the actual photo, tapping on 'whitespace' will be ignored.
          *
          * @param view - View the user tapped.
@@ -1004,7 +1003,7 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
         void onPhotoTap(View view, float x, float y);
 
         /**
-         * A simple callback where out of photo happened;
+         * level_a simple callback where out of photo happened;
          */
         void onOutsidePhotoTap();
     }
@@ -1018,7 +1017,7 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
     public interface OnViewTapListener {
 
         /**
-         * A callback to receive where the user taps on a ImageView. You will receive a callback if
+         * level_a callback to receive where the user taps on a ImageView. You will receive a callback if
          * the user taps anywhere on the view, tapping on 'whitespace' will not be ignored.
          *
          * @param view - View the user tapped.
@@ -1037,7 +1036,7 @@ public class PhotoViewAttacher implements IPhotoView, View.OnTouchListener,
     public interface OnSingleFlingListener {
 
         /**
-         * A callback to receive where the user flings on a ImageView. You will receive a callback if
+         * level_a callback to receive where the user flings on a ImageView. You will receive a callback if
          * the user flings anywhere on the view.
          *
          * @param e1        - MotionEvent the user first touch.

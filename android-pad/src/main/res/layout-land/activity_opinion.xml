@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".credit.main.service.approval.OpinionActivity">
+
+    <include
+        layout="@layout/common_title_layout"/>
+
+    <LinearLayout
+        android:layout_width="800dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical">
+
+            <include
+                layout="@layout/common_pull_loadmore_layout"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <LinearLayout
+                    android:id="@+id/alphaIndicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        style="@style/common_lay_horizontal">
+
+                        <TextView
+                            android:id="@+id/tab_0"
+                            style="@style/common_tab_bar"
+                            android:layout_width="wrap_content"
+                            android:clickable="true"
+                            android:text="同意"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/common_lay_horizontal">
+
+                        <TextView
+                            android:id="@+id/tab_1"
+                            style="@style/common_tab_bar"
+                            android:layout_width="wrap_content"
+                            android:text="不同意"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="意见详情："/>
+
+                <EditText
+                    android:id="@+id/opinion_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@drawable/shape_txt_bg"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/common_btn_submit"/>
+
+</LinearLayout>

@@ -107,6 +107,7 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+
             if (msg.obj != null) {
 
                 try {
@@ -190,7 +191,7 @@ public class AfterWarnFragment extends ParentFragment implements BaseRefreshList
     }
 
     private void sendRequest() {
-        JSONObject jsonObject = ParamUtils.setParams("warn", "crmAfterTheLoan", new Object[]{ParamUtils.UserId, mItemNo, ParamUtils.pageSize, curPage}, 4);
+        JSONObject jsonObject = ParamUtils.setParams("warn", "crmAfterTheLoan", new Object[]{ParamUtils.UserId, "010", ParamUtils.pageSize, curPage}, 4);
         HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
     }
 

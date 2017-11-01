@@ -14,8 +14,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="63dp"
-            android:layout_weight="427"
+            android:layout_marginTop="48dp"
+            android:layout_weight="327"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -37,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="630"
+            android:layout_marginTop="48dp"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -61,17 +62,18 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="563">
+                        android:layout_weight="563"
+                        android:gravity="center_vertical">
 
-                        <TextView
+                        <ImageView
                             android:id="@+id/textView4"
                             android:layout_width="wrap_content"
-                            android:layout_height="44dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginRight="20dp"
-                            android:padding="8dp"
-                            android:drawableLeft="@drawable/login_user_icon"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/login_user_icon"
                             android:gravity="center">
-                        </TextView>
+                        </ImageView>
 
                         <EditText
                             android:id="@+id/login_edit_user"
@@ -100,16 +102,16 @@
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="563">
+                        android:layout_weight="563"
+                        android:gravity="center_vertical">
 
-                        <TextView
+                        <ImageView
                             android:layout_width="wrap_content"
-                            android:layout_height="44dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginRight="20dp"
-                            android:padding="8dp"
-                            android:drawableLeft="@drawable/login_pwd_icon"
-                            android:gravity="center">
-                        </TextView>
+                            android:layout_margin="8dp"
+                            android:src="@drawable/login_pwd_icon">
+                        </ImageView>
 
                         <EditText
                             android:id="@+id/login_edit_psd"

@@ -26,9 +26,9 @@
 				<ImageView
 					android:layout_width="48dp"
 					android:layout_height="40dp"
-					android:src="@drawable/back_arrow"
 					android:paddingBottom="4dp"
 					android:paddingTop="4dp"
+					android:src="@drawable/back_arrow"
 					/>
 
 				<TextView

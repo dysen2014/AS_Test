@@ -46,7 +46,7 @@ public class ImageDownloader {
 	/**
      * Download the specified image from the Internet and binds it to the provided ImageView. The
      * binding is immediate if the image is found in the cache and will be done asynchronously
-     * otherwise. A null bitmap will be associated to the ImageView if an error occurs.
+     * otherwise. level_a null bitmap will be associated to the ImageView if an error occurs.
      *
      * @param url The URL of the image to download.
      * @param imageView The ImageView to bind the downloaded image to.
@@ -251,7 +251,7 @@ public class ImageDownloader {
 	} // end of BitmapDownloaderTask
 	
 	/**
-     * A fake Drawable that will be attached to the imageView while the download is in progress.
+     * level_a fake Drawable that will be attached to the imageView while the download is in progress.
      *
      * <p>Contains a reference to the actual download task, so that a download task can be stopped
      * if a new binding is required, and makes sure that only the last started download process can

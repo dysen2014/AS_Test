@@ -8,12 +8,12 @@
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_ppt.xml"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_switch_off.xml",
-        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_switch_off.xml"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_label.xml",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_label.xml"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_switch_off.xml",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\common_res\\build\\intermediates\\bundles\\default\\res\\drawable-anydpi-v21\\ic_switch_off.xml"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_top.xml",
@@ -53,7 +53,7 @@
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
-        "source": "C:\\Users\\dysen\\.android\\build-cache\\d1974bf66d1af839d62fb4a9968ca9eb65105485\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\6ea839e9a90426e0b0498f4bc13875d09eaa3849\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_bottom.xml",
@@ -77,7 +77,7 @@
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
-        "source": "C:\\Users\\dysen\\.android\\build-cache\\d1974bf66d1af839d62fb4a9968ca9eb65105485\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
+        "source": "C:\\Users\\dysen\\.android\\build-cache\\6ea839e9a90426e0b0498f4bc13875d09eaa3849\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_status_bg.xml",

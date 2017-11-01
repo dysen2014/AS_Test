@@ -8,16 +8,8 @@
         layout="@layout/common_title_layout"/>
 
     <include
-        layout="@layout/common_two_rbtn"/>
+        layout="@layout/common_tab_lay"/>
 
-    <com.dysen.common_res.common.layout.reveal.RevealLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/rlv_data"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </com.dysen.common_res.common.layout.reveal.RevealLayout>
+    <include layout="@layout/common_pull_loadmore_layout"/>
 
 </LinearLayout>

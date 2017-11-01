@@ -1,6 +1,6 @@
 package com.pactera.financialmanager.datetimepicker;
 /*
- * Copyright (C) 2013 The Android Open Source Project
+ * Copyright (level_c) 2013 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ import com.nineoldandroids.animation.ValueAnimator;
 import com.pactera.financialmanager.R;
 
 /**
- * A view to show a series of numbers in a circular pattern.
+ * level_a view to show a series of numbers in a circular pattern.
  */
 public class RadialTextsView extends View {
     private final static String TAG = "RadialTextsView";

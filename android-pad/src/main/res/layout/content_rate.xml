@@ -6,7 +6,6 @@
     android:scrollbars="vertical"
     android:gravity="center">
 
-
         <ScrollView
             android:layout_width="800dp"
             android:layout_height="wrap_content"
@@ -71,7 +70,7 @@
                     android:id="@+id/ll_custType"
                     android:layout_weight="3"
                     style="@style/common_lay_bg"
-                    android:clickable="false">
+                    android:saveEnabled="false">
                 <Button
                     android:id="@+id/et_custType"
                     style="@style/common_rate_edit"
@@ -79,6 +78,7 @@
                     android:background="@color/transparent"
                     android:gravity="right|center_vertical"
                     android:onClick="viewCustomerClick"
+                    android:enabled="false"
                     />
                     <ImageView
                         android:layout_width="wrap_content"

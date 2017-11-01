@@ -9,17 +9,14 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
-import com.dysen.common_res.common.utils.TabSwitchHelper;
 import com.dysen.common_res.common.views.TextViewMarquee;
 import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
 import com.google.gson.Gson;
@@ -137,7 +134,10 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
             super.handleMessage(msg);
             progressLoading.setVisibility(View.GONE);
             if (msg.what == -1) {
-                ShowDialog(getActivity(), "请求错误！");
+
+//                    toast("请求超时！");
+                tvHideData.setVisibility(View.VISIBLE);
+                tvHideData.setText("请求超时！");
             } else {
                 if (msg.obj != null) {
                     JSONObject jsonObject = ((JSONObject) msg.obj);
@@ -194,7 +194,8 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
         if (Tool.haveNet(getActivity())) {
             HttpThread.sendRequestGet(ParamUtils.urlTempCrm, param, handler, warnType);
         } else {
-            ShowDialog(getActivity(), "请检查网络是否连接！");
+            tvHideData.setVisibility(View.VISIBLE);
+            tvHideData.setText(R.string.unNetwork);
         }
     }
 
@@ -230,7 +231,7 @@ public class CustomerDefaultWarnFragment extends ParentFragment implements BaseR
                         || checkObjValid(warnCrmInfoListDK) && warnCrmInfoListDK.size() > 0) {
                     initView();
                 } else {
-                    ShowDialog(getActivity(), "无数据");
+                    tvHideData.setVisibility(View.VISIBLE);
                 }
             }
         } else if (index == infoIndex2) {

@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -20,6 +21,8 @@ import com.dysen.common_res.R;
 import com.dysen.common_res.common.utils.DialogAlert;
 import com.dysen.common_res.common.utils.FormatUtil;
 import com.jaeger.library.StatusBarUtil;
+
+import java.util.List;
 
 import q.rorbin.badgeview.QBadgeView;
 
@@ -129,6 +132,35 @@ protected void backActivity(View v){
 			return true;
 		else
 			return false;
+	}
+
+	protected boolean checkListValid(List list) {
+		if (list != null && list.size()>0)
+			return true;
+		else
+			return false;
+	}
+
+	/**
+	 * 页面跳转
+	 * @param cls
+	 */
+	public void gotoNextActivity(Class<?> cls){
+		Intent intent = new Intent();
+		intent.setClass(this, cls);
+		startActivity(intent);
+	}
+
+	/**
+	 * 页面跳转传参数
+	 * @param cls
+	 * @param bundle
+	 */
+	public void gotoNextActivity(Class<?> cls, Bundle bundle){
+		Intent intent = new Intent();
+		intent.setClass(this, cls);
+		intent.putExtras(bundle);
+		startActivity(intent);
 	}
 
 	/**
@@ -249,6 +281,31 @@ protected void backActivity(View v){
 			InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
 		}
+	}
+
+	/**
+	 * 屏蔽一系列实体键
+	 * */
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		switch (keyCode) {
+			case KeyEvent.KEYCODE_HOME:
+				return true;
+//			 case KeyEvent.KEYCODE_BACK:
+//			 return true;
+			case KeyEvent.KEYCODE_CALL:
+				return true;
+			case KeyEvent.KEYCODE_SYM:
+				return true;
+			case KeyEvent.KEYCODE_VOLUME_DOWN:
+				return true;
+			case KeyEvent.KEYCODE_VOLUME_UP:
+				return true;
+			case KeyEvent.KEYCODE_STAR:
+				return true;
+		}
+
+		return super.onKeyDown(keyCode, event);
 	}
 
 	public void setBadgeView(View view, String text) {

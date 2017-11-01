@@ -274,7 +274,7 @@ public class DeviceService extends BluetoothService implements Serializable {
 //                for (int i = 0; i < tagList.length(); i++) {
 //                    char c = tagList.charAt(i);
 //                    String rs = resultArray[i + 1];
-//                    if ('A' == c) {
+//                    if ('level_a' == c) {
 //                        iccardInfo.setId(rs);
 //                    } else if ('J' == c) {
 //                        iccardInfo.setSerial(rs);
@@ -390,7 +390,7 @@ public class DeviceService extends BluetoothService implements Serializable {
 //                Map<String, String> userInfoMap;
 //                userInfoMap = MessageUtils.parseIcUserInfo2(CHexConver.hexStringToBytes(userInfo.substring(2)));
 //                icCardInfo.setTrack2(userInfoMap.get("E"));
-//                icCardInfo.setId(userInfoMap.get("A"));
+//                icCardInfo.setId(userInfoMap.get("level_a"));
 //                icCardInfo.setSerial(userInfoMap.get("J"));
 //            } else {
 //                icCardInfo.setResult(false);

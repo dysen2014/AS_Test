@@ -24,16 +24,16 @@
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\refreshing.png"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\cusarchiving_spinner_table.png",
-        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\cusarchiving_spinner_table.png"
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\login_top_old.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\login_top_old.png"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\rlbg.png",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\rlbg.png"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\login_top_old.png",
-        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\login_top_old.png"
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\cusarchiving_spinner_table.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\cusarchiving_spinner_table.png"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\signrecord.png",
@@ -136,12 +136,12 @@
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\itembg4444.9.png"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\login_bg.png",
-        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\login_bg.png"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\pullup_icon_big.png",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\pullup_icon_big.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\login_bg.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\login_bg.png"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon_daijiaoyes.png",
@@ -316,12 +316,12 @@
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\calcaulator_5.png"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\listview_background.9.png",
-        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\listview_background.9.png"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\person_6_gray.png",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\person_6_gray.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\listview_background.9.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\listview_background.9.png"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\customerinfo.png",
@@ -512,20 +512,16 @@
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\signinrecord.png"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\about.png",
-        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\about.png"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\six.png",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\six.png"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\map_marker_multiple.png",
-        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\map_marker_multiple.png"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\two.png",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\two.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\map_marker_multiple.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\map_marker_multiple.png"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\six2x.png",
@@ -988,12 +984,12 @@
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\myreport_pm.png"
     },
     {
-        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\cusarchiving_swatch_off.png",
-        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\cusarchiving_swatch_off.png"
-    },
-    {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\archiving_photo.png",
         "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\archiving_photo.png"
+    },
+    {
+        "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\cusarchiving_swatch_off.png",
+        "source": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\src\\main\\res\\drawable-hdpi\\cusarchiving_swatch_off.png"
     },
     {
         "merged": "D:\\dysen\\Android\\AS_Test\\Code_Test\\Credit_new\\android-pad\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon_daijiaono.png",

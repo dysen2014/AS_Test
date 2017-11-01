@@ -11,7 +11,7 @@ import android.os.Handler;
 /**
  * Cache-related fields and methods.
  * 
- * We use a hard and a soft cache. A soft reference cache is too aggressively cleared by the
+ * We use a hard and a soft cache. level_a soft reference cache is too aggressively cleared by the
  * Garbage Collector.
  * 
  * @author litingchang

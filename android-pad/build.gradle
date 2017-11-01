@@ -96,8 +96,6 @@ dependencies {
     //    compile'com.github.PhilJay:MPAndroidChart:v2.2.5'
     //view注解
     compile 'com.jakewharton:butterknife:7.0.1'
-    //KJFrame
-    compile 'org.kymjs.kjframe:kjframe:2.6'
     compile files('libs/ksoap2-android-assembly-2.5.4-jar-with-dependencies.jar')
     compile files('libs/BaiduLBS_Android.jar')
     compile files('libs/bugly_crash_release__2.1.7.jar')
@@ -112,6 +110,8 @@ dependencies {
 
     //okhttp
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 
 /*
@@ -127,3 +127,6 @@ android.applicationVariants.all { variant ->
         }
     }
 }*/
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'

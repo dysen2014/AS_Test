@@ -77,9 +77,9 @@ public class CheckIdCardUtils{
 		cityCodes.put("81", "香港");
 		cityCodes.put("82", "澳门");
 		cityCodes.put("91", "国外");
-		twFirstCode.put("A", 10);
-		twFirstCode.put("B", 11);
-		twFirstCode.put("C", 12);
+		twFirstCode.put("level_a", 10);
+		twFirstCode.put("level_b", 11);
+		twFirstCode.put("level_c", 12);
 		twFirstCode.put("D", 13);
 		twFirstCode.put("E", 14);
 		twFirstCode.put("F", 15);
@@ -103,9 +103,9 @@ public class CheckIdCardUtils{
 		twFirstCode.put("Z", 33);
 		twFirstCode.put("I", 34);
 		twFirstCode.put("O", 35);
-		hkFirstCode.put("A", 1);
-		hkFirstCode.put("B", 2);
-		hkFirstCode.put("C", 3);
+		hkFirstCode.put("level_a", 1);
+		hkFirstCode.put("level_b", 2);
+		hkFirstCode.put("level_c", 3);
 		hkFirstCode.put("R", 18);
 		hkFirstCode.put("U", 21);
 		hkFirstCode.put("Z", 26);
@@ -326,7 +326,7 @@ public class CheckIdCardUtils{
 	 * 验证香港身份证号码(存在Bug，部份特殊身份证无法检查)
 	 * <p>
 	 * 身份证前2位为英文字符，如果只出现一个英文字符则表示第一位是空格，对应数字58 前2位英文字符A-Z分别对应数字10-35
-	 * 最后一位校验码为0-9的数字加上字符"A"，"A"代表10
+	 * 最后一位校验码为0-9的数字加上字符"level_a"，"level_a"代表10
 	 * </p>
 	 * <p>
 	 * 将身份证号码全部转换为数字，分别对应乘9-1相加的总和，整除11则证件号码有效
@@ -358,7 +358,7 @@ public class CheckIdCardUtils{
 			sum = sum + Integer.valueOf(c + "") * iflag;
 			iflag--;
 		}
-		if (end.toUpperCase().equals("A")) {
+		if (end.toUpperCase().equals("level_a")) {
 			sum = sum + 10;
 		} else {
 			sum = sum + Integer.valueOf(end);

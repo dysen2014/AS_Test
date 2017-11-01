@@ -9,17 +9,16 @@ public class AfterTheLoan {
 
 
 	/**
-	 * InterestBalance : 0
-	 * ConTractNo : BC2016032300001127
-	 * BusinessName1 : 一般流动资金贷款
-	 * CustomerName : 测试用户2014031400000802
-	 * CustomerID : 2014031400000802
-	 * BusinessType : 1010
-	 * BusinessSum : 16000000
-	 * Balance : 16000000
-	 * DueBillNO : 35010000001898610
-	 * OfficeTel : 13872146366
-	 * ActualMaturity : 2017/03/24
+	 * InterestBalance : 0.0
+	 * ConTractNo : BC2017102500001376
+	 * BusinessName1 : 个人经营性综合贷款
+	 * CustomerName : 向永斌
+	 * CustomerID : 20130326001280
+	 * BusinessSum : 150000.0
+	 * Balance : 130000.0
+	 * DueBillNO : 31010000026994895
+	 * OfficeTel : 15872542366
+	 * ActualMaturity : 2018/04/07
 	 */
 
 	private double InterestBalance;
@@ -27,7 +26,6 @@ public class AfterTheLoan {
 	private String BusinessName1;
 	private String CustomerName;
 	private String CustomerID;
-	private String BusinessType;
 	private double BusinessSum;
 	private double Balance;
 	private String DueBillNO;
@@ -38,7 +36,7 @@ public class AfterTheLoan {
 		return InterestBalance;
 	}
 
-	public void setInterestBalance(int InterestBalance) {
+	public void setInterestBalance(double InterestBalance) {
 		this.InterestBalance = InterestBalance;
 	}
 
@@ -74,19 +72,11 @@ public class AfterTheLoan {
 		this.CustomerID = CustomerID;
 	}
 
-	public String getBusinessType() {
-		return BusinessType;
-	}
-
-	public void setBusinessType(String BusinessType) {
-		this.BusinessType = BusinessType;
-	}
-
 	public double getBusinessSum() {
 		return BusinessSum;
 	}
 
-	public void setBusinessSum(int BusinessSum) {
+	public void setBusinessSum(double BusinessSum) {
 		this.BusinessSum = BusinessSum;
 	}
 
@@ -94,7 +84,7 @@ public class AfterTheLoan {
 		return Balance;
 	}
 
-	public void setBalance(int Balance) {
+	public void setBalance(double Balance) {
 		this.Balance = Balance;
 	}
 
