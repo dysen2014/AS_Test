@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Dec 14 22:35:00 CST 2018
+#Sun Dec 23 16:20:43 CST 2018
 2.path=lib/x86/libcomminterface_0.1.so
 14.set=NATIVE_RESOURCE
 107.baseType=DIRECTORY
