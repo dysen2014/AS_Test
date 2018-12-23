@@ -1,53 +1,57 @@
 package com.pactera.financialmanager.credit.main.mine;
 
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 
-import com.dysen.common_res.common.base.ParentActivity;
-import com.dysen.common_res.common.views.ViewUtils;
+import com.alibaba.sdk.android.feedback.impl.FeedbackAPI;
 import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.ui.ParentActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.concurrent.Callable;
 
 public class ProposalActivity extends ParentActivity {
 
-    @Bind(R.id.txt_back)
-    TextView txtBack;
-    @Bind(R.id.txt_title)
-    TextView txtTitle;
-    @Bind(R.id.edt_proposal)
-    EditText edtProposal;
-    @Bind(R.id.btn_submit)
-    Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proposal);
-        ButterKnife.bind(this);
+        initTitle(this, "", false,"");
+        try {
+            JSONObject extInfo = new JSONObject();
+            extInfo.put("UserId", LogoActivity.user.getUserID());
+            FeedbackAPI.setAppExtInfo(extInfo);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-        initView();
+
+        FeedbackAPI.activity = this; // 设置activity
+        //support-v4包中的Fragment
+        FragmentManager fm = getSupportFragmentManager();
+        final FragmentTransaction transaction = fm.beginTransaction();
+        final Fragment feedback = FeedbackAPI.getFeedbackFragment();
+        // must be called
+        FeedbackAPI.setFeedbackFragment(new Callable() {
+            @Override
+            public Object call() throws Exception {
+                transaction.replace(R.id.content, feedback);
+                transaction.commit();
+                return null;
+            }
+        }, null);
     }
 
-    private void initView() {
-
-        txtBack.setText(R.string.tab_mine);
-        txtTitle.setText("建议");
-        btnSubmit.setText("提交建议");
-    }
-
-    @OnClick(R.id.btn_submit)
-    public void onViewClicked() {
-
-        String text = ViewUtils.getText(edtProposal);
-        if (!txtBack.equals("")){
-            toast("您的建议提交成功！");
-        }else
-            toast("请输入建议信息！");
-        finish();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        FeedbackAPI.cleanFeedbackFragment();
+        FeedbackAPI.cleanActivity();
     }
 }

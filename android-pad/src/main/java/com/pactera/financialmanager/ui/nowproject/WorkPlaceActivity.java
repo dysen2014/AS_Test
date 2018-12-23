@@ -95,7 +95,7 @@ public class WorkPlaceActivity extends ParentActivity implements OnClickListener
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.nowworkplaceactivity);
-		initTitle(this, R.drawable.workplacesmallicon);
+		initTitle(this, "工作平台");
 		findViews();
 		setListener();
 		

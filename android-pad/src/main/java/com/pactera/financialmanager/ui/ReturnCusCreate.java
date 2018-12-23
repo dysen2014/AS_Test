@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HRequest;
 import com.pactera.financialmanager.ui.service.HResponse;
@@ -50,7 +51,7 @@ public class ReturnCusCreate extends ParentActivity implements OnClickListener {
 	TextView rc_create_aworkdate;// 提醒时间
 	Button rc_create_save, rc_create_cancel;// 保存、取消
 	private String[] ServeModes = { "行内到访", "登门拜访", "电话", "短信", "电子邮件", "传真",
-			"信函", "其他" };
+			"信函", "relevance_other" };
 	private String[] ServeType = { "生日关怀" + "节日问候", "活动开展", "业务交流" };
 	private String[] CSStatus = { "已执行", "未执行" };
 	

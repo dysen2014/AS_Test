@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
+import com.pactera.financialmanager.ui.ParentActivity;
 import com.dysen.common_res.common.utils.ActivityManagerApplication;
 import com.dysen.common_res.common.utils.CallAndSMS;
 import com.dysen.common_res.common.utils.HttpThread;
@@ -39,7 +39,7 @@ import butterknife.OnClick;
  * Created by dysen on 2017/10/17.
  */
 
-class BusinessApprovalActivity extends ParentActivity {
+public class BusinessApprovalActivity extends ParentActivity {
 
     @Bind(R.id.txt_back)
     TextView txtBack;
@@ -87,13 +87,14 @@ class BusinessApprovalActivity extends ParentActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            uberPgsview.setVisibility(View.INVISIBLE);
-            tvHideData.setVisibility(View.INVISIBLE);
+
+            if (uberPgsview != null)
+                uberPgsview.setVisibility(View.INVISIBLE);
+            if (tvHideData != null)
+                tvHideData.setVisibility(View.INVISIBLE);
             try {
                 if (msg.obj != null) {
                     initData(msg.what, msg.obj.toString());
-                } else {
-                    tvHideData.setVisibility(View.VISIBLE);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -126,6 +127,11 @@ class BusinessApprovalActivity extends ParentActivity {
 
                     @Override
                     public void onLongClick(View view, Integer info) {
+
+                    }
+
+                    @Override
+                    public void onClick(View view, int position, int index) {
 
                     }
                 }));
@@ -237,6 +243,17 @@ class BusinessApprovalActivity extends ParentActivity {
                 startActivity(new Intent(BusinessApprovalActivity.this, OpinionActivity.class));
             }
         });
+
+        if (layBack != null) {
+            layBack.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    finish();
+                }
+            });
+        }
     }
 
     protected void sendRequest(JSONObject jsonObject, int tabIndex) {

@@ -9,19 +9,16 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/android-pad" />
-            <option value="$PROJECT_DIR$/approvaldemo" />
-            <option value="$PROJECT_DIR$/baseitem-library" />
-            <option value="$PROJECT_DIR$/ble-lib" />
             <option value="$PROJECT_DIR$/common_res" />
-            <option value="$PROJECT_DIR$/contact-library" />
             <option value="$PROJECT_DIR$/expandable-library" />
-            <option value="$PROJECT_DIR$/filedownload" />
-            <option value="$PROJECT_DIR$/kjframe-library" />
-            <option value="$PROJECT_DIR$/ocr-library" />
+            <option value="$PROJECT_DIR$/flowlayout-library" />
+            <option value="$PROJECT_DIR$/ocr_ui" />
             <option value="$PROJECT_DIR$/popwindow-library" />
             <option value="$PROJECT_DIR$/pull_loadmore-library" />
+            <option value="$PROJECT_DIR$/recyclerview-library" />
             <option value="$PROJECT_DIR$/sms-library" />
             <option value="$PROJECT_DIR$/status_bar-library" />
+            <option value="$PROJECT_DIR$/swipe-reveal-layout" />
             <option value="$PROJECT_DIR$/tab_bar-library" />
             <option value="$PROJECT_DIR$/zbarscan-library" />
           </set>

@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.adapter.MyRecycleViewAdapter;
-import com.dysen.common_res.common.base.ParentActivity;
+import com.pactera.financialmanager.ui.ParentActivity;
 import com.dysen.common_res.common.utils.ActivityManagerApplication;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.ParamUtils;
@@ -74,26 +74,37 @@ public class OpinionActivity extends ParentActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            if (msg.what == -1) {
-                tvHideData.setVisibility(View.VISIBLE);
-                tvHideData.setText(R.string.unNetwork);
-            }
-            if (msg.what == -100) {
-
-                tvHideData.setVisibility(View.VISIBLE);
-            }
+            if (uberPgsview != null)
+                uberPgsview.setVisibility(View.INVISIBLE);
+            if (tvHideData != null)
+                tvHideData.setVisibility(View.INVISIBLE);
+//            if (msg.what == -1) {
+//                tvHideData.setVisibility(View.VISIBLE);
+//                tvHideData.setText(R.string.unNetwork);
+//            }
+//            if (msg.what == -100) {
+//
+//                tvHideData.setVisibility(View.VISIBLE);
+//            }
             if (msg.obj != null) {
                 try {
                     riskFlag = HttpThread.parseJSON(msg.obj.toString()).getString("result");
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-                listData = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
+                try {
+                    listData = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 if (checkListValid(listData)) {
                     if (riskFlag.equals("Y")) {
                         RiskSianalActivity.setData(listData);
                         startActivity(new Intent(OpinionActivity.this, RiskSianalActivity.class));
                     } else if (riskFlag.equals("N")) {
+                        if (tvHideData != null)
+                            tvHideData.setVisibility(View.INVISIBLE);
                         btnSubmit.setEnabled(true);
                     }
                 }
@@ -124,9 +135,11 @@ public class OpinionActivity extends ParentActivity {
         sendRequest();
     }
 
-    private void sendRequest() {
+    private void sendRequest() {//风险特许
         //crmRiskSignalTX   SerialNo:贷款流水号,UserId:登陆用户ID
-        JSONObject jsonObject = ParamUtils.setParams("crmRiskSignalTX", "crmRiskSignalTX", new Object[]{"BA20170727000003", ParamUtils.UserId}, 2);
+//        "BA20170727000003"
+        JSONObject jsonObject = ParamUtils.setParams("crmRiskSignalTX", "crmRiskSignalTX",
+                new Object[]{examineBeanList.get(index).getObjectNo(), ParamUtils.UserId}, 2);
         HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
     }
 
@@ -149,6 +162,16 @@ public class OpinionActivity extends ParentActivity {
         } else
             tvHideData.setVisibility(View.VISIBLE);
         uberPgsview.setVisibility(View.INVISIBLE);
+        if (layBack != null) {
+            layBack.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    finish();
+                }
+            });
+        }
     }
 
     public static void setData(List<ApprovalBean.ExamineBean> listData, int mIndex) {

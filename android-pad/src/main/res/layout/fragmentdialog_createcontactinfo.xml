@@ -335,6 +335,7 @@
                                 <TextView
                                     android:id="@+id/et_dialog_begin_job_time"
                                     android:layout_width="0dp"
+                                    android:layout_weight="16"
                                     android:layout_height="36dp"
                                     android:layout_gravity="center_vertical"
                                     android:background="@drawable/bookbuilding_datebtnbg"

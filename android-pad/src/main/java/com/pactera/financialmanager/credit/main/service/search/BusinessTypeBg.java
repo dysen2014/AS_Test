@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.dysen.common_res.common.base.ParentActivity;
+import com.pactera.financialmanager.ui.ParentActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.pactera.financialmanager.R;

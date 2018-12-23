@@ -1,7 +1,6 @@
 package com.pactera.financialmanager.ui.fragmentbookbuilding;
 
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -23,13 +22,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.adapter.SpinnerAdapter;
 import com.pactera.financialmanager.adapter.SpinnerAdapter.CallBackItemClickListener;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.bookbuildingfrocompany.ActivityBaseInfo;
 import com.pactera.financialmanager.ui.model.AssessRetValEntity;

@@ -1,8 +1,5 @@
 package com.pactera.financialmanager.ui.customermanager;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,9 +16,6 @@ import org.json.JSONObject;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.media.ThumbnailUtils;
 import android.os.Bundle;
 import android.os.Message;
 import android.util.Base64;
@@ -43,7 +37,7 @@ import android.widget.Toast;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.adapter.SpinnerAdapter;
 import com.pactera.financialmanager.adapter.SpinnerAdapter.CallBackItemClickListener;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.fragmentbookbuilding.WindowTakePictures;

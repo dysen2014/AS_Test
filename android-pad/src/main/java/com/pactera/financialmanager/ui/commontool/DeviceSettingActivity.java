@@ -53,7 +53,7 @@ public class DeviceSettingActivity extends ParentActivity {
         setContentView(R.layout.activity_device_settings);
         ViewUtils.inject(this);
 
-        initTitle(this, R.drawable.changyonggongju);
+        initTitle(this, "常用工具");
         btUitl = new BluetoothUtil(this, handler);
 
         btAdapter = new DevicesBTAdapter(this);

@@ -1,7 +1,6 @@
 package com.pactera.financialmanager.ui.fragmentbookbuilding;
 
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.TextUtils;
@@ -20,7 +19,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.pactera.financialmanager.R;
@@ -31,7 +29,7 @@ import com.pactera.financialmanager.callback.WorkPlaceItemChange;
 import com.pactera.financialmanager.entity.OtherBankEntity;
 import com.pactera.financialmanager.ui.DeleteDialog;
 import com.pactera.financialmanager.ui.DeleteDialog.IsDeleteListener;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.SwipeListView;
 import com.pactera.financialmanager.ui.bookbuildingfrocompany.ActivityBaseInfo;
@@ -1256,8 +1254,8 @@ public class FragmentBookBuildingCustomerRelation extends ParentFragment
 	}
 
 	private void setDefaultInfo() {
-		// CommonAdapter<FourFieldEntity> adapter1=new
-		// CommonAdapter<FourFieldEntity>(getActivity(),list1,R.layout.lv_fourfield)
+		// BaseAdapter<FourFieldEntity> adapter1=new
+		// BaseAdapter<FourFieldEntity>(getActivity(),list1,R.layout.lv_fourfield)
 		// {
 		// @Override
 		// public void convert(CommonViewHolder helper, FourFieldEntity item) {
@@ -1272,8 +1270,8 @@ public class FragmentBookBuildingCustomerRelation extends ParentFragment
 		// }
 		// };
 
-		// CommonAdapter<FiveFieldEntity> adapter2 = new
-		// CommonAdapter<FiveFieldEntity>(
+		// BaseAdapter<FiveFieldEntity> adapter2 = new
+		// BaseAdapter<FiveFieldEntity>(
 		// getActivity(), list2, R.layout.lv_fivefield) {
 		// @Override
 		// public void convert(CommonViewHolder helper, FiveFieldEntity item) {
@@ -1291,8 +1289,8 @@ public class FragmentBookBuildingCustomerRelation extends ParentFragment
 		// }
 		// };
 
-		// CommonAdapter<SevenFieldEntity> adapter3 = new
-		// CommonAdapter<SevenFieldEntity>(
+		// BaseAdapter<SevenFieldEntity> adapter3 = new
+		// BaseAdapter<SevenFieldEntity>(
 		// getActivity(), list3, R.layout.lv_othergulianfanginfo) {
 		// @Override
 		// public void convert(CommonViewHolder helper, SevenFieldEntity item) {
@@ -1332,8 +1330,8 @@ public class FragmentBookBuildingCustomerRelation extends ParentFragment
 			}
 		};
 
-		// CommonAdapter<SevenFieldEntity> adapter5 = new
-		// CommonAdapter<SevenFieldEntity>(
+		// BaseAdapter<SevenFieldEntity> adapter5 = new
+		// BaseAdapter<SevenFieldEntity>(
 		// getActivity(), list5, R.layout.lv_itemcustomerrelation) {
 		// @Override
 		// public void convert(CommonViewHolder helper, SevenFieldEntity item) {

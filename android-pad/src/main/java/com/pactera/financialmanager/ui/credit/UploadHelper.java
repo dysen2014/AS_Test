@@ -81,10 +81,14 @@ public class UploadHelper {
 
                         msg = Message.obtain();
                         msg.what = 1;
-                        msg.obj = "正在上传第" + (nSuc+1) + "条数据...";
+                        msg.obj = "正在上传第" + (nSuc + 1) + "条数据...";
                         handler.sendMessage(msg);
 
 
+                        LogUtils.d("ce========"+JSON.toJSONString(ce));
+
+//                        String resp = httpPost("http://192.168.3.112:8080/bmc/credit/upload", JSON
+//                                .toJSONString(ce));
                         String resp = httpPost(HRequest.BMC_URL_DOMAIN + "credit/upload", JSON.toJSONString(ce));
                         JSONObject respObject = JSON.parseObject(resp);
 
@@ -100,7 +104,7 @@ public class UploadHelper {
                             Bundle b = new Bundle();
                             b.putLong("id", e.getId());
                             msg.setData(b);
-                            msg.obj = "第" + (nSuc+1) + "条数据上传成功";
+                            msg.obj = "第" + (nSuc + 1) + "条数据上传成功";
                             handler.sendMessage(msg);
 
                         } else {
@@ -132,20 +136,25 @@ public class UploadHelper {
 
     private String httpPost(String url, String json) {
 
-        LogUtils.i("upload url:"+url);
+        LogUtils.d("upload url:" + url);
+        LogUtils.d("json ====:" + json);
         HttpClient hc = new DefaultHttpClient();
         HttpPost post = new HttpPost(url);
 
+        LogUtils.d("hc=====:" + hc);
+        LogUtils.d("post ====:" + post);
         hc.getParams().setParameter(CoreConnectionPNames.CONNECTION_TIMEOUT, 30 * 1000);
         hc.getParams().setParameter(CoreConnectionPNames.SO_TIMEOUT, 30 * 1000);
         try {
             post.addHeader(HTTP.CONTENT_TYPE, "application/json;charset=utf-8");
             post.setEntity(new StringEntity(json, "utf-8"));
-
+            LogUtils.d("hc+++++++++=======" + hc);
             HttpResponse response = hc.execute(post);
             if (response.getStatusLine().getStatusCode() == 200) {
                 return EntityUtils.toString(response.getEntity(), "utf-8");
             }
+
+            LogUtils.d("response=====" + response);
 
         } catch (IOException e) {
             e.printStackTrace();

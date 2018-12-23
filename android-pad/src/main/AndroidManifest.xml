@@ -23,19 +23,21 @@
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <!--
-//修改系统设置-黑科技->
+    <!-- //修改系统设置-黑科技 -->
+    <!-- 危险权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
-       <!- Bugly
-    -->
+    <!-- 一般权限 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <!-- Bugly -->
     <uses-permission android:name="android.permission.READ_LOGS"/>
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.FLASHLIGHT"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <!-- call and sms -->
     <uses-permission android:name="android.permission.CALL_PHONE"/>
@@ -45,17 +47,24 @@
     <uses-feature
         android:name="android.hardware.bluetooth_le"
         android:required="true"/>
+    <!-- 调用硬件相机权限 -->
     <uses-feature android:name="android.hardware.camera"/>
     <uses-feature android:name="android.hardware.camera.autofocus"/>
+
+    <!--百度地图报错-->
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+
 
     <application
         android:name=".app.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/SplashScreenAppTheme"
+        tools:replace="android:icon, android:theme, android:allowBackup"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".ui.LogoActivity"
+            android:name=".ui.login.LogoActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -63,6 +72,29 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="false"
+            tools:ignore="WrongManifestParent">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION"/> <!-- Required  用户注册SDK的intent -->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED"/> <!-- Required  用户接收SDK消息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED"/> <!-- Required  用户接收SDK通知栏信息的intent -->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED"/> <!-- Required  用户打开自定义通知栏的intent -->
+                <action android:name="cn.jpush.android.intent.ACTION_RICHPUSH_CALLBACK"/> <!-- Optional 用户接受Rich Push Javascript 回调函数的intent -->
+                <action android:name="cn.jpush.android.intent.CONNECTION"/> <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <category android:name="com.pactera.financialmanager2"/>
+            </intent-filter>
+        </receiver>
+
 
         <!-- 厅堂首页 -->
         <activity
@@ -104,7 +136,7 @@
 
         <!-- 新版登录 -->
         <activity
-            android:name=".ui.NewLoginActivity"
+            android:name=".ui.login.NewLoginActivity"
             android:configChanges="orientation|keyboardHidden"
             android:launchMode="singleTask"
             android:screenOrientation="landscape"
@@ -233,11 +265,11 @@
             android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
 
         <!-- 信用卡 进件入口 -->
-        <activity
-            android:name=".ui.credit.CreditCardApplyListActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="landscape"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+         <activity
+         android:name=".ui.credit.CreditCardApplyListActivity"
+         android:launchMode="singleTask"
+         android:screenOrientation="landscape"
+         android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <!-- 信用卡 进件入口 编辑 -->
         <activity
             android:name=".ui.credit.CreditCardApplyActivity"
@@ -296,13 +328,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="landscape"/>
         <activity
-            android:name=".ocr.IDCardInfoReaderActivity"
+            android:name=".credit.common.ocr_new.IDCardInfoReaderActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"/>
-        <activity
-            android:name=".ocr.IdCardCameraNew"
-            android:launchMode="singleTask"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <activity
             android:name=".credit.CreditActivity"
             android:launchMode="singleTask"
@@ -312,7 +341,8 @@
         <activity
             android:name=".credit.main.service.search.Query"
             android:launchMode="singleTask"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <activity
             android:name=".credit.main.service.search.QueryDetails"
             android:launchMode="singleTask"
@@ -351,33 +381,115 @@
         <activity android:name=".credit.main.warn.DataListActivity"/>
 
         <!-- 选定客户 -->
-        <activity android:name=".credit.main.service.rate.ContactCustomerActivity"/>
+        <activity
+            android:name=".credit.main.service.rate.ContactCustomerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
         <!-- 审批 -->
-         <activity android:name=".credit.main.service.approval.ApprovalActivity"/>
-        <activity android:name=".credit.main.service.approval.BusinessApprovalActivity"/>
-        <activity android:name=".credit.main.service.approval.OpinionActivity"/>
-        <activity android:name=".credit.main.service.approval.OpinionSubmitActivity"/>
+        <activity
+            android:name=".credit.main.service.approval.ApprovalActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".credit.main.service.approval.BusinessApprovalActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".credit.main.service.approval.OpinionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity
+            android:name=".credit.main.service.approval.OpinionSubmitActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <activity
+            android:name=".credit.main.service.approval.RiskSianalActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"/>
         <!-- 书架 -->
-        <activity android:name=".credit.main.service.study.LearningBookcaseActivity"/>
-        <activity android:name=".credit.WarnMainActivity"/>
-        <activity android:name=".credit.main.mine.AboutActivity"/>
-        <activity android:name=".credit.main.mine.ProposalActivity"/>
+        <activity
+            android:name=".credit.main.service.study.LearningBookcaseActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".credit.main.WarnActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".credit.main.mine.AboutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".credit.main.mine.ProposalActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
+        <!--  -->
+        <activity
+            android:name=".credit.main.service.rate.GeneralListTableActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"/>
         <!-- 提醒首页 -->
-
+        <activity
+            android:name=".credit.main.warn.FinancialLoanActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden"/>
 
         <!-- 产品广告 - Service -->
         <service android:name=".ui.notice.NoticeService"/>
         <!-- ==新的4dFsyb3Ls536ANrjxSMDdpcDEPu5FCcn=   oNEAXx651ljXOuLTDsO4P7Rv8GWDABG9=====［百度地图］========旧的iCEMGUXXqa9Y4KZYNLsu34ql= -->
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
-            android:value="oNEAXx651ljXOuLTDsO4P7Rv8GWDABG9"/>
+            android:value="6pIh9W61XlBugx8bOyP0kbcggA5FQmCY"/>
+        <!-- android:value="AGGngjC8LxkGZzZnmWwGTAmuFuetxD9e"/> -->
 
         <service
             android:name="com.baidu.location.f"
             android:enabled="true"
             android:process=":remote"/>
 
-        <activity android:name=".credit.main.service.approval.RiskSianalActivity">
+        <activity
+            android:name=".credit.main.service.relevance_search.RelevanceSearchActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity
+            android:name=".credit.main.service.cus_screening.CusScreeningActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity
+            android:name=".credit.main.service.cus_screening.ScreeningListActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity
+            android:name=".credit.main.service.search.CorrelationActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity
+            android:name=".credit.main.service.search.AssociatedBusinessFragment"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity
+            android:name=".credit.main.service.search.AssociatedFragment"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity
+            android:name=".credit.main.service.search.AssocQuryActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+        </activity>
+        <activity android:name=".ui.credit.CardEntryActivity"
+                  android:screenOrientation="landscape"
+                  android:windowSoftInputMode="adjustUnspecified|stateHidden">
         </activity>
     </application>
 

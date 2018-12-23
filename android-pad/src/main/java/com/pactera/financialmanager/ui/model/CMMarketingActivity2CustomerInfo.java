@@ -76,6 +76,24 @@ public class CMMarketingActivity2CustomerInfo implements Serializable {
 	private String FUND_AMT;// 基金余额
 	private String MMM_PRO_AMT;// 理财余额
 	private String NEW_LC_MAMT;// 个贷余额
+	private String ETC_SGN;//ETC
+	private String SMF_SGN;//SMF_SGN //扫码付
+
+	public String getSMF_SGN() {
+		return SMF_SGN;
+	}
+
+	public void setSMF_SGN(String SMF_SGN) {
+		this.SMF_SGN = SMF_SGN;
+	}
+
+	public String getETC_SGN() {
+		return ETC_SGN;
+	}
+
+	public void setETC_SGN(String ETC_SGN) {
+		this.ETC_SGN = ETC_SGN;
+	}
 
 	public String getCUSTID() {
 		return CUSTID;
