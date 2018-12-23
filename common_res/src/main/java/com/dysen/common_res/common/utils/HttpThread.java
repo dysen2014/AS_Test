@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Xml;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.internal.Primitives;
-import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +19,7 @@ import org.xmlpull.v1.XmlPullParser;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
@@ -39,6 +39,53 @@ public class HttpThread extends Thread {
     private static final String TAG = "HttpThread";
     public static String jsonData;
     private static final MediaType MEDIA_TYPE_MARKDOWN  = MediaType.parse("application/json; charset=utf-8");
+
+    public static void sendRequestGet(final String url, final Handler handler){
+        //创建okHttpClient对象
+        OkHttpClient mOkHttpClient = new OkHttpClient();
+        //创建一个Request
+        final Request request = new Request.Builder()
+                .url(url)
+//                .url("https://github.com/hongyangAndroid")
+                .build();
+        //new call
+        Call call = mOkHttpClient.newCall(request);
+        //请求加入调度
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                handler.sendEmptyMessage(-1);
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) {
+                LogUtils.d("http", "sendRequest:"+String.valueOf(response));
+
+                String tmpBody = null;
+                JSONObject dataJsonObject = null;
+                JSONArray dataJsonArray = null;
+                try {
+                    tmpBody = new String(response.body().bytes(), "GBK");
+//                    tmpBody = response.body().string();
+                    LogUtils.v("tmpBody==="+tmpBody);
+                    if (tmpBody.startsWith("[")) {
+                        dataJsonArray = new JSONArray(tmpBody);
+                    } else {
+                        dataJsonObject = new JSONObject(tmpBody);
+                    }
+
+                    if (tmpBody.contains("[]"))
+                        handler.sendEmptyMessage(-100);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                LogUtils.d("http", "Response completed: "+dataJsonObject);
+                Message msg = new Message();
+                msg.obj = dataJsonObject;
+                handler.sendMessage(msg);
+            }
+        });
+    }
 
     public static void sendRequestGet(final String url, final String params, final Handler handler, final int warnType){
         //创建okHttpClient对象
@@ -127,18 +174,18 @@ public class HttpThread extends Thread {
                             .url(url)//请求地址
                             .post(body)//post 请求参数
                             .build();
-                    LogUtils.d("http", "sendRequest:"+ url + obj.toString());
+                    LogUtils.d("http", "sendRequest:\n"+ url + obj.toString());
                     Response response = client.newCall(request).execute();
 //                    LogUtils.d("http", "response:"+String.valueOf(response));
                     String responseData = response.body().string();
 
-                    LogUtils.d("http", "Response completed: " + responseData);
+                    LogUtils.d("http", "Response completed:\n" + responseData);
 
                     Message msg = new Message();
                             msg.obj = responseData;
                     handler.sendMessage(msg);
                     JSONObject json = parseJSON(responseData);
-                    if (json.has("array") && json.equals("[]")){
+                    if (json.has("array") && json.toString().contains("[]")){
                         handler.sendEmptyMessage(-100);
                     }
 
@@ -155,7 +202,7 @@ public class HttpThread extends Thread {
         if (!TextUtils.isEmpty(jsonData) || jsonData != null){
             JSONObject jsonObject = new JSONObject(jsonData);
             JSONObject json = jsonObject.getJSONObject(name);
-            LogUtils.d("http parse", "jsonObject: " + json.toString());
+//            LogUtils.d("http parse", "jsonObject: " + json.toString());
 
             return json;
         }else
@@ -168,7 +215,7 @@ public class HttpThread extends Thread {
             JSONObject json = null;
             if (jsonObject.has("ResponseParams")) {
                 json = jsonObject.getJSONObject("ResponseParams");
-                LogUtils.d("http parse", "jsonObject: " + jsonObject.getJSONObject("ResponseParams").toString());
+//                LogUtils.d("http parse", "jsonObject: " + jsonObject.getJSONObject("ResponseParams").toString());
             }else
             return null;
             return json;
@@ -182,20 +229,15 @@ public class HttpThread extends Thread {
      * @return
      * @throws JSONException
      */
-    public static String parseJSONWithGson(String jsonData) {
+    public static String parseJSONWithGson(String jsonData) throws JSONException{
         if (!TextUtils.isEmpty(jsonData) || jsonData != null){
             JSONObject jsonObject = null;
-            try {
+
                 jsonObject = new JSONObject(jsonData);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
             String jsonArray = null;
-            try {
+
                 jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array").toString();
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
+
             LogUtils.d("http parse", "jsonObject: " + jsonArray);
 
             return jsonArray;
@@ -217,10 +259,10 @@ public class HttpThread extends Thread {
             String jsonArray = null;
 
                     jsonArrayHeader = jsonObject.getJSONObject("ResponseParams").getJSONArray("header").toString();
-                    LogUtils.d("http parse", jsonArrayHeader+"===============json parse==============");
+//                    LogUtils.d("http parse", jsonArrayHeader+"===============json parse==============");
 
                     jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array").toString();
-                    LogUtils.d("http parse", "===============json parse==============" +  jsonArray);
+//                    LogUtils.d("http parse", "===============json parse==============" +  jsonArray);
 
 
             Message msg = new Message();
@@ -234,25 +276,23 @@ public class HttpThread extends Thread {
             return null;
     }
 
-    public static <T> T parseObject(String jsonData, Class<T> classOfT) throws JsonSyntaxException {
+    /**
+     * json字符串 转成实体类
+     * @param <T>
+     * @param jsonData
+     * @return
+     */
+    public static <T> List<T> parseList(String jsonData, Class<T> cls) {
 
         if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
             Gson gson = new Gson();
-            Object object = gson.fromJson(jsonData, classOfT);
+            List<T> list = new ArrayList<T>();
+            JsonArray arry = new JsonParser().parse(jsonData).getAsJsonArray();
+            for (JsonElement jsonElement : arry) {
+                list.add(gson.fromJson(jsonElement, cls));
+            }
+            return list ;
 
-            return Primitives.wrap(classOfT).cast(object);
-        }else
-            return null;
-    }
-
-    public static <T> List<T> parseList(String jsonData) throws JsonSyntaxException {
-
-        if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
-            Gson gson = new Gson();
-
-            List<T> list = gson.fromJson(jsonData, new TypeToken<List<T>>() {}.getType());
-
-            return list;
         } else
             return null;
     }
@@ -276,11 +316,11 @@ public class HttpThread extends Thread {
                     RequestBody body = RequestBody.create(MEDIA_TYPE_JSON, json.toString());
                     OkHttpClient client = new OkHttpClient();
                     Request request = new Request.Builder().url(url).post(body).build();
-                    Log.d(TAG, "request: "+request);
+                    LogUtils.d("http", "sendRequest:\n"+ url + json.toString());
                     Response response = client.newCall(request).execute();
                     //Log.d(TAG, "body: "+response.body());
                     responseData = response.body().string();
-                    Log.d(TAG, "responseData: "+responseData);
+                    LogUtils.d("http", "Response completed:\n" + responseData);
 
                     //parseJSONWithGson(responseData);
                 }catch (Exception e){
@@ -300,11 +340,12 @@ public class HttpThread extends Thread {
     public String sendRequestWithOkHttp(String url) throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder().url(url).build();
-        Log.d(TAG, "request: "+request);
+
+        LogUtils.d("http", "sendRequest:\n"+ request);
         Response response = client.newCall(request).execute();
         //Log.d(TAG, "body: "+response.body());
         String responseData = response.body().string();
-        Log.d(TAG, "responseData: "+responseData);
+        LogUtils.d("http", "Response completed:\n" + responseData);
         if (response.isSuccessful()) {
             return response.body().string();
         } else {
@@ -325,25 +366,19 @@ public class HttpThread extends Thread {
                             .url(url)//请求地址
                             .post(body)//post 请求参数
                             .build();
-                    LogUtils.d("http", "sendRequest:"+ url + jsonObject.toString());
+                    LogUtils.d("http", "sendRequest:\n"+ url + jsonObject.toString());
                     Response response = client.newCall(request).execute();
 //                    LogUtils.d("http", "response:"+String.valueOf(response));
                     String responseData = response.body().string();
 
-                    LogUtils.d("http", "Response completed: " + responseData);
-
+                    LogUtils.d("http", "Response completed:\n" + responseData);
+                    JSONObject json = parseJSON(responseData);
+                    if (json.has("array") && json.toString().contains("[]")){
+                        handler.sendEmptyMessage(-100);
+                    }
                     Message msg = new Message();
-//                    if (parseJSON(responseData).get("returnCode").toString().equals("SUCCESS")) {//返回成功
-//                        if (parseJSON(responseData, "Result").has("Result")){
-//                            if (parseJSON(responseData, "Result").toString().equals("N")) {//参数有无
-//
-//                            } }else {//
                              msg.obj = responseData;
                             msg.what = index;
-//                        }
-//                    }else {
-//
-//                    }
 
                     handler.sendMessage(msg);
                 } catch (Exception e) {

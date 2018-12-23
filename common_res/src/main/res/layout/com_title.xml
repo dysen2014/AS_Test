@@ -82,7 +82,6 @@
                             android:layout_weight="1"
                             android:gravity="bottom|center_horizontal"
                             android:singleLine="true"
-                            android:text="Admin"
                             android:textColor="@color/wordbgcolor"
                             android:textSize="14sp" />
 

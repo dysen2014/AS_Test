@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/dysen/Downloads/Credit_new/android-pad/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+            "map": [
+                {
+                    "source": "/Users/dysen/.gradle/caches/transforms-1/files-1.1/citypickerview-3.0.1.aar/6829b17c52c4aac26de1a7305be7baa7/res/values-w820dp-v13/values-w820dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "57",
+                        "endOffsets": "108"
+                    }
+                }
+            ]
+        }
+    ]
+}

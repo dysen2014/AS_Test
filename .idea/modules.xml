@@ -4,19 +4,16 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Credit_new.iml" filepath="$PROJECT_DIR$/Credit_new.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-pad/android-pad.iml" filepath="$PROJECT_DIR$/android-pad/android-pad.iml" />
-      <module fileurl="file://$PROJECT_DIR$/approvaldemo/approvaldemo.iml" filepath="$PROJECT_DIR$/approvaldemo/approvaldemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/baseitem-library/baseitem-library.iml" filepath="$PROJECT_DIR$/baseitem-library/baseitem-library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ble-lib/ble-lib.iml" filepath="$PROJECT_DIR$/ble-lib/ble-lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/common_res/common_res.iml" filepath="$PROJECT_DIR$/common_res/common_res.iml" />
-      <module fileurl="file://$PROJECT_DIR$/contact-library/contact-library.iml" filepath="$PROJECT_DIR$/contact-library/contact-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/expandable-library/expandable-library.iml" filepath="$PROJECT_DIR$/expandable-library/expandable-library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/filedownload/filedownload.iml" filepath="$PROJECT_DIR$/filedownload/filedownload.iml" />
-      <module fileurl="file://$PROJECT_DIR$/kjframe-library/kjframe-library.iml" filepath="$PROJECT_DIR$/kjframe-library/kjframe-library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ocr-library/ocr-library.iml" filepath="$PROJECT_DIR$/ocr-library/ocr-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flowlayout-library/flowlayout-library.iml" filepath="$PROJECT_DIR$/flowlayout-library/flowlayout-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ocr_ui/ocr_ui.iml" filepath="$PROJECT_DIR$/ocr_ui/ocr_ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/popwindow-library/popwindow-library.iml" filepath="$PROJECT_DIR$/popwindow-library/popwindow-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/pull_loadmore-library/pull_loadmore-library.iml" filepath="$PROJECT_DIR$/pull_loadmore-library/pull_loadmore-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recyclerview-library/recyclerview-library.iml" filepath="$PROJECT_DIR$/recyclerview-library/recyclerview-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/sms-library/sms-library.iml" filepath="$PROJECT_DIR$/sms-library/sms-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/status_bar-library/status_bar-library.iml" filepath="$PROJECT_DIR$/status_bar-library/status_bar-library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipe-reveal-layout/swipe-reveal-layout.iml" filepath="$PROJECT_DIR$/swipe-reveal-layout/swipe-reveal-layout.iml" />
       <module fileurl="file://$PROJECT_DIR$/tab_bar-library/tab_bar-library.iml" filepath="$PROJECT_DIR$/tab_bar-library/tab_bar-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/zbarscan-library/zbarscan-library.iml" filepath="$PROJECT_DIR$/zbarscan-library/zbarscan-library.iml" />
     </modules>

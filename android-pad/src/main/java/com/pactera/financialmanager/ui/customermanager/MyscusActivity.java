@@ -1,32 +1,5 @@
 package com.pactera.financialmanager.ui.customermanager;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.alibaba.fastjson.JSON;
-import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.adapter.CommonCustomerAdapter;
-import com.pactera.financialmanager.adapter.PersonCustomerAdapter;
-import com.pactera.financialmanager.adapter.SpinnerAdapter;
-import com.pactera.financialmanager.adapter.SpinnerAdapter.CallBackItemClickListener;
-import com.pactera.financialmanager.ui.LogoActivity;
-import com.pactera.financialmanager.ui.ParentActivity;
-import com.pactera.financialmanager.ui.PullToRefreshLayout;
-import com.pactera.financialmanager.ui.PullToRefreshLayout.OnRefreshListener;
-import com.pactera.financialmanager.ui.PullableListView;
-import com.pactera.financialmanager.ui.hallfirst.CMMarketingActivity2;
-import com.pactera.financialmanager.ui.model.MycusCommon;
-import com.pactera.financialmanager.ui.model.MycusPerson;
-import com.pactera.financialmanager.ui.service.HConnection;
-import com.pactera.financialmanager.ui.service.HResponse;
-import com.pactera.financialmanager.util.Constants;
-import com.pactera.financialmanager.util.InterfaceInfo;
-import com.pactera.financialmanager.util.NewCatevalue;
-import com.pactera.financialmanager.util.Tool;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -44,6 +17,33 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.alibaba.fastjson.JSON;
+import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.adapter.CommonCustomerAdapter;
+import com.pactera.financialmanager.adapter.PersonCustomerAdapter;
+import com.pactera.financialmanager.adapter.SpinnerAdapter;
+import com.pactera.financialmanager.adapter.SpinnerAdapter.CallBackItemClickListener;
+import com.pactera.financialmanager.ui.ParentActivity;
+import com.pactera.financialmanager.ui.PullToRefreshLayout;
+import com.pactera.financialmanager.ui.PullToRefreshLayout.OnRefreshListener;
+import com.pactera.financialmanager.ui.PullableListView;
+import com.pactera.financialmanager.ui.hallfirst.CMMarketingActivity2;
+import com.pactera.financialmanager.ui.login.LogoActivity;
+import com.pactera.financialmanager.ui.model.MycusCommon;
+import com.pactera.financialmanager.ui.model.MycusPerson;
+import com.pactera.financialmanager.ui.service.HConnection;
+import com.pactera.financialmanager.ui.service.HResponse;
+import com.pactera.financialmanager.util.Constants;
+import com.pactera.financialmanager.util.InterfaceInfo;
+import com.pactera.financialmanager.util.NewCatevalue;
+import com.pactera.financialmanager.util.Tool;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 我的建档客户
@@ -131,7 +131,10 @@ public class MyscusActivity extends ParentActivity implements OnClickListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_myscus);
-		initTitle(this, R.drawable.customermanagercon);
+		Intent intent = getIntent();
+		String Name = intent.getStringExtra("Name");
+		String NameInfo = intent.getStringExtra("NameInfo");
+		initTitle(this, Name, true,NameInfo);
 
 		findViews();
 		bindOnClickListener();

@@ -17,7 +17,7 @@ import android.os.IBinder;
 import android.os.Message;
 
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentService;
 import com.pactera.financialmanager.ui.model.Notice;
 import com.pactera.financialmanager.ui.service.HConnection;

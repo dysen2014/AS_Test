@@ -2,22 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="16dp"
+              android:gravity="center_vertical"
               android:orientation="vertical"
-    android:layout_margin="16dp">
+              android:scrollbars="horizontal">
 
     <com.yinglan.alphatabs.AlphaTabsIndicator
+
         android:id="@+id/alphaIndicator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <com.yinglan.alphatabs.AlphaTabView
             android:id="@+id/tab_0"
             style="@style/common_tab_bar"
             app:tabIconNormal="@drawable/warn_tab_customerdefault"
             app:tabIconSelected="@drawable/warn_tab_customerdefault_selected"
-            app:tabText="客户违约"
+            app:tabText="贷款预约"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
             app:textColorSelected="#ea452f"/>
@@ -27,7 +31,7 @@
             style="@style/common_tab_bar"
             app:tabIconNormal="@drawable/warn_tab_customertransaction"
             app:tabIconSelected="@drawable/warn_tab_customertransaction_selected"
-            app:tabText="客户异动"
+            app:tabText="余额不足"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
             app:textColorSelected="#ea452f"/>
@@ -37,7 +41,7 @@
             style="@style/common_tab_bar"
             app:tabIconNormal="@drawable/warn_tab_customercare"
             app:tabIconSelected="@drawable/warn_tab_customercare_selected"
-            app:tabText="客户关怀"
+            app:tabText="资金异动"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
             app:textColorSelected="#ea452f"/>
@@ -47,7 +51,7 @@
             style="@style/common_tab_bar"
             app:tabIconNormal="@drawable/warn_tab_financialneeds"
             app:tabIconSelected="@drawable/warn_tab_financialneeds_selected"
-            app:tabText="金融需求"
+            app:tabText="存款/理财到期"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
             app:textColorSelected="#ea452f"/>
@@ -57,64 +61,317 @@
             style="@style/common_tab_bar"
             app:tabIconNormal="@drawable/warn_tab_productexpires"
             app:tabIconSelected="@drawable/warn_tab_productexpires_selected"
-            app:tabText="产品到期"
+            app:tabText="信用卡逾期"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
             app:textColorSelected="#ea452f"/>
 
-            <com.yinglan.alphatabs.AlphaTabView
-                android:id="@+id/tab_5"
-                style="@style/common_tab_bar"
-                app:tabIconNormal="@drawable/warn_tab_overdue"
-                app:tabIconSelected="@drawable/warn_tab_overdue_selected"
-                app:tabText="贷款逾期"
-                app:tabTextSize="13sp"
-                app:textColorNormal="#999999"
-                app:textColorSelected="#ea452f"
-                android:clickable="false"/>
-
-            <com.yinglan.alphatabs.AlphaTabView
-                android:id="@+id/tab_6"
-                style="@style/common_tab_bar"
-                app:tabIconNormal="@drawable/warn_tab_expiration"
-                app:tabIconSelected="@drawable/warn_tab_expiration_selected"
-                app:tabText="贷款到期"
-                app:tabTextSize="13sp"
-                app:textColorNormal="#999999"
-                app:textColorSelected="#ea452f"
-                android:clickable="false"/>
-
-            <com.yinglan.alphatabs.AlphaTabView
-                android:id="@+id/tab_7"
-                style="@style/common_tab_bar"
-                app:tabIconNormal="@drawable/warn_tab_after"
-                app:tabIconSelected="@drawable/warn_tab_after_selected"
-                app:tabText="贷后管理"
-                app:tabTextSize="13sp"
-                app:textColorNormal="#999999"
-                app:textColorSelected="#ea452f"
-                android:clickable="false"/>
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_5"
+            style="@style/common_tab_bar"
+            app:tabIconNormal="@drawable/warn_tab_customertransaction"
+            app:tabIconSelected="@drawable/warn_tab_customertransaction_selected"
+            app:tabText="客户评级变动"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
 
         <com.yinglan.alphatabs.AlphaTabView
-            android:visibility="gone"
+            android:id="@+id/tab_6"
+            style="@style/common_tab_bar"
+            app:tabIconNormal="@drawable/warn_tab_customertransaction"
+            app:tabIconSelected="@drawable/warn_tab_customertransaction_selected"
+            app:tabText="生日关怀"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_7"
+            style="@style/common_tab_bar"
+            app:tabIconNormal="@drawable/warn_tab_customertransaction"
+            app:tabIconSelected="@drawable/warn_tab_customertransaction_selected"
+            app:tabText="账户异常"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
+
+        <com.yinglan.alphatabs.AlphaTabView
             android:id="@+id/tab_8"
             style="@style/common_tab_bar"
-            app:tabIconNormal="@drawable/warn_tab_customertransaction"
-            app:tabIconSelected="@drawable/warn_tab_customertransaction_selected"
-            app:tabText="客户审批"
+            android:clickable="false"
+            app:tabIconNormal="@drawable/warn_tab_overdue"
+            app:tabIconSelected="@drawable/warn_tab_overdue_selected"
+            app:tabText="逾期贷款"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
             app:textColorSelected="#ea452f"/>
 
         <com.yinglan.alphatabs.AlphaTabView
-            android:visibility="gone"
             android:id="@+id/tab_9"
             style="@style/common_tab_bar"
-            app:tabIconNormal="@drawable/warn_tab_customertransaction"
-            app:tabIconSelected="@drawable/warn_tab_customertransaction_selected"
-            app:tabText="余额不足"
+            android:clickable="false"
+            app:tabIconNormal="@drawable/warn_tab_expiration"
+            app:tabIconSelected="@drawable/warn_tab_expiration_selected"
+            app:tabText="到期贷款"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
+
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_10"
+            style="@style/common_tab_bar"
+            android:clickable="true"
+            app:tabIconNormal="@drawable/warn_tab_after"
+            app:tabIconSelected="@drawable/warn_tab_after_selected"
+            app:tabText="贷后管理"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_11"
+            style="@style/common_tab_bar"
+            android:clickable="true"
+            app:tabIconNormal="@drawable/warn_tab_after"
+            app:tabIconSelected="@drawable/warn_tab_after_selected"
+            app:tabText="贷后管理"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
             app:textColorSelected="#ea452f"/>
     </com.yinglan.alphatabs.AlphaTabsIndicator>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rlv_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/ll_lay_0"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_0"
+                android:src="@drawable/dkyy_3x"
+                style="@style/common_tab_img"
+                />
+            <TextView
+                android:id="@+id/tab_name_0"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_1"
+                style="@style/common_tab_img"
+                android:src="@drawable/yebz_3x"/>
+            <TextView
+                android:id="@+id/tab_name_1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_2"
+                style="@style/common_tab_img"
+                android:src="@drawable/zjyd_3x"/>
+            <TextView
+                android:id="@+id/tab_name_2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_3"
+                style="@style/common_tab_img"
+                android:src="@drawable/ckdq_3x"/>
+            <TextView
+                android:id="@+id/tab_name_3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_4"
+                style="@style/common_tab_img"
+                android:src="@drawable/xykyq_3x"/>
+            <TextView
+                android:id="@+id/tab_name_4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_5"
+                style="@style/common_tab_img"
+                android:src="@drawable/khpjbd_3x"/>
+            <TextView
+                android:id="@+id/tab_name_5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_6"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_6"
+                style="@style/common_tab_img"
+                android:src="@drawable/srgh_3x"/>
+            <TextView
+                android:id="@+id/tab_name_6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_7"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_7"
+                style="@style/common_tab_img"
+                android:src="@drawable/srgh_3x"/>
+            <TextView
+                android:id="@+id/tab_name_7"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_8"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_8"
+                style="@style/common_tab_img"
+                android:src="@drawable/yqdk_3x"/>
+            <TextView
+                android:id="@+id/tab_name_8"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_9"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_9"
+                style="@style/common_tab_img"
+                android:src="@drawable/dqdk_3x"/>
+            <TextView
+                android:id="@+id/tab_name_9"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_lay_10"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/tab_img_10"
+                style="@style/common_tab_img"
+                android:src="@drawable/dhgl_3x"/>
+            <TextView
+                android:id="@+id/tab_name_10"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="name"/>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

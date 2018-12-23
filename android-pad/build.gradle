@@ -1,26 +1,49 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion '25.0.0'
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 //    compileSdkVersion rootProject.ext.compileSdkVersion
 //    buildToolsVersion rootProject.ext.buildToolsVersion
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        applicationId "com.pactera.financialmanager2"
+        applicationId "com.pactera.financialmanager"
+        multiDexEnabled true
         minSdkVersion 16
-        targetSdkVersion 25
-        versionCode 6
-        versionName "2.1.1"
+        targetSdkVersion 26
+        versionCode 1
+        versionName "3.0.7"
 
         if (project.hasProperty('buildVersionName')) {
             versionName buildVersionName
         }
 
-        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.debug
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
+//        ndk {
+//            //选择要添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a', 'x86', 'x86_64'
+//        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: applicationId,
+//                JPUSH_APPKEY : "7d725ceae3118c4e43a7efa0", //JPush上注册的包名对应的appkey.(自己的极光推送上面)
+                /*
+                 const client = JPush.buildClient('d909067e24b4c9ceb5d8f005', 'bac007d52d5dde81927555e5') //生产phone
+                 const client_pad = JPush.buildClient('8fd32aa55ae4f80aff9c3ae8','7cc2db27f880f4fb01f7192a') //生产pad、
+                   */
+                JPUSH_APPKEY : "8fd32aa55ae4f80aff9c3ae8", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
     }
 
     signingConfigs {
@@ -33,13 +56,25 @@ android {
         }
     }
 
+    allprojects {
+        repositories {
+
+            flatDir {
+                dirs 'libs'
+            }
+
+        }
+    }
+
     buildTypes {
         debug {
 //            buildConfigField "String", "BMC_URL_DOMAIN", "\"http://192.168.2.111:7001/\""
             buildConfigField "String", "BMC_URL_DOMAIN", "\"http://27.17.37.104:9995/\""
+            minifyEnabled false
         }
 
         release {
+//            buildConfigField "String", "BMC_URL_DOMAIN", "\"http://192.168.2.111:7001/\""
             buildConfigField "String", "BMC_URL_DOMAIN", "\"http://27.17.37.104:9995/\""
             signingConfig signingConfigs.releaseConfig
 //            multiDexEnabled true
@@ -53,25 +88,32 @@ android {
         }
     }
 
+    //添加如下配置就ok了
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     dexOptions {
         javaMaxHeapSize "4g"
     }
-
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
 /** eclipse 转 android studio **/
-/*
-    sourceSets {
-        main.setRoot('src/main')
-        main {
-            manifest.srcFile 'src/main/AndroidManifest.xml'
-            java.srcDirs = ['src/main/java']
-            resources.srcDirs = ['src/main/java']
-            aidl.srcDirs = ['src/main/aidl']
-            res.srcDirs = ['src/main/res']
-            assets.srcDirs = ['src/main/assets']
-            jni.srcDirs = ['src/main/jni']
-            jniLibs.srcDirs = ['src/main/jniLibs']
-        }
-    }*/
+//    sourceSets {
+//        main.setRoot('src/main')
+//        main {
+//            manifest.srcFile 'src/main/AndroidManifest.xml'
+//            java.srcDirs = ['src/main/java']
+//            resources.srcDirs = ['src/main/java']
+//            aidl.srcDirs = ['src/main/aidl']
+//            res.srcDirs = ['src/main/res']
+//            assets.srcDirs = ['src/main/assets']
+//            jni.srcDirs = ['src/main/jni']
+//            jniLibs.srcDirs = ['src/main/jniLibs']
+//        }
+//    }
 
     /*解决程序不能在模拟器上运行*/
 //    splits {
@@ -85,33 +127,64 @@ android {
 }
 
 dependencies {
-    compile project(':ocr-library')
-    compile project(':ble-lib')
-    compile project(':common_res')
-    compile project(':baseitem-library')
-    compile project(':kjframe-library')
-    //contact
-    compile project(':contact-library')
     //饼图
-    //    compile'com.github.PhilJay:MPAndroidChart:v2.2.5'
+    implementation files('libs/ksoap2-android-assembly-2.5.4-jar-with-dependencies.jar')
+    implementation files('libs/BaiduLBS_Android.jar')
+    implementation files('libs/bugly_crash_release__2.1.7.jar')
+    implementation files('libs/YGQD_MD_CENTERM.jar')
+    implementation files('libs/universal-image-loader-1.9.5.jar')
+    implementation files('libs/nineoldandroids-2.4.0.jar')
+    implementation files('libs/xUtils-2.6.14.jar')
+    implementation files('libs/fastjson-1.1.37.jar')
+    implementation files('libs/afinal_0.5.1_bin.jar')
+    //   极光推送   此处以SDK 2.1.8版本为例
+    implementation 'cn.jiguang:jpush:2.1.8'
+    //ocr jar包
+    implementation files('libs/ocr-sdk.jar')
+    //ocr 库
+    implementation project(':ocr_ui')
     //view注解
-    compile 'com.jakewharton:butterknife:7.0.1'
-    compile files('libs/ksoap2-android-assembly-2.5.4-jar-with-dependencies.jar')
-    compile files('libs/BaiduLBS_Android.jar')
-    compile files('libs/bugly_crash_release__2.1.7.jar')
-    compile files('libs/YGQD_MD_CENTERM.jar')
-    compile files('libs/universal-image-loader-1.9.5.jar')
-    compile files('libs/nineoldandroids-2.4.0.jar')
-    compile files('libs/xUtils-2.6.14.jar')
-    compile files('libs/fastjson-1.1.37.jar')
-    compile files('libs/afinal_0.5.1_bin.jar')
-    compile files('libs/gson-2.3.1.jar')
-    compile files('libs/litepal-1.5.1.jar')
+    //    compile 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:multidex:1.0.1'
+    //    compile 'com.android.support:support-annotations:25.0.0'
+    //地址选择器
+    implementation 'liji.library.dev:citypickerview:3.0.1'
+    //阿里云意见反馈
+    implementation(name: 'alicloud-android-feedback-3.1.1', ext: 'aar')
+    implementation files('libs/alicloud-android-monitor-2.5.1.1_for_bc_proguard.jar')
+    implementation files('libs/utdid4all-1.1.5.3_proguard.jar')
+    implementation files('libs/alicloud-android-utils-1.1.1.jar')
+    implementation project(path: ':swipe-reveal-layout')
+    implementation files('libs/AndroidPrinterSDK2.2.jar')
+    implementation files('libs/d2xx.jar')
+    implementation files('libs/geitCj1000_1.0.2.jar')
+    implementation files('libs/MPrintLib_Release.jar')
+    implementation files('libs/OutputUtil.jar')
+    implementation files('libs/SDSES_WltNoLic_1.2.jar')
+    implementation files('libs/sdsesInterface.jar')
+    implementation files('libs/siecom.jar')
+    implementation files('libs/pinyin4j-2.5.0.jar')
+    implementation project(':common_res')
 
-    //okhttp
-    compile 'com.squareup.okhttp3:okhttp:3.9.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+//    implementation project(':status_bar-library')
+//    implementation 'com.android.support:cardview-v7:28.0.0'
+//    implementation 'q.rorbin:badgeview:1.1.3'
+//    //pull_loadmore
+//    implementation project(path: ':pull_loadmore-library')
+//    //view注解
+//    implementation 'com.jakewharton:butterknife:7.0.1'
+//    //tab_bar
+//    implementation project(path: ':tab_bar-library')
+//    //popwindow
+//    implementation project(path: ':popwindow-library')
+//    //BaseRecyclerViewAdapterHelper
+//    implementation project(path: ':recyclerview-library')
+//    implementation 'com.jwenfeng.pulltorefresh:library:1.0.3'
+//    //db
+    implementation files('libs/litepal-1.5.1.jar')
+////    implementation 'com.squareup.okhttp3:okhttp-ws:3.4.2'
+//    implementation 'com.android.support:design:28.0.0'
 }
 
 /*
@@ -128,5 +201,3 @@ android.applicationVariants.all { variant ->
     }
 }*/
 
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'

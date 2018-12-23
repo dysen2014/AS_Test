@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title_layout"/>
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        >
+
+    <ScrollView
+        app:layout_heightPercent="80%"
+        app:layout_widthPercent="80%"
+        android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:stretchColumns="1">
+
+                    <TableRow
+                        style="@style/common_tablerow">
+
+                        <TextView
+                            style="@style/common_tablerow_text"
+                            android:text="@string/customerType"
+                            />
+
+                        <LinearLayout
+                            style="@style/common_lay_bg"
+                            >
+
+                            <Spinner
+                                android:id="@+id/customerType"
+                                style="@style/common_rate_edit"/>
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/common_tablerow">
+
+                        <TextView
+                            style="@style/common_tablerow_text"
+                            android:text="@string/customerName"
+                            />
+
+                        <EditText
+                            android:id="@+id/customerName"
+                            style="@style/common_tablerow_edit"
+                            android:hint="@string/hint_cus_name"
+                            />
+
+                        <ImageView
+                            android:id="@+id/iv_ocr"
+                            android:layout_marginLeft="8dp"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/icon_ocr"/>
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/common_tablerow"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/common_tablerow_text"
+                            android:text="@string/cardType"
+                            />
+
+                        <LinearLayout
+                            style="@style/common_lay_bg">
+
+                            <Spinner
+                                android:id="@+id/cardType"
+                                style="@style/common_rate_edit"
+                                />
+                        </LinearLayout>
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/common_tablerow">
+
+                        <TextView
+                            style="@style/common_tablerow_text"
+                            android:text="@string/cardNumber"/>
+
+                        <EditText
+                            android:id="@+id/cardNumber"
+                            style="@style/common_tablerow_edit"
+                            android:hint="@string/hint_card_num"
+                            />
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/common_tablerow"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/common_tablerow_text"
+                            android:text="@string/ownedOutlets"
+                            />
+
+                        <LinearLayout
+                            style="@style/common_lay_bg">
+                            <LinearLayout
+                                android:id="@+id/ll_owned_outlets"
+                                android:layout_weight="3"
+                                style="@style/common_lay_bg">
+                                <Button
+                                    android:id="@+id/btn_owned_outlets"
+                                    style="@style/common_rate_edit"
+                                    android:hint="@string/changeOwnedOutlets"
+                                    android:background="@color/transparent"
+                                    android:gravity="right|center_vertical"
+                                    />
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/pull_down_triangle"
+                                    android:padding="16dp"
+                                    android:layout_gravity="right"
+                                    />
+                            </LinearLayout>
+                            <Spinner
+                                android:id="@+id/owned_outlets"
+                                style="@style/common_rate_edit"
+                                android:visibility="gone"
+                                />
+                        </LinearLayout>
+                    </TableRow>
+                    <TableRow
+                        style="@style/common_tablerow"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/common_tablerow_text"
+                            android:text="@string/telephoneNumber"
+                            />
+
+                        <EditText
+                            android:id="@+id/telephoneNumber"
+                            style="@style/common_tablerow_edit"
+                            android:hint="请输入手机号码"
+                            />
+                    </TableRow>
+
+                    <TableRow
+                        style="@style/common_tablerow"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <TextView
+                            style="@style/common_tablerow_text"
+                            android:text="@string/level"
+                            />
+
+                        <LinearLayout
+                            style="@style/common_lay_bg">
+
+                            <Spinner
+                                android:id="@+id/level"
+                                style="@style/common_rate_edit"
+                                />
+                        </LinearLayout>
+
+                    </TableRow>
+                </TableLayout>
+
+                <android.support.percent.PercentRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="40dp">
+                    >
+
+                    <Button
+                        android:id="@+id/submit"
+                        app:layout_widthPercent="50%"
+                        android:layout_height="48dp"
+                        android:background="@drawable/login_btn_icon"
+                        android:gravity="center"
+                        android:text="查询"
+                        android:textColor="#fff"
+                        />
+                </android.support.percent.PercentRelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.percent.PercentRelativeLayout>
+
+</LinearLayout>

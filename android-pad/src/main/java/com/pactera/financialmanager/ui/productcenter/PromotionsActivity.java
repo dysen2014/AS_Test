@@ -78,7 +78,10 @@ public class PromotionsActivity extends ParentActivity implements
         // 绑定监听器
         bindOnClickListener();
         initImageLoaderOption();
-        initTitle(this, R.drawable.yingxiaoguanli);
+        Intent intent = getIntent();
+        String Name = intent.getStringExtra("Name");
+        String NameInfo = intent.getStringExtra("NameInfo");
+        initTitle(this, Name, true,NameInfo);
         getData();
 
     }
@@ -396,7 +399,7 @@ public class PromotionsActivity extends ParentActivity implements
     /**
      * 进入退出动画
      *
-     * @param laySub
+     * @param
      */
     private void subUpAnim() {
 

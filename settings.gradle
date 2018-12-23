@@ -1,1 +1,5 @@
-include ':zbarscan-library', ':common_res', ':baseitem-library', ':sms-library', ':kjframe-library', ':ocr-library', ':android-pad', ':ble-lib', ':filedownload', ':tab_bar-library', ':contact-library', ':status_bar-library', ':popwindow-library', ':approvaldemo', ':expandable-library', ':pull_loadmore-library'
+include ':zbarscan-library', ':common_res', ':sms-library',
+        ':android-pad', ':tab_bar-library', ':status_bar-library',
+        ':popwindow-library', ':expandable-library', ':pull_loadmore-library',
+        ':flowlayout-library', ':recyclerview-library', ':ocr_ui', ':swipe-reveal-layout'
+

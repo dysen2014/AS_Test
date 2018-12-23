@@ -1,41 +1,27 @@
 package com.dysen.common_res.common.adapter;
 
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.BaseViewHolder;
+import com.dysen.common_res.R;
+
+import java.util.List;
 
 /**
- * Created by dysen on 2017/10/18.
+ * Created by dysen on 11/30/2017.
+ * 公用Adapter
  */
+public class CommonAdapter {
 
-public class CommonAdapter extends RecyclerView.Adapter<CommonAdapter.ViewHolder> {
+    public class BaseAdapter extends BaseQuickAdapter<Class<?>, BaseViewHolder> {
 
-    public CommonAdapter() {
+        public BaseAdapter(int layoutResId, List data) {
+            super(layoutResId, data);
+        }
 
-    }
-
-    @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(0, parent, false);
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-
-    }
-
-    @Override
-    public int getItemCount() {
-        return 0;
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-
+        @Override
+        protected void convert(BaseViewHolder helper, Class<?> item) {
+            helper.setText(R.id.text, "");
+            helper.setImageResource(R.id.icon, 0);
         }
     }
 }

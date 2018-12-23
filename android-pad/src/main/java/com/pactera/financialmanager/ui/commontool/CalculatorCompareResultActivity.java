@@ -26,7 +26,7 @@ public class CalculatorCompareResultActivity extends ParentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.calculator_compare_2);
-		initTitle(this,R.drawable.changyonggongju);
+		initTitle(this,"常用工具");
 		// 根据数据进行计算
 		getShowResultInfor();
 		findViews();

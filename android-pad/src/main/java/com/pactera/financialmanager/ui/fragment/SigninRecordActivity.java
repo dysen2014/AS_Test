@@ -1,8 +1,8 @@
 package com.pactera.financialmanager.ui.fragment;
 
-import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
@@ -49,7 +49,7 @@ import com.baidu.mapapi.map.Polyline;
 import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.model.SignRecordInfo;
 import com.pactera.financialmanager.ui.service.HConnection;
@@ -62,7 +62,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -142,7 +141,10 @@ public class SigninRecordActivity extends ParentActivity implements OnClickListe
 		this.setContentView(R.layout.activity_signinrecordmap);
 		// 初始化界面
 		setView();
-		initTitle(this, R.drawable.workplacesmallicon);
+		Intent intent = getIntent();
+		String Name = intent.getStringExtra("Name");
+		String NameInfo = intent.getStringExtra("NameInfo");
+		initTitle(this, Name, true,NameInfo);
         if (null!= LogoActivity.user ) {
 			String theStaId = LogoActivity.user.getStaId();
 //管理岗

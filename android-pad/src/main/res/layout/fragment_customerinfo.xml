@@ -228,6 +228,14 @@
                         android:text="省财税"
                         android:textColor="@color/workplacewordcolor"
                         android:textSize="17sp" />
+                    <TextView
+                        android:id="@+id/tv_t88"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center"
+                        android:text="ETC"
+                        android:textColor="@color/workplacewordcolor"
+                        android:textSize="17sp" />
 
                     <TextView
                         android:id="@+id/tv_t29"
@@ -307,6 +315,15 @@
                         android:layout_height="35dp"
                         android:gravity="center"
                         android:text="兴业银行理财持有"
+                        android:textColor="@color/workplacewordcolor"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/tv_SMF"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:gravity="center"
+                        android:text="扫码付"
                         android:textColor="@color/workplacewordcolor"
                         android:textSize="17sp" />
                 </LinearLayout>
@@ -492,6 +509,14 @@
                         android:gravity="center"
                         android:scaleType="center"
                         android:src="@drawable/cb_no" />
+                    <ImageView
+                    android:id="@+id/imv_v88"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:scaleType="center"
+                    android:src="@drawable/cb_no" />
 
                     <ImageView
                         android:id="@+id/imv_v29"
@@ -567,6 +592,15 @@
 
                     <ImageView
                         android:id="@+id/imv_v37"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:scaleType="center"
+                        android:src="@drawable/cb_no" />
+
+                    <ImageView
+                        android:id="@+id/imv_vSMF"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1"

@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="warn_khgx">#FFCB0001</color>
+    <color name="warn_xd">#6699ff</color>
+
+    <!--自定义 颜色-->
+    <!--××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××-->
+    <color name="view_selected">#FDF8E7</color>
+    <color name="window_bg">#FBFBFB</color>
+    <color name="primary_light_alpha50">#7FCFD8DC</color>
+
     <!-- 颜色 -->
     <color name="common_yellow">#FF8C00</color>
 

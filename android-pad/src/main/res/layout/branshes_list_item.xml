@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center">
+
+        >
+    <TextView
+        app:layout_widthPercent="50%"
+        android:layout_height="48dp"
+        android:text="我就是我，不一样的烟火"
+        android:gravity="center"
+        android:id="@+id/title"
+        android:background="@drawable/shape_txt_bg"
+        android:layout_margin="8dp"/>
+
+</android.support.percent.PercentRelativeLayout>

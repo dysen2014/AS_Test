@@ -1,11 +1,11 @@
 package com.pactera.financialmanager.ui.customermanager;
 
 import android.app.Activity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -21,7 +21,6 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.model.LatLng;
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.entity.CatevalueEntity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HResponse;
@@ -35,9 +34,6 @@ import com.pactera.financialmanager.util.Tool;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 客户建档（个人建档）
@@ -113,7 +109,7 @@ public class PersonArchiving extends ParentActivity implements OnClickListener {
         findViews();
         setListener();
         setData();
-        initTitle(this, R.drawable.customermanagercon);
+        initTitle(this, "客户建党");
         fragmentManager = getSupportFragmentManager();
         setFragmentPersonInfo();
 

@@ -3,6 +3,7 @@ package com.pactera.financialmanager.ui.credit;
 import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.bluetooth.BluetoothAdapter;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
@@ -24,7 +25,7 @@ import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.bean.IDCheckResult;
 import com.pactera.financialmanager.db.CreditCardApplyDao;
 import com.pactera.financialmanager.entity.CreditCardApplyEntity;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.util.LogUtils;
 
@@ -80,7 +81,7 @@ public class CreditCardApplyListActivity extends ParentActivity implements View.
                 }
             }
         });
-        super.initTitle(this, 0);
+        super.initTitle(this, "");
         ParamHelper.updateParam(this, handler, LogoActivity.user.getClearingCenterBrCode());
     }
 
@@ -95,6 +96,7 @@ public class CreditCardApplyListActivity extends ParentActivity implements View.
     public void onClick(View view) {
         //点击创建申请按钮进入的操作
         if (view.getId() == R.id.btn_apply) {
+            mBlueToothAdapter = BluetoothAdapter.getDefaultAdapter();
 
             if (mBlueToothAdapter!= null && !mBlueToothAdapter.isEnabled()){
                 mBlueToothAdapter.enable();
@@ -102,7 +104,11 @@ public class CreditCardApplyListActivity extends ParentActivity implements View.
             }
             SystemClock.sleep(3000);
             if (mBlueToothAdapter.isEnabled()) {
-                startActivityForResult(new Intent(this, IDCheck.class), 1);
+
+//                startActivityForResult(new Intent(this, IDCheck.class), 1);
+
+                startActivityForResult(new Intent(this, CardEntryActivity.class), 1);
+
             }else {
 
                 toast("请先打开蓝牙！再操作。");

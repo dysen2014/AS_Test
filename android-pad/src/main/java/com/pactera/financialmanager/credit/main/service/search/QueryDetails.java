@@ -9,7 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
+import com.pactera.financialmanager.credit.common.bean.CommonBean;
+import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.R;
 
 import java.util.ArrayList;
@@ -56,12 +57,15 @@ public class QueryDetails extends ParentActivity {
 	public static String type;
 	public static List<ListPerson> listCustomer = new ArrayList<>();
 	public static List<ListBusinessList> listBusiness= new ArrayList<>();
+	public static List<CommonBean.RelevanceBean> relevanceBeanList = new ArrayList<>();
 
+	public static LinearLayout layBacks;
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.query_details);
 		ButterKnife.bind(this);
-
+		layBacks = layBack;
+		layBacks.setEnabled(false);
 		initView();
 		setFragmentAll(crmCustomerInfo);
 	}
@@ -69,9 +73,11 @@ public class QueryDetails extends ParentActivity {
 	private void initView() {
 
 		txtBack.setText(getString(R.string.business_details));
+		initTitle(this, "", false,"");
 		fragmentManager = getSupportFragmentManager();
 		type = getIntent().getStringExtra("type");
 
+		backActivity(this, layBack);
 	}
 
 	@OnClick({R.id.crmCustomerInfo, R.id.keyman, R.id.loanafter, R.id.crmCreditProve, R.id.crmEntOwner})
@@ -161,9 +167,12 @@ public class QueryDetails extends ParentActivity {
 		transaction.commitAllowingStateLoss();
 	}
 
-	public static void setData(List<ListPerson> list, List<ListBusinessList> list2, int i) {
+	public static void setData(List<ListPerson> list, List<ListBusinessList> list2,
+							   List<CommonBean.RelevanceBean> list3, int
+			i) {
 		listCustomer = list;
 		listBusiness = list2;
+		relevanceBeanList = list3;
 		index = i;
 	}
 }

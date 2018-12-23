@@ -1,11 +1,6 @@
 package com.pactera.financialmanager.ui;
 
 import android.content.Intent;
-import com.pactera.financialmanager.ui.credit.CreditCardApplyListActivity;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
@@ -21,12 +16,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.ui.credit.CreditCardApplyListActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HResponse;
 import com.pactera.financialmanager.util.Constants.requestType;
 import com.pactera.financialmanager.util.InterfaceInfo;
 import com.pactera.financialmanager.util.NewCatevalue;
 import com.pactera.financialmanager.util.Tool;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * 贷记卡查询
@@ -82,11 +83,13 @@ public class DiscoverCardActivity extends ParentActivity implements
 		// 初始化
 		findViews();
 		setListener();
-		initTitle(this, R.drawable.xinyongkachaxun);
+		Intent intent = getIntent();
+		String Name = intent.getStringExtra("Name");
+		String NameInfo = intent.getStringExtra("NameInfo");
+		initTitle(this, Name, true,NameInfo);
 		LogoActivity.user.getUserID();
 		LogoActivity.user.getUserid();
 		LogoActivity.user.getStaId();
-		Intent intent = getIntent();
 		certcode = intent.getStringExtra("certcode");//certcode2017.3.3更改为获取身份证
 	}
 

@@ -22,19 +22,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.adapter.MyRecycleViewAdapter;
-import com.dysen.common_res.common.base.ParentActivity;
+import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.ParamUtils;
 import com.dysen.common_res.common.utils.Utils;
 import com.example.zhouwei.library.CustomPopWindow;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.credit.common.bean.rate.BussType;
 import com.pactera.financialmanager.credit.common.bean.rate.Customer;
 import com.pactera.financialmanager.credit.common.bean.rate.Industry;
 import com.pactera.financialmanager.credit.main.service.rate.adapter.BussAdapter;
 import com.pactera.financialmanager.credit.main.service.rate.adapter.IndustyAdapter;
+import com.pactera.financialmanager.ui.ParentActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -80,6 +79,10 @@ public class RateActivity extends ParentActivity {
     Spinner spinner4;
     @Bind(R.id.txt_title)
     TextView txtTitle;
+    @Bind(R.id.txt_back)
+    TextView txtBack;
+    @Bind(R.id.lay_back)
+    LinearLayout layBack;
     @Bind(R.id.btn_submit)
     Button btnSubmit;
     @Bind(R.id.ll_custName)
@@ -92,10 +95,22 @@ public class RateActivity extends ParentActivity {
     TextView txtRate;
     @Bind(R.id.ll_rate)
     LinearLayout llRate;
-    @Bind(R.id.ll_busstype)
-    LinearLayout llBusstype;
     @Bind(R.id.tv_busstype)
     TextView tvBusstype;
+    @Bind(R.id.btn_busstype)
+    Button btnBusstype;
+    @Bind(R.id.ll_busstype)
+    LinearLayout llBusstype;
+    @Bind(R.id.tv_bussrate)
+    TextView tvBussrate;
+    @Bind(R.id.btn_bussrate)
+    Button btnBussrate;
+    @Bind(R.id.ll_bussrate)
+    LinearLayout llBussrate;
+    @Bind(R.id.bussrate)
+    LinearLayout bussrate;
+    @Bind(R.id.tv_industry)
+    TextView tvIndustry;
     private ArrayAdapter<CharSequence> adapteEdu = null;
     private List<CharSequence> dataEdu = null;
     private List<BussType> bussType = new ArrayList<>();
@@ -171,6 +186,8 @@ public class RateActivity extends ParentActivity {
 
                     ContactCustomerActivity.setData(customer);
                     startActivityForResult(new Intent(RateActivity.this, ContactCustomerActivity.class), 99);
+                } else {
+                    toast("暂无可选定的客户");
                 }
             }
 
@@ -186,6 +203,8 @@ public class RateActivity extends ParentActivity {
         }
     };
     private List<String> listData = new ArrayList<>();
+    private String TypeNo_name;
+    private String TypeNo_value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -197,8 +216,23 @@ public class RateActivity extends ParentActivity {
 //        StatusBarUtil.setColorDiff(this, mColor);
         txtTitle.setText("选定客户");
 
+        Intent intent = getIntent();
+        String Name = intent.getStringExtra("Name");
+        String NameInfo = intent.getStringExtra("NameInfo");
+        initTitle(this, Name, true,NameInfo);
+        txtBack.setText("服务");
+        if (layBack != null) {
+            layBack.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    finish();
+                }
+            });
+        }
         //获取业务品种信息
-        reqBussBody(null);
+        reqBussBody(null);;
     }
 
     /**
@@ -281,6 +315,7 @@ public class RateActivity extends ParentActivity {
                     Response response = client.newCall(request).execute();
                     //Log.d(TAG, "body: "+response.body());
                     String responseData = response.body().string();
+
                     LogUtils.d("responseData: " + responseData);
                     if (sortNo != null && sortNo.length() > 0) {
                         bussTypeVal = sortNo;
@@ -331,9 +366,7 @@ public class RateActivity extends ParentActivity {
 
         String jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array").toString();
         Log.d(TAG, "jsonObject: " + jsonArray);
-        Gson gson = new Gson();
-        bussType = gson.fromJson(jsonArray, new TypeToken<List<BussType>>() {
-        }.getType());
+        bussType = HttpThread.parseList(jsonArray, BussType.class);
         Message msg = new Message();
         msg.what = COMPLETED;
         handler.sendMessage(msg);
@@ -482,9 +515,7 @@ public class RateActivity extends ParentActivity {
 
         JSONArray jsonArray = jsonObject.getJSONObject("ResponseParams").getJSONArray("array");
         LogUtils.d("jsonObject: " + jsonArray);
-        Gson gson = new Gson();
-        customer = gson.fromJson(jsonArray.toString(), new TypeToken<List<Customer>>() {
-        }.getType());
+        customer = HttpThread.parseList(jsonArray.toString(), Customer.class);
         LogUtils.d("customer: " + customer);
 
         Message msg = new Message();
@@ -497,7 +528,6 @@ public class RateActivity extends ParentActivity {
      */
     void reqBussType() {
         LinearLayout layout = (LinearLayout) findViewById(R.id.busstype);
-//        llBusstype = new LinearLayout(this);
         llBusstype.setOrientation(LinearLayout.HORIZONTAL);
 //        tvBusstype.setText("业务品种");
 //        layout.addView(tvBusstype);
@@ -510,7 +540,7 @@ public class RateActivity extends ParentActivity {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                LinearLayout layout11 = (LinearLayout) findViewById(R.id.busstype);
+                LinearLayout layout11 = (LinearLayout) findViewById(R.id.ll_busstype);
                 int count = layout11.getChildCount();
                 BussType bussType1 = (BussType) parent.getItemAtPosition(position);
                 String sortNo = bussType1.getSortNo();
@@ -519,20 +549,20 @@ public class RateActivity extends ParentActivity {
                 }
                 //选择第一级删除后面几级下拉框
                 if (sortNo.length() == 1 && !sortNo.startsWith("4")) {
+                    for (int j = 1; count > j; j++) {
+                        layout11.removeViewAt(1);
+                    }
+                } else if (sortNo.length() == 4 && !sortNo.startsWith("4")) {
                     for (int j = 2; count > j; j++) {
                         layout11.removeViewAt(2);
                     }
-                } else if (sortNo.length() == 4 && !sortNo.startsWith("4")) {
+                } else if (sortNo.length() == 7 && !sortNo.startsWith("4")) {
                     for (int j = 3; count > j; j++) {
                         layout11.removeViewAt(3);
                     }
-                } else if (sortNo.length() == 7 && !sortNo.startsWith("4")) {
+                } else if (sortNo.length() == 10 && !sortNo.startsWith("4")) {
                     for (int j = 4; count > j; j++) {
                         layout11.removeViewAt(4);
-                    }
-                } else if (sortNo.length() == 10 && !sortNo.startsWith("4")) {
-                    for (int j = 5; count > j; j++) {
-                        layout11.removeViewAt(5);
                     }
                 }
 
@@ -658,6 +688,7 @@ public class RateActivity extends ParentActivity {
      * @param title
      */
     void setSpinner(String id, String title) {
+        LogUtils.d("industryType:"+industryType);
         try {
             if ("001".equals(id)) {
                 LinearLayout industryLoyout = (LinearLayout) findViewById(R.id.id_industry);//投向行业
@@ -675,18 +706,14 @@ public class RateActivity extends ParentActivity {
                 }
             }
             LinearLayout layout = (LinearLayout) findViewById(R.id.estimate);//利率测算项
-//            GridLayout layout = (GridLayout) findViewById(R.id.estimate);
 
             llRate.setOrientation(LinearLayout.HORIZONTAL);
             txtRate.setText(title);
 
-            layout.addView(txtRate);
-//            TextView textView1 = new TextView(this);
-//            //textView1.setText("请选择");
-//            layout2.addView(textView1);
             Spinner spinner = new Spinner(this);
             spinner.setId(Integer.parseInt(id));
             llRate.removeAllViews();
+
             this.dataEdu = new ArrayList<CharSequence>();
             if ("002".equals(id)) {
                 for (int i = 0; i < professionCanal.length(); i++) {
@@ -765,6 +792,11 @@ public class RateActivity extends ParentActivity {
             this.adapteEdu.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(this.adapteEdu);
             llRate.addView(spinner);
+            ViewGroup parent = (ViewGroup) txtRate.getParent();
+            if (parent != null) {
+                parent.removeAllViews();
+            }
+            layout.addView(txtRate);
             layout.addView(llRate);
 
         } catch (JSONException e) {
@@ -801,7 +833,7 @@ public class RateActivity extends ParentActivity {
      *
      * @param view
      */
-    public void clickSubmmit(View view) {
+    public void clickSubmit(View view) {
         //获取利率测算值
         String interesArray = getRateUrl();
         EditText editText1 = (EditText) findViewById(R.id.et_term);
@@ -1120,7 +1152,7 @@ public class RateActivity extends ParentActivity {
         project = null;      //合作商
         guarantee = null;      //担保公司
         iTermMonth = null;      //期数
-        //影藏投向行业
+        //隐藏投向行业
         LinearLayout industryLoyout = (LinearLayout) findViewById(R.id.id_industry);
         industryLoyout.setVisibility(View.INVISIBLE);
         spinner2.setVisibility(View.GONE);
@@ -1180,17 +1212,12 @@ public class RateActivity extends ParentActivity {
         });
     }
 
-    @OnClick({R.id.ll_custName, R.id.et_custName})
-    public void onViewClicked() {
-        reqCustBody();
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
 //        LogUtils.v(resultCode + "~~~~~~~~~~~~~~~~~~~~" + requestCode);
-        if (resultCode == 0)
+        if (resultCode == 0) {
             if (requestCode == 99) {
                 Bundle bundle = data.getBundleExtra("data");
                 String name = bundle.getString("name");
@@ -1206,10 +1233,40 @@ public class RateActivity extends ParentActivity {
                         listData.add(3, cus.getCertID());
                         etCustName.setText(cus.getCustomerName());
                         etCustType.setText(customerType);
-                        llCustType.setEnabled(true);
+                        etCustType.setEnabled(true);
                     }
                 }
             }
+        } else if (resultCode == RESULT_OK) {
+            //业务品种返回的数据
+            TypeNo_value = data.getExtras().getString("typeNo");
+            TypeNo_name = data.getExtras().getString("typeName");
+            btnBusstype.setText(TypeNo_name);
+            //加载利率测算项
+            if (TypeNo_value != null && TypeNo_value.length() > 0) {
+                sortNo = TypeNo_value;
+                bussTypeVal = TypeNo_value;
+            }
+        }
+    }
+
+    @OnClick({R.id.ll_busstype, R.id.ll_bussrate,R.id.ll_custName, R.id.et_custName})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.ll_busstype2:
+                startActivityForResult(new Intent(RateActivity.this, GeneralListTableActivity
+                        .class), 0);
+                break;
+            case R.id.ll_bussrate:
+
+                LogUtils.d(TypeNo_name + "=========TypeNo===========" + TypeNo_value);
+                reqRateBody(sortNo);
+                break;
+            case R.id.ll_custName:
+            case R.id.et_custName:
+                reqCustBody();
+                break;
+        }
     }
 }
 

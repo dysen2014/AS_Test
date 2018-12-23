@@ -15,8 +15,8 @@ public class OverdueCustomer {
 	 * OverDueDays : 517
 	 * CustomerName : 危先容
 	 * CustomerID : 2014121600000276
-	 * BusinessSum : 100000
-	 * Balance : 100000
+	 * BusinessSum : 100000.0
+	 * Balance : 100000.0
 	 * OverDueBalance : 116145.05
 	 * DueBillNO : 31010000020583427
 	 * OfficeTel : 13997670288
@@ -29,8 +29,8 @@ public class OverdueCustomer {
 	private String OverDueDays;
 	private String CustomerName;
 	private String CustomerID;
-	private int BusinessSum;
-	private int Balance;
+	private double BusinessSum;
+	private double Balance;
 	private String OverDueBalance;
 	private String DueBillNO;
 	private String OfficeTel;
@@ -84,19 +84,19 @@ public class OverdueCustomer {
 		this.CustomerID = CustomerID;
 	}
 
-	public int getBusinessSum() {
+	public double getBusinessSum() {
 		return BusinessSum;
 	}
 
-	public void setBusinessSum(int BusinessSum) {
+	public void setBusinessSum(double BusinessSum) {
 		this.BusinessSum = BusinessSum;
 	}
 
-	public int getBalance() {
+	public double getBalance() {
 		return Balance;
 	}
 
-	public void setBalance(int Balance) {
+	public void setBalance(double Balance) {
 		this.Balance = Balance;
 	}
 

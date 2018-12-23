@@ -26,7 +26,7 @@ public class Catevalue {
 //			"政府人事部门或编制委员会的批文", "事业单位法人登记证书", "财政部门同意其开户的证明", "社会团体登记证书",
 //			"上级主管部门批文或证明", "工会法人资格证书", "民办非企业登记证书", "驻华机构登记证", "个体工商户营业执照",
 //			"企业名称预先核准通知书", "组织机构代码证", "国税登记证", "地税登记证", "批准证书", "进出口业务资格证书",
-//			"外贸易经营者备案登记表", "金融许可证", "外汇业务核准件", "外汇登记证", "开户许可证", "办学许可证", "其他" };
+//			"外贸易经营者备案登记表", "金融许可证", "外汇业务核准件", "外汇登记证", "开户许可证", "办学许可证", "relevance_other" };
 
 
 //	/** 学历 */
@@ -37,7 +37,7 @@ public class Catevalue {
 
 //	/** 教育程度 */
 //	public static String[] eduID = { "0", "1", "2", "3", "4" };
-//	public static String[] eduStr = { "名誉博士", "博士", "硕士", "学士", "其他" };
+//	public static String[] eduStr = { "名誉博士", "博士", "硕士", "学士", "relevance_other" };
 
 //	/** 个人客户住房状况 */
 //	public static String[] houseConditionID = { "0", "1", "2", "3", "4" };
@@ -63,7 +63,7 @@ public class Catevalue {
 //	public static String[] custClassID = { "01", "02", "03", "04", "05", "06",
 //			"07", "08", "09" };
 //	public static String[] custClassStr = { "农村经营大户", "家庭农场", "一般农户", "外出创业人员",
-//			"外出务工人员", "公务员、事业单位员工", "社区居民", "个体工商户", "其他" };
+//			"外出务工人员", "公务员、事业单位员工", "社区居民", "个体工商户", "relevance_other" };
 
 //	/** 关键成员关系类型 */
 //	public static String[] reltypeID = { "0101", "0102", "0103", "0104",
@@ -76,7 +76,7 @@ public class Catevalue {
 //	public static String[] relationshipID = { "0301", "0302", "0303", "0304",
 //			"0305", "0306", "0309" };
 //	public static String[] relationshipStr = { "夫妻关系", "兄弟姐妹关系", "父母关系",
-//			"子女关系", "祖父母", "孙子女关系", "其他" };
+//			"子女关系", "祖父母", "孙子女关系", "relevance_other" };
 
 //	/** 风险能力承受 */
 //	public static String[] riskBearID = { "01", "02", "03", "04", "05" };
@@ -86,7 +86,7 @@ public class Catevalue {
 //	public static String[] estateTypeID = { "01", "02", "03", "04", "05", "06",
 //			"07", "08" };
 //	public static String[] estateTypeStr = { "房产", "土地", "土地使用权", "房屋及建筑物",
-//			"专利权", "商标权", "著作权", "其他" };
+//			"专利权", "商标权", "著作权", "relevance_other" };
 
 //	/** 个人客户动产类型 */
 //	public static String[] movableTypeID = { "01", "02", "03", "04", "05",
@@ -118,7 +118,7 @@ public class Catevalue {
 //			"合作经营企业(港或澳、台资)", "港、澳与内地合作企业", "台湾与内地合作企业", "港、澳、台商独资经营企业",
 //			"港、澳独资经营企业", "台湾独资经营企业", "港、澳、台商投资股份有限公司", "港、澳投资股份有限公司",
 //			"台商投资股份有限公司", "其他港澳台投资", "外商投资企业", "中外合资经营企业", "中外合作经营企业",
-//			"外资(独资)企业", "外商投资股份有限公司", "其他国外投资", "个体经营", "个体工商户", "个人合伙", "其他" };
+//			"外资(独资)企业", "外商投资股份有限公司", "其他国外投资", "个体经营", "个体工商户", "个人合伙", "relevance_other" };
 
 //	/** 电话类型 */
 //	public static String[] phoneID = { "01", "02", "03" };
@@ -155,26 +155,26 @@ public class Catevalue {
 //	public static String[] signTypeID = { "01", "02", "03", "04", "05", "06",
 //			"07", "08", "09", "10", "11" };
 //	public static String[] signTypeStr = { "个人手机银行", "商务手机银行", "个人网银", "POS机",
-//			"电话银行", "短信银行", "微信银行", "第三方支付", "水费", "电费", "其他" };
+//			"电话银行", "短信银行", "微信银行", "第三方支付", "水费", "电费", "relevance_other" };
 
 //	/** 电子产品需求 */
 //	public static String[] kindTypeID = { "01", "02", "03", "04", "05" };
 //	public static String[] kindTypeStr = { "无银行卡贷记卡存折", "手机银行卡乐付网银",
-//			"电话银行支付宝短信", "银行贷记卡中间业务", "其他" };
+//			"电话银行支付宝短信", "银行贷记卡中间业务", "relevance_other" };
 
 //	/** 贷款种类 */
 //	public static String[] loanCateTypeID = { "01", "02", "03" };
-//	public static String[] loanCateTypeStr = { "贷款", "银行承兑", "其他" };
+//	public static String[] loanCateTypeStr = { "贷款", "银行承兑", "relevance_other" };
 
 //	/** 贷款用途 */
 //	public static String[] loanUseTypeID = { "01", "02", "03", "04" };
-//	public static String[] loanUseTypeStr = { "购房", "购车", "经济周转", "其他" };
+//	public static String[] loanUseTypeStr = { "购房", "购车", "经济周转", "relevance_other" };
 
 //	/** 可提供的担保方式 */
 //	public static String[] warrantTypeID = { "01", "02", "03", "04", "05",
 //			"06", "07", "08", "09", "10" };
 //	public static String[] warrantTypeStr = { "信用", "保证", "担保人", "抵押", "质押",
-//			"质押加阶段性保证", "抵押加保证", "质押加保证", "质押加阶段性保证", "其他" };
+//			"质押加阶段性保证", "抵押加保证", "质押加保证", "质押加阶段性保证", "relevance_other" };
 //
 //	/** 周转期限 */
 //	public static String[] turnOverTypeID = { "01", "02", "03", "04", "05" };
@@ -206,7 +206,7 @@ public class Catevalue {
 	public static String[] custypeID = { "01", "02", "03", "04", "05", "06",
 			"07", "08", "09", "10" };
 	public static String[] custypeStr = { "农村经营大户", "家庭农场", "一般农户", "外出创业人员",
-			"外出务工人员", "个体工商户/小微企业主", "公务员", "事业单位员工", "社区居民", "其他" };
+			"外出务工人员", "个体工商户/小微企业主", "公务员", "事业单位员工", "社区居民", "relevance_other" };
 
 	/** 个人客户培植方向 */
 	public static String[] cultivate_direID = { "01", "02", "03", "04" };
@@ -263,7 +263,7 @@ public class Catevalue {
 //	 * 经营状况
 //	 */
 //	public static String[] businessStateID={"01","02","03","04"};
-//	public static String[] businessStateStr={"正常经营","经营困难","关停倒闭","其他"};
+//	public static String[] businessStateStr={"正常经营","经营困难","关停倒闭","relevance_other"};
 	
 	/**贵宾卡级别**/
 	public static String[] cust_psn_sf_cordID={};

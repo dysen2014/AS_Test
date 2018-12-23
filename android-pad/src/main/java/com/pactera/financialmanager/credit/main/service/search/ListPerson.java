@@ -11,6 +11,24 @@ public class ListPerson{
     private String CustomerName;
     private  String MobilePhone;
     private String CertID;
+    private String CertTypeName;
+
+    public String getCertTypeName() {
+        return CertTypeName;
+    }
+
+    public void setCertTypeName(String certTypeName) {
+        CertTypeName = certTypeName;
+    }
+
+    public ListPerson(String irscreditLevel, String customerType, String customerId, String customerName, String mobilePhone, String certID) {
+        IrscreditLevel = irscreditLevel;
+        CustomerType = customerType;
+        CustomerId = customerId;
+        CustomerName = customerName;
+        MobilePhone = mobilePhone;
+        CertID = certID;
+    }
 
     public String getCertID() {
         return CertID;

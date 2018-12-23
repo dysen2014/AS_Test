@@ -32,7 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.model.User;
 
@@ -62,7 +62,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -855,6 +854,32 @@ public final class Tool {
 		if (LogoActivity.user != null) {
 			userCode = LogoActivity.user.getUserCode();
 			brCode = LogoActivity.user.getBrCode();
+
+		}
+		String thequest = request + "?method=" + method + "&userCode="
+				+ userCode + "&brCode=" + brCode + "&seriNo=" + seriNo
+				+ "&chnlCode=" + chnlCode + "&transCode=" + request;
+		Log.i("requestHttp", thequest);
+		return thequest;
+
+	}
+
+	// 网络请求
+	public static String requestHttp(String request, String method, String brCode) {
+		String userCode = "";
+		String seriNo = LogoActivity.user.getImei();
+		String chnlCode = "02";// 默认安卓客户端
+
+		if (brCode == null){
+			brCode = LogoActivity.user.getBrCode();
+
+		}
+
+		if (TextUtils.isEmpty(method)) {
+			method = "getJSON";
+		}
+		if (LogoActivity.user != null) {
+			userCode = LogoActivity.user.getUserCode();
 
 		}
 		String thequest = request + "?method=" + method + "&userCode="

@@ -61,7 +61,7 @@ public class CalculatorCreditActivity extends ParentActivity implements OnClickL
 		setContentView(R.layout.calculator_credit);
 		findViews();
 		setListener();
-		initTitle(this, R.drawable.changyonggongju);
+		initTitle(this,"常用工具");
 	}
 
 	private void setListener() {

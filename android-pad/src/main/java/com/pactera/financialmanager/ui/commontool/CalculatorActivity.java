@@ -29,7 +29,7 @@ public class CalculatorActivity extends ParentActivity implements
 		setContentView(R.layout.activity_calculator);
 		findViews();
 		bindOnClickListener();
-		initTitle(this,R.drawable.changyonggongju);
+		initTitle(this,"常用工具");
 	}
 
 	private void bindOnClickListener() {

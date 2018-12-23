@@ -111,7 +111,7 @@ public class ActivityBaseInfo extends ParentActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookbuildingbaseinfo);
-        initTitle(this, R.drawable.customermanagercon);
+        initTitle(this, "客户建档");
 
         fragmentManager = getSupportFragmentManager();
         setupView();

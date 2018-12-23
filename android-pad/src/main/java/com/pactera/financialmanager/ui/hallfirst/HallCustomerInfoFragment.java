@@ -25,13 +25,13 @@ public class HallCustomerInfoFragment extends ParentFragment {
 	private TextView tvTitle11, tvTitle12, tvTitle13, tvTitle14, tvTitle15,
 			tvTitle16, tvTitle17, tvTitle18, tvTitle19, tvTitle20, tvTitle21,
 			tvTitle38, tvTitle39, tvTitle23, tvTitle24, tvTitle25, tvTitle26, tvTitle27,
-			tvTitle28, tvTitle29, tvTitle30, tvTitle31, tvTitle32, tvTitle33,
-			tvTitle34, tvTitle35, tvTitle36, tvTitle37;
+			tvTitle28, tvTitle88, tvTitle29, tvTitle30, tvTitle31, tvTitle32, tvTitle33,
+			tvTitle34, tvTitle35, tvTitle36, tvTitle37, tv_SMF;
 	private ImageView tvInfo11, tvInfo12, tvInfo13, tvInfo14, tvInfo15,
 			tvInfo16, tvInfo17, tvInfo18, tvInfo19, tvInfo20, tvInfo21,
 			tvInfo38, tvInfo39, tvInfo23, tvInfo24, tvInfo25, tvInfo26, tvInfo27,
-			tvInfo28, tvInfo29, tvInfo30, tvInfo31, tvInfo32, tvInfo33,
-			tvInfo34, tvInfo35, tvInfo36, tvInfo37;
+			tvInfo28, tvInfo88, tvInfo29, tvInfo30, tvInfo31, tvInfo32, tvInfo33,
+			tvInfo34, tvInfo35, tvInfo36, tvInfo37, imv_vSMF;
 	
 	private ImageView imvRefresh;
 	private LinearLayout layLoading;
@@ -72,6 +72,7 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvInfo26=(ImageView)view.findViewById(R.id.imv_v26);// 代缴电费  *******
 		tvInfo27=(ImageView)view.findViewById(R.id.imv_v27);// 代缴水费  *******
 		tvInfo28=(ImageView)view.findViewById(R.id.imv_v28);// 省财税库行签约 ====
+		tvInfo88=(ImageView)view.findViewById(R.id.imv_v28);//ETC
 		tvInfo29=(ImageView)view.findViewById(R.id.imv_v29);// 代发工资====
 		tvInfo30=(ImageView)view.findViewById(R.id.imv_v30);// 单位结算卡持有 ====
 		tvInfo31=(ImageView)view.findViewById(R.id.imv_v31);// 活期存款持有 ====
@@ -81,6 +82,7 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvInfo35=(ImageView)view.findViewById(R.id.imv_v35);// 承兑汇票持有 ====
 		tvInfo36=(ImageView)view.findViewById(R.id.imv_v36);// 行内理财持有 ====
 		tvInfo37=(ImageView)view.findViewById(R.id.imv_v37);// 兴业银行理财持有 ====
+		imv_vSMF=(ImageView)view.findViewById(R.id.imv_vSMF);// 扫码付 ====
 		
 		tvTitle11=(TextView)view.findViewById(R.id.tv_t11);// 借记卡 ------
 		tvTitle12=(TextView)view.findViewById(R.id.tv_t12);// 信用卡 ------
@@ -101,6 +103,7 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvTitle26=(TextView)view.findViewById(R.id.tv_t26);// 代缴电费  *******
 		tvTitle27=(TextView)view.findViewById(R.id.tv_t27);// 代缴水费  *******
 		tvTitle28=(TextView)view.findViewById(R.id.tv_t28);// 省财税库行签约 ====
+		tvTitle88=(TextView)view.findViewById(R.id.tv_t88);//ETC
 		tvTitle29=(TextView)view.findViewById(R.id.tv_t29);// 代发工资====
 		tvTitle30=(TextView)view.findViewById(R.id.tv_t30);// 单位结算卡持有 ====
 		tvTitle31=(TextView)view.findViewById(R.id.tv_t31);// 活期存款持有 ====
@@ -110,6 +113,7 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvTitle35=(TextView)view.findViewById(R.id.tv_t35);// 承兑汇票持有 ====
 		tvTitle36=(TextView)view.findViewById(R.id.tv_t36);// 行内理财持有 ====
 		tvTitle37=(TextView)view.findViewById(R.id.tv_t37);// 兴业银行理财持有 ====
+		tv_SMF=(TextView)view.findViewById(R.id.tv_SMF);// 扫码付 ====
 		
 		imvRefresh = (ImageView) view.findViewById(R.id.imv_refresh);
 		// 初始化本地控件
@@ -173,8 +177,8 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvInfo25.setImageResource(getValue(customerinfo.getBDPAY_SGN()));
 		tvInfo26.setImageResource(getValue(customerinfo.getPWR_SGN()));
 		tvInfo27.setImageResource(getValue(customerinfo.getWRT_SGN()));
-		
 		tvInfo28.setImageResource(getValue(customerinfo.getTPS_SGN()));
+		tvInfo88.setImageResource(getValue(customerinfo.getETC_SGN()));
 		tvInfo29.setImageResource(getValue(customerinfo.getPAYROLL_SNG()));
 		tvInfo30.setImageResource(getValue(customerinfo.getUNIT_CARD_SNG()));
 		tvInfo31.setImageResource(getValue(customerinfo.getCURR_DPST_HOLD()));
@@ -184,7 +188,8 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvInfo35.setImageResource(getValue(customerinfo.getBGD_HOLD()));
 		tvInfo36.setImageResource(getValue(customerinfo.getFNC_HOLD()));
 		tvInfo37.setImageResource(getValue(customerinfo.getXYB_FNC_HOLD()));
-		
+		imv_vSMF.setImageResource(getValue(customerinfo.getSMF_SGN()));
+
 		String pro = customerinfo.getPRO_PRO_AMT();	// 客户总资产
 		String deposit = customerinfo.getDEPOSIT_PRO_AMT_ALL();// 存款余额
 		String fund = customerinfo.getFUND_AMT();// 基金余额
@@ -235,6 +240,7 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvInfo24.setVisibility(personVisible);// 财付通签约 ------
 		tvInfo25.setVisibility(personVisible);// 百付宝签约 ------
 		tvInfo28.setVisibility(View.VISIBLE);// 省财税库行签约 ====
+		tvInfo88.setVisibility(View.VISIBLE);//ETC
 		tvInfo16.setVisibility(View.VISIBLE);// 短信银行 *******
 		tvInfo17.setVisibility(View.VISIBLE);// pos机 *******
 		tvInfo18.setVisibility(View.VISIBLE);// 卡乐付 *******
@@ -251,6 +257,7 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvInfo35.setVisibility(commonVisible);// 承兑汇票持有 ====
 		tvInfo36.setVisibility(commonVisible);// 行内理财持有 ====
 		tvInfo37.setVisibility(commonVisible);// 兴业银行理财持有 ====
+		imv_vSMF.setVisibility(commonVisible);// 扫码付 ====
 		
 		tvTitle11.setVisibility(personVisible);// 借记卡 ------
 		tvTitle12.setVisibility(personVisible);// 信用卡 ------
@@ -271,6 +278,7 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvTitle26.setVisibility(View.VISIBLE);// 代缴电费  *******
 		tvTitle27.setVisibility(View.VISIBLE);// 代缴水费  *******
 		tvTitle28.setVisibility(View.VISIBLE);// 省财税库行签约 ====
+		tvTitle88.setVisibility(View.VISIBLE);
 		tvTitle29.setVisibility(commonVisible);// 代发工资====
 		tvTitle30.setVisibility(commonVisible);// 单位结算卡持有 ====
 		tvTitle31.setVisibility(commonVisible);// 活期存款持有 ====
@@ -280,11 +288,12 @@ public class HallCustomerInfoFragment extends ParentFragment {
 		tvTitle35.setVisibility(commonVisible);// 承兑汇票持有 ====
 		tvTitle36.setVisibility(commonVisible);// 行内理财持有 ====
 		tvTitle37.setVisibility(commonVisible);// 兴业银行理财持有 ====
+		tv_SMF.setVisibility(commonVisible);// 扫码付 ====
 	}
 	
 	/**
 	 * 加载饼状图
-	 * @param pro 客户总资产
+	 * 客户总资产
 	 * @param deposit 存款余额
 	 * @param fund 基金余额
 	 * @param mmm 理财余额

@@ -25,9 +25,9 @@ import android.widget.TextView;
 
 /**
  * 地址选择器
- * 
+ *
  * @author JAY
- * 
+ *
  */
 public class WheelView extends ScrollView {
 	public static final String TAG = WheelView.class.getSimpleName();
@@ -166,7 +166,7 @@ public class WheelView extends ScrollView {
 		if (views != null) {
 			views.removeAllViews();
 		}
-		displayItemCount = offset * 2 + 2;//加载显示几行地址信息，此处是加载四行信息
+		displayItemCount = offset * 2 + 1;//加载显示几行地址信息，此处是加载四行信息（见鬼的注释，下拉的地方）
 		for (AreaEntity entity : items) {
 			String item = entity.getName();
 			views.addView(createView(item));
@@ -363,6 +363,7 @@ public class WheelView extends ScrollView {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
+
 		if (ev.getAction() == MotionEvent.ACTION_UP) {
 
 			startScrollerTask();

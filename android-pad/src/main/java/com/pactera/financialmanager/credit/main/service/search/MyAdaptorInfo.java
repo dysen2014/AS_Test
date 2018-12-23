@@ -24,7 +24,7 @@ public class MyAdaptorInfo {
         Context context;
         List<InfoItem> list;
         OnItemClickCallback callback;
-        int[] imgId = new int[]{R.drawable.level_a, R.drawable.level_b, R.drawable.level_c, R.drawable.level_no};
+        int[] imgId = new int[]{R.mipmap.level_a, R.mipmap.level_b, R.mipmap.level_c, R.mipmap.level_no};
 
         public CommonListAdapter(Context context, List<InfoItem> lists) {
             this.context = context;
@@ -88,14 +88,16 @@ public class MyAdaptorInfo {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
 
+            TextView tvName;
+            TextView tvValue;
             LinearLayout llLay;
-            TextView tvName, tvValue;
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                llLay = (LinearLayout) itemView.findViewById(R.id.ll_lay);
+
                 tvName = (TextView) itemView.findViewById(R.id.tv_name);
                 tvValue = (TextView) itemView.findViewById(R.id.tv_value);
+                llLay = (LinearLayout)  itemView.findViewById(R.id.ll_lay);
             }
         }
     }

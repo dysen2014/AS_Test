@@ -1,14 +1,17 @@
 package com.pactera.financialmanager.credit.main.service.search;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
 import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.ui.ParentActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -21,6 +24,10 @@ public class Query extends ParentActivity {
 	RadioButton rbtn1;
 	@Bind(R.id.fragment_query)
 	FrameLayout fragmentQuery;
+	@Bind(R.id.lay_back)
+	LinearLayout layBack;
+	@Bind(R.id.txt_back)
+	TextView txtBack;
 
 	private FragmentManager fragmentManager;
 	QueryCustomerFragment queryCustomerFragment;
@@ -38,9 +45,26 @@ public class Query extends ParentActivity {
 
 	private void initView() {
 
-		rbtn0.setText(getString(R.string.s_customer));
-		rbtn1.setText(getString(R.string.s_bussiness));
+
+		Intent intent = getIntent();
+		String Name = intent.getStringExtra("Name");
+		String NameInfo = intent.getStringExtra("NameInfo");
+		initTitle(this, Name, true,NameInfo);
+
+		txtBack.setText("服务");
+		rbtn0.setText(getString(R.string.s_bussiness));
+		rbtn1.setText(getString(R.string.s_customer));
 		fragmentManager = getSupportFragmentManager();
+		if (layBack != null) {
+			layBack.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					finish();
+				}
+			});
+		}
 	}
 
 	@OnClick({R.id.rbtn_0, R.id.rbtn_1})
@@ -84,18 +108,18 @@ public class Query extends ParentActivity {
 
 		switch (view.getId()) {
 			case R.id.rbtn_0:
-				if (queryCustomerFragment == null) {
-					queryCustomerFragment = new QueryCustomerFragment();
-					transaction.add(R.id.fragment_query, queryCustomerFragment);
-				} else
-					transaction.show(queryCustomerFragment);
-				break;
-			case R.id.rbtn_1:
 				if (queryBusinessFragment == null) {
 					queryBusinessFragment = new QueryBusinessFragment();
 					transaction.add(R.id.fragment_query, queryBusinessFragment);
 				} else
 					transaction.show(queryBusinessFragment);
+				break;
+			case R.id.rbtn_1:
+				if (queryCustomerFragment == null) {
+				queryCustomerFragment = new QueryCustomerFragment();
+				transaction.add(R.id.fragment_query, queryCustomerFragment);
+			} else
+				transaction.show(queryCustomerFragment);
 				break;
 		}
 		transaction.commitAllowingStateLoss();

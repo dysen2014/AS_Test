@@ -14,6 +14,8 @@ import com.pactera.financialmanager.util.GetDeviceSerialNumberUtil;
 import com.pactera.financialmanager.util.Tool;
 import com.pactera.financialmanager.util.VersionUtils;
 
+import java.util.List;
+
 /**
  * 登录用户，即管理员
  * 
@@ -62,10 +64,54 @@ public class User {
 
 	// 用户所在法人清算中心
 	private String clearingCenterBrCode;
+
+	private String detailsStation;   //返回的权限
+
+	//提醒and服务
+	private List<FwMenu> fw_menu;
+	private List<TxMenu> tx_menu;
+	private List<QtMenu> qt_menu;
+
+
+	public String getDetailsStation() {
+		return detailsStation;
+	}
+
+	public void setDetailsStation(String detailsStation) {
+		this.detailsStation = detailsStation;
+	}
+
+
+	public List<QtMenu> getQt_menu() {
+		return qt_menu;
+	}
+
+	public void setQt_menu(List<QtMenu> qt_menu) {
+		this.qt_menu = qt_menu;
+	}
+
+	public List<FwMenu> getFw_menu() {
+		return fw_menu;
+	}
+
+	public void setFw_menu(List<FwMenu> fw_menu) {
+		this.fw_menu = fw_menu;
+	}
+
+	public List<TxMenu> getTx_menu() {
+		return tx_menu;
+	}
+
+	public void setTx_menu(List<TxMenu> tx_menu) {
+		this.tx_menu = tx_menu;
+	}
+
 	public User(Context context) throws Exception {
 		if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
 			return ;
 		}
+
+
 		// 设备序列号
 		this.imei = GetDeviceSerialNumberUtil.getAndroidId(context);
 		if(TextUtils.isEmpty(imei) || imei == null){

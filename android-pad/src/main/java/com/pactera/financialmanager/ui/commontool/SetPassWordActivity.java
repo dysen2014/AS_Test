@@ -1,21 +1,5 @@
 package com.pactera.financialmanager.ui.commontool;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
-import com.pactera.financialmanager.ui.ParentActivity;
-import com.pactera.financialmanager.ui.service.HConnection;
-import com.pactera.financialmanager.ui.service.HResponse;
-import com.pactera.financialmanager.util.InterfaceInfo;
-import com.pactera.financialmanager.util.Tool;
-import com.pactera.financialmanager.util.Constants.requestType;
-
 import android.os.Bundle;
 import android.os.Message;
 import android.text.TextUtils;
@@ -26,6 +10,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.ui.ParentActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
+import com.pactera.financialmanager.ui.service.HConnection;
+import com.pactera.financialmanager.ui.service.HResponse;
+import com.pactera.financialmanager.util.Constants.requestType;
+import com.pactera.financialmanager.util.InterfaceInfo;
+import com.pactera.financialmanager.util.Tool;
+
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 修改密码
@@ -53,7 +51,7 @@ public class SetPassWordActivity extends ParentActivity implements
 		findViews();
 		setInfo();
 		setListener();
-		initTitle(this,R.drawable.changyonggongju);
+		initTitle(this,"常用工具");
 
 	}
 

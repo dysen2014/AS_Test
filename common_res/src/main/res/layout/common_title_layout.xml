@@ -1,59 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-	<LinearLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="vertical"
-		>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="56dp"
-		android:gravity="center_vertical"
-		android:background="#ea452f"
-		android:orientation="horizontal"
-		>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#ea452f"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
 
-			<LinearLayout
-				android:id="@+id/lay_back"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal"
-				android:gravity="center_vertical"
-			    android:onClick="backActivity"
-				>
+        <LinearLayout
+            android:id="@+id/lay_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:saveEnabled="false"
+            >
 
-				<ImageView
-					android:layout_width="48dp"
-					android:layout_height="40dp"
-					android:paddingBottom="4dp"
-					android:paddingTop="4dp"
-					android:src="@drawable/back_arrow"
-					/>
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:src="@drawable/ic_left"
+                />
 
-				<TextView
-					android:id="@+id/txt_back"
-					android:gravity="center_vertical|left"
-					android:text="返回"
-					style="@style/common_title_txt"
-					android:layout_width="wrap_content"
-					android:textSize="18sp"
-					/>
-			</LinearLayout>
+            <TextView
+                android:id="@+id/txt_back"
+                style="@style/common_title_txt"
+                android:layout_width="wrap_content"
+                android:gravity="center_vertical|left"
+                android:text="返回"
+                android:textSize="18sp"
+                />
+        </LinearLayout>
 
-			<TextView
-				android:id="@+id/txt_title"
-				android:layout_weight="1"
-				android:gravity="center"
+        <TextView
+            android:id="@+id/txt_title"
+            style="@style/common_title_txt"
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:gravity="center"/>
+
+        <TextView
+        android:id="@+id/txt_"
+        style="@style/common_title_txt"
+        android:layout_width="96dp"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/separateline" />
+
+        <LinearLayout
+            android:layout_width="112dp"
+            android:layout_height="wrap_content"
+            >
+
+            <ImageView
+                android:layout_width="33dp"
+                android:layout_height="33dp"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="16dp"
+                android:id="@+id/pop_is"
+                android:padding="1dp"
+                android:background="@drawable/login_user_icon" />
+
+            <LinearLayout
                 android:layout_width="0dp"
-				style="@style/common_title_txt"/>
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
-			<TextView
-				android:id="@+id/txt_"
-				android:layout_width="96dp"
-				android:gravity="center_vertical"
-				style="@style/common_title_txt"
-				/>
-		</LinearLayout>
+                <com.dysen.common_res.common.views.TextViewMarquee
+                    android:id="@+id/com_tv_adminname"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="bottom|center_horizontal"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
-	</LinearLayout>
+                <TextView
+                    android:id="@+id/com_tv_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.94"
+                    android:gravity="center"
+                    android:text="退出"
+                    android:textColor="@color/wordbgcolor1"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+

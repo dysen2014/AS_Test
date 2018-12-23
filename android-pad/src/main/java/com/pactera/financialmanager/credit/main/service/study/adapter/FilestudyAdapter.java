@@ -1,88 +1,138 @@
 package com.pactera.financialmanager.credit.main.service.study.adapter;
 
 import android.content.Context;
-import android.util.Log;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.utils.LogUtils;
+import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.views.TextViewMarquee;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.credit.main.service.study.StudyActivity;
 import com.pactera.financialmanager.credit.main.service.study.bean.Filestudy;
+import com.pactera.financialmanager.util.FiledUtil;
 
 import java.io.File;
 import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * Created by admin on 2017-7-5.
  */
 
-public class FilestudyAdapter extends ArrayAdapter<Filestudy> {
+public class FilestudyAdapter {
 
-    private static final String TAG = "FilestudyAdapter";
-    private static File mFile;
-    private int resourceId;
-    Context mContext;
-    List<Filestudy> list;
 
-    public FilestudyAdapter(Context context, int textViewResourceId, List<Filestudy> objects) {
-        super(context, textViewResourceId, objects);
-        resourceId = textViewResourceId;
-        mContext = context;
-        list = objects;
-    }
+    public static class FilesAdapter  extends RecyclerView.Adapter<FilesAdapter.ViewHolder> {
 
-    public View getView(int postion, View convertView, ViewGroup parent) {
-        Filestudy filestudy = getItem(postion);
-        Log.d(TAG, "filestudy: " + filestudy);
-        View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
-        TextViewMarquee fileType = (TextViewMarquee) view.findViewById(R.id.textView);
-        TextViewMarquee fileName = (TextViewMarquee) view.findViewById(R.id.textView2);
-        TextView btnOpenFile = (TextView) view.findViewById(R.id.btn_file);
-        ImageView img = (ImageView) view.findViewById(R.id.imageView);
-        String type = filestudy.getFileName();
-        type = type.substring(type.indexOf("."));
-        LogUtils.d("type:" + type);
-        switch (type) {
-            case ".doc":
-            case ".docx":
-                img.setBackgroundResource(R.drawable.ic_doc);
-                break;
-            case ".ppt":
-                img.setBackgroundResource(R.drawable.ic_ppt);
-                break;
-            case ".excel":
-                img.setBackgroundResource(R.drawable.ic_excel);
-                break;
-            case ".pdf":
-                img.setBackgroundResource(R.drawable.ic_pdf);
-                break;
-            case ".txt":
-                img.setBackgroundResource(R.drawable.ic_txt);
-                break;
+        private static File mFile;
+        Context mContext;
+        List<Filestudy> list;
+
+        OnItemClickCallback callback;
+        public static ViewHolder myHolder;
+
+        public FilesAdapter(Context mContext, List<Filestudy> list) {
+            this.mContext = mContext;
+            this.list = list;
         }
-        fileType.setText(filestudy.getDocName());
-        fileName.setText(filestudy.getFileName());
-//        final File file = new File(FileUtils.getSDdir("download"), filestudy.getFileName());
-        if (mFile != null)
-        if (mFile.exists()) {
-            btnOpenFile.setVisibility(View.VISIBLE);
-            btnOpenFile.setOnClickListener(new View.OnClickListener() {
+        public FilesAdapter(Context mContext, List<Filestudy> list, OnItemClickCallback<Object>
+                callback) {
+            this.mContext = mContext;
+            this.list = list;
+            this.callback = callback;
+        }
+
+        @Override
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.file, parent,
+                    false);
+            //view.setBackgroundColor(Color.RED);
+            ViewHolder viewHolder = new ViewHolder(view);
+            return viewHolder;
+        }
+
+        @Override
+        public void onBindViewHolder(final ViewHolder holder, final int position) {
+            myHolder = holder;
+            final Filestudy filestudy = list.get(position);
+            String type = filestudy.getFileName();
+            type = type.substring(type.indexOf("."));
+            switch (type) {
+                case ".doc":
+                case ".docx":
+                    holder.img.setBackgroundResource(R.drawable.ic_doc);
+                    break;
+                case ".ppt":
+                    holder.img.setBackgroundResource(R.drawable.ic_ppt);
+                    break;
+                case ".excel":
+                    holder.img.setBackgroundResource(R.drawable.ic_excel);
+                    break;
+                case ".pdf":
+                    holder.img.setBackgroundResource(R.drawable.ic_pdf);
+                    break;
+                case ".txt":
+                    holder.img.setBackgroundResource(R.drawable.ic_txt);
+                    break;
+            }
+            holder.fileType.setText(filestudy.getDocName());
+            holder.fileName.setText(filestudy.getFileName());
+
+            holder.llLay.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    callback.onClick(v, filestudy);
+                }
+            });
+            final File file = new File(FiledUtil.getSDdir("download"), filestudy.getFileName());
+            if (file.exists()) {
+                holder.btnOpenFile.setVisibility(View.VISIBLE);
+                holder.llLay.setEnabled(false);
+            }else {
+                holder.btnOpenFile.setVisibility(View.INVISIBLE);
+                holder.llLay.setEnabled(true);
+            }
+            holder.btnOpenFile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    new StudyActivity().openFile(mContext, mFile);
+                    new StudyActivity().openFile(mContext, file);
                 }
             });
         }
-        return view;
-    }
 
-    public static void setData(File file) {
-        mFile = file;
+        @Override
+        public int getItemCount() {
+            return list.size();
+        }
+
+        public class ViewHolder extends RecyclerView.ViewHolder {
+
+            @Bind(R.id.tv_type)
+            TextViewMarquee fileType;
+            @Bind(R.id.tv_title)
+            TextViewMarquee fileName;
+            @Bind(R.id.btn_open_file)
+            TextView btnOpenFile;
+            @Bind(R.id.iv_img)
+            ImageView img;
+            @Bind(R.id.ll_lay)
+            LinearLayout llLay;
+
+            public ViewHolder(View itemView) {
+                super(itemView);
+                ButterKnife.bind(this, itemView);
+            }
+        }
+
+        public static void setData(File file) {
+            mFile = file;
+        }
     }
 }

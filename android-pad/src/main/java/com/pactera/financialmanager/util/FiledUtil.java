@@ -1,5 +1,8 @@
 package com.pactera.financialmanager.util;
 
+import android.graphics.Bitmap;
+import android.os.Environment;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,8 +14,6 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
-import android.graphics.Bitmap;
 
 /**
  * 获取对象属性
@@ -150,6 +151,14 @@ public class FiledUtil {
 		}
 		return size;
 	}
-	   
 
+	public static File getSDdir(String newDir) {
+		String dirPath = Environment.getExternalStorageDirectory() + File.separator + newDir + File.separator;
+		//建立文件下载的目录
+		final File dir = new File(dirPath);
+		if (!dir.exists()) {
+			dir.mkdirs();
+		}
+		return dir;
+	}
 }

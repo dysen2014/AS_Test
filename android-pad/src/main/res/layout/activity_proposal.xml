@@ -8,29 +8,40 @@
     android:orientation="vertical"
     tools:context="com.pactera.financialmanager.credit.main.mine.ProposalActivity">
 
-    <include
-        layout="@layout/common_title_layout"/>
+    <!--<include-->
+        <!--layout="@layout/common_title_layout"/>-->
 
-    <LinearLayout
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--android:orientation="vertical">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="800dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="64dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/edt_proposal"-->
+                    <!--android:layout_width="400dp"-->
+                    <!--android:layout_height="200dp"-->
+                    <!--android:layout_marginBottom="64dp"-->
+                    <!--android:background="@drawable/shape_txt_bg"-->
+                    <!--android:hint="\t请在此处输入您的意见或建议！"/>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<include layout="@layout/common_btn_submit"/>-->
+        <!--</LinearLayout>-->
+
+    <FrameLayout
+        android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:gravity="center">
-        <LinearLayout
-            android:layout_width="800dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center">
+        android:layout_height="match_parent" />
 
-            <EditText
-                android:id="@+id/edt_proposal"
-                android:layout_width="400dp"
-                android:layout_height="200dp"
-                android:hint="\t请在此处输入您的意见或建议！"
-                android:background="@drawable/shape_txt_bg"/>
-        </LinearLayout>
-
-        <include layout="@layout/common_btn_submit"/>
-    </LinearLayout>
 </LinearLayout>

@@ -8,3 +8,13 @@
 
 
 </shape>
+<!--
+    (1)根标签必须改为<shape>
+    (2)<size>标签，定义RadioButton的大小（宽高）
+
+    (3)<corners>标签，定义原来矩形4个直角的完全程度（与width/heigth一致则为圆角）
+
+    (4)<solid>为中间填充颜色
+
+    (5)<stroke>为边框属性
+    -->

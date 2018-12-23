@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ApprovalDemo</string>
+
+    <!--http state-->
+    <string name="unNetwork">无网络连接</string>
+    <string name="request_nodata">无数据内容</string>
+    <string name="request_timeout">请求超时!</string>
+</resources>

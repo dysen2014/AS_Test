@@ -1,12 +1,5 @@
 package com.pactera.financialmanager.ui.commontool;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.Dialog;
@@ -20,8 +13,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
@@ -35,9 +28,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.ZoomControls;
 
 import com.baidu.location.BDLocation;
@@ -46,6 +39,8 @@ import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BaiduMap.OnMapClickListener;
+import com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.InfoWindow;
@@ -56,24 +51,28 @@ import com.baidu.mapapi.map.MapView;
 import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationData;
-import com.baidu.mapapi.map.BaiduMap.OnMapClickListener;
-import com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener;
 import com.baidu.mapapi.model.LatLng;
-import com.baidu.mapapi.utils.poi.BaiduMapPoiSearch;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.adapter.SpinnerAdapter;
 import com.pactera.financialmanager.adapter.SpinnerAdapter.CallBackItemClickListener;
-import com.pactera.financialmanager.ui.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.model.CustomerMapInfo;
 import com.pactera.financialmanager.ui.model.QueryOneCusInfo;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HRequest;
 import com.pactera.financialmanager.ui.service.HResponse;
+import com.pactera.financialmanager.util.Constants.requestType;
 import com.pactera.financialmanager.util.InterfaceInfo;
 import com.pactera.financialmanager.util.NewCatevalue;
 import com.pactera.financialmanager.util.Tool;
-import com.pactera.financialmanager.util.Constants.requestType;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.baidu.mapapi.map.MapStatusUpdateFactory.newLatLng;
 
@@ -158,7 +157,10 @@ public class CustomerMapActivity extends ParentActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_customemap);
-        initTitle(this, R.drawable.changyonggongju);
+        Intent intent = getIntent();
+        String Name = intent.getStringExtra("Name");
+        String NameInfo = intent.getStringExtra("NameInfo");
+        initTitle(this, Name, true,NameInfo);
         // 初始化控件
         setView();
         initListenner();

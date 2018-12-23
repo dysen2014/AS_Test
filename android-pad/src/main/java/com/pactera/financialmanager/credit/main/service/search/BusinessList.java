@@ -5,23 +5,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.HttpThread;
-import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
 import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
 import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.ui.ParentActivity;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -51,9 +47,11 @@ public class BusinessList extends ParentActivity implements PullLoadMoreRecycler
     PullLoadMoreRecyclerView pullLoadMore;
 
     private Context mContext;
-
-    private List<ListBusinessList> listData;
-    private String CustomerType, CustomerName, CertType, CertID, MobileTelephone, BusinessTypeBg, ClassifyResult, BusinessSum, OverDueDay;
+    int count;
+    private List<ListBusinessList> listData = new ArrayList<>();
+    private String CustomerType, CustomerName, CertType, CertID, MobileTelephone, BusinessTypeBg,
+            SortNo
+    , ClassifyResult, BusinessSum, OverDueDay;
 
     private Handler handler = new Handler() {
         @Override
@@ -67,30 +65,38 @@ public class BusinessList extends ParentActivity implements PullLoadMoreRecycler
                 return;
             }
             if (msg.obj != null) {
+                String json = null;
+                try {
+                    JSONObject jsonObject = HttpThread.parseJSON(msg.obj.toString());
+                    if (jsonObject.has("array")) {
+                        if (jsonObject.getString("array").equals("")) {
 
-                listData = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
-                initData(listData);
+                            tvHideData.setVisibility(View.VISIBLE);
+                            return;
+                        }
+                    }
+                    json = HttpThread.parseJSONWithGson(msg.obj.toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                List<ListBusinessList> list = HttpThread.parseList(json, ListBusinessList.class);
+                count = list.size();
+                for (ListBusinessList business : list) {
+                    listData.add(business);
+                }
+                if (listData != null && listData.size() > 0) {
+                    initData(listData);
+                }
             }
         }
     };
 
-    protected List<ListBusinessList> parseList(String jsonData) throws JsonSyntaxException {
-
-        if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
-            Gson gson = new Gson();
-
-            List<ListBusinessList> list = gson.fromJson(jsonData, new TypeToken<List<ListBusinessList>>() {
-            }.getType());
-
-            return list;
-        } else
-            return null;
-    }
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.query_list);
         ButterKnife.bind(this);
+        initTitle(this, "", false,"");
 
         initView();
         sendRequest();
@@ -102,7 +108,8 @@ public class BusinessList extends ParentActivity implements PullLoadMoreRecycler
         // , BusinessTypeBg:业务产品, CustomerName:客户名称,CustomerType:客户类型,MobileTelephone:手机号码, Balance:贷款余额,ActualMaturity:到期日期
         // ,ActualPutOutDate:发放日期,CertID:证件号码, CurPage:页码, PageSize:每页条数
         JSONObject jsonObject = ParamUtils.setParams("search", "crmBusinessQuery", new Object[]{ParamUtils.UserId, BusinessSum
-                , OverDueDay, CertType, "", "", ClassifyResult, BusinessTypeBg, CustomerName, CustomerType, MobileTelephone, ""
+                , OverDueDay, CertType, "", "", ClassifyResult, SortNo, CustomerName, CustomerType,
+                MobileTelephone, ""
                 , "", "", CertID, curPage, ParamUtils.pageSize}, 17);
         HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
     }
@@ -116,13 +123,24 @@ public class BusinessList extends ParentActivity implements PullLoadMoreRecycler
         CertType = bundle.getString("CertType");
         CertID = bundle.getString("CertID");
         MobileTelephone = bundle.getString("MobileTelephone");
-        BusinessTypeBg = bundle.getString("BusinessTypeBg");
+//        BusinessTypeBg = bundle.getString("BusinessTypeBg");
+        SortNo = bundle.getString("SortNo");
         ClassifyResult = bundle.getString("ClassifyResult");
         BusinessSum = bundle.getString("BusinessSum");
         OverDueDay = bundle.getString("OverDueDay");
 
         pullLoadMore.setGridLayout(2);
         pullLoadMore.setOnPullLoadMoreListener(this);
+        if (layBack != null) {
+            layBack.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    finish();
+                }
+            });
+        }
     }
 
     private void initData(final List<ListBusinessList> listData) {
@@ -153,6 +171,11 @@ public class BusinessList extends ParentActivity implements PullLoadMoreRecycler
             public void onLongClick(View view, Integer info) {
 
             }
+
+            @Override
+            public void onClick(View view, int position, int index) {
+
+            }
         }));
     }
 
@@ -172,14 +195,21 @@ public class BusinessList extends ParentActivity implements PullLoadMoreRecycler
 
     @Override
     public void onLoadMore() {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                curPage++;
-                sendRequest();
-                // 结束刷新
-                pullLoadMore.setPullLoadMoreCompleted();
-            }
-        }, 2000);
+        if (count != 0 && count % Integer.parseInt(ParamUtils.pageSize) == 0) {
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    curPage++;
+                    sendRequest();
+                    // 结束刷新
+                    pullLoadMore.setPullLoadMoreCompleted();
+                }
+            }, 2000);
+        } else {
+            toast("已全部加载完毕！");
+            // 结束刷新
+            pullLoadMore.setPullLoadMoreCompleted();
+        }
     }
 }

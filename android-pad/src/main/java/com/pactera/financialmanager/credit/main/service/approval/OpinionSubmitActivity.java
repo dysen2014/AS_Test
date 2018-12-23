@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.adapter.MyRecycleViewAdapter;
-import com.dysen.common_res.common.base.ParentActivity;
+import com.pactera.financialmanager.ui.ParentActivity;
 import com.dysen.common_res.common.utils.ActivityManagerApplication;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
@@ -64,13 +64,14 @@ public class OpinionSubmitActivity extends ParentActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
+            if (uberPgsview != null)
             uberPgsview.setVisibility(View.INVISIBLE);
+            if (tvHideData != null)
+                tvHideData.setVisibility(View.INVISIBLE);
             LogUtils.v(msg.obj.toString());
             try {
                 if (msg.obj != null) {
                     initData(msg);
-                } else {
-                    tvHideData.setVisibility(View.VISIBLE);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -114,6 +115,11 @@ public class OpinionSubmitActivity extends ParentActivity {
 
                     @Override
                     public void onLongClick(View view, String info) {
+
+                    }
+
+                    @Override
+                    public void onClick(View view, int position, int index) {
 
                     }
                 }));
@@ -183,6 +189,17 @@ public class OpinionSubmitActivity extends ParentActivity {
             jsonObject = ParamUtils.setParams("saveOpinion", "saveOpinion", new String[]{examineBeanList.get(index).getFlowTaskNo(),
                     examineBeanList.get(index).getObjectNo(), examineBeanList.get(index).getObjectType(), opinionContent, opinionType
                     , examineBeanList.get(index).getFlowNo(), examineBeanList.get(index).getPhaseNo(), "false", ParamUtils.UserIdApproval}, 9);
+        }
+
+        if (layBack != null) {
+            layBack.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    finish();
+                }
+            });
         }
     }
 

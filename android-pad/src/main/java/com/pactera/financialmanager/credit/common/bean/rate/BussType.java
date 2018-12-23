@@ -10,6 +10,7 @@ public class BussType {
     private String SortNo;
     private String key;
     private String value;
+    private String TypeProductML;
 
     public BussType(String TypeName, String TypeNo, String SortNo, String key, String value){
         this.TypeName = TypeName;
@@ -17,6 +18,14 @@ public class BussType {
         this.SortNo = SortNo;
         this.key = key;
         this.value = value;
+    }
+
+    public String getTypeProductML() {
+        return TypeProductML;
+    }
+
+    public void setTypeProductML(String typeProductML) {
+        TypeProductML = typeProductML;
     }
 
     public String getTypeName(){

@@ -1,28 +1,46 @@
 package com.pactera.financialmanager.ui;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.ocr.sdk.model.IDCardResult;
 import com.dysen.common_res.common.utils.FormatUtil;
 import com.dysen.common_res.common.utils.LogUtils;
+import com.jaeger.library.StatusBarUtil;
+import com.pactera.financialmanager.credit.common.ocr_new.IDCardInfoReaderActivity;
 import com.pactera.financialmanager.datetimepicker.DatePickerDialog;
 import com.pactera.financialmanager.datetimepicker.DatePickerDialog.OnDateSetListener;
 import com.pactera.financialmanager.datetimepicker.TimePickerDialog;
 import com.pactera.financialmanager.datetimepicker.TimePickerDialog.OnTimeSetListener;
 import com.pactera.financialmanager.ui.CitySelectWindow.CallBackCity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HRequest;
 import com.pactera.financialmanager.util.Constants;
@@ -35,6 +53,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 import q.rorbin.badgeview.QBadgeView;
+
+import static com.pactera.financialmanager.ui.ParentActivity.idCard;
 
 /**
  * Fragment模板框架
@@ -60,6 +80,109 @@ public class ParentFragment extends Fragment {
 				onConnected(msg);
 			}
 		};
+	}
+	public static void backActivity(final Activity activity, LinearLayout layBack) {
+		if (layBack != null) {
+			layBack.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					activity.finish();
+				}
+			});
+		}
+	}
+	public void CityPicker(View view, CitySelect.CallBackCitySelect callBackInf) {
+		CitySelect citySelect = new CitySelect(getActivity(), view);
+		citySelect.showCity(callBackInf);
+	}
+
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+							 Bundle savedInstanceState) {
+		TextView textView = new TextView(getActivity());
+
+
+		StatusBarUtil.setColor(getActivity(), Color.parseColor("#ea452f"), 0);
+		return textView;
+	}
+
+	public static class MyUtils{
+
+		public static void setSelItemColor(CardView view, @ColorInt int colorId) {
+
+//		LogUtils.d("colorId:"+colorId);
+			if (oldView == null) {
+				//第一次点击
+				oldView = view;
+				oldColor = view.getDrawingCacheBackgroundColor();//当前 iew 的颜色
+				view.setCardBackgroundColor(colorId);
+
+			} else {
+				//非第一次点击
+				//把上一次点击的 变化
+				oldView.setBackgroundResource(oldColor);
+				view.setCardBackgroundColor(Color.TRANSPARENT);
+
+				oldView = view;
+			}
+		}
+	}
+
+	public static class OCRUtils{
+
+	}
+	protected void openOCR() {
+
+		if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA) != PackageManager
+				.PERMISSION_GRANTED) {
+			//未授权
+			ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CAMERA}, 1);
+		} else {
+			Intent intent = new Intent(getActivity(), IDCardInfoReaderActivity.class);
+			startActivityForResult(intent, IDCardInfoReaderActivity.REQUEST_CODE_CAMERA);
+		}
+	}
+
+	protected void onAtyResult(int requestCode, int resultCode, Intent data, EditText customerName, EditText cardNumber) {
+
+		LogUtils.d("requestCode=" + requestCode + "\tresultCode=" + resultCode+"\tdata="+data);
+		if (requestCode == IDCardInfoReaderActivity.REQUEST_CODE_CAMERA) {
+			if (resultCode == Activity.RESULT_OK) {
+				if (data != null) {
+//                    IDCardResult idCard = (IDCardResult) data.getSerializableExtra(IDCardInfoReaderActivity
+//                            .KEY_ID_CARD);
+					if (idCard != null) {
+						LogUtils.d("idCard=" + idCard + "\tidCard.=" + idCard.getName());
+						setValue(idCard, customerName, cardNumber);
+					}
+				}
+			} else if (resultCode == Activity.RESULT_CANCELED) {
+				if (data != null) {
+					String str = data.getStringExtra(IDCardInfoReaderActivity
+							.KEY_NO_ID_CARD);
+					toast(str);
+//					ShowDialog(getActivity(), str);
+				}
+			}
+		}
+	}
+
+	private void setValue(IDCardResult idCard, EditText customerName, EditText cardNumber) {
+		if (idCard != null) {
+			// 设置页面信息
+			String name = idCard.getName().toString();
+			String cardNo = idCard.getIdNumber().toString();
+			if (!TextUtils.isEmpty(name)) {
+				customerName.setText(name);
+			}
+			if (!TextUtils.isEmpty(cardNo)) {
+				cardNumber.setText(cardNo);
+			}
+		} else {
+			toast("身份证信息识别失败");
+		}
 	}
 
 	@SuppressWarnings("deprecation")
@@ -304,8 +427,6 @@ public class ParentFragment extends Fragment {
 		}
 	}
 
-	private long lastTime = 0;
-
 	/**
 	 * Toast消息提示
 	 *
@@ -378,9 +499,70 @@ public class ParentFragment extends Fragment {
 		LogUtils.d("view==="+view);
 		QBadgeView badge = new QBadgeView(getActivity());
 		badge.bindTarget(view);
+		badge.setBadgeTextSize(16, true);
 		if (FormatUtil.isNumeric(text))
 			badge.setBadgeNumber(Integer.parseInt(text));
 		else
 			badge.setBadgeText(text);
+	}
+
+	protected static String getTypeName(String customerType) {
+
+		String name = "";
+		if (customerType.equals("010"))
+			name = "公";
+		if (customerType.equals("030"))
+			name = "个";
+		if (customerType.equals("040"))
+			name = "农";
+
+		return name;
+	}
+
+	private long lastTime = 0;
+
+	/**
+	 * Toast消息提示
+	 *
+	 * @param text
+	 */
+	public void toast(String text) {
+		// 2s内只提示一次
+		long currentTime = System.currentTimeMillis();
+		if (currentTime - lastTime > 2000) {
+			lastTime = currentTime;
+			Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
+		}
+	}
+
+	public void setBadgeView(View view, int count) {
+
+		QBadgeView badge = new QBadgeView(getContext());
+		badge.bindTarget(view);
+
+		badge.setBadgeNumber(count);
+	}
+
+
+	protected void syncScroll(final RecyclerView leftList,  final RecyclerView rightList) {
+		leftList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+			@Override
+			public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+				if (recyclerView.getScrollState() != RecyclerView.SCROLL_STATE_IDLE) {
+					// note: scrollBy() not trigger OnScrollListener
+					// This is a known issue. It is caused by the fact that RecyclerView does not know how LayoutManager will handle the scroll or if it will handle it at all.
+					rightList.scrollBy(dx, dy);
+				}
+			}
+		});
+
+		rightList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+			@Override
+			public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+				if (recyclerView.getScrollState() != RecyclerView.SCROLL_STATE_IDLE) {
+					leftList.scrollBy(dx, dy);
+				}
+			}
+		});
 	}
 }

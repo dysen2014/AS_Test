@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/common_bg_main_nologo"
-    android:orientation="vertical"
-    android:weightSum="1536">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/common_bg_main_nologo"
+              android:orientation="vertical"
+              android:weightSum="1536">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
         android:orientation="horizontal"
         android:visibility="visible">
 
-        <include layout="@layout/com_title" />
+        <include layout="@layout/com_title"/>
     </LinearLayout>
 
     <RelativeLayout
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:text="客户关键信息"
                 android:textColor="@color/brown"
-                android:textSize="25sp" />
+                android:textSize="25sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -64,7 +64,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/qy_btn_warn_person"
                     android:checked="true"
-                    android:text="个人" />
+                    android:text="个人"/>
 
                 <RadioButton
                     android:id="@+id/rbtn_warncommon"
@@ -73,7 +73,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/qy_btn_warn_common"
-                    android:text="对公" />
+                    android:text="对公"/>
             </RadioGroup>
         </LinearLayout>
 
@@ -107,7 +107,7 @@
                     android:singleLine="true"
                     android:text="客户姓名:"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/cusarchiving_step1_text2"
@@ -116,11 +116,11 @@
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@+id/cusarchiving_step1_cardtype"
                     android:gravity="right"
-                    android:paddingRight="5dp"
+                    android:paddingRight="8dp"
                     android:singleLine="true"
                     android:text="证件类别:"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:id="@+id/cusarchiving_step1_cardtype"
@@ -132,16 +132,16 @@
                     android:hint=" "
                     android:singleLine="true"
                     android:textColor="@color/black"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"/>
 
                 <EditText
                     android:id="@+id/cusarchiving_step1_cusname"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/cusarchiving_step1_text1"
                     android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/cusarchiving_step1_text1"
                     android:singleLine="true"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"/>
             </RelativeLayout>
 
             <LinearLayout
@@ -152,10 +152,10 @@
 
                 <Button
                     android:id="@+id/cusarchiving_step1_readID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/icon_readid" />
+                    android:background="@drawable/icon_readid"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -195,7 +195,7 @@
                         android:singleLine="true"
                         android:text="客户性别:"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"/>
 
                     <TextView
                         android:id="@+id/cusarchiving_step1_sextype"
@@ -208,7 +208,7 @@
                         android:hint=" "
                         android:singleLine="true"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"/>
 
                     <EditText
                         android:id="@+id/cusarchiving_step1_contactsname"
@@ -217,7 +217,7 @@
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/cusarchiving_step1_text3"
                         android:textSize="16sp"
-                        android:visibility="gone" />
+                        android:visibility="gone"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -237,7 +237,7 @@
                         android:singleLine="true"
                         android:text="证件号码:"
                         android:textColor="@color/black"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"/>
 
                     <EditText
                         android:id="@+id/cusarchiving_step1_cardnum"
@@ -246,7 +246,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
                         android:singleLine="true"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"/>
 
                 </LinearLayout>
             </LinearLayout>
@@ -288,7 +288,7 @@
                     android:text="电话号码:"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"/>
 
                 <EditText
                     android:id="@+id/cusarchiving_step1_phonenum"
@@ -300,7 +300,7 @@
                     android:maxLength="11"
                     android:singleLine="true"
                     android:textSize="16sp"
-                    android:visibility="invisible" />
+                    android:visibility="invisible"/>
 
                 <Button
                     android:id="@+id/cusarchiving_step1_nextbtn"
@@ -308,7 +308,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:background="@drawable/cusarchiving_step_next" />
+                    android:background="@drawable/cusarchiving_step_next"/>
             </RelativeLayout>
 
             <LinearLayout

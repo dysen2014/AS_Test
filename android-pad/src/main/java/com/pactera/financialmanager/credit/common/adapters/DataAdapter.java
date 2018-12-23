@@ -30,6 +30,13 @@ public class DataAdapter extends BaseAdapter {
 	private ChildDataAdapter childDataAdapter;
 	private LinearLayoutManager mLayoutManager;
 
+	public DataAdapter(Context context, List<List<Object>> list) {
+
+		mContext = context;
+		dataList = list;
+		childDataAdapter = new ChildDataAdapter(mContext);
+	}
+
 	public DataAdapter(Context context, List<List<Object>> list, OnItemClickCallback<Integer> onItemClickCallback) {
 
 		mContext = context;
@@ -88,6 +95,11 @@ public class DataAdapter extends BaseAdapter {
 
 			@Override
 			public void onLongClick(View view, Object info) {
+
+			}
+
+			@Override
+			public void onClick(View view, int position, int index) {
 
 			}
 		});

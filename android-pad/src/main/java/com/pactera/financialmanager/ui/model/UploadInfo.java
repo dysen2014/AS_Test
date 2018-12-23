@@ -18,6 +18,12 @@ public class UploadInfo {
 	// 标识
 	private String identifier;
 
+	public UploadInfo(String versionNO, String loadURL, String identifier) {
+		this.versionNO = versionNO;
+		this.loadURL = loadURL;
+		this.identifier = identifier;
+	}
+
 	public String getSoftID() {
 		return softID;
 	}

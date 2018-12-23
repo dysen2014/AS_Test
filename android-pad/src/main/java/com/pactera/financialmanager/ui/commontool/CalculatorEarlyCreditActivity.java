@@ -92,7 +92,7 @@ public class CalculatorEarlyCreditActivity extends ParentActivity implements
 		setContentView(R.layout.calculator_earlycredit);
 		findViews();
 		setListener();
-		initTitle(this,R.drawable.changyonggongju);
+		initTitle(this,"常用工具");
 	}
 
 	private void setListener() {

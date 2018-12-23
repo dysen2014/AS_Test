@@ -10,17 +10,16 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentFragment;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
+import com.dysen.common_res.common.utils.OnItemClick;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
 import com.dysen.common_res.common.views.TextViewMarquee;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
 import com.jwenfeng.library.pulltorefresh.BaseRefreshListener;
 import com.jwenfeng.library.pulltorefresh.PullToRefreshLayout;
 import com.pactera.financialmanager.R;
@@ -33,6 +32,7 @@ import com.pactera.financialmanager.credit.common.bean.InitData;
 import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView;
 import com.pactera.financialmanager.credit.main.warn.DataListActivity;
+import com.pactera.financialmanager.ui.ParentFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,8 +43,6 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-import static com.dysen.common_res.common.utils.HttpThread.parseList;
-
 /**
  * 关键人
  * Created by dysen on 2017/8/28.
@@ -52,261 +50,273 @@ import static com.dysen.common_res.common.utils.HttpThread.parseList;
 
 public class KeyPersonFragment extends ParentFragment implements BaseRefreshListener {
 
-	@Bind(R.id.left_top_item_tv)
-	TextViewMarquee leftTopItemTv;
-	@Bind(R.id.top_data)
-	RecyclerView topData;
-	@Bind(R.id.header_horizontal)
-	SyncHorizontalScrollView headerHorizontal;
-	@Bind(R.id.left_data)
-	RecyclerView leftData;
-	@Bind(R.id.lv_data)
-	RecyclerView lvData;
-	@Bind(R.id.data_horizontal)
-	SyncHorizontalScrollView dataHorizontal;
-	@Bind(R.id.ptr_layout)
-	PullToRefreshLayout ptrLayout;
-	@Bind(R.id.progress_loading)
-	ProgressBar progressLoading;
+    @Bind(R.id.left_top_item_tv)
+    TextViewMarquee leftTopItemTv;
+    @Bind(R.id.top_data)
+    RecyclerView topData;
+    @Bind(R.id.header_horizontal)
+    SyncHorizontalScrollView headerHorizontal;
+    @Bind(R.id.left_data)
+    RecyclerView leftData;
+    @Bind(R.id.lv_data)
+    RecyclerView lvData;
+    @Bind(R.id.data_horizontal)
+    SyncHorizontalScrollView dataHorizontal;
+    @Bind(R.id.ptr_layout)
+    PullToRefreshLayout ptrLayout;
+    @Bind(R.id.progress_loading)
+    ProgressBar progressLoading;
+    @Bind(R.id.ll_lay)
+    LinearLayout llLay;
+    @Bind(R.id.tv_hide_data)
+    TextView tvHideData;
 
-	private TopDataAdapter mTopDataAdapter;
-	private DataAdapter mDataAdapter;
-	private LinearLayoutManager mLayoutManager;
-	private ChildDataAdapter childDataAdapter;
-	private LeftAdapter mLeftAdapter;
+    private TopDataAdapter mTopDataAdapter;
+    private DataAdapter mDataAdapter;
+    private LinearLayoutManager mLayoutManager;
+    private ChildDataAdapter childDataAdapter;
+    private LeftAdapter mLeftAdapter;
 
-	private List<String> mListLeft = new ArrayList<>();
-	private List<String> mListTop = new ArrayList<>();
-	private List<List<Object>> mListData = new ArrayList<>();
+    private List<String> mListLeft = new ArrayList<>();
+    private List<String> mListTop = new ArrayList<>();
+    private List<List<String>> mListData = new ArrayList<>();
 
-	private int index1;
-	final int PAGE_SIZE = 10;
-	int curPage = 1;
-	private List<BeanHeader> beanListHeader = new ArrayList<>();
-	private List<KeyPersonBean.Customer> listCustomer = new ArrayList<>();
-	private List<KeyPersonBean.Business> listBusiness = new ArrayList<>();
-	private String customerId, customerType;
-	private boolean flagCustomer;
+    private int index1;
+    final int PAGE_SIZE = 10;
+    int CurPage = 1;
+    private List<BeanHeader> beanListHeader = new ArrayList<>();
+    private List<KeyPersonBean.Customer> listCustomer = new ArrayList<>();
+    private List<KeyPersonBean.Business> listBusiness = new ArrayList<>();
+    private String customerId, customerType;
+    private boolean flagCustomer;
 
-	private Handler handler = new Handler() {
-		@SuppressWarnings("unchecked")
-		@Override
-		public void handleMessage(Message msg) {
-			super.handleMessage(msg);
+    private Handler handler = new Handler() {
+        @SuppressWarnings("unchecked")
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (msg.obj != null) {
 
-			if (msg.obj != null) {
-
-				try {
-					parseJSONWithGson((String) msg.obj, mHandler);
-				} catch (JSONException e) {
-					e.printStackTrace();
-				}
+                try {
+                    parseJSONWithGson((String) msg.obj, mHandler);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
 //				progressLoading.setVisibility(View.GONE);
-			}
-		}
-	};
+            }
+        }
+    };
 
-	private void parseJSONWithGson(String jsonData, Handler handler) throws JSONException {
-		if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
-			JSONObject jsonObject2 = new JSONObject(jsonData);
-			String jsonArray = "";
+    private void parseJSONWithGson(String jsonData, Handler handler) throws JSONException {
+        if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
+            JSONObject jsonObject2 = new JSONObject(jsonData);
+            String jsonArray = "";
 
-			String jsonHeader = jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("header").toString();
-			if (flagCustomer) {
-				jsonArray = jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("IndRelative").toString();
-			} else {
-				jsonArray = jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("EntRelative").toString();
-			}
-//			LogUtils.d(jsonHeader + "========json parse==========" + jsonArray);
-			Message msg = new Message();
-			Bundle bundle = new Bundle();
-			bundle.putString("header", jsonHeader);
-			bundle.putString("data", jsonArray);
-			msg.setData(bundle);
-			handler.sendMessage(msg);
-		} else
-			return;
-	}
+            String jsonHeader = jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("header").toString();
+            if (flagCustomer) {
+                jsonArray = jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("IndRelative").toString();
+            } else {
+                jsonArray = jsonObject2.getJSONObject("ResponseParams").getJSONArray("array").getJSONObject(0).getJSONArray("EntRelative").toString();
+            }
+            LogUtils.d(jsonHeader + "========json parse==========" + jsonArray);
+            Message msg = new Message();
+            Bundle bundle = new Bundle();
+            bundle.putString("header", jsonHeader);
+            bundle.putString("data", jsonArray);
+            msg.setData(bundle);
+            handler.sendMessage(msg);
+        } else
+            return;
+    }
 
-	Handler mHandler = new Handler() {
-		@Override
-		public void handleMessage(Message msg) {
-			super.handleMessage(msg);
+    private int count;
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
 
 //			LogUtils.d(msg.getData() + "=============================================" + msg.obj);
-			if (msg.getData() != null) {
-				Bundle bundle = msg.getData();
-				progressLoading.setVisibility(View.GONE);
-				beanListHeader = parseListHeader(bundle.getString("header"));
-				List<KeyPersonBean> list = parseList(bundle.getString("data"));
-				if (flagCustomer)
-					listCustomer = parseListCustomer(bundle.getString("data"));
-				else
-					listBusiness = parseListBusiness(bundle.getString("data"));
+            if (msg.getData() != null) {
+                Bundle bundle = msg.getData();
+                progressLoading.setVisibility(View.GONE);
+                beanListHeader = HttpThread.parseList(bundle.getString("header"), BeanHeader.class);
+                List<KeyPersonBean> list = HttpThread.parseList(bundle.getString("data"),
+                        KeyPersonBean.class);
 
-				if (beanListHeader != null && beanListHeader.size() > 0) {
+                count = list.size();
+                if (count == 0) {
+                    tvHideData.setVisibility(View.VISIBLE);
+                }
+                if (flagCustomer)
+                    listCustomer = HttpThread.parseList(bundle.getString("data"), KeyPersonBean
+                            .Customer.class);
+                else
+                    listBusiness = HttpThread.parseList(bundle.getString("data"), KeyPersonBean
+                            .Business.class);
+
+                if (beanListHeader != null && beanListHeader.size() > 0) {
 //					LogUtils.d(beanListHeader.get(0).getNAME() + "-----------------------errfegfer------------------" + beanListHeader.size());
-					initView();
-				}
-			}
-		}
-	};
+                    initView();
+                }
+            }
+        }
+    };
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-	protected List<BeanHeader> parseListHeader(String jsonData) throws JsonSyntaxException {
+        View view = inflater.inflate(R.layout.fragment_key_person, container, false);
+        ButterKnife.bind(this, view);
+        syncScroll(leftData, lvData);
 
-		if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
-			Gson gson = new Gson();
-			LogUtils.d("jsonData===============" + jsonData);
-			List<BeanHeader> list = gson.fromJson(jsonData, new TypeToken<List<BeanHeader>>() {
-			}.getType());
+        if (QueryDetails.type.equals("customer")) {
+            customerType = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerType();
+            customerId = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerId();
+        } else if (QueryDetails.type.equals("approval_business")) {
+            customerType = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerType();
+            customerId = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerID();
+        }
+        if (customerType.equals("030") || customerType.equals("040")) {
+            flagCustomer = true;
+        } else {
+            flagCustomer = false;
+        }
+        LogUtils.d("flagCustomer:" + flagCustomer + "\tCustomerId:" + customerId + "\tCustomerType:" + customerType);
+        sendRequest();
+        return view;
+    }
 
-			return list;
-		} else
-			return null;
-	}
+    public void syncScroll(final RecyclerView leftList, final RecyclerView rightList) {
+        leftList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (recyclerView.getScrollState() != RecyclerView.SCROLL_STATE_IDLE) {
+                    // note: scrollBy() not trigger OnScrollListener
+                    // This is a known issue. It is caused by the fact that RecyclerView does not know how LayoutManager will handle the scroll or if it will handle it at all.
+                    rightList.scrollBy(dx, dy);
+                }
+            }
+        });
 
-	protected List<KeyPersonBean.Customer> parseListCustomer(String jsonData) throws JsonSyntaxException {
+        rightList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (recyclerView.getScrollState() != RecyclerView.SCROLL_STATE_IDLE) {
+                    leftList.scrollBy(dx, dy);
+                }
+            }
+        });
+    }
 
-		if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
-			Gson gson = new Gson();
+    private void sendRequest() {
 
-			List<KeyPersonBean.Customer> list = gson.fromJson(jsonData, new TypeToken<List<KeyPersonBean.Customer>>() {
-			}.getType());
+        JSONObject jsonObject = ParamUtils.setParams("CustomerSearch", "crmEntKeyman", new Object[]{customerId, customerType, CurPage, PAGE_SIZE}, 4);
+        HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
+    }
 
-			return list;
-		} else
-			return null;
-	}
-
-	protected List<KeyPersonBean.Business> parseListBusiness(String jsonData) throws JsonSyntaxException {
-
-		if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
-			Gson gson = new Gson();
-
-			List<KeyPersonBean.Business> list = gson.fromJson(jsonData, new TypeToken<List<KeyPersonBean.Business>>() {
-			}.getType());
-
-			return list;
-		} else
-			return null;
-	}
-
-
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-		View view = inflater.inflate(R.layout.fragment_key_person, container, false);
-		ButterKnife.bind(this, view);
-
-		if (QueryDetails.type.equals("customer")){
-			customerType = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerType();
-			customerId = QueryDetails.listCustomer.get(BusinessDetails.index).getCustomerId();
-		}else if (QueryDetails.type.equals("business")){
-			customerType = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerType();
-			customerId = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerID();
-		}
-		if (customerType.equals("030") || customerType.equals("040")){
-			flagCustomer = true;
-		}else {
-			flagCustomer = false;
-		}
-LogUtils.d("flagCustomer:"+flagCustomer+"\tCustomerId:"+customerId+"\tCustomerType:"+customerType);
-		sendRequest();
-		return view;
-	}
-
-	private void sendRequest() {
-
-		JSONObject jsonObject = ParamUtils.setParams("CustomerSearch", "crmEntKeyman", new Object[]{customerId, customerType, curPage, PAGE_SIZE}, 4);
-		HttpThread.sendRequestWithOkHttp(ParamUtils.url, jsonObject, handler);
-	}
-
-	private void initData() {
-		mListTop = InitData.getTopHeaderData(beanListHeader);
-		if (listCustomer != null && listCustomer.size()>0) {
-			mListLeft = InitData.getLeftHeaderData(listCustomer.size());
-			mListData = InitData.KeyPerson.getCellDataCustomer(beanListHeader, listCustomer);
-		}
-		if (listBusiness != null && listBusiness.size()>0) {
-			mListLeft = InitData.getLeftHeaderData(listBusiness.size());
-			mListData = InitData.KeyPerson.getCellDataBusiness(beanListHeader, listBusiness);
-		}
+    private void initData() {
+        mListTop = InitData.getTopHeaderData(beanListHeader);
+        if (listCustomer != null && listCustomer.size() > 0) {
+            mListLeft = InitData.getLeftHeaderData(listCustomer.size());
+            mListData = InitData.KeyPerson.getCellDataCustomer(beanListHeader, listCustomer);
+        }
+        if (listBusiness != null && listBusiness.size() > 0) {
+            mListLeft = InitData.getLeftHeaderData(listBusiness.size());
+            mListData = InitData.KeyPerson.getCellDataBusiness(beanListHeader, listBusiness);
+        }
 
 //		if (topName.size()>0) {
 //			commonTxt0.setVisibility(View.VISIBLE);
 //			commonTxt0.setText(topName.get(0));
 //		}
 //		setSelectView(commonTxt0, index1);
-	}
+    }
 
 
-	private void initView() {
-		headerHorizontal.setScrollView(dataHorizontal);
-		dataHorizontal.setScrollView(headerHorizontal);
-
+    private void initView() {
+        headerHorizontal.setScrollView(dataHorizontal);
+        dataHorizontal.setScrollView(headerHorizontal);
+        llLay.setVisibility(View.VISIBLE);
 //		commonTxtRlv2.setVisibility(View.VISIBLE);
-		initData();
-		mTopDataAdapter = new TopDataAdapter(getActivity(), mListTop);
-		mLeftAdapter = new LeftAdapter(getActivity(), mListLeft);
+        initData();
+        mTopDataAdapter = new TopDataAdapter(getActivity(), mListTop, new OnItemClick() {
+            @Override
+            public void onClick(View view, Object obj, TextView item_tv) {
 
-		setRecyclerView(topData).setAdapter(mTopDataAdapter);
-		setRecyclerView(leftData, 1).setAdapter(mLeftAdapter);
+            }
+        });
+        mLeftAdapter = new LeftAdapter(getActivity(), mListLeft);
+
+        setRecyclerView(topData).setAdapter(mTopDataAdapter);
+        setRecyclerView(leftData, 1).setAdapter(mLeftAdapter);
 //        lvData.setAdapter(mDataAdapter);
-		setRecyclerView(lvData, 1).setAdapter(new DataAdapterNew(getActivity(), mListData, new OnItemClickCallback<Integer>() {
-			@Override
-			public void onClick(View view, Integer info) {
+        setRecyclerView(lvData, 1).setAdapter(new DataAdapterNew(getActivity(), mListData, new OnItemClickCallback<Integer>() {
+            @Override
+            public void onClick(View view, Integer info) {
 
-				List<String> listDataName = mListTop;
-				List<Object> listDataValue = null;
-				listDataValue = mListData.get(info);
-				DataListActivity.setData(listDataName, listDataValue);
+                List<String> listDataName = mListTop;
+                List<String> listDataValue = null;
+                listDataValue = mListData.get(info);
+                DataListActivity.setData(listDataName, listDataValue);
 //				setSelectorItemColor(view, R.color.colorAccent);
-				Intent intent = new Intent(getActivity(), DataListActivity.class);
-				startActivity(intent);
-			}
+                Intent intent = new Intent(getActivity(), DataListActivity.class);
+                startActivity(intent);
+            }
 
-			@Override
-			public void onLongClick(View view, Integer info) {
+            @Override
+            public void onLongClick(View view, Integer info) {
 
-			}
-		}));
+            }
 
-		ptrLayout.setRefreshListener(this);
-	}
+            @Override
+            public void onClick(View view, int position, int index) {
 
-	@Override
-	public void refresh() {
-		new Handler().postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				curPage = 1;
-				listCustomer.clear();
-				listBusiness.clear();
-				sendRequest();
-				// 结束刷新
-				ptrLayout.finishRefresh();
-			}
-		}, 2000);
-	}
+            }
+        }));
+        ((LinearLayoutManager) lvData.getLayoutManager()).scrollToPositionWithOffset(Integer.parseInt(ParamUtils.pageSize) * (CurPage - 1), 0);
+        ((LinearLayoutManager) leftData.getLayoutManager()).scrollToPositionWithOffset(Integer.parseInt
+                (ParamUtils.pageSize) * (CurPage - 1), 0);
+        ptrLayout.setRefreshListener(this);
+        QueryDetails.layBacks.setEnabled(true);
+    }
 
-	@Override
-	public void loadMore() {
-		new Handler().postDelayed(new Runnable() {
-			@Override
-			public void run() {
-				curPage++;
-				sendRequest();
-				// 结束加载更多
-				ptrLayout.finishLoadMore();
-			}
-		}, 2000);
-	}
+    @Override
+    public void refresh() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                CurPage = 1;
+                listCustomer.clear();
+                listBusiness.clear();
+                sendRequest();
+                // 结束刷新
+                ptrLayout.finishRefresh();
+            }
+        }, 2000);
+    }
 
-	@Override
-	public void onDestroyView() {
-		super.onDestroyView();
-		ButterKnife.unbind(this);
-	}
+    @Override
+    public void loadMore() {
+        if (count % Integer.parseInt(ParamUtils.pageSize) == 0) {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    CurPage++;
+                    sendRequest();
+                    // 结束加载更多
+                    ptrLayout.finishLoadMore();
+                }
+            }, 2000);
+        } else {
+            toast("已全部加载完毕！");
+            ptrLayout.finishLoadMore();
+        }
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
 }

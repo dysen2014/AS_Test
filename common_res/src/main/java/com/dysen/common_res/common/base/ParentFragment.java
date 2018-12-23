@@ -4,9 +4,11 @@ package com.dysen.common_res.common.base;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.DrawableRes;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
@@ -20,7 +22,6 @@ import android.widget.Toast;
 import com.dysen.common_res.R;
 import com.dysen.common_res.common.utils.DialogAlert;
 import com.dysen.common_res.common.utils.FormatUtil;
-import com.dysen.common_res.common.utils.LogUtils;
 import com.jaeger.library.StatusBarUtil;
 
 import q.rorbin.badgeview.QBadgeView;
@@ -31,6 +32,7 @@ import q.rorbin.badgeview.QBadgeView;
 public class ParentFragment extends Fragment {
 
 
+    protected int curPage = 1;
     private LinearLayoutManager mLayoutManager;
 
     public ParentFragment() {
@@ -43,7 +45,30 @@ public class ParentFragment extends Fragment {
         TextView textView = new TextView(getActivity());
 
         StatusBarUtil.setColor(getActivity(), Color.parseColor("#ea452f"), 0);
+
         return textView;
+    }
+
+    public static class MyUtils{
+
+        public static void setSelItemColor(CardView view, @ColorInt int colorId) {
+
+//		LogUtils.d("colorId:"+colorId);
+            if (oldView == null) {
+                //第一次点击
+                oldView = view;
+                oldColor = view.getDrawingCacheBackgroundColor();//当前 iew 的颜色
+                view.setCardBackgroundColor(colorId);
+
+            } else {
+                //非第一次点击
+                //把上一次点击的 变化
+                oldView.setBackgroundResource(oldColor);
+                view.setCardBackgroundColor(Color.TRANSPARENT);
+
+                oldView = view;
+            }
+        }
     }
 
     protected static String getTypeName(String customerType) {
@@ -80,15 +105,19 @@ public class ParentFragment extends Fragment {
             //第一次点击
             oldView = view;
             oldColor = view.getDrawingCacheBackgroundColor();//当前 iew 的颜色
-            view.setBackgroundResource(colorId <= Long.parseLong("7F000000", 16) ? R.color.common_yellow : colorId);
+
+                view.setBackgroundResource(colorId <= Long.parseLong("7F000000", 16) ? R.color
+                        .common_yellow : colorId);
         } else {
             //非第一次点击
             //把上一次点击的 变化
             oldView.setBackgroundResource(oldColor);
-            view.setBackgroundResource(colorId <= Long.parseLong("7F000000", 16) ? R.color.common_yellow : colorId);
+                view.setBackgroundResource(colorId <= Long.parseLong("7F000000", 16) ? R.color
+                        .common_yellow : colorId);
             oldView = view;
         }
     }
+
     public static void setSelectorItemColor(View view, @ColorRes @DrawableRes int colorId, @ColorRes @DrawableRes int oldColorId) {
 
 //		LogUtils.d("colorId:"+colorId);
@@ -96,15 +125,19 @@ public class ParentFragment extends Fragment {
             //第一次点击
             oldView = view;
             oldColor = oldColorId;//当前 iew 的颜色
-            view.setBackgroundResource(colorId <= Long.parseLong("7F000000", 16) ? com.dysen.common_res.R.color.common_yellow : colorId);
+
+            view.setBackgroundResource(colorId <= Long.parseLong("7F000000", 16) ? R.color
+                    .common_yellow : colorId);
         } else {
             //非第一次点击
             //把上一次点击的 变化
             oldView.setBackgroundResource(oldColor);
-            view.setBackgroundResource(colorId <= Long.parseLong("7F000000", 16) ? com.dysen.common_res.R.color.common_yellow : colorId);
+            view.setBackgroundResource(colorId <= Long.parseLong("7F000000", 16) ? R.color
+                    .common_yellow : colorId);
             oldView = view;
         }
     }
+
     private long lastTime = 0;
 
     /**
@@ -112,7 +145,7 @@ public class ParentFragment extends Fragment {
      *
      * @param text
      */
-    public void toast(CharSequence text) {
+    public void toast(String text) {
         // 2s内只提示一次
         long currentTime = System.currentTimeMillis();
         if (currentTime - lastTime > 2000) {
@@ -120,6 +153,7 @@ public class ParentFragment extends Fragment {
             Toast.makeText(getActivity(), text, Toast.LENGTH_SHORT).show();
         }
     }
+
     protected boolean checkObjValid(Object obj) {
         if (obj != null)
             return true;
@@ -127,9 +161,10 @@ public class ParentFragment extends Fragment {
             return false;
     }
 
-    protected void backActivity(View v){
-        getActivity().finish();
-    }
+//    protected void backActivity(View v) {
+//        getActivity().finish();
+//    }
+
     protected RecyclerView setRecyclerView(RecyclerView recyclerView) {
 
         //设置固定大小
@@ -199,14 +234,48 @@ public class ParentFragment extends Fragment {
         }
     }
 
-    public void setBadgeView(View view, String text) {
+    public void setBadgeView(View view, int count) {
 
-        LogUtils.d("view==="+view);
         QBadgeView badge = new QBadgeView(getContext());
         badge.bindTarget(view);
-        if (FormatUtil.isNumeric(text))
-            badge.setBadgeNumber(Integer.parseInt(text));
-        else
-            badge.setBadgeText(text);
+
+        badge.setBadgeTextSize(16, true);
+        badge.setBadgeNumber(count);
+    }
+
+    public void setBadgeView(View view, String text) {
+
+        QBadgeView badge = new QBadgeView(getContext());
+        badge.bindTarget(view);
+        badge.setBadgeTextSize(16, true);
+        if (!text.equals(""))
+            if (FormatUtil.isNumeric(text))
+                badge.setBadgeNumber(Integer.parseInt(text));
+            else
+                badge.setBadgeText(text);
+        else return;
+    }
+
+
+    protected void syncScroll(final RecyclerView leftList, final RecyclerView rightList) {
+        leftList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (recyclerView.getScrollState() != RecyclerView.SCROLL_STATE_IDLE) {
+                    // note: scrollBy() not trigger OnScrollListener
+                    // This is a known issue. It is caused by the fact that RecyclerView does not know how LayoutManager will handle the scroll or if it will handle it at all.
+                    rightList.scrollBy(dx, dy);
+                }
+            }
+        });
+
+        rightList.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                if (recyclerView.getScrollState() != RecyclerView.SCROLL_STATE_IDLE) {
+                    leftList.scrollBy(dx, dy);
+                }
+            }
+        });
     }
 }

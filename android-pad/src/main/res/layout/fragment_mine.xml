@@ -4,7 +4,8 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <include layout="@layout/common_title_layout"/>
+    <include layout="@layout/common_title_layout"
+        android:visibility="gone"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,18 +23,18 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
-                    android:background="@drawable/mine_bg"/>
+                    android:background="@mipmap/mine_bg"/>
 
                 <ImageView
                     android:layout_width="128dp"
                     android:layout_height="128dp"
                     android:layout_gravity="bottom|center_horizontal"
-                    android:src="@drawable/mine_img"/>
+                    android:src="@mipmap/mine_img"/>
             </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="116dp"
+                android:layout_height="152dp"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -41,36 +42,15 @@
                     android:id="@+id/mine_text_name"
                     style="@style/common_mine_text"
                     android:layout_height="36dp"
-                    android:hint="张三\t4201231999××××1234"
                     android:textSize="36px"/>
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/CRM_text_name"
                     style="@style/common_mine_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal">
+                    android:layout_height="36dp"
+                    android:textColor="@color/black"
+                    android:textSize="36px"/>
 
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:gravity="right|center_vertical"
-                        android:text="所属营业部:"
-                        android:textColor="#999999"
-                        android:textSize="32px"
-                        />
-
-                    <TextView
-                        android:id="@+id/mine_text_org"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="16dp"
-                        android:layout_weight="3"
-                        android:gravity="center_vertical"
-                        android:hint="×××支行"
-                        android:textSize="32px"/>
-                </LinearLayout>
 
                 <LinearLayout
                     style="@style/common_mine_text"
@@ -85,6 +65,7 @@
                         android:layout_weight="2"
                         android:gravity="right|center_vertical"
                         android:text="信贷系统ID:"
+                        android:visibility="gone"
                         android:textColor="#999999"
                         android:textSize="32px"/>
 
@@ -94,9 +75,36 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="16dp"
                         android:layout_weight="3"
-                        android:hint="信贷系统帐号BG123321"
-                        android:textColor="#fbfbfb"
-                        android:gravity="center_vertical"
+                        android:gravity="center_horizontal"
+                        android:textSize="32px"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/common_mine_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:visibility="gone"
+                        android:gravity="right|center_vertical"
+                        android:text="所属营业部:"
+                        android:textColor="#999999"
+                        android:textSize="32px"
+                        />
+
+                    <TextView
+                        android:id="@+id/mine_text_org"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="16dp"
+                        android:layout_weight="3"
+                        android:textColor="@color/black"
+                        android:gravity="center_horizontal"
                         android:textSize="32px"/>
                 </LinearLayout>
 
@@ -118,9 +126,10 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/txt_security_img"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/mine_security"/>
+                        android:background="@mipmap/mine_security"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -140,9 +149,10 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/txt_suggest_img"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/mine_suggest"/>
+                        android:background="@mipmap/mine_suggest"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -162,9 +172,10 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/txt_follow_img"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/mine_follow"/>
+                        android:background="@mipmap/mine_follow"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -184,9 +195,10 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/txt_memo_img"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/mine_memo"
+                        android:background="@mipmap/mine_memo"
                         android:gravity="center"/>
 
                     <TextView
@@ -207,9 +219,10 @@
                     android:gravity="center">
 
                     <TextView
+                        android:id="@+id/txt_about_img"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/mine_about"
+                        android:background="@mipmap/mine_about"
                         android:gravity="center"/>
 
                     <TextView
@@ -231,9 +244,10 @@
                     android:layout_marginRight="48dp">
 
                     <TextView
+                        android:id="@+id/tx_quit_img"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
-                        android:background="@drawable/mine_quit"/>
+                        android:background="@mipmap/mine_quit"/>
 
                     <TextView
                         android:layout_width="wrap_content"

@@ -22,7 +22,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.model.Deposit;
 import com.pactera.financialmanager.ui.service.HConnection;

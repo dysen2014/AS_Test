@@ -1,7 +1,5 @@
 package com.pactera.financialmanager.adapter;
 
-import java.util.List;
-
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,6 +10,8 @@ import android.widget.TextView;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.ui.model.MycusCommon;
 import com.pactera.financialmanager.util.NewCatevalue;
+
+import java.util.List;
 
 /**
  * 我的建档客户-对公客户

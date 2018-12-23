@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    >
+
+    <!--app:cardBackgroundColor这是设置背景颜色
+app:cardCornerRadius这是设置圆角大小
+app:cardElevation这是设置z轴的阴影
+app:cardMaxElevation这是设置z轴的最大高度值
+app:cardUseCompatPadding是否使用CompatPadding
+app:cardPreventCornerOverlap是否使用PreventCornerOverlap
+app:contentPadding 设置内容的padding
+app:contentPaddingLeft 设置内容的左padding
+app:contentPaddingTop 设置内容的上padding
+app:contentPaddingRight 设置内容的右padding
+app:contentPaddingBottom 设置内容的底padding-->
+    <android.support.v7.widget.CardView
+        style="@style/common_cardview"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="8dp"
+        android:id="@+id/card_item"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_warn_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/cardview_bg_boder"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/iv_img"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:padding="8dp"
+                    android:src="@drawable/warn_dkyy"
+                    android:layout_marginBottom="8dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:textSize="22sp"
+                    android:textColor="@color/common_right_txt"/>
+                <TextView
+                    android:id="@+id/tv_name_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginRight="10dp"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:textColor="@color/common_left_txt"/>
+            </LinearLayout>
+        </LinearLayout>
+            <ImageView
+                android:id="@+id/iv_trials"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:layout_gravity="right"
+                android:src="@mipmap/trials"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

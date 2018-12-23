@@ -18,8 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.pactera.financialmanager.KJHttp;
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.PullToRefreshLayout;
 import com.pactera.financialmanager.ui.PullToRefreshLayout.OnRefreshListener;
@@ -28,7 +29,6 @@ import com.pactera.financialmanager.ui.model.CustEvent;
 import com.pactera.financialmanager.ui.model.FinancialDemandInfo;
 import com.pactera.financialmanager.ui.nowproject.FinancialDemandItemDeailActivity;
 import com.pactera.financialmanager.ui.service.HConnection;
-import com.pactera.financialmanager.ui.service.HRequest;
 import com.pactera.financialmanager.ui.service.HResponse;
 import com.pactera.financialmanager.util.Constants;
 import com.pactera.financialmanager.util.InterfaceInfo;
@@ -38,7 +38,6 @@ import com.pactera.financialmanager.util.Tool;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.kymjs.kjframe.KJHttp;
 
 import java.util.ArrayList;
 import java.util.List;

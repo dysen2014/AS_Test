@@ -8,7 +8,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.pactera.financialmanager.db.Settings;
-import com.pactera.financialmanager.ui.LogoActivity;
 import com.pactera.financialmanager.ui.service.HRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

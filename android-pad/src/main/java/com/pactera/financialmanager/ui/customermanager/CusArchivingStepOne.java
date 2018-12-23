@@ -1,7 +1,10 @@
 package com.pactera.financialmanager.ui.customermanager;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -9,6 +12,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -19,17 +24,19 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.ocr.sdk.model.IDCardResult;
+import com.dysen.common_res.common.bean.BaiduBean;
+import com.dysen.common_res.common.utils.HttpThread;
+import com.guoguang.util.IdentityCardInfo;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.adapter.SpinnerAdapter;
 import com.pactera.financialmanager.adapter.SpinnerAdapter.CallBackItemClickListener;
-import com.pactera.financialmanager.ocr.OCRAnalysis;
+import com.pactera.financialmanager.credit.common.ocr_new.IDCardInfoReaderActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
-import com.pactera.financialmanager.ui.commontool.DeviceSettingActivity;
 import com.pactera.financialmanager.ui.model.BaseCustomerInfo;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HResponse;
 import com.pactera.financialmanager.util.BluetoothTools;
-import com.pactera.financialmanager.util.BluetoothUtil;
 import com.pactera.financialmanager.util.Constants.requestType;
 import com.pactera.financialmanager.util.IDCReaderSDK;
 import com.pactera.financialmanager.util.InterfaceInfo;
@@ -37,12 +44,12 @@ import com.pactera.financialmanager.util.LimitsUtil;
 import com.pactera.financialmanager.util.NewCatevalue;
 import com.pactera.financialmanager.util.RuleUtil;
 import com.pactera.financialmanager.util.Tool;
-import com.guoguang.util.IdentityCardInfo;
-import com.ym.idcard.reg.IDCard;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * 客户建档（第一步）
@@ -60,8 +67,8 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
     private RadioButton rbtnWarnPerson, rbtnWarnCommon;
     private Button btnReadID;// 读取身份证ID
     private Button nextBtn; // 下一步
-    private EditText cusName;// 客户姓名（对私）、企业名称（对公）
-    private EditText cardNum;// 证件号码
+    private EditText customerName;// 客户姓名（对私）、企业名称（对公）
+    private EditText cardNumber;// 证件号码
     private EditText cusPhone;// 电话号码（对私）、联络人电话（对公）
     private EditText contactsname;// 联络人姓名（对公）
     private TextView cardType;// 证件类型
@@ -75,11 +82,38 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
 
     private HConnection HCon, companyHConn;
     private final int returnIndex = 1, companyFlag = 2;
-    private MyHandler mHandler;
 
     // 读身份证信息
     private ProgressDialog progressDialogIDCard = null;
     BluetoothTools btt = null;
+
+    List<BaiduBean.TokenSuccess> tokenSuccesses;
+    List<BaiduBean.TokenError> tokenErrors;
+    Handler mHandler = new MyHandler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+
+            if (msg.what == -1){
+
+            }
+            else if (msg.what == -100){
+
+            }
+
+            if (msg.obj != null){
+                try {
+                    JSONObject jsonObject = HttpThread.parseJSON(msg.obj.toString(), "");
+                    tokenSuccesses = HttpThread.parseList(msg.obj.toString(), BaiduBean.TokenSuccess.class);
+                    tokenErrors = HttpThread.parseList(msg.obj.toString(), BaiduBean.TokenError.class);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    };
+    private IDCardResult idCard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,11 +121,12 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
         setContentView(R.layout.cusarchiving_step_1);
         // 初始化
         findViews();
-        OCRAnalysis.idCard = null;
         // 绑定监听器
         bindOnClickListener();
-        initTitle(this, R.drawable.customermanagercon);
-        mHandler = new MyHandler();
+        Intent intent = getIntent();
+        String Name = intent.getStringExtra("Name");
+        String NameInfo = intent.getStringExtra("NameInfo");
+        initTitle(this, Name, true,NameInfo);
         isPersonRight = LimitsUtil.checkUserLimit(this, LimitsUtil.T030201, false);
         isCommonRight = LimitsUtil.checkUserLimit(this, LimitsUtil.T030202, false);
         // 个人建档无权限，则显示对公状态
@@ -106,10 +141,9 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
     @Override
     protected void onResume() {
         super.onResume();
-        IDCard idCard = OCRAnalysis.idCard;
         if(idCard != null){
-            cusName.setText(idCard.getName());
-            cardNum.setText(idCard.getCardNo());
+            customerName.setText(idCard.getName().toString());
+            cardNumber.setText(idCard.getIdNumber().toString());
         }
     }
 
@@ -131,10 +165,10 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
             String Data = b.getString("CardData");
             byte[] PictureData = b.getByteArray("PictureData");
             int retCode = b.getInt("retCode");
-            String cusNam = b.getString("cusName");
-            String cardN = b.getString("cardNum");
-            cusName.setText(cusNam);
-            cardNum.setText(cardN);
+            String cusNam = b.getString("customerName");
+            String cardN = b.getString("cardNumber");
+            customerName.setText(cusNam);
+            cardNumber.setText(cardN);
             //text_view.append(Data);
             //text_view.setText(Data);
             Log.v("MyHandler", "IDCReaderSDK 1= " + retCode);
@@ -172,8 +206,8 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
         textinfo[4] = (TextView) findViewById(R.id.cusarchiving_step1_text5);
         btnReadID = (Button) findViewById(R.id.cusarchiving_step1_readID);
         nextBtn = (Button) findViewById(R.id.cusarchiving_step1_nextbtn);
-        cusName = (EditText) findViewById(R.id.cusarchiving_step1_cusname);
-        cardNum = (EditText) findViewById(R.id.cusarchiving_step1_cardnum);
+        customerName = (EditText) findViewById(R.id.cusarchiving_step1_cusname);
+        cardNumber = (EditText) findViewById(R.id.cusarchiving_step1_cardnum);
         cusPhone = (EditText) findViewById(R.id.cusarchiving_step1_phonenum);
         contactsname = (EditText) findViewById(R.id.cusarchiving_step1_contactsname);
         cardType = (TextView) findViewById(R.id.cusarchiving_step1_cardtype);
@@ -201,9 +235,9 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
      */
     private void creatData(int index) {
         if (index == 0) {
-            String custNameStr = cusName.getText().toString();//客户姓名
+            String custNameStr = customerName.getText().toString();//客户姓名
             String sexTypeStr = sexType.getText().toString();//客户性别
-            String cardNumberStr = cardNum.getText().toString();//身份证号码
+            String cardNumberStr = cardNumber.getText().toString();//身份证号码
             if (checkInputStr(custNameStr)) {
                 Toast.makeText(getApplicationContext(), "客户姓名不能为空！", Toast.LENGTH_SHORT).show();
                 return;
@@ -224,10 +258,10 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
             theNewCustomer.cust_psn_card_type = cardTypeID;
             setData(theNewCustomer.toJsonForPerson());
         } else if (index == 1) {
-            String cusNameStr = cusName.getText().toString().trim();// 姓名
+            String cusNameStr = customerName.getText().toString().trim();// 姓名
             String cardTypeStr = cardType.getText().toString();// 证件类型
             String contactsNameStr = contactsname.getText().toString().trim();// 联络人姓名
-            String cardNumStr = cardNum.getText().toString().trim();// 证件号码
+            String cardNumStr = cardNumber.getText().toString().trim();// 证件号码
             String cusPhoneNumStr = cusPhone.getText().toString().trim();// 联络人电话
             if (checkInputStr(cusNameStr)) {
                 Toast.makeText(getApplicationContext(), "请输入姓名", Toast.LENGTH_SHORT).show();
@@ -381,8 +415,8 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
             contactsname.setVisibility(View.GONE);
             sexType.setVisibility(View.VISIBLE);
             cardType.setText("");
-            cusName.setText("");
-            cardNum.setText("");
+            customerName.setText("");
+            cardNumber.setText("");
             cusPhone.setText("");
             contactsname.setText("");
             btnReadID.setVisibility(View.VISIBLE);
@@ -391,8 +425,8 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
             contactsname.setVisibility(View.VISIBLE);
             sexType.setVisibility(View.GONE);
             cardType.setText("");
-            cusName.setText("");
-            cardNum.setText("");
+            customerName.setText("");
+            cardNumber.setText("");
             cusPhone.setText("");
             contactsname.setText("");
             btnReadID.setVisibility(View.INVISIBLE);
@@ -436,8 +470,8 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
                         IdentityCardInfo idinfo = (IdentityCardInfo) msg.obj;
                         if (idinfo != null) {
                             Log.i("ID_TAG", "--->" + idinfo.getName());
-                            cusName.setText(idinfo.getName());
-                            cardNum.setText(idinfo.getNumber());
+                            customerName.setText(idinfo.getName());
+                            cardNumber.setText(idinfo.getNumber());
                         }
                     } else {
                         Toast.makeText(CusArchivingStepOne.this, "抱歉，身份证信息读取失败！", Toast.LENGTH_SHORT).show();
@@ -529,14 +563,58 @@ public class CusArchivingStepOne extends ParentActivity implements OnClickListen
                         btt.connectBluetooth(handler);
                     }
                 }*/
-                OCRAnalysis analysis = new OCRAnalysis(this);
-                analysis.takePhoto("IDCardinfoReaderActivity");
+//               toast("read id~~~~~~~~~~~~~~");
+                openOCR();
+//                getToken();
                 break;
                 default:
                     break;
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        onAtyResult(requestCode, resultCode, data, customerName, cardNumber);
+    }
+
+    //处理照片的数据
+    private void setValue(IDCardResult idCard){
+        this.idCard = idCard;
+        if (idCard != null) {
+            // 设置页面信息
+            String name = idCard.getName().toString();
+            String cardNo = idCard.getIdNumber().toString();
+            if(TextUtils.isEmpty(name)){
+                name = "";
+            }
+            if(TextUtils.isEmpty(cardNo)){
+                cardNo = "";
+            }
+            customerName.setText(name);
+            cardNumber.setText(cardNo);
+
+            // 自动查询相对应的值
+//                    if (checkQueryValue()) {
+//                        loading();
+//                        getCusDatas();
+//                    }
+        }else{
+            toast("身份证信息识别失败");
+        }
+    }
+
+    private void getToken() {
+
+        String clientId = "55B8huveEu1lzqgWIny1Pe8p";
+        String clientSecret = "BjrH4n6AMWpLi9n4Wt1yoZsUBqVf6are";
+        String url = "https://aip.baidubce" +
+                ".com/oauth/2.0/token?grant_type=client_credentials&client_id="+clientId
+                +"client_secret= "+clientSecret;
+
+        HttpThread.sendRequestGet(url, mHandler);
+    }
 
 
     /**

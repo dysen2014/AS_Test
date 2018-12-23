@@ -10,7 +10,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -41,7 +40,6 @@ import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.ui.ParentActivity;
-import com.pactera.financialmanager.ui.fragment.SigninFragment;
 import com.pactera.financialmanager.ui.model.Customer;
 import com.pactera.financialmanager.ui.model.SignRecordInfo;
 import com.pactera.financialmanager.ui.service.HConnection;
@@ -60,7 +58,6 @@ import java.util.Date;
 import java.util.List;
 
 import static com.baidu.mapapi.map.MapStatusUpdateFactory.newLatLng;
-import static org.kymjs.kjframe.ui.ViewInject.toast;
 
 /**
  * Created by dysen on 2017/8/24.
@@ -69,7 +66,7 @@ import static org.kymjs.kjframe.ui.ViewInject.toast;
 public class CheckIn extends ParentActivity implements View.OnClickListener {
 
     // MapView 是地图主控件
-    private MapView mMapView = null;
+    private MapView mMapView;
     // 定位、删除按钮
     private Button LocBtn, DelBtn;
     // 地图管理
@@ -109,7 +106,7 @@ public class CheckIn extends ParentActivity implements View.OnClickListener {
 
         setContentView(R.layout.fragmentmysignin);
 
-        findViews(conView);
+        findViews();
         setListener();
         // 获取地图控制
         mBaiduMap = mMapView.getMap();
@@ -209,11 +206,11 @@ public class CheckIn extends ParentActivity implements View.OnClickListener {
         DelBtn.setOnClickListener(this);
     }
 
-    private void findViews(View view) {
+    private void findViews() {
         factory = LayoutInflater.from(this);
-        mMapView = (MapView) view.findViewById(R.id.signin_bmapView);
-        LocBtn = (Button) view.findViewById(R.id.fm_mysignin_btn_loc);
-        DelBtn = (Button) view.findViewById(R.id.fm_mysignin_btn_del);
+        mMapView = (MapView) findViewById(R.id.signin_bmapView);
+        LocBtn = (Button) findViewById(R.id.fm_mysignin_btn_loc);
+        DelBtn = (Button) findViewById(R.id.fm_mysignin_btn_del);
 //		signinView = factory.inflate(R.layout.signin_marker_info, null);
 //
 //		signinInfo = (TextView) signinView

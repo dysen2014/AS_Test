@@ -23,7 +23,7 @@ import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.model.LatLng;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.ui.DeployDialog;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.model.CMMarketingActivity2CustomerInfo;
 import com.pactera.financialmanager.ui.model.CreateDeployInfo;
@@ -46,6 +46,9 @@ import org.json.JSONObject;
  */
 public class CMMarketingActivity2 extends ParentActivity implements
         OnClickListener {
+
+    public static final String IS_FORPERSON = "isForperson";
+    public static final String CUSTOMER_ID = "customerID";
 
     private RadioGroup rgrpTopTabs;
     private RadioButton rbtnInfo, rbtnPower, rbtnProduct;
@@ -86,7 +89,7 @@ public class CMMarketingActivity2 extends ParentActivity implements
     private boolean isForperson = true;
     private boolean isQuery = true;
     private boolean isOwener = false;
-
+    private boolean allocate = false;
 
     private boolean isCreateDeployNew = false;
     private QueryDeployInfo mDepoyInfo;
@@ -98,7 +101,7 @@ public class CMMarketingActivity2 extends ParentActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sch_cm2);
-        initTitle(this, R.drawable.hallword);
+        initTitle(this, "厅堂管理");
 
         initView();
         setListener();
@@ -108,8 +111,17 @@ public class CMMarketingActivity2 extends ParentActivity implements
         isForperson = this.getIntent().getBooleanExtra("isForperson", true);
         isQuery = this.getIntent().getBooleanExtra("isQuery", true);
 
-        if (!isQuery) {
+        if (!isForperson) {
             address_btn.setVisibility(View.GONE);
+        }
+
+        Bundle bundle = this.getIntent().getExtras();
+        if (bundle != null) {
+            if (!isForperson){
+                isForperson = bundle.getBoolean(IS_FORPERSON);
+            }
+            customerID = bundle.getString("custID");
+            allocate = bundle.getBoolean("allocate");
         }
 
         hiddentTabForCommon();//三个头部按钮的显示或隐藏
@@ -118,7 +130,7 @@ public class CMMarketingActivity2 extends ParentActivity implements
         queryDeploy();
 
         // 定位初始化
-        mLocClient = new LocationClient(this);
+        mLocClient = new LocationClient(getApplicationContext());
         mLocClient.registerLocationListener(myListener);
         LocationClientOption option = new LocationClientOption();
         option.setOpenGps(true);// 打开gps
@@ -224,17 +236,24 @@ public class CMMarketingActivity2 extends ParentActivity implements
             rgrpTopTabs.setVisibility(View.VISIBLE);
         }
     }
-//隐藏或显示客户购买力
-    private void showOrHideCustomerPower(String OwenerID) {
-        if (!LogoActivity.user.getUserCode().equals(OwenerID)) {
-            rbtnPower.setVisibility(View.GONE);
-            address_btn.setVisibility(View.GONE);// 上传地址
-            btn_apply_for_deploy.setVisibility(View.VISIBLE);// 申请调配
-        } else {
-            btn_apply_for_deploy.setVisibility(View.GONE);
-            address_btn.setVisibility(View.VISIBLE);
-            rbtnPower.setVisibility(View.VISIBLE);
 
+    //隐藏或显示客户购买力
+    private void showOrHideCustomerPower(String OwenerID) {
+
+        if (allocate) {
+            btn_apply_for_deploy.setVisibility(View.GONE);
+            address_btn.setVisibility(View.GONE);
+        } else {
+            if (!LogoActivity.user.getUserCode().equals(OwenerID)) {
+                rbtnPower.setVisibility(View.GONE);
+                address_btn.setVisibility(View.GONE);// 上传地址
+                btn_apply_for_deploy.setVisibility(View.VISIBLE);// 申请调配
+            } else {
+                btn_apply_for_deploy.setVisibility(View.GONE);
+                address_btn.setVisibility(View.VISIBLE);
+                rbtnPower.setVisibility(View.VISIBLE);
+
+            }
         }
     }
 
@@ -245,8 +264,11 @@ public class CMMarketingActivity2 extends ParentActivity implements
             if (!isForperson) {
                 requestType = InterfaceInfo.HALLFIRST_INFO_QUERY_COMMON;
             }
+
             customerInfoCon = RequestInfo(this, Constants.requestType.Search,
                     requestType, customerID, customerInfoFlag);
+
+
         }
     }
 
@@ -350,11 +372,11 @@ public class CMMarketingActivity2 extends ParentActivity implements
             } else if (index == createDeployFlag) {
                 changeDeployBtnBg(true);
                 queryDeploy();
-                Toast.makeText(this, tvCustomerName.getText().toString()+"   已发起调配申请", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, tvCustomerName.getText().toString() + "   已发起调配申请", Toast.LENGTH_SHORT).show();
             } else if (index == deleteDeployFlag) {
                 changeDeployBtnBg(false);
                 queryDeploy();
-                Toast.makeText(this, tvCustomerName.getText().toString()+"   取消调配", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, tvCustomerName.getText().toString() + "   取消调配", Toast.LENGTH_SHORT).show();
             }
         } else {
             customerinfo.setNodateStatus("\nerrorCode：" + code);
@@ -404,9 +426,9 @@ public class CMMarketingActivity2 extends ParentActivity implements
                 sex = NewCatevalue.getLabel(CMMarketingActivity2.this,
                         NewCatevalue.CONTACT_SEX, sex);
             }//int值不能超过11位
-            if (Tool.parseInt(customerinfo2.getCUST_PSN_CARD_NUMBER().substring(16,17))%2!=0) {
+            if (Tool.parseInt(customerinfo2.getCUST_PSN_CARD_NUMBER().substring(16, 17)) % 2 != 0) {
                 imvPhoto.setImageResource(R.drawable.archiving_person_info_head_man);
-            } else  {
+            } else {
                 imvPhoto.setImageResource(R.drawable.archiving_person_info_head_women);
             }
             tvCustomerName.setText(customerinfo2.getIDV_CHN_NM());
@@ -586,7 +608,8 @@ public class CMMarketingActivity2 extends ParentActivity implements
             dialog.show();
         }
     }
-//上传地址
+
+    //上传地址
     private void sendAddress() {
         // TODO Auto-generated method stub
         String CUSTTYPE = "01";// 客户类型(个人)

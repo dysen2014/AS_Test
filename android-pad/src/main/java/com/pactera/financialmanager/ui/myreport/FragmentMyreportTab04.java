@@ -27,13 +27,12 @@ import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.model.ComparatorCusttype;
 import com.pactera.financialmanager.ui.model.Proportion;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HResponse;
-import com.pactera.financialmanager.util.Catevalue;
 import com.pactera.financialmanager.util.Constants;
 import com.pactera.financialmanager.util.InterfaceInfo;
 import com.pactera.financialmanager.util.NewCatevalue;

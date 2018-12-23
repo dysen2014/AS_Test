@@ -34,8 +34,8 @@ import com.pactera.financialmanager.callback.BtnClickListener;
 import com.pactera.financialmanager.entity.PadQueueInfoBean;
 import com.pactera.financialmanager.ui.HeadRefreshListView;
 import com.pactera.financialmanager.ui.HeadRefreshListView.OnRefreshListener;
-import com.pactera.financialmanager.ui.LogoActivity;
-import com.pactera.financialmanager.ui.NewLoginActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
+import com.pactera.financialmanager.ui.login.NewLoginActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.dgfragment.MyCpDialogFragmentButtons;
 import com.pactera.financialmanager.ui.model.OtherLineChannelEntity;
@@ -132,7 +132,10 @@ public class HallFirstActivity extends ParentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.hall_first);
-		initTitle(this, R.drawable.hallword);
+		Intent intent = getIntent();
+		String Name = intent.getStringExtra("Name");
+		String NameInfo = intent.getStringExtra("NameInfo");
+		initTitle(this, Name, true,NameInfo);
 		
 		padQueueInfoBeanList = new ArrayList<PadQueueInfoBean>();
 		tmpCustome = new ArrayList<PadQueueInfoBean>();
@@ -416,10 +419,11 @@ public class HallFirstActivity extends ParentActivity implements
 					// TODO card level map to Bitm
 					Bitmap bitmapVipLevel = null;
 					String vipLevel = padQueueInfoBean.getVipLevel().trim();
+					Log.d("你到底是什么级别=======", "getView: "+vipLevel);
 					if("0".equals(vipLevel)){
-						//bitmapVipLevel = Tool.readBitMap(getApplicationContext(), R.drawable.putongka);//惠农卡2017/1/6号添加
+//						bitmapVipLevel = Tool.readBitMap(getApplicationContext(), R.drawable.putongkass);//惠农卡2017/1/6号添加
 					}else if("1".equals(vipLevel)) {
-						bitmapVipLevel = Tool.readBitMap(getApplicationContext(), R.drawable.putongka);//福满社区卡2017/1/6号添加
+						bitmapVipLevel = Tool.readBitMap(getApplicationContext(), R.drawable.fuckyou);//福满社区卡2017/1/6号添加
 					}else if ("2".equals(vipLevel)) {
 						bitmapVipLevel = Tool.readBitMap(getApplicationContext(), R.drawable.goldcard1);//黄金卡
 					} else if ("3".equals(vipLevel)) {

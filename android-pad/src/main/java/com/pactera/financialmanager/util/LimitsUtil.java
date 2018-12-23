@@ -103,7 +103,8 @@ public class LimitsUtil {
 	 * @return
 	 */
 	public static boolean checkUserLimit(Context context, String rightStr) {
-		boolean isRight = checkUserLimit(context, rightStr, true);
+//		boolean isRight = checkUserLimit(context, rightStr, true);
+		boolean isRight = checkUserLimit(context, rightStr, false);
 		return isRight;
 	}
 	
@@ -145,7 +146,6 @@ public class LimitsUtil {
 			dialog.setMsg("接口返回权限有误！！！");
 			return false;
 		}
-
 		// 循环判断是否有此权限
 		for (String limit : userLimits) {
 			if (limit.equals(rightStr)) {

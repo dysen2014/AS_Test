@@ -15,6 +15,9 @@ public class FormatUtil {
      * 验证手机格式
      */
     public static boolean isMobileNO(String mobiles) {
+
+        if (mobiles.equals(""))
+            return false;
 		/*
 	    移动：134、135、136、137、138、139、150、151、157(TD)、158、159、187、188、178
 	    联通：130、131、132、152、155、156、185、186、176
@@ -32,6 +35,9 @@ public class FormatUtil {
      * @return
      */
     public static boolean isEmail(String email) {
+
+        if (email.equals(""))
+            return false;
         String str = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
         Pattern p = Pattern.compile(str);
         Matcher m = p.matcher(email);
@@ -45,6 +51,9 @@ public class FormatUtil {
      * @return
      */
     public static boolean isNumeric(String str) {
+
+        if (str.equals(""))
+            return false;
         Pattern pattern = Pattern.compile("[0-9]*");
         Matcher isNum = pattern.matcher(str);
         if (!isNum.matches()) {
@@ -57,6 +66,8 @@ public class FormatUtil {
      * 判断身份证格式
      */
     public static boolean isIdCardNo(String idNum){
+        if (idNum.equals(""))
+            return false;
         //定义判别用户身份证号的正则表达式（要么是15位或18位，最后一位可以为字母）
         Pattern idNumPattern = Pattern.compile("(\\d{14}[0-9a-zA-Z])|(\\d{17}[0-9a-zA-Z])");
         //通过Pattern获得Matcher
@@ -90,8 +101,10 @@ public class FormatUtil {
      * @param name
      * @return
      */
-    public  static boolean checkNameChese(String name)
-    {
+    public  static boolean checkNameChese(String name) {
+
+        if (name.equals(""))
+            return false;
         boolean res=true;
         char [] cTemp = name.toCharArray();
         for(int i=0;i<name.length();i++)
@@ -111,6 +124,9 @@ public class FormatUtil {
      * @return
      */
     public static boolean checkBankCard(String cardId) {
+
+        if (cardId.equals(""))
+            return false;
         char bit = getBankCardCheckCode(cardId
                 .substring(0, cardId.length() - 1));
         if (bit == 'N') {
@@ -120,6 +136,7 @@ public class FormatUtil {
     }
 
     private static char getBankCardCheckCode(String nonCheckCodeCardId) {
+
         if (nonCheckCodeCardId == null
                 || nonCheckCodeCardId.trim().length() == 0
                 || !nonCheckCodeCardId.matches("\\d+")) {
@@ -148,6 +165,9 @@ public class FormatUtil {
      * @throws ParseException
      */
     public static boolean IDCardValidate(String IDStr) throws ParseException {
+
+        if (IDStr.equals(""))
+            return false;
         String errorInfo = "";// 记录错误信息
         String[] ValCodeArr = { "1", "0", "x", "9", "8", "7", "6", "5", "4",
                 "3", "2" };
@@ -302,6 +322,8 @@ public class FormatUtil {
      * @return
      */
     private static boolean isDataFormat(String str) {
+        if (str.equals(""))
+            return false;
         boolean flag = false;
         // String
         // regxStr="[1-9][0-9]{3}-[0-1][0-2]-((0[1-9])|([12][0-9])|(3[01]))";
@@ -318,6 +340,7 @@ public class FormatUtil {
      * 空值null返回"",防止脏数据奔溃
      */
     public static String checkValue(String str) {
+
         return TextUtils.isEmpty(str)?"":str;
     }
 }

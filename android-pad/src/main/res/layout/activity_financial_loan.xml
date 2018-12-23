@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <include layout="@layout/common_title_layout"/>
+
+        <LinearLayout
+            android:layout_width="800dp"
+            android:layout_height="48dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:id="@+id/deal_with"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:id="@+id/tv_fd_handleman"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="32dp"
+                android:text="处理意见:"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/etxt_fd_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginRight="32dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="8dp"
+                android:background="@drawable/shape_txt_bg"/>
+
+            <Button
+                android:id="@+id/btn_fd_search"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="查询"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"/>
+
+            <Button
+                android:id="@+id/btn_fd_submit"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_btn_icon"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:layout_marginLeft="32dp"
+                android:text="提交"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView
+            android:id="@+id/data_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"/>
+
+</LinearLayout>

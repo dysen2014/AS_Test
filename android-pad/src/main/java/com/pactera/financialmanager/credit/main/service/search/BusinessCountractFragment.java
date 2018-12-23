@@ -124,7 +124,8 @@ public class BusinessCountractFragment extends Fragment {
     private void initView() {
         DuebillInfoItem = new ArrayList<>();
         mContext = getActivity();
-        SerialNo = BusinessDetails.listData.get(BusinessDetails.index).getSerialNo();
+//        SerialNo = BusinessDetails.listData.get(BusinessDetails.index).getSerialNo();
+        SerialNo = BusinessDetails.listData.get(BusinessDetails.index).getContractNo();
         BusinessType = BusinessDetails.listData.get(BusinessDetails.index).getTypeNo();
         pullLoadMore.setGridLayout(2);
         pullLoadMore.setPushRefreshEnable(false);

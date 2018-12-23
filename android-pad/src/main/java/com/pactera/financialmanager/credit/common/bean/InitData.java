@@ -3,12 +3,11 @@ package com.pactera.financialmanager.credit.common.bean;
 import com.pactera.financialmanager.credit.common.bean.http.AfterTheLoan;
 import com.pactera.financialmanager.credit.common.bean.http.BeanHeader;
 import com.pactera.financialmanager.credit.common.bean.http.ExpirationReminder;
-import com.pactera.financialmanager.credit.common.bean.http.ExpirationReminderHeader;
 import com.pactera.financialmanager.credit.common.bean.http.OverdueCustomer;
-import com.pactera.financialmanager.credit.common.bean.http.OverdueCustomerHeader;
 import com.pactera.financialmanager.credit.common.bean.search.LoanAfterBean;
 import com.pactera.financialmanager.credit.common.bean.warn.WarnCrmInfoBean;
 import com.pactera.financialmanager.credit.main.service.search.KeyPersonBean;
+import com.pactera.financialmanager.util.LogUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,6 +23,15 @@ public class InitData {
 	//====================================模拟生成数据==========================================
 
 	public static List<String> getTopHeaderData(List<BeanHeader> listHeader) {
+		List<String> mList = new ArrayList<>();
+		for (int i = 0; i < listHeader.size(); i++) {
+
+			mList.add(listHeader.get(i).getNAME());
+		}
+		return mList;
+	}
+
+	public static List<String> getTopHeaderDataAfter(List<BeanHeader.AfterManagementBean> listHeader) {
 		List<String> mList = new ArrayList<>();
 		for (int i = 0; i < listHeader.size(); i++) {
 
@@ -461,20 +469,24 @@ public class InitData {
 		public static List<List<Object>> getCellData(List<BeanHeader> listHeader, List<ExpirationReminder> list) {
 
 			List<List<Object>> mList = new ArrayList<>();
+			for (int i = 0; i < listHeader.size(); i++) {
+				LogUtils.i("id======================"+listHeader.get(i).getID());
+			}
 			for (int i = 0; i < list.size(); i++) {//行数
 				List<Object> mListChild = new ArrayList<>();
 
 				Map<String, Object> map = new HashMap<>();
-
-				map.put("DueBillNO", list.get(i).getDueBillNO());
-				map.put("CustomerID", list.get(i).getCustomerID());
-				map.put("ConTractNo", list.get(i).getConTractNo());
+//				InterestBalance2;ClassifyResult;CustomerName;BusinessName;BusinessSum;ActualBusinessRate;OrgName;BalanceSum;UserName;
+// ActualPutOutDate;Balance;OverDueBalance;InterestBalance1;ActualMaturity;OfficeTel;
+				//CustomerName OfficeTel BusinessName BusinessSum Balance ActualPutOutDate
+				// ActualMaturity OverDueBalance BalanceSum
+				// InterestBalance1 InterestBalance2 ClassifyResult ActualBusinessRate UserName OrgName
 				map.put("CustomerName", list.get(i).getCustomerName());
-				map.put("BusinessName1", list.get(i).getBusinessName1());
+
 				map.put("BusinessSum", list.get(i).getBusinessSum());
+				map.put("BusinessName", list.get(i).getBusinessName());
 				map.put("Balance", list.get(i).getBalance());
 				map.put("ActualMaturity", list.get(i).getActualMaturity());
-				map.put("InterestBalance", list.get(i).getInterestBalance());
 				map.put("OfficeTel", list.get(i).getOfficeTel());
 				for (int j = 0; j < listHeader.size(); j++) {//列数
 
@@ -522,12 +534,12 @@ public class InitData {
 
 	public static class KeyPerson {
 
-		public static List<List<Object>> getCellDataCustomer(List<BeanHeader> listHeader, List<KeyPersonBean.Customer> listCustomer) {
+		public static List<List<String>> getCellDataCustomer(List<BeanHeader> listHeader, List<KeyPersonBean.Customer> listCustomer) {
 
-			List<List<Object>> mList = new ArrayList<>();
+			List<List<String>> mList = new ArrayList<>();
 
 				for (int i = 0; i < listCustomer.size(); i++) {//行数
-					List<Object> mListChild = new ArrayList<>();
+					List<String> mListChild = new ArrayList<>();
 					Map<String, Object> map = new HashMap<>();
 
 					map.put("CertName", listCustomer.get(i).getCertName());
@@ -540,18 +552,18 @@ public class InitData {
 					map.put("UpdateDate", listCustomer.get(i).getUpdateDate());
                     for (int j = 0; j < listHeader.size(); j++) {//列数
 
-                        mListChild.add(map.get(listHeader.get(j).getID()));
+                        mListChild.add((String) map.get(listHeader.get(j).getID()));
                     }
                     mList.add(mListChild);
 				}
 			return mList;
 		}
-		public static List<List<Object>> getCellDataBusiness(List<BeanHeader> listHeader, List<KeyPersonBean.Business> listBusiness) {
+		public static List<List<String>> getCellDataBusiness(List<BeanHeader> listHeader, List<KeyPersonBean.Business> listBusiness) {
 
-			List<List<Object>> mList = new ArrayList<>();
+			List<List<String>> mList = new ArrayList<>();
 
 				for (int i = 0; i < listBusiness.size(); i++) {//行数
-					List<Object> mListChild = new ArrayList<>();
+					List<String> mListChild = new ArrayList<>();
                     Map<String, Object> map = new HashMap<>();
 
 					map.put("CertName", listBusiness.get(i).getCertName());
@@ -565,7 +577,7 @@ public class InitData {
 					map.put("UserName", listBusiness.get(i).getUserName());
                     for (int j = 0; j < listHeader.size(); j++) {//列数
 
-                        mListChild.add(map.get(listHeader.get(j).getID()));
+                        mListChild.add((String) map.get(listHeader.get(j).getID()));
                     }
                     mList.add(mListChild);
 				}
@@ -576,12 +588,12 @@ public class InitData {
 
 	public static class LoanAfter {
 
-		public static List<List<Object>> getCellData(List<BeanHeader> listHeader, List<LoanAfterBean> listData) {
+		public static List<List<String>> getCellData(List<BeanHeader> listHeader, List<LoanAfterBean> listData) {
 
-			List<List<Object>> mList = new ArrayList<>();
+			List<List<String>> mList = new ArrayList<>();
 
 			for (int i = 0; i < listData.size(); i++) {//行数
-				List<Object> mListChild = new ArrayList<>();
+				List<String> mListChild = new ArrayList<>();
                 Map<String, Object> map = new HashMap<>();
 
 				map.put("SerialNo", listData.get(i).getSerialNo());
@@ -600,7 +612,7 @@ public class InitData {
 				map.put("OperateOrgName", listData.get(i).getOperateOrgName());
                 for (int j = 0; j < listHeader.size(); j++) {//列数
 
-                    mListChild.add(map.get(listHeader.get(j).getID()));
+                    mListChild.add((String) map.get(listHeader.get(j).getID()));
                 }
             mList.add(mListChild);
 			}

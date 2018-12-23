@@ -16,7 +16,6 @@ import com.pactera.financialmanager.adapter.SpinnerAdapter;
 import com.pactera.financialmanager.adapter.SpinnerAdapter.CallBackItemClickListener;
 import com.pactera.financialmanager.db.AreaDao;
 import com.pactera.financialmanager.ui.CitySelect;
-import com.pactera.financialmanager.ui.CitySelectWindow.CallBackCity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.bookbuildingfrocompany.ActivityBaseInfo;
 import com.pactera.financialmanager.ui.model.CustomerAreaInfo;
@@ -75,7 +74,7 @@ public class CusArchivingStepTwo extends ParentActivity implements
         // 绑定监听器
         bindOnClickListener();
         getInfo();
-        initTitle(this, R.drawable.customermanagercon);
+        initTitle(this, "客户建档");
     }
 
     // 获取地址等信息
@@ -108,7 +107,7 @@ public class CusArchivingStepTwo extends ParentActivity implements
 
         cityTypeSp = (TextView) findViewById(R.id.cusarchiving_step2_citytype);
         cityBelongSp = (TextView) findViewById(R.id.cusarchiving_step2_citybelong);
-        initTitle(this, R.drawable.workplacesmallicon);
+        initTitle(this, "工作平台");
 
         Intent intent = getIntent(); // 获取客户类型
         ChooseId = intent.getIntExtra("ChooseId", 0);

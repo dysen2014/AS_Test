@@ -69,6 +69,34 @@ public class StatusBarUtil {
         }
     }
 
+    public static void setColor(Activity activity, @ColorInt int color, @IntRange(from = 0, to =
+            255) int statusBarAlpha, boolean naviFlag, @ColorInt int colorNavi) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            if (naviFlag) {
+                // 虚拟导航键
+            activity.getWindow().setNavigationBarColor(colorNavi);
+            }
+            activity.getWindow().setStatusBarColor(calculateStatusColor(color, statusBarAlpha));
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // 虚拟导航键
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
+            View fakeStatusBarView = decorView.findViewById(FAKE_STATUS_BAR_VIEW_ID);
+            if (fakeStatusBarView != null) {
+                if (fakeStatusBarView.getVisibility() == View.GONE) {
+                    fakeStatusBarView.setVisibility(View.VISIBLE);
+                }
+                fakeStatusBarView.setBackgroundColor(calculateStatusColor(color, statusBarAlpha));
+            } else {
+                decorView.addView(createStatusBarView(activity, color, statusBarAlpha));
+            }
+            setRootView(activity);
+        }
+    }
+
     /**
      * 为滑动返回界面设置状态栏颜色
      *

@@ -124,10 +124,11 @@ public class CreditProveFragment extends ParentFragment {
 
         InfoItem = new ArrayList<>();
 
+        QueryDetails.layBacks.setEnabled(true);
         if (QueryDetails.type.equals("customer")) {
             customerType = QueryDetails.listCustomer.get(QueryDetails.index).getCustomerType();
             customerId = QueryDetails.listCustomer.get(QueryDetails.index).getCustomerId();
-        } else if (QueryDetails.type.equals("business")) {
+        } else if (QueryDetails.type.equals("approval_business")) {
             customerType = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerType();
             customerId = QueryDetails.listBusiness.get(BusinessDetails.index).getCustomerID();
         }

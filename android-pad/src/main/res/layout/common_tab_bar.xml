@@ -3,25 +3,28 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
+              android:layout_marginTop="16dp"
               android:orientation="vertical">
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="#888"/>
+        android:background="#888"
+        android:layout_marginBottom="8dp"/>
 
     <com.yinglan.alphatabs.AlphaTabsIndicator
         android:id="@+id/alphaIndicator"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="64dp"
         android:padding="8dp"
+        android:layout_gravity="center_vertical"
         android:orientation="horizontal">
 
         <com.yinglan.alphatabs.AlphaTabView
             android:id="@+id/tab_0"
             style="@style/common_tab_bar"
-            app:tabIconNormal="@drawable/tab_warn"
-            app:tabIconSelected="@drawable/tab_warn_selected"
+            app:tabIconNormal="@drawable/msg_default_normal"
+            app:tabIconSelected="@drawable/msg_actived_selected"
             app:tabText="提醒"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
@@ -30,8 +33,8 @@
         <com.yinglan.alphatabs.AlphaTabView
             android:id="@+id/tab_1"
             style="@style/common_tab_bar"
-            app:tabIconNormal="@drawable/tab_service"
-            app:tabIconSelected="@drawable/tab_service_selected"
+            app:tabIconNormal="@drawable/service_default_normal"
+            app:tabIconSelected="@drawable/service_actived_selected"
             app:tabText="服务"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"
@@ -40,19 +43,8 @@
         <com.yinglan.alphatabs.AlphaTabView
             android:id="@+id/tab_2"
             style="@style/common_tab_bar"
-            app:tabIconNormal="@mipmap/service_normal"
-            app:tabIconSelected="@mipmap/service_selected"
-            app:tabText="审批"
-            app:tabTextSize="13sp"
-            app:textColorNormal="#999999"
-            app:textColorSelected="#ea452f"/>
-
-
-        <com.yinglan.alphatabs.AlphaTabView
-            android:id="@+id/tab_3"
-            style="@style/common_tab_bar"
-            app:tabIconNormal="@drawable/tab_mine"
-            app:tabIconSelected="@drawable/tab_mine_selected"
+            app:tabIconNormal="@drawable/me_default_normal"
+            app:tabIconSelected="@drawable/me_actived_selected"
             app:tabText="我的"
             app:tabTextSize="13sp"
             app:textColorNormal="#999999"

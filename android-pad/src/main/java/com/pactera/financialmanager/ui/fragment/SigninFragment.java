@@ -56,7 +56,6 @@ import com.pactera.financialmanager.util.Constants.requestType;
 import com.pactera.financialmanager.util.InterfaceInfo;
 import com.pactera.financialmanager.util.LogUtils;
 import com.pactera.financialmanager.util.StringUtils;
-import com.ym.idcard.util.StringUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -69,7 +68,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.baidu.mapapi.map.MapStatusUpdateFactory.newLatLng;
-import static org.kymjs.kjframe.ui.ViewInject.toast;
 
 /**
  * 工作平台下的签到的fragment

@@ -23,7 +23,7 @@ public class CusArchivingActivity extends ParentActivity implements OnClickListe
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_customermanager);
-		initTitle(this,R.drawable.customermanagercon);
+		initTitle(this, "客户建档");
 		
 		// 初始化
 		findViews();

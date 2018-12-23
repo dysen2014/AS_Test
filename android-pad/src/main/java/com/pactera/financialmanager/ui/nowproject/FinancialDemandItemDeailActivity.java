@@ -2,7 +2,6 @@ package com.pactera.financialmanager.ui.nowproject;
 
 import android.os.Bundle;
 import android.os.Message;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -13,14 +12,13 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.adapter.SpinnerAdapter;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.fragment.FragmentFinancialDemand;
 import com.pactera.financialmanager.ui.model.FinancialDemandInfo;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HResponse;
 import com.pactera.financialmanager.util.Constants;
-import com.pactera.financialmanager.util.DelayedTextWatcher;
 import com.pactera.financialmanager.util.DialogAlert;
 import com.pactera.financialmanager.util.InterfaceInfo;
 import com.pactera.financialmanager.util.NewCatevalue;
@@ -75,7 +73,7 @@ public class FinancialDemandItemDeailActivity extends ParentActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_financial_demand_item_detail);
-        initTitle(this, R.drawable.workplacesmallicon);
+        initTitle(this, "工作平台");
 
 
         // 检查是否是管理岗
@@ -83,6 +81,7 @@ public class FinancialDemandItemDeailActivity extends ParentActivity implements 
         if (staID.equals("ST000111") || staID.equals("ST000301")
                 || staID.equals("ST000701") || staID.equals("ST000901")
                 || staID.equals("ST001101") || staID.equals("ST000501")) {
+
             isManager = true;
         }
 

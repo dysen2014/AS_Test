@@ -75,7 +75,7 @@ public class CreditInputChecker {
             if ("0003".equals(e.getProductCode()) && TextUtils.isEmpty(e.getUnitCode())) {
                 return "单位不能为空";
             }
-            if (TextUtils.isEmpty(e.getMaPyName()) || !PATTERN_PINYIN.matcher(e.getMaPyName()).matches()) {
+            if (TextUtils.isEmpty(e.getMaPyName())) {
                 return "拼音输入有误";
             }
 

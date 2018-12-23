@@ -4,6 +4,12 @@
 	<color name="colorPrimaryDark">#303F9F</color>
 	<color name="colorAccent">#FF4081</color>
 
+	<!--自定义 颜色-->
+	<!--××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××-->
+	<color name="view_selected">#FDF8E7</color>
+	<color name="window_bg">#FBFBFB</color>
+	<color name="primary_light_alpha50">#7FCFD8DC</color>
+	<!--××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××-->
 	<!-- 颜色 -->
 	<color name="common_red">#960404</color>
 	<color name="common_yellow">#FF8C00</color>
@@ -23,7 +29,7 @@
 	<color name="listblue">#d2eeff</color>
 	<color name="listred">#fcf0f6</color>
 	<color name="twittergray">#BDBEC2</color>
-	<color name="et_backgroud_gray">#EDEDED</color>
+	<color name="et_backgroud_gray">#F4F4F4</color>
 	<color name="light_cyan">#F5F9F8</color>
 	<color name="fi_department_item_bg">#DBDBDB</color>
 	<color name="kcbackground">#F4F4F4</color>
@@ -423,4 +429,18 @@
 	<color name="bg_line">#E7E7E7</color>
 	<color name="normal_cell_bg">#FEFFFE</color>
 	<color name="reveal_color">#1b000000</color>
+
+	<!--主题背景色-->
+	<color name="theme_background">#f0f0f0</color>
+	<!--下划线-->
+	<color name="underline_gray">#e5e5e5</color>
+	<color name="business_text_color">#333333</color>
+	<color name="preservation_btn_color">#d90000</color>
+
+
+	<color name="idcard_field_title">#ff3455ff</color>
+	<color name="idcard_info_text">#ff000000</color>
+    <color name="buttonStroke">#D8D8D8</color>
+	<color name="common_uncheck_bg">#e5e5e5</color>
+	<color name="common_check_bg">#e5e5e5</color>
 </resources>

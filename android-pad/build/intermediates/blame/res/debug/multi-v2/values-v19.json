@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/dysen/Downloads/Credit_new/android-pad/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v19/values-v19.xml",
+            "map": [
+                {
+                    "source": "/Users/dysen/Downloads/Credit_new/android-pad/src/main/res/values-v19/styles.xml",
+                    "from": {
+                        "startLines": "3,9",
+                        "startColumns": "4,4",
+                        "startOffsets": "59,281",
+                        "endLines": "7,9",
+                        "endColumns": "12,38",
+                        "endOffsets": "273,315"
+                    },
+                    "to": {
+                        "startLines": "2,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,270",
+                        "endLines": "6,7",
+                        "endColumns": "12,31",
+                        "endOffsets": "265,297"
+                    }
+                }
+            ]
+        }
+    ]
+}

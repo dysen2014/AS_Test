@@ -20,7 +20,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.model.Notice;
 

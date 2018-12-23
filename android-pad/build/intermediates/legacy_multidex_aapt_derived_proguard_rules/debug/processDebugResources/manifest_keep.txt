@@ -1,0 +1,2 @@
+# Referenced at /Users/dysen/Downloads/Credit_new/android-pad/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:73
+-keep class com.pactera.financialmanager.app.MyApplication { <init>(...); }

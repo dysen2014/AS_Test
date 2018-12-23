@@ -1,13 +1,5 @@
 package com.pactera.financialmanager.adapter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.db.CatevalueDao;
-import com.pactera.financialmanager.entity.CatevalueEntity;
-import com.pactera.financialmanager.util.Tool;
-
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
@@ -15,17 +7,24 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnTouchListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
-import android.widget.EditText;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.LinearLayout.LayoutParams;
+
+import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.db.CatevalueDao;
+import com.pactera.financialmanager.entity.CatevalueEntity;
+import com.pactera.financialmanager.util.Tool;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 下拉通用类
@@ -70,7 +69,7 @@ public class SpinnerAdapter {
 
 		popupWindow.setTouchInterceptor(new OnTouchListener() {
 			public boolean onTouch(View view, MotionEvent event) {
-				Log.i("1111111", "event.getAction()=" + event.getAction());
+//				Log.i("1111111", "event.getAction()=" + event.getAction());
 				if (event.getAction() == MotionEvent.ACTION_OUTSIDE) {
 					popupWindow.dismiss();
 					return true;
@@ -252,7 +251,6 @@ class TheSpinnerAdapter extends BaseAdapter {
 
 		String itemStr = data.get(position);
 		item_info.setText(itemStr);
-
 		return vi;
 	}
 }

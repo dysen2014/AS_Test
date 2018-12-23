@@ -2,6 +2,7 @@ package com.pactera.financialmanager.ui;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -27,11 +28,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
+import com.baidu.ocr.sdk.model.IDCardResult;
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ocr.IdCardCameraNew;
-import com.pactera.financialmanager.ocr.OCRAnalysis;
+import com.pactera.financialmanager.credit.common.ocr_new.IDCardInfoReaderActivity;
 import com.pactera.financialmanager.ui.PullToRefreshLayout.OnRefreshListener;
 import com.pactera.financialmanager.ui.hallfirst.CMMarketingActivity2;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.model.CustmerQuery;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HResponse;
@@ -40,9 +42,6 @@ import com.pactera.financialmanager.util.DialogAlert;
 import com.pactera.financialmanager.util.InterfaceInfo;
 import com.pactera.financialmanager.util.NewCatevalue;
 import com.pactera.financialmanager.util.Tool;
-import com.ym.idcard.reg.IDCard;
-import com.ym.idcard.reg.OcrEngine;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -59,7 +58,7 @@ public class QuerycusActivity extends ParentActivity implements
 		OnClickListener, OnItemClickListener {
 
 	private RadioButton rbtnPerson, rbtnCommon;
-	private EditText etCusname,etPapersnum,etCusCardNum,etCusAccountNum;
+	private EditText customerName,etPapersnum,cardNumber,etCusAccountNum;
 	private EditText etPhonenum;
 	private View view4;
 	private TextView tvTitle1, tvTitle3;;
@@ -92,58 +91,23 @@ public class QuerycusActivity extends ParentActivity implements
 	private boolean isMeasure = false;
 	private boolean isQuery=true;
 	private ImageView ocrView;
-	private OCRAnalysis ocrAnalysis =null;
 	//处理照片的数据
-	private Handler mHandler = new Handler(){
-		@Override
-		public void handleMessage(Message msg) {
-			super.handleMessage(msg);
-			//ocrAnalysis.toastInfo(msg);
-
-			// 解析对象
-			if(msg.what == OcrEngine.RECOG_OK) {
-//				Toast.makeText(getApplicationContext(),"身份证信息识别成功",Toast.LENGTH_SHORT).show();
-				IDCard idCard = (IDCard) msg.obj;
-				if (idCard != null) {
-					// 设置页面信息
-					String name = idCard.getName();
-					String cardNo = idCard.getCardNo();
-					if(TextUtils.isEmpty(name)){
-						name = "";
-					}
-					if(TextUtils.isEmpty(cardNo)){
-						cardNo = "";
-					}
-					etCusname.setText(name);
-					etPapersnum.setText(cardNo);
-
-					// 自动查询相对应的值
-					if (checkQueryValue()) {
-						loading();
-						getCusDatas();
-					}
-				}
-			}else{
-				Toast.makeText(getApplicationContext(),"身份证信息识别失败",Toast.LENGTH_SHORT).show();
-			}
-		}
-	};
+	
 	private EditText querycusEt5;
+	private IDCardResult idCard;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_querycus);
-		initTitle(this, R.drawable.kehuchaxun);
+		Intent intent = getIntent();
+		String Name = intent.getStringExtra("Name");
+		String NameInfo = intent.getStringExtra("NameInfo");
+		initTitle(this, Name, true,NameInfo);
 		findView();
 		bindOnListener();
 		hiddentLoading(true);
 		layNodatas.setVisibility(View.GONE);
-		ocrAnalysis = new OCRAnalysis(this);
-		if(IdCardCameraNew.isTakephoto) {
-			IdCardCameraNew.isTakephoto = false;
-			ocrAnalysis.readIdCardInfo(mHandler);
-		}
 	}
 
 	@SuppressLint("HandlerLeak")
@@ -192,10 +156,10 @@ public class QuerycusActivity extends ParentActivity implements
 		ocrView = (ImageView) findViewById(R.id.imv_ocr);
 		rbtnPerson = (RadioButton) findViewById(R.id.rbtn_warnperson);
 		rbtnCommon = (RadioButton) findViewById(R.id.rbtn_warncommon);
-		etCusname = (EditText) findViewById(R.id.querycus_cusid);
+		customerName = (EditText) findViewById(R.id.querycus_cusid);
 		etPhonenum = (EditText) findViewById(R.id.querycus_phonenum);
 		etPapersnum = (EditText) findViewById(R.id.querycus_papersnumber);
-		etCusCardNum = (EditText) findViewById(R.id.edittxt_querycus_card_num);
+		cardNumber = (EditText) findViewById(R.id.edittxt_querycus_card_num);
 		querycusEt5 = (EditText) findViewById(R.id.querycus_et5);
 		etCusAccountNum = (EditText) findViewById(R.id.edittxt_querycus_account_num);
 		view4 = (View) findViewById(R.id.view4);
@@ -489,10 +453,10 @@ public class QuerycusActivity extends ParentActivity implements
 		phoneNumStr = "";
 		cardNoStr = "";
 
-		etCusname.setText("");
+		customerName.setText("");
 		etPhonenum.setText("");
 		etPapersnum.setText("");
-		etCusCardNum.setText("");
+		cardNumber.setText("");
 		etCusAccountNum.setText("");
 	}
 
@@ -505,8 +469,8 @@ public class QuerycusActivity extends ParentActivity implements
 		tvTitle3.setTextColor(getResources().getColor(R.color.black));
 		tvValue1.setText("核心客户号");//这里如果不改过来，在每次进行切换之后会显示会回显为客户代码
 		tvValue2.setText("客户姓名");
-		etCusname.setHint("请输入客户姓名...");
-		etCusCardNum.setHint("请输入客户卡号...");
+		customerName.setHint("请输入客户姓名...");
+		cardNumber.setHint("请输入客户卡号...");
 		etCusAccountNum.setHint("请输入客户帐号...");
 		etPhonenum.setHint("请输入客户手机号码...");
 		view4.setVisibility(View.VISIBLE);
@@ -518,7 +482,7 @@ public class QuerycusActivity extends ParentActivity implements
 		// 对公展示数据
 		if (!isForperson) {
 			tvTitle1.setText("客户名称：");
-			etCusname.setHint("请输入客户名称");
+			customerName.setHint("请输入客户名称");
 			tvTitle3.setTextColor(getResources().getColor(R.color.gray));
 			tvValue1.setText("核心客户号");
 			tvValue2.setText("企业名称");
@@ -539,16 +503,18 @@ public class QuerycusActivity extends ParentActivity implements
 	 * @return
 	 */
 	private boolean checkQueryValue() {
-		nameStr = etCusname.getText().toString().trim();// 客户姓名
+		nameStr = customerName.getText().toString().trim();// 客户姓名
 		phoneNumStr = etPhonenum.getText().toString().trim();// 电话号码
 		cardNoStr = etPapersnum.getText().toString().trim();// 证件号码
-		cusCardNumStr = etCusCardNum.getText().toString().trim();// 客户卡号
+		cusCardNumStr = cardNumber.getText().toString().trim();// 客户卡号
 		cusAccountNumStr = etCusAccountNum.getText().toString().trim();// 客户帐号
 
+//		// 判断是否为空
+//		if (!TextUtils.isEmpty(nameStr) || !TextUtils.isEmpty(phoneNumStr) ||
+//		!TextUtils.isEmpty(cusCardNumStr) || !TextUtils.isEmpty(cusAccountNumStr)
+//				|| !TextUtils.isEmpty(cardNoStr)) {
 		// 判断是否为空
-		if (!TextUtils.isEmpty(nameStr) || !TextUtils.isEmpty(phoneNumStr) ||
-		!TextUtils.isEmpty(cusCardNumStr) || !TextUtils.isEmpty(cusAccountNumStr)
-				|| !TextUtils.isEmpty(cardNoStr)) {
+		if (!TextUtils.isEmpty(nameStr) && !TextUtils.isEmpty(cardNoStr)) {
 			return true;
 		} else {
 			DialogAlert dialog = new DialogAlert(this);
@@ -579,15 +545,7 @@ public class QuerycusActivity extends ParentActivity implements
 			layNodatas.setVisibility(View.GONE);
 			break;
 			case R.id.imv_ocr:
-				if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-					//未授权
-					ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA} , 1);
-				}
-				else {
-
-					ocrAnalysis.takePhoto("QuerycusActivity");
-					finish();
-				}
+				openOCR();
 				break;
 		// 对公
 		case R.id.rbtn_warncommon:
@@ -624,6 +582,11 @@ public class QuerycusActivity extends ParentActivity implements
 
 	}
 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		onAtyResult(requestCode, resultCode, data, customerName, cardNumber);
+	}
 
 	@Override
 	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -634,12 +597,7 @@ public class QuerycusActivity extends ParentActivity implements
 				toast("用户拒绝2！");
 				break;
 			case 1:
-				if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
-					ocrAnalysis.takePhoto("QuerycusActivity");
-					finish();
-				}else {
-					toast("用户拒绝！");
-				}
+				openOCR();
 				break;
 		}
 	}
@@ -674,3 +632,4 @@ public class QuerycusActivity extends ParentActivity implements
         }
 	}
 }
+//"CUSTID":"PN0000080061531557"

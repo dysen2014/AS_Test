@@ -50,7 +50,10 @@ public class HotProductActivity extends ParentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hotproducts);
-		initTitle(this, R.drawable.yingxiaoguanli);
+
+		String Name = intent.getStringExtra("Name");
+		String NameInfo = intent.getStringExtra("NameInfo");
+		initTitle(this, Name, true,NameInfo);
 		findViews();
 		getData(20, 0, "");
 		hotProduct_gridView.setOnItemClickListener(new OnItemClickListener() {

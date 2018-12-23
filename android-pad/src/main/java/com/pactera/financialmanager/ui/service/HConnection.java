@@ -17,6 +17,7 @@ import com.pactera.financialmanager.ui.ConnectedListener;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.model.User;
+import com.pactera.financialmanager.util.LogUtils;
 import com.pactera.financialmanager.util.Tool;
 
 import org.json.JSONArray;
@@ -45,7 +46,6 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-import com.pactera.financialmanager.util.LogUtils;
 
 public class HConnection {
 	public static final int RESPONSE_ERROR = -1;

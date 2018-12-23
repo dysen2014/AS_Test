@@ -64,7 +64,7 @@ public class MeasureActivity extends ParentActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_measure);
-		initTitle(this, R.drawable.changyonggongju);
+		initTitle(this, "常用工具");
 		// 初始化
 		findViews();
 		setListener();

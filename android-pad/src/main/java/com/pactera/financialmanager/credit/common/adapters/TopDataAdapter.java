@@ -8,8 +8,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dysen.common_res.common.utils.LogUtils;
+import com.dysen.common_res.common.utils.OnItemClick;
+import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.pactera.financialmanager.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,10 +23,17 @@ public class TopDataAdapter extends RecyclerView.Adapter<TopDataAdapter.ViewHold
 
 	List<String> topList;
 	Context mContext;
+	String AscText = "↑";
+	String DescText = "↓";
+	boolean sortingBool = true;
 
-	public TopDataAdapter(Context context, List<String> list){
+	// 申明一个点击事件接口变量
+	private OnItemClick callback = null;
+
+	public TopDataAdapter(Context context, List<String> list, OnItemClick onItemClickTitle){
 		mContext = context;
 		topList = list;
+		callback = onItemClickTitle;
 	}
 	/**
 	 * item显示类型
@@ -45,15 +55,21 @@ public class TopDataAdapter extends RecyclerView.Adapter<TopDataAdapter.ViewHold
 	 * @param position
 	 */
 	@Override
-	public void onBindViewHolder(ViewHolder holder, int position) {
+	public void onBindViewHolder(final ViewHolder holder, final int position) {
 
 		holder.item_tv.setText(topList.get(position));
 		holder.item_tv.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				LogUtils.d("onclick ");
+				callback.onClick(view,position, holder.item_tv);
 			}
 		});
+	}
+
+	public void refresh(List<String> list) {
+		topList = list;
+		notifyDataSetChanged();
 	}
 
 	@Override

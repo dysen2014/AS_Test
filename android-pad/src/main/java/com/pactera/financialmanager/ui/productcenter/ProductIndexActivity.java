@@ -30,7 +30,7 @@ public class ProductIndexActivity extends ParentActivity implements
 		findViews();
 		// 绑定监听器
 		bindOnClickListener();
-		initTitle(this, R.drawable.yingxiaoguanli);
+		initTitle(this, "营销管理");
 	}
 
 	private void bindOnClickListener() {

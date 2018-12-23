@@ -75,6 +75,26 @@
                 android:id="@+id/data_item_new_tv_10"
                 app:layout_widthPercent="25%"
                 style="@style/cell"/>
+            <com.dysen.common_res.common.views.TextViewMarquee
+                android:id="@+id/data_item_new_tv_11"
+                app:layout_widthPercent="25%"
+                style="@style/cell"/>
+            <com.dysen.common_res.common.views.TextViewMarquee
+                android:id="@+id/data_item_new_tv_12"
+                app:layout_widthPercent="25%"
+                style="@style/cell"/>
+            <com.dysen.common_res.common.views.TextViewMarquee
+                android:id="@+id/data_item_new_tv_13"
+                app:layout_widthPercent="25%"
+                style="@style/cell"/>
+            <com.dysen.common_res.common.views.TextViewMarquee
+                android:id="@+id/data_item_new_tv_14"
+                app:layout_widthPercent="25%"
+                style="@style/cell"/>
+            <com.dysen.common_res.common.views.TextViewMarquee
+                android:id="@+id/data_item_new_tv_15"
+                app:layout_widthPercent="25%"
+                style="@style/cell"/>
         </LinearLayout>
     </ScrollView>
 

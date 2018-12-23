@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:expandable="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <include layout="@layout/common_title_layout"/>
+
+    <com.yinglan.alphatabs.AlphaTabsIndicator
+        android:id="@+id/alphaIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+        <!--
+            app:tabIconNormal="@color/transparent"
+            app:tabIconSelected="@drawable/contact_name_bg"-->
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_0"
+            style="@style/common_tab_bar"
+            app:tabIconNormal="@drawable/tab_bg_normal"
+            app:tabIconSelected="@drawable/tab_bg_selected"
+            app:tabText="申请信息"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
+
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_1"
+            style="@style/common_tab_bar"
+            app:tabIconNormal="@drawable/tab_bg_normal"
+            app:tabIconSelected="@drawable/tab_bg_selected"
+            app:tabText="客户信息"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
+
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_2"
+            style="@style/common_tab_bar"
+            app:tabIconNormal="@drawable/tab_bg_normal"
+            app:tabIconSelected="@drawable/tab_bg_selected"
+            app:tabText="担保信息"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
+
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_3"
+            style="@style/common_tab_bar"
+            app:tabIconNormal="@drawable/tab_bg_normal"
+            app:tabIconSelected="@drawable/tab_bg_selected"
+            app:tabText="调查报告"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"
+            android:visibility="gone"/>
+
+        <com.yinglan.alphatabs.AlphaTabView
+            android:id="@+id/tab_4"
+            style="@style/common_tab_bar"
+            app:tabIconNormal="@drawable/tab_bg_normal"
+            app:tabIconSelected="@drawable/tab_bg_selected"
+            app:tabText="处理意见"
+            app:tabTextSize="13sp"
+            app:textColorNormal="#999999"
+            app:textColorSelected="#ea452f"/>
+
+    </com.yinglan.alphatabs.AlphaTabsIndicator>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp">
+        <include
+            layout="@layout/common_pull_loadmore_layout"/>
+    </LinearLayout>
+    <include
+        layout="@layout/common_btn_submit"/>
+</LinearLayout>

@@ -10,7 +10,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
+import com.pactera.financialmanager.credit.common.bean.CommonBean;
+import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.R;
 
 import java.util.List;
@@ -43,11 +44,12 @@ public class BusinessDetails extends ParentActivity {
 	FrameLayout frameLayoutBusinessDetails;
 
 	private FragmentManager fragmentManager;
-	private DuebillInfoFragment duebillInfoFragment;//
-	private BusinessCountractFragment businessCountractFragment;//
-	private InfoFragment infoFragment;//
+	private DuebillInfoFragment duebillInfoFragment;//借据
+	private BusinessCountractFragment businessCountractFragment;//合同
+	private InfoFragment infoFragment;//客户
 
 	public static List<ListBusinessList> listData;
+	public static List<CommonBean.RelevanceBean> relevanceBeanList;
 	public static int index;
 	private int tabIndex;
 
@@ -67,6 +69,7 @@ public class BusinessDetails extends ParentActivity {
 		txtTitle.setText(getString(R.string.business_details));
 		fragmentManager = getSupportFragmentManager();
 
+		backActivity(this, layBack);
 	}
 
 	@OnClick({R.id.crmDuebillInfo, R.id.crmBusinessCountract, R.id.crmCustomerInfo})
@@ -142,8 +145,8 @@ public class BusinessDetails extends ParentActivity {
 //				break;
 
 				Intent intent = new Intent(getApplicationContext(), QueryDetails.class);
-				QueryDetails.setData(null, listData, index);
-				intent.putExtra("type", "business");
+				QueryDetails.setData(null, listData, relevanceBeanList, index);
+				intent.putExtra("type", "approval_business");
 				startActivity(intent);
 		}
 
@@ -167,6 +170,11 @@ public class BusinessDetails extends ParentActivity {
 
 	public static void setData(List<ListBusinessList> list, int i) {
 		listData = list;
+		index = i ;
+	}
+
+	public static void setRelevanceBeanData(List<CommonBean.RelevanceBean> list, int i) {
+		relevanceBeanList = list;
 		index = i ;
 	}
 }

@@ -227,6 +227,7 @@
                                     android:layout_alignParentRight="true"
                                     android:layout_marginRight="5dp"
                                     android:clickable="true"
+                                    android:visibility="gone"
                                     android:src="@drawable/icon_address" />
 
                             </RelativeLayout>
@@ -635,6 +636,7 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/bookbuildingbtnbg"
                                 android:text="申请调配"
+                                android:visibility="gone"
                                 android:textColor="@color/white" />
                         </LinearLayout>
                     </LinearLayout>

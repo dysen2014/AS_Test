@@ -13,7 +13,7 @@ import com.dysen.common_res.common.utils.TabSwitchHelper;
 
 import java.util.List;
 
-import butterknife.Bind;
+//import butterknife.Bind;
 
 /**
  * Created by dysen on 2017/10/25.

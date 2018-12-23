@@ -4,23 +4,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
 import com.dysen.common_res.common.utils.ActivityManagerApplication;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.OnItemClickCallback;
 import com.dysen.common_res.common.utils.ParamUtils;
 import com.dysen.common_res.common.views.uber.UberProgressView;
 import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
-import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.reflect.TypeToken;
 import com.pactera.financialmanager.R;
+import com.pactera.financialmanager.ui.ParentActivity;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -76,7 +73,15 @@ public class ApprovalActivity extends ParentActivity implements PullLoadMoreRecy
             }
             uberPgsview.setVisibility(View.INVISIBLE);
             if (msg.obj != null) {
-                listData = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
+                try {
+                    List<ApprovalBean.ExamineBean> list = HttpThread.parseList(HttpThread
+                            .parseJSONWithGson
+                            (msg.obj.toString()), ApprovalBean.ExamineBean.class);
+                    for (ApprovalBean.ExamineBean examineBean:list)
+                    listData.add(examineBean);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
                 initData(listData);
             } else {
                 tvHideData.setVisibility(View.VISIBLE);
@@ -104,24 +109,16 @@ public class ApprovalActivity extends ParentActivity implements PullLoadMoreRecy
             public void onLongClick(View view, Integer index) {
 
             }
+
+            @Override
+            public void onClick(View view, int position, int index) {
+
+            }
         });
         pullLoadMore.setAdapter(approvalAdapter);
     }
 
     private ApprovalAdapter.ApprovalMain approvalAdapter;
-
-    public static List<ApprovalBean.ExamineBean> parseList(String jsonData) throws JsonSyntaxException {
-
-        if (!TextUtils.isEmpty(jsonData) || jsonData != null) {
-            Gson gson = new Gson();
-
-            List<ApprovalBean.ExamineBean> list = gson.fromJson(jsonData, new TypeToken<List<ApprovalBean.ExamineBean>>() {
-            }.getType());
-
-            return list;
-        } else
-            return null;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,7 +147,12 @@ public class ApprovalActivity extends ParentActivity implements PullLoadMoreRecy
 
         ActivityManagerApplication.addActivity(this);
 
+        Intent intent = getIntent();
+        String Name = intent.getStringExtra("Name");
+        String NameInfo = intent.getStringExtra("NameInfo");
+        initTitle(this, Name, true,NameInfo);
         txtTitle.setText("贷款审批");
+        txtBack.setText("服务");
         tab0.setText("待审批");
         tab1.setText("已审批");
         tab2.setVisibility(View.GONE);
@@ -161,6 +163,16 @@ public class ApprovalActivity extends ParentActivity implements PullLoadMoreRecy
         pullLoadMore.setGridLayout(2);
         pullLoadMore.setOnPullLoadMoreListener(this);
 //        ptrLayout.setRefreshListener(this);
+        if (layBack != null) {
+            layBack.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    finish();
+                }
+            });
+        }
     }
 
     @OnClick({R.id.tab_0, R.id.tab_1})
@@ -174,6 +186,7 @@ public class ApprovalActivity extends ParentActivity implements PullLoadMoreRecy
                 break;
         }
         showViewBg(view);
+        listData.clear();
         curPage = 1;
         sendRequest();
     }
@@ -223,7 +236,7 @@ public class ApprovalActivity extends ParentActivity implements PullLoadMoreRecy
             @Override
             public void run() {
                 curPage++;
-                clearList();
+//                clearList();
                 sendRequest();
                 // 结束刷新
                 pullLoadMore.setPullLoadMoreCompleted();

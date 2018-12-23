@@ -1,7 +1,5 @@
 package com.pactera.financialmanager.ui.commontool;
 
-import java.text.DecimalFormat;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -18,6 +16,8 @@ import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.util.CalculatorFinancialFormula;
 import com.pactera.financialmanager.util.Tool;
+
+import java.text.DecimalFormat;
 
 /**
  * 买房租房净资产比较器
@@ -60,7 +60,7 @@ public class CalculatorCompareActivity extends ParentActivity implements
 		setContentView(R.layout.calculator_compare);
 		findViews();
 		bindOnClickListener();
-		initTitle(this, R.drawable.changyonggongju);
+		initTitle(this, "常用工具");
 	}
 
 	private void bindOnClickListener() {

@@ -29,7 +29,7 @@ public class CommonToolActivity extends ParentActivity implements
 		findViews();
 		// 绑定监听器
 		bindOnClickListener();
-		initTitle(this,R.drawable.changyonggongju);
+		initTitle(this,"常用工具");
 	}
 
 	private void bindOnClickListener() {

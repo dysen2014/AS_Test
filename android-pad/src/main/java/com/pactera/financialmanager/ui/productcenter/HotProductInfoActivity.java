@@ -67,7 +67,7 @@ public class HotProductInfoActivity extends ParentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_hotproducts_info);
-		initTitle(this, R.drawable.yingxiaoguanli);
+		initTitle(this, "热销产品");
 		findViews();
 		getData();
 

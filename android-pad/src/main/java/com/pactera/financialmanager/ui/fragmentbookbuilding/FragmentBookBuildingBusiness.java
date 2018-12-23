@@ -2,7 +2,6 @@ package com.pactera.financialmanager.ui.fragmentbookbuilding;
 
 
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Message;
@@ -23,7 +22,6 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.pactera.financialmanager.R;
@@ -34,7 +32,7 @@ import com.pactera.financialmanager.callback.BookbuildingZBGCinfoCallback;
 import com.pactera.financialmanager.callback.WorkPlaceItemChange;
 import com.pactera.financialmanager.ui.DeleteDialog;
 import com.pactera.financialmanager.ui.DeleteDialog.IsDeleteListener;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.SwipeListView;
 import com.pactera.financialmanager.ui.bookbuildingfrocompany.ActivityBaseInfo;
@@ -117,7 +115,7 @@ public class FragmentBookBuildingBusiness extends ParentFragment implements
 		sendRequestForFuzai();// 查询负债信息
 		sendRequestForZibenGouChengInfo();// 查询资本构成信息
 		sendRequestForGuQuauTouZiInfo();// 查询股权投资
-		// showZibengouchengInfo();//资本构成
+		// showZibengouchengInfo();//relevance_capital_composition
 		// showGuquantouziInfo();// 股权投资
 		return view;
 	}
@@ -214,7 +212,7 @@ public class FragmentBookBuildingBusiness extends ParentFragment implements
 		HRequest request = null;
 		String requestStr;
 		String custId = ActivityBaseInfo.custID;
-		if (flag == 1) {// 资本构成 创建
+		if (flag == 1) {// relevance_capital_composition 创建
 			requestStr = Tool.getRequest("T011154");
 			requestStr = requestStr + "&jsonData={CUSTID:\"" + custId
                     + "\",STOCK_NAME:\"" // 股东名称
@@ -1304,7 +1302,7 @@ public class FragmentBookBuildingBusiness extends ParentFragment implements
             createFuzhaiFragment.show(fm, "createfuzhai");
             setDialogCallBack(createFuzhaiFragment);
             break;
-        case R.id.btn_createzibengoucheng:// 资本构成
+        case R.id.btn_createzibengoucheng:// relevance_capital_composition
             DialogFragmentCreateZBGCInfo fragmentzibengoucheng = DialogFragmentCreateZBGCInfo.getNewInstance();
             fragmentzibengoucheng.show(fm, "fm");
             setCallBackFunction(fragmentzibengoucheng);

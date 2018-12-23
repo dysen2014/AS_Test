@@ -24,7 +24,6 @@ import android.widget.TextView;
 
 import com.examples.outputjar.BlueUtils;
 import com.examples.outputjar.ClsUtils;
-import com.guoguang.hbnx.impl.iMateInfo;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.bean.IDCheckResult;
 import com.pactera.financialmanager.ui.ParentActivity;
@@ -341,7 +340,7 @@ public class IDCheck extends ParentActivity {
      * 1    读卡成功 返回
      */
     private void mySetResult(int i) {
-        disconn(IDCheck.this, handlerState);
+//        disconn(IDCheck.this, handlerState);
         Intent intent = new Intent();
         if (i == 1) {
             if (applyType >= 0) {
@@ -547,26 +546,26 @@ public class IDCheck extends ParentActivity {
 //        }
     }
 
-    iMateInfo imf;
-    public void disconn(Context context, final Handler handler){
-        imf = new iMateInfo(context, iMateInfo.Operate.DISCON_BLUETOOTH, new iMateInfo.iMateCallback() {
-            @Override
-            public void onSucceed(Bundle bundle) {
-                String state = bundle.getString(iMateInfo.MESSAGE);
-                toast("" + state);
-                Message msg1 = new Message();
-                msg1.what = 0;
-                handler.sendMessage(msg1);
-            }
-
-            @Override
-            public void onError(Bundle bundle) {
-                toast("error");
-                Message msg1 = new Message();
-                msg1.what = 1;
-                handler.sendMessage(msg1);
-            }
-        });
-        imf.startImate();
-    }
+//    iMateInfo imf;
+//    public void disconn(Context context, final Handler handler){
+//        imf = new iMateInfo(context, iMateInfo.Operate.DISCON_BLUETOOTH, new iMateInfo.iMateCallback() {
+//            @Override
+//            public void onSucceed(Bundle bundle) {
+//                String state = bundle.getString(iMateInfo.MESSAGE);
+//                toast("" + state);
+//                Message msg1 = new Message();
+//                msg1.what = 0;
+//                handler.sendMessage(msg1);
+//            }
+//
+//            @Override
+//            public void onError(Bundle bundle) {
+//                toast("error");
+//                Message msg1 = new Message();
+//                msg1.what = 1;
+//                handler.sendMessage(msg1);
+//            }
+//        });
+//        imf.startImate();
+//    }
 }

@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.pactera.financialmanager.R;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.model.ComparatorDeposit;
 import com.pactera.financialmanager.ui.model.Deposit;

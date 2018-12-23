@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.dysen.common_res.R;
+
+import java.util.List;
+
 /**
  * Created by dy on 2016-08-26.
  */
@@ -99,6 +103,32 @@ public class ViewUtils {
         }
     }
 
+    public static void setText(String value, Object object) {
+
+        if (object instanceof TextView) {
+            ((TextView) object).setText(value);
+        } else if (object instanceof Button) {
+            ((Button) object).setText(value);
+        } else if (object instanceof EditText) {
+            ((EditText) object).setText(value);
+        } else {
+
+        }
+    }
+
+    public static void setHint(String value, Object object) {
+
+        if (object instanceof TextView) {
+            ((TextView) object).setHint(value);
+        } else if (object instanceof Button) {
+            ((Button) object).setHint(value);
+        } else if (object instanceof EditText) {
+            ((EditText) object).setHint(value);
+        } else {
+
+        }
+    }
+
     /**
      * 获取 TextView, Button, EditText等的内容
      *
@@ -117,6 +147,51 @@ public class ViewUtils {
 
         }
         return "";
+    }
+
+    public static String getHint(Object object) {
+
+        if (object instanceof TextView) {
+            return ((TextView) object).getHint().toString();
+        } else if (object instanceof Button) {
+            return ((Button) object).getHint().toString();
+        } else if (object instanceof EditText) {
+            return ((EditText) object).getHint().toString();
+        } else {
+
+        }
+        return "";
+    }
+
+    /**
+     * 设置text 空值 hint 显示
+     * @param viewList
+     * @param valueList
+     */
+    public static void setViewsValue(List<View> viewList, List<String> valueList) {
+        for (int i = 0; i < viewList.size(); i++) {
+            ViewUtils.setText("", viewList.get(i));
+            ViewUtils.setHint(valueList.get(i), viewList.get(i));
+        }
+    }
+
+    public static void setViewEnable(Object object , boolean flag) {
+
+        if (object instanceof TextView) {
+            if (flag) ((TextView) object).setBackgroundResource(R.mipmap.btn_bg_red);
+            else ((TextView) object).setBackgroundResource(R.mipmap.btn_bg_gray);
+            ((TextView) object).setEnabled(flag);
+        } else if (object instanceof Button) {
+            if (flag) ((Button) object).setBackgroundResource(R.mipmap.btn_bg_red);
+            else ((Button) object).setBackgroundResource(R.mipmap.btn_bg_gray);
+            ((Button) object).setEnabled(flag);
+        } else if (object instanceof EditText) {
+            if (flag) ((EditText) object).setBackgroundResource(R.mipmap.btn_bg_red);
+            else ((EditText) object).setBackgroundResource(R.mipmap.btn_bg_gray);
+            ((EditText) object).setEnabled(flag);
+        } else {
+
+        }
     }
 }
 

@@ -8,6 +8,9 @@ import android.view.View;
 
 import com.dysen.common_res.R;
 
+import java.util.Arrays;
+import java.util.List;
+
 
 /**
  * dialog工具类
@@ -39,10 +42,14 @@ public class DialogUtils {
 		d.show();
 	}
 
-	public static void showCloseDialog(Context context, View view) {
+	public static Dialog showCloseDialog(Context context, View view) {
 		d = new Dialog(context, R.style.new_circle_progress);
 		d.setContentView(view);
+//		在dialog.show()之前调dialog.setCanceledOnTouchOutside(true);
+//		d.setCanceledOnTouchOutside(true);
 		d.show();
+
+		return d;
 	}
 
 	public static void dismissDialog() {
@@ -55,5 +62,28 @@ public class DialogUtils {
 		if (alertDialog != null && alertDialog.isShowing()) {
 			alertDialog.dismiss();
 		}
+	}
+
+	/**
+	 * 滚动列表
+	 * @param typeList
+	 */
+	private void ShowWheel(String[] typeList, WheelView wheelView){
+		LogUtils.d("打开");
+		dialog.setCanceledOnTouchOutside(true);
+		dialog.show();
+//		wheel_line = (WheelView) view.findViewById(R.id.wheel_line);
+		wheelView.setOffset(1);
+		wheelView.setItems(Arrays.asList(typeList));
+		wheelView.setSeletion(1);
+	}
+	private void ShowWheel(List<String> typeList, WheelView wheelView){
+		LogUtils.d("打开");
+		dialog.setCanceledOnTouchOutside(true);
+		dialog.show();
+//		wheel_line = (WheelView) view.findViewById(R.id.wheel_line);
+		wheelView.setOffset(1);
+		wheelView.setItems(typeList);
+		wheelView.setSeletion(1);
 	}
 }

@@ -6,7 +6,7 @@
               android:orientation="vertical">
 <include
     layout="@layout/common_title_layout"
-    android:visibility="gone"/>
+    />
     <FrameLayout
         android:id="@+id/frameLayout_tab_credit"
         android:layout_width="match_parent"
@@ -14,7 +14,5 @@
         android:layout_weight="1"
         />
 
-    <include
-        layout="@layout/common_tab_bar"
-        />
+    <include layout="@layout/common_tab_bar"/>
 </LinearLayout>

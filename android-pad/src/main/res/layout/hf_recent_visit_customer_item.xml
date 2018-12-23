@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="55dip"
-    android:background="@color/darkorange"
+    android:background="@color/common_tab_bg"
     android:orientation="horizontal" >
 
     <TextView

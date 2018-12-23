@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.callback.WorkPlaceItemChange;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.MyHScrollView;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.model.CustEvent;

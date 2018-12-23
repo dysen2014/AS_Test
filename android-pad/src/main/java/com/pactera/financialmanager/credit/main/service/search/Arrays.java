@@ -17,8 +17,8 @@ public class Arrays extends AppCompatActivity{
     private String TypeNo_value;
     private String classifyResult_name;
     private String classifyResult_value;
-    protected String customerType(String customerType_name,String[] items){
-        String[] customer_type = {"010","010010","010020","010030","010040","010050","010060","010070","030","040"};
+    public String customerType(String customerType_name, String[] items){
+        String[] customer_type = {"010","030"};
         for(int i=0;i<items.length;i++){
             if(customerType_name.equals (items[i])){
                 customerType_value = customer_type[i];
@@ -27,8 +27,8 @@ public class Arrays extends AppCompatActivity{
         return customerType_value;
     }
     protected String getCustomerType_name(String customerType_value){
-        String[] items = {"010","010010","010020","010030","010040","010050","010060","010070","030","040"};
-        String[] customer_type = {"对公客户","法人企业","非法人企业","金融机构","事业单位","社会团体","党政机关","其他","个人客户","农户客户"};
+        String[] items = {"040", "010","030"};
+        String[] customer_type = {"农户客户","对公客户","个人客户"};
         for(int i=0;i<items.length;i++){
             if(customerType_value.equals(items[i])){
                 customerType_name = customer_type[i];
@@ -36,7 +36,7 @@ public class Arrays extends AppCompatActivity{
         }
         return  customerType_name;
     }
-    protected String cardType(String cardType_name,String[] items){
+    public String cardType(String cardType_name, String[] items){
         String[] card_type = {"0","010","020","030","090","095","1","2","3","4","5","6","7","8","9","X"};
         for(int i=0;i<items.length;i++){
             if(cardType_name.equals (items[i])){

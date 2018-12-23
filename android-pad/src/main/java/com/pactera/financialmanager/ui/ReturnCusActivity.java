@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -29,6 +30,7 @@ import com.pactera.financialmanager.adapter.SpinnerAdapter.CallBackItemClickList
 import com.pactera.financialmanager.datetimepicker.DatePickerDialog.OnDateSetListener;
 import com.pactera.financialmanager.datetimepicker.TimePickerDialog.OnTimeSetListener;
 import com.pactera.financialmanager.ui.PullToRefreshLayout.OnRefreshListener;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.model.CustmerQuery;
 import com.pactera.financialmanager.ui.model.ReturnCustomer;
 import com.pactera.financialmanager.ui.service.HConnection;
@@ -110,7 +112,10 @@ public class ReturnCusActivity extends ParentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_returncus);
-		initTitle(this, R.drawable.customermanagercon);
+		Intent intent = getIntent();
+		String Name = intent.getStringExtra("Name");
+		String NameInfo = intent.getStringExtra("NameInfo");
+		initTitle(this, Name, true,NameInfo);
 		
 		findViews();
 		bindOnClickListener();
@@ -358,7 +363,7 @@ public class ReturnCusActivity extends ParentActivity implements
 			}
 
 			// 添加查询条件
-			String info = "&spareOne="+LogoActivity.user.getStaId()+"&size=" + QUERY_SIZE + "&offset=" + offset;
+			String info = "&spareOne="+ LogoActivity.user.getStaId()+"&size=" + QUERY_SIZE + "&offset=" + offset;
 			if (!strCusname.equals("")) {
 				String cusname = strCusname;
 				try {

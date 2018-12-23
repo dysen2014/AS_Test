@@ -35,7 +35,7 @@ import com.pactera.financialmanager.bean.IDCheckResult;
 import com.pactera.financialmanager.db.CreditCardApplyDao;
 import com.pactera.financialmanager.entity.CreditCardApplyEntity;
 import com.pactera.financialmanager.entity.CreditCardApplyEntity.PicEntity;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.fragmentbookbuilding.WindowTakePictures;
 import com.pactera.financialmanager.util.BitmapUtils;
@@ -234,7 +234,7 @@ public class CreditCardApplyActivity extends ParentActivity implements View.OnCl
                                 new SpinnerItem("5", "民营企业"),
                                 new SpinnerItem("6", "私营企业"),
                                 new SpinnerItem("7", "军队"),
-                                new SpinnerItem("8", "其他"),
+                                new SpinnerItem("8", "relevance_other"),
                         });
                     }
 
@@ -242,9 +242,9 @@ public class CreditCardApplyActivity extends ParentActivity implements View.OnCl
                         spinMindustryCode = (Spinner) findViewById(R.id.spin_m_industry_code);
                         initSpinner(spinMindustryCode, new SpinnerItem[]{
                                 DEFAULT_SPINNER_ITEM,
-                                new SpinnerItem("level_a", "农、林、牧、渔业"),
-                                new SpinnerItem("level_b", "采矿业"),
-                                new SpinnerItem("level_c", "制造业"),
+                                new SpinnerItem("A", "农、林、牧、渔业"),
+                                new SpinnerItem("B", "采矿业"),
+                                new SpinnerItem("C", "制造业"),
                                 new SpinnerItem("D", "电力、燃气及水的生产和供应业"),
                                 new SpinnerItem("E", "建筑业"),
                                 new SpinnerItem("F", "交通运输、仓库和邮政业"),
@@ -300,7 +300,7 @@ public class CreditCardApplyActivity extends ParentActivity implements View.OnCl
                                 new SpinnerItem("0", "配偶"),
                                 new SpinnerItem("1", "父母"),
                                 new SpinnerItem("2", "子女"),
-                                new SpinnerItem("9", "其他")
+                                new SpinnerItem("9", "relevance_other")
                         });
                     }
 
@@ -321,7 +321,7 @@ public class CreditCardApplyActivity extends ParentActivity implements View.OnCl
                                 new SpinnerItem("0", "自购无贷款"),
                                 new SpinnerItem("1", "自购有贷款"),
                                 new SpinnerItem("2", "无房"),
-                                new SpinnerItem("9", "其他"),
+                                new SpinnerItem("9", "relevance_other"),
                         });
                     }
 
@@ -332,7 +332,7 @@ public class CreditCardApplyActivity extends ParentActivity implements View.OnCl
                                 new SpinnerItem("0", "配偶"),
                                 new SpinnerItem("1", "父母"),
                                 new SpinnerItem("2", "子女"),
-                                new SpinnerItem("9", "其他")
+                                new SpinnerItem("9", "relevance_other")
                         });
                     }
 
@@ -344,7 +344,7 @@ public class CreditCardApplyActivity extends ParentActivity implements View.OnCl
                                 new SpinnerItem("20", "大学本科"),
                                 new SpinnerItem("30", "大专"),
                                 new SpinnerItem("60", "高中及以下"),
-                                new SpinnerItem("99", "其他"),
+                                new SpinnerItem("99", "relevance_other"),
                         });
                     }
                 }
@@ -422,7 +422,7 @@ public class CreditCardApplyActivity extends ParentActivity implements View.OnCl
         initApplyEntity();//通过实体类中的set方法传值出去
         bindViews();//findviewbyId()
         initViewsData();//值的回显
-        super.initTitle(this, 0);
+        super.initTitle(this, "");
     }
     //通过实体类中的set方法传值出去
     private void initApplyEntity() {

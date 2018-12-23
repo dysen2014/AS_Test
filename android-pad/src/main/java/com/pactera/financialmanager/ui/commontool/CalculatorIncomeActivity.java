@@ -37,7 +37,7 @@ public class CalculatorIncomeActivity extends ParentActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.calculator_licai);
-		initTitle(this,R.drawable.changyonggongju);
+		initTitle(this,"常用工具");
 		findViews();
 
 		licai_btn.setOnClickListener(new OnClickListener() {

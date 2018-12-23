@@ -30,7 +30,7 @@ import com.pactera.financialmanager.db.CateDao;
 import com.pactera.financialmanager.entity.CustomerBasicInfo;
 import com.pactera.financialmanager.entity.Matchs;
 import com.pactera.financialmanager.entity.PercentInfo;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.PieView;
 import com.pactera.financialmanager.ui.service.HConnection;

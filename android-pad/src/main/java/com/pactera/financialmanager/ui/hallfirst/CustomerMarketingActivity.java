@@ -40,7 +40,7 @@ import android.widget.ViewFlipper;
 
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.ui.DefiDialog;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentActivity;
 import com.pactera.financialmanager.ui.PieView;
 import com.pactera.financialmanager.ui.model.CustomerMarketingInfo;

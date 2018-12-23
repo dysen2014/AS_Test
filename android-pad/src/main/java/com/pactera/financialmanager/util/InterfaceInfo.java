@@ -161,10 +161,10 @@ public class InterfaceInfo {
 	public static final String RETURNCUS_FORCOMMON_UPDATE = "T000107"; // 客户回访修改-对公
 	public static final String RETURNCUS_FORPERSON_DEL = "T000057"; // 客户回访删除-对个人
 	public static final String RETURNCUS_FORCOMMON_DEL = "T000108"; // 客户回访删除-对公
-	public static final String QUERYCUS_FORPERSON_MYCUS = "T000017"; // 客户查询-对个人-带默认权限
-	public static final String QUERYCUS_FORCOMMON_MYCUS = "T000020"; // 客户查询-对公
-// 	public static final String QUERYCUS_FORPERSON_MYCUS = "T000022"; // 客户查询-对个人--所有客户
-//	public static final String QUERYCUS_FORCOMMON_MYCUS = "T000021"; // 客户查询-对公
+//	public static final String QUERYCUS_FORPERSON_MYCUS = "T000017"; // 客户查询-对个人-带默认权限
+//	public static final String QUERYCUS_FORCOMMON_MYCUS = "T000020"; // 客户查询-对公
+ 	public static final String QUERYCUS_FORPERSON_MYCUS = "T000022"; // 客户查询-对个人--所有客户
+	public static final String QUERYCUS_FORCOMMON_MYCUS = "T000021"; // 客户查询-对公
 
 
 	/** 厅堂管理 **/

@@ -12,20 +12,22 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
+import com.pactera.financialmanager.adapter.ContactCustomerAdp;
+import com.pactera.financialmanager.bean.ContactBean;
+import com.pactera.financialmanager.ui.ParentActivity;
 import com.dysen.common_res.common.utils.HttpThread;
 import com.dysen.common_res.common.utils.LogUtils;
 import com.dysen.common_res.common.utils.ParamUtils;
-import com.dysen.contact_library.adapter.ContactCustomerAdp;
-import com.dysen.contact_library.bean.ContactBean;
-import com.dysen.contact_library.utils.OnItemClickCallback;
-import com.dysen.contact_library.views.WordsNavigation;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.credit.common.bean.rate.Customer;
+import com.pactera.financialmanager.util.OnItemClickCallback;
+import com.pactera.financialmanager.views.WordsNavigation;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -62,7 +64,11 @@ public class ContactCustomerActivity extends ParentActivity implements
             super.handleMessage(msg);
             if (msg.obj != null){
 
+                try {
                     customer = parseList(HttpThread.parseJSONWithGson(msg.obj.toString()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
 
             if (customer!= null){

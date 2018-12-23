@@ -24,6 +24,7 @@ import com.alibaba.fastjson.JSON;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.datetimepicker.DatePickerDialog.OnDateSetListener;
 import com.pactera.financialmanager.datetimepicker.TimePickerDialog.OnTimeSetListener;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.model.CustmerQuery;
 import com.pactera.financialmanager.ui.model.ReturnCustomer;
 import com.pactera.financialmanager.ui.service.HConnection;
@@ -197,7 +198,7 @@ public class ReturnCusUpdateActivity extends ParentActivity implements OnClickLi
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_returncus_update);
-		initTitle(this, R.drawable.customermanagercon);
+		initTitle(this, "客户建档");
 
 		findViews();
 		bindOnClickListener();

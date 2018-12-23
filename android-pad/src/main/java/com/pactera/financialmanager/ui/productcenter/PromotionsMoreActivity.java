@@ -1,14 +1,5 @@
 package com.pactera.financialmanager.ui.productcenter;
 
-import java.io.FileNotFoundException;
-import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -18,8 +9,8 @@ import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
@@ -40,6 +31,15 @@ import com.pactera.financialmanager.ui.service.HResponse;
 import com.pactera.financialmanager.util.Constants.requestType;
 import com.pactera.financialmanager.util.InterfaceInfo;
 import com.pactera.financialmanager.util.Tool;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 优惠活动(更多)
@@ -73,7 +73,7 @@ public class PromotionsMoreActivity extends ParentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_promotions_more);
-        initTitle(this, R.drawable.yingxiaoguanli);
+        initTitle(this, "营销管理");
         // 初始化
         findViews();
         // more_gridView.setColumnWidth(promotions_more_ll.getWidth()/10);
@@ -337,7 +337,7 @@ public class PromotionsMoreActivity extends ParentActivity {
     /**
      * 进入退出动画
      *
-     * @param laySub
+     * @param
      */
     private void subUpAnim() {
 

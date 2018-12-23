@@ -1,18 +1,8 @@
 package com.pactera.financialmanager.credit.common.utils;
 
-import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
-
-import com.dysen.common_res.common.utils.OnItemClickCallback;
-import com.pactera.financialmanager.credit.common.adapters.DataAdapterNew;
-import com.pactera.financialmanager.credit.common.adapters.LeftAdapter;
-import com.pactera.financialmanager.credit.common.adapters.TopDataAdapter;
-import com.pactera.financialmanager.credit.main.warn.DataListActivity;
-
-import java.util.List;
 
 /**
  * Created by dysen on 2017/10/9.

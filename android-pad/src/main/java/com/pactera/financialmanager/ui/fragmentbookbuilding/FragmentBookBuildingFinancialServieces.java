@@ -28,7 +28,7 @@ import com.pactera.financialmanager.callback.WorkPlaceItemChange;
 import com.pactera.financialmanager.datetimepicker.DatePickerDialog;
 import com.pactera.financialmanager.datetimepicker.TimePickerDialog;
 import com.pactera.financialmanager.ui.DeleteDialog;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
 import com.pactera.financialmanager.ui.SwipeListView;
 import com.pactera.financialmanager.ui.bookbuildingfrocompany.ActivityBaseInfo;

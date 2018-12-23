@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.dysen.common_res.common.base.ParentActivity;
+import com.pactera.financialmanager.ui.ParentActivity;
 import com.dysen.common_res.common.utils.ActivityManagerApplication;
 import com.dysen.common_res.common.views.uber.UberProgressView;
 import com.dysen.pullloadmore_recyclerview.PullLoadMoreRecyclerView;
@@ -67,7 +67,16 @@ public class RiskSianalActivity extends ParentActivity {
             riskSignal = new ApprovalAdapter.RiskSignal(this, listData);
         }
         pullLoadMore.setAdapter(riskSignal);
+        if (layBack != null) {
+            layBack.setOnClickListener(new View.OnClickListener() {
 
+                @Override
+                public void onClick(View v) {
+                    // TODO Auto-generated method stub
+                    finish();
+                }
+            });
+        }
     }
 
     @OnClick({R.id.btn_submit})

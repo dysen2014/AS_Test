@@ -7,7 +7,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.os.Message;
 import android.text.TextUtils;
@@ -26,18 +25,15 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.pactera.financialmanager.R;
 import com.pactera.financialmanager.callback.BookbuildingContactCallback;
 import com.pactera.financialmanager.callback.WorkPlaceItemChange;
-import com.pactera.financialmanager.ui.LogoActivity;
+import com.pactera.financialmanager.ui.login.LogoActivity;
 import com.pactera.financialmanager.ui.ParentFragment;
-import com.pactera.financialmanager.ui.PullableListView;
 import com.pactera.financialmanager.ui.SwipeListView;
 import com.pactera.financialmanager.ui.bookbuildingfrocompany.ActivityBaseInfo;
-import com.pactera.financialmanager.ui.model.BaseCustomerInfo;
 import com.pactera.financialmanager.ui.model.ContantsInfoEntity;
 import com.pactera.financialmanager.ui.model.SevenFieldEntity;
 import com.pactera.financialmanager.ui.newcommonadapter.CommonAdapter;
@@ -46,7 +42,6 @@ import com.pactera.financialmanager.ui.newcommonadapter.CommonViewHolder;
 import com.pactera.financialmanager.ui.service.HConnection;
 import com.pactera.financialmanager.ui.service.HRequest;
 import com.pactera.financialmanager.ui.service.HResponse;
-import com.pactera.financialmanager.util.Constants;
 import com.pactera.financialmanager.util.Tool;
 
 /**

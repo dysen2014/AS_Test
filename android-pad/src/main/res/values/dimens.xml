@@ -47,48 +47,55 @@
     <dimen name="left_side_width">250dip</dimen>
 
     <!--关键成员列表-->
-    <item name="weight_customerrelation_keymemberlist_txt_1" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_keymemberlist_txt_2" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_keymemberlist_txt_3" type="dimen" format="float">3</item>
-    <item name="weight_customerrelation_keymemberlist_txt_4" type="dimen" format="float">6</item>
-    <item name="weight_customerrelation_keymemberlist_txt_5" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_keymemberlist_txt_6" type="dimen" format="float">3</item>
-    <item name="weight_customerrelation_keymemberlist_txt_7" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_keymemberlist_txt_8" type="dimen" format="float">3</item>
+    <item name="weight_customerrelation_keymemberlist_txt_1" format="float" type="dimen">4</item>
+    <item name="weight_customerrelation_keymemberlist_txt_2" format="float" type="dimen">4</item>
+    <item name="weight_customerrelation_keymemberlist_txt_3" format="float" type="dimen">3</item>
+    <item name="weight_customerrelation_keymemberlist_txt_4" format="float" type="dimen">6</item>
+    <item name="weight_customerrelation_keymemberlist_txt_5" format="float" type="dimen">4</item>
+    <item name="weight_customerrelation_keymemberlist_txt_6" format="float" type="dimen">3</item>
+    <item name="weight_customerrelation_keymemberlist_txt_7" format="float" type="dimen">4</item>
+    <item name="weight_customerrelation_keymemberlist_txt_8" format="float" type="dimen">3</item>
 
     <!--集团关系-->
-    <item name="weight_customerrelation_corelation_txt_1" type="dimen" format="float">6</item>
-    <item name="weight_customerrelation_corelation_txt_2" type="dimen" format="float">6</item>
-    <item name="weight_customerrelation_corelation_txt_3" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_corelation_txt_4" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_corelation_txt_5" type="dimen" format="float">5</item>
+    <item name="weight_customerrelation_corelation_txt_1" format="float" type="dimen">6</item>
+    <item name="weight_customerrelation_corelation_txt_2" format="float" type="dimen">6</item>
+    <item name="weight_customerrelation_corelation_txt_3" format="float" type="dimen">4</item>
+    <item name="weight_customerrelation_corelation_txt_4" format="float" type="dimen">4</item>
+    <item name="weight_customerrelation_corelation_txt_5" format="float" type="dimen">5</item>
 
     <!--对外担保信息-->
-    <item name="weight_customerrelation_externalguarantee_txt_1" type="dimen" format="float">5</item>
-    <item name="weight_customerrelation_externalguarantee_txt_2" type="dimen" format="float">5</item>
-    <item name="weight_customerrelation_externalguarantee_txt_3" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_externalguarantee_txt_4" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_externalguarantee_txt_5" type="dimen" format="float">4</item>
-    <item name="weight_customerrelation_externalguarantee_txt_6" type="dimen" format="float">5</item>
-    <item name="weight_customerrelation_externalguarantee_txt_7" type="dimen" format="float">5</item>
+    <item name="weight_customerrelation_externalguarantee_txt_1" format="float" type="dimen">5
+    </item>
+    <item name="weight_customerrelation_externalguarantee_txt_2" format="float" type="dimen">5
+    </item>
+    <item name="weight_customerrelation_externalguarantee_txt_3" format="float" type="dimen">4
+    </item>
+    <item name="weight_customerrelation_externalguarantee_txt_4" format="float" type="dimen">4
+    </item>
+    <item name="weight_customerrelation_externalguarantee_txt_5" format="float" type="dimen">4
+    </item>
+    <item name="weight_customerrelation_externalguarantee_txt_6" format="float" type="dimen">5
+    </item>
+    <item name="weight_customerrelation_externalguarantee_txt_7" format="float" type="dimen">5
+    </item>
 
     <!--其它关联方情况-->
-    <item name="weight_customerrelation_other_txt_1" type="dimen" format="float">6</item>
-    <item name="weight_customerrelation_other_txt_2" type="dimen" format="float">7</item>
-    <item name="weight_customerrelation_other_txt_3" type="dimen" format="float">7</item>
-    <item name="weight_customerrelation_other_txt_4" type="dimen" format="float">6</item>
-    <item name="weight_customerrelation_other_txt_5" type="dimen" format="float">7</item>
-    <item name="weight_customerrelation_other_txt_6" type="dimen" format="float">5</item>
+    <item name="weight_customerrelation_other_txt_1" format="float" type="dimen">6</item>
+    <item name="weight_customerrelation_other_txt_2" format="float" type="dimen">7</item>
+    <item name="weight_customerrelation_other_txt_3" format="float" type="dimen">7</item>
+    <item name="weight_customerrelation_other_txt_4" format="float" type="dimen">6</item>
+    <item name="weight_customerrelation_other_txt_5" format="float" type="dimen">7</item>
+    <item name="weight_customerrelation_other_txt_6" format="float" type="dimen">5</item>
 
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
 
-
     <dimen name="title_text_size">20sp</dimen>
     <dimen name="column_name_text_size">16sp</dimen>
     <dimen name="dimens38dp">38dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
     <!--textSize -->
 </resources>

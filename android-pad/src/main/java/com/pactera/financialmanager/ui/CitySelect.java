@@ -47,6 +47,11 @@ public class CitySelect {
     private List<AreaEntity> listCounty = new ArrayList<AreaEntity>();// 县
     private List<AreaEntity> listStreet = new ArrayList<AreaEntity>();// 街道
 
+
+    private List<AreaEntity> listOwnedCity = new ArrayList<AreaEntity>();// 所属市
+    private List<AreaEntity> listOwnedCounty = new ArrayList<AreaEntity>();// 所属县
+    private List<AreaEntity> listOwnedOutlets = new ArrayList<AreaEntity>();// 所属网点
+
     private String location1, location2, location3, location4,
             location5 = "420101000000";//默认武汉市辖区
     //			location5 = "110101001";//默认北京东华门街道办事处
@@ -312,6 +317,19 @@ public class CitySelect {
         // }
     }
 
+    /** 获取所有网点列表 */
+    private void openOwnedOutlets(){
+
+        new Thread(){
+            @Override
+            public void run() {
+                super.run();
+                if (!listOwnedCity.isEmpty()){
+
+                }
+            }
+        }.start();
+    }
     /** 获取所有省份列表 */
     private void openRowDbank() {
         new Thread() {
@@ -358,6 +376,12 @@ public class CitySelect {
             };
         }.start();
     }
+
+    private MyHandlerSelect ownedOutletsHandler = new MyHandlerSelect(activity) {
+        public void handleMessage(android.os.Message msg) {
+
+        }
+    };
 
     private MyHandlerSelect mHandler = new MyHandlerSelect(activity) {
         public void handleMessage(android.os.Message msg) {

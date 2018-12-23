@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+        <android.support.v7.widget.CardView
+            style="@style/common_cardview"
+            app:cardBackgroundColor="@color/transparent"
+            app:cardCornerRadius="8dp"
+            android:id="@+id/card_item"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/shape_view_bg"
+                android:gravity="center_vertical">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/IrscreditLevel"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/white"
+                        android:textSize="32sp"
+                        android:gravity="center"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/CustomerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="@string/customerName"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        style="@style/common_lay_txt">
+
+                        <TextView
+                            android:id="@+id/CertTypeName"
+                            style="@style/common_right_txt"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/common_lay_txt">
+
+
+                        <TextView
+                            android:id="@+id/MobilePhone"
+                            style="@style/common_right_txt"
+                            android:text="@string/telephoneNumber"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/ic_right"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</LinearLayout>

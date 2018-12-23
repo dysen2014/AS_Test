@@ -1,126 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:orientation="vertical"
-	android:descendantFocusability="blocksDescendants"
-	>
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="50dp"
-		android:orientation="horizontal"
-		>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-		<LinearLayout
-			android:layout_width="100dp"
-			android:layout_height="match_parent"
-			android:orientation="vertical"
-			>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:id="@+id/ll_lay"
+                >
 
-			<include layout="@layout/left_top_item"/>
-		</LinearLayout>
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
 
-		<LinearLayout
-			android:layout_width="0dp"
-			android:layout_height="50dp"
-			android:layout_weight="1"
-			android:orientation="vertical"
-			>
+                    <include layout="@layout/left_top_item"/>
+                </LinearLayout>
 
-			<com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView
-				android:id="@+id/header_horizontal"
-				android:layout_width="match_parent"
-				android:layout_height="48dp"
-				android:overScrollMode="never"
-				android:scrollbars="none"
-				>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
 
-				<android.support.v7.widget.RecyclerView
-					android:id="@+id/top_data"
-					android:layout_width="match_parent"
-					android:layout_height="48dp"
-					/>
+                    <com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView
+                        android:id="@+id/header_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                        >
 
-			</com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView>
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/top_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            />
 
-		</LinearLayout>
-	</LinearLayout>
+                    </com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView>
 
-	<FrameLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		>
-	<com.jwenfeng.library.pulltorefresh.PullToRefreshLayout
-		android:id="@+id/ptr_layout"
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		>
+                </LinearLayout>
+            </LinearLayout>
 
-		<ScrollView
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:overScrollMode="never"
-			android:scrollbars="vertical"
-			>
+            <com.jwenfeng.library.pulltorefresh.PullToRefreshLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ptr_layout"
+                >
 
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="match_parent"
-				android:layout_alignParentTop="true"
-				android:orientation="horizontal"
-				>
-				<com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView
-					android:id="@+id/left_header_horizontal"
-					android:layout_width="100dp"
-					android:layout_height="match_parent"
-					android:overScrollMode="never"
-					android:scrollbars="none"
-					>
-				<android.support.v7.widget.RecyclerView
-					android:id="@+id/left_data"
-					android:layout_width="100dp"
-					android:layout_height="match_parent"
-					android:overScrollMode="never"
-					android:scrollbars="none"
-					/>
-</com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView>
-				<LinearLayout
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:orientation="vertical"
-					>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical"
+                    android:visibility="gone"
+                    >
+                </ScrollView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:orientation="horizontal"
+                        >
 
-					<com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView
-						android:id="@+id/data_horizontal"
-						android:layout_width="match_parent"
-						android:layout_height="match_parent"
-						android:overScrollMode="never"
-						android:scrollbars="none"
-						>
+                        <com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView
+                            android:id="@+id/left_header_horizontal"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:overScrollMode="never"
+                            android:scrollbars="none"
+                            android:visibility="gone"
+                            />
 
-						<android.support.v7.widget.RecyclerView
-							android:id="@+id/lv_data"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:overScrollMode="never"
-							android:scrollbars="none"
-							/>
-					</com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView>
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/left_data"
+                                android:layout_width="60dp"
+                                android:layout_height="match_parent"
+                                android:overScrollMode="never"
+                                android:scrollbars="none"
+                                />
 
-				</LinearLayout>
-			</LinearLayout>
-		</ScrollView>
-	</com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>
-	<TextView
-		android:id="@+id/tv_hide_data"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center"
-		android:text="无数据内容"
-		android:textSize="30sp"
-		android:visibility="invisible"/>
-	</FrameLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            >
+
+                            <com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView
+                                android:id="@+id/data_horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:overScrollMode="never"
+                                android:scrollbars="none"
+                                >
+
+                                <android.support.v7.widget.RecyclerView
+                                    android:id="@+id/lv_data"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:overScrollMode="never"
+                                    android:scrollbars="none"
+                                    />
+                            </com.pactera.financialmanager.credit.common.views.SyncHorizontalScrollView>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+            </com.jwenfeng.library.pulltorefresh.PullToRefreshLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_hide_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="暂无提醒事项"
+            android:textSize="30sp"
+            android:visibility="invisible"/>
+    </FrameLayout>
 </LinearLayout>

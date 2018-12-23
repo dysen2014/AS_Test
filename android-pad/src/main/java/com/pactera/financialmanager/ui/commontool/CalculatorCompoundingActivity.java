@@ -33,7 +33,7 @@ public class CalculatorCompoundingActivity extends ParentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.calculator_fuli);
 		findViews();
-		initTitle(this,R.drawable.changyonggongju);
+		initTitle(this,"常用工具");
 		fuli_btn.setOnClickListener(new OnClickListener() {
 
 			@Override
